@@ -1,4 +1,43 @@
-h1{
-    color: green;
-    text-align: center;
+/* general styles */
+*{
+    margin: 0;
 }
+/*end general styles */
+
+/* nav-bar styles */
+
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: rgb(196, 222, 239);
+    font-weight: 700;
+    
+    transform: scale(1.05)
+}
+.navbar-light .navbar-nav .active>.nav-link{
+    color: white;
+
+}
+
+.navbar .dropdown-item:hover {
+    /* color: rgb(4, 0, 255); */
+    background-color:#131416 ;
+} 
+
+#authorization{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 800;
+    
+
+}
+
+#authorization:hover{
+    color: rgb(196, 222, 239);
+    transform: scale(1.25)
+
+}
+/* end nav-bar styles */
+
