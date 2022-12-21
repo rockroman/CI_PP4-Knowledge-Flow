@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 
+
 {% load i18n %}
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+{% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
 <h1>{% trans "Sign In" %}</h1>
 
-{% get_providers as socialaccount_providers %}
+<!-- {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
@@ -28,7 +30,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 {% include "socialaccount/snippets/login_extra.html" %}
 
-{% else %}
+{% else %} -->
 <p>{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
