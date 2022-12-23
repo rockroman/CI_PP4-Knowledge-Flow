@@ -10,7 +10,7 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['image', 'bio', 'role']
+        fields = ['image', 'first_name', 'last_name', 'role', 'bio']
         role = forms.MultipleChoiceField(
             choices=ROLE, widget=forms.CheckboxSelectMultiple())
 

@@ -11,6 +11,8 @@ class Profile(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = CloudinaryField('image', default='placeholder')
+    first_name = models.CharField(max_length=20, blank=True, null=True)
+    last_name = models.CharField(max_length=20, blank=True, null=True)
     bio = models.TextField(max_length=1000, blank=True)
     role = models.CharField(max_length=20, choices=ROLE)
     created_on = models.DateTimeField(auto_now_add=True)
