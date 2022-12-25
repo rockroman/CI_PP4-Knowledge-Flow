@@ -7,17 +7,14 @@ from django.contrib.auth.models import User
 
 
 class ProfileForm(forms.ModelForm):
+    # role = forms.ChoiceField(widget=forms.RadioSelect, choices=Profile.ROLE)
 
     class Meta:
         model = Profile
         fields = ['image', 'first_name', 'last_name', 'role', 'bio']
-        role = forms.MultipleChoiceField(
-            choices=ROLE, widget=forms.CheckboxSelectMultiple())
-
-    widgets = {
-        'bio': forms.Textarea(attrs={'class': 'form-control', 'rows': '10'}),
-    }
-
+        # role = forms.ChoiceField(required=True, widget=forms.CheckboxInput(attrs={'type':'checkbox'}) )
+        # widgets = {'bio': forms.Textarea(attrs={'class': 'form-control', 'rows': '10'})}
+        role = forms.ChoiceField(widget=forms.RadioSelect, choices=Profile.ROLE)
 
 class UserForm(forms.ModelForm):
 

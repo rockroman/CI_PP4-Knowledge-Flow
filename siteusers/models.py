@@ -18,5 +18,10 @@ class Profile(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
+    # def get_absolute_url(self):
+    #     return reverse('profile_form', kwargs={'pk': self.pk})
+
     def __str__(self):
         return f'{self.user.username} Profile'
+
+    
