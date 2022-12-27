@@ -4,21 +4,27 @@
 from django import forms
 from .models import Profile
 from django.contrib.auth.models import User
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 
 
 class ProfileForm(forms.ModelForm):
     role = forms.ChoiceField(widget=forms.RadioSelect(), choices=Profile.ROLE)
+    user = forms.CharField(max_length=20)
 
     class Meta:
         model = Profile
-        fields = ['image', 'first_name', 'last_name', 'role', 'bio']
-        # role = forms.ChoiceField(required=True, widget=forms.CheckboxInput(attrs={'type':'checkbox'}) )
-        # widgets = {'bio': forms.Textarea(attrs={'class': 'form-control', 'rows': '10'})}
-        # role = forms.ChoiceField(widget=forms.RadioSelect, choices=Profile.ROLE)
+        fields = ['user', 'image', 'first_name', 'last_name', 'role', 'bio']
 
-class UserForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.add_input(Submit('submit', 'UPDATE PROFILE'))
+      
 
-    class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'email'] 
+# class UserForm(forms.ModelForm):
+
+#     class Meta:
+#         model = User
+#         fields = ['first_name', 'last_name', 'email'] 
 

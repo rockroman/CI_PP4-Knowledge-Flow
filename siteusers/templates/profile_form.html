@@ -4,9 +4,14 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-    <h1 class="col-12 text-center">Profile</h1>
+    <h1 class="col-12 text-center">{{ user }}'s Profile</h1>
    
-            <div class="container">{% crispy form %}</div>
+    <div class="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+    </div>
     
 
 

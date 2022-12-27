@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+# from django.urls import reverse
 from cloudinary.models import CloudinaryField
 # Create your models here.
 
@@ -19,7 +20,7 @@ class Profile(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     # def get_absolute_url(self):
-    #     return reverse('profile_form', kwargs={'pk': self.pk})
+    #     return reverse('home', kwargs={'pk': self.pk})
 
     def __str__(self):
         return f'{self.user.username} Profile'
