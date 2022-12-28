@@ -1,5 +1,5 @@
-from django.shortcuts import render,redirect
-from django.views.generic.edit import CreateView
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import CreateView, DetailView 
 from django.contrib.auth.models import User
 from .models import Profile
 from .forms import Profileform
@@ -11,10 +11,21 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 
 
+class SeeProfilePageView(DetailView):
+	model = Profile
+	template_name = 'user_profile_page'
+
+	def get_context_data(self, *args, **kwargs):
+		user = Profile.objects.all()
+		context = super(SeeProfilePageView, self).get_context_data(**kwargs)
+
+		site_user = get_object_or_404(Profile, id=self.kwargs['pk'])
+		context['site_user'] = site_user
+		return context
+	
 
 
-
-class ProfilePageView(CreateView):
+class CreateProfileView(CreateView):
 	model = Profile
 	form_class = Profileform
 	template_name = 'create_profile.html'
