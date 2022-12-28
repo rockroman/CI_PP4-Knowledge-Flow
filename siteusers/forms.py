@@ -8,23 +8,16 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
 
-class ProfileForm(forms.ModelForm):
+class Profileform(forms.ModelForm):
+   
     role = forms.ChoiceField(widget=forms.RadioSelect(), choices=Profile.ROLE)
-    user = forms.CharField(max_length=20)
-
+    
     class Meta:
         model = Profile
-        fields = ['user', 'image', 'first_name', 'last_name', 'role', 'bio']
+        fields = ['image','first_name', 'last_name', 'email', 'role', 'bio']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.helper.add_input(Submit('submit', 'UPDATE PROFILE'))
-      
-
-# class UserForm(forms.ModelForm):
-
-#     class Meta:
-#         model = User
-#         fields = ['first_name', 'last_name', 'email'] 
+        self.helper.add_input(Submit('submit', 'CREATE PROFILE'))
 
