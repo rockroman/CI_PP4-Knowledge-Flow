@@ -4,8 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    path('create_profile/',
+    path('',
          CreateProfileView.as_view(), name='create_myprofile'),
-    path('<int:pk>/profile', SeeProfilePageView.as_view(), name='myprofile'),
+    path('<int:pk>/profile/', SeeProfilePageView.as_view(), name='myprofile'),
     
 ]

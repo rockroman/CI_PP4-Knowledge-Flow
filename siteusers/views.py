@@ -8,24 +8,23 @@ from crispy_forms.helper import FormHelper
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
 
-class SeeProfilePageView(DetailView):
+class SeeProfilePageView(LoginRequiredMixin, DetailView):
 	model = Profile
-	template_name = 'user_profile_page'
+	template_name = 'user_profile_page.html'
 
 	def get_context_data(self, *args, **kwargs):
 		user = Profile.objects.all()
-		context = super(SeeProfilePageView, self).get_context_data(**kwargs)
-
+		context = super(SeeProfilePageView, self).get_context_data(*args, **kwargs)
 		site_user = get_object_or_404(Profile, id=self.kwargs['pk'])
 		context['site_user'] = site_user
 		return context
 	
 
-
-class CreateProfileView(CreateView):
+class CreateProfileView(LoginRequiredMixin, CreateView):
 	model = Profile
 	form_class = Profileform
 	template_name = 'create_profile.html'

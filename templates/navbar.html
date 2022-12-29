@@ -50,13 +50,19 @@
                     <a class="dropdown-item text-white" href="#">Something else here</a>
                   </div>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                    Profile
                   </a>
+                  {% endif %}
                   <div class="dropdown-menu  bg-dark">
-                    <a class="dropdown-item text-white" href="">My Profile</a>
+                    {% if user.profile.id %}
+                    <a class="dropdown-item text-white" href="{% url 'myprofile' user.profile.id %}">My Profile</a>
+                    {% endif %}
+                    
                     <a class="dropdown-item text-white" href="{% url 'create_myprofile' %}">Create profile</a>
+                    
                     <!-- <a class="dropdown-item text-white" href="#">Something else here</a> -->
                     
                   </div>
@@ -90,7 +96,7 @@
 
     </section>  -->
     <!-- end hero -->
-
+    <!-- 'myprofile' site_user.profile.id  -->
     <!-- section 1-------------------------------------------------------------------------------- -->
 <!--     
     <section> -->
