@@ -44,8 +44,9 @@
     color: red;
 }
 /* end nav-bar styles */
-#breadcrumb{
-    background-color: blue;
+.breadcrumb{
+    background-color: rgb(14, 14, 88);
+    
 }
 /* profile page syles */
 /* end profile page syles */
