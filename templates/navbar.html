@@ -51,22 +51,23 @@
                   </div>
                 </li>
                 {% if user.is_authenticated %}
+                
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                    Profile
                   </a>
-                  {% endif %}
+                  
                   <div class="dropdown-menu  bg-dark">
-                    {% if user.profile.id %}
-                    <a class="dropdown-item text-white" href="{% url 'myprofile' user.profile.id %}">My Profile</a>
+                    
+                    <a class="dropdown-item text-white" href="{% url 'appuser_profile' %} ">My profile</a>
+                    
+                  
                     {% endif %}
-                    
-                    <a class="dropdown-item text-white" href="{% url 'create_myprofile' %}">Create profile</a>
-                    
-                    <!-- <a class="dropdown-item text-white" href="#">Something else here</a> -->
-                    
+                  
                   </div>
                 </li>
+                
+                
                 <!-- <li class="nav-item">
                   <a class="nav-link" href="">Profile</a>
                 </li> -->
@@ -96,7 +97,9 @@
 
     </section>  -->
     <!-- end hero -->
-    <!-- 'myprofile' site_user.profile.id  -->
+   
+    <!-- 'myprofile' user.profile.id -->
+    <!-- 'edit_myprofile' profile.user.id -->
     <!-- section 1-------------------------------------------------------------------------------- -->
 <!--     
     <section> -->

@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import CreateView, DetailView 
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
+from django.views.generic import CreateView, DetailView, UpdateView, TemplateView
 from django.contrib.auth.models import User
 from .models import Profile
-from .forms import Profileform
+from .forms import Profileform, ProfileUpdateForm
 from django.urls import reverse_lazy
 from crispy_forms.helper import FormHelper
 from django.http import HttpResponse
@@ -12,26 +12,94 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
 
+class AppUserProfile(generic.CreateView):
+	model = Profile
+	form_class = Profileform
+	template_name = 'create_profile.html'
+
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super().form_valid(form)
+
+
 class SeeProfilePageView(LoginRequiredMixin, DetailView):
 	model = Profile
 	template_name = 'user_profile_page.html'
 
-	def get_context_data(self, *args, **kwargs):
-		user = Profile.objects.all()
-		context = super(SeeProfilePageView, self).get_context_data(*args, **kwargs)
-		site_user = get_object_or_404(Profile, id=self.kwargs['pk'])
-		context['site_user'] = site_user
-		return context
-	
 
-class CreateProfileView(LoginRequiredMixin, CreateView):
-	model = Profile
-	form_class = Profileform
-	template_name = 'create_profile.html'
+# -------used code
+# class CreateProfileView(LoginRequiredMixin, CreateView):
+# 	model = Profile
+# 	form_class = Profileform
+# 	template_name = 'create_profile.html'
 	
-	def form_valid(self, form):
-		form.instance.user = self.request.user
-		return super().form_valid(form)
+# 	def form_valid(self, form):
+# 		form.instance.user = self.request.user
+# 		return super().form_valid(form)
+
+
+# class SeeProfilePageView(LoginRequiredMixin, DetailView):
+# 	model = Profile
+# 	template_name = 'user_profile_page.html'
+
+# 	# def get_object(self,*args, **kwargs):
+# 	# 	return self.request.user
+
+# 	# def get_context_data(self, *args, **kwargs):
+# 	# 	users = Profile.objects.all()
+# 	# 	context = super(SeeProfilePageView, self).get_context_data(*args, **kwargs)
+# 	# 	app_user = get_object_or_404(Profile, id=self.kwargs['pk'])
+# 	# 	context['app_user'] = app_user
+# 	# 	return context
+
+# # id=self.kwargs['pk']
+
+# class EditProfilePageView(UpdateView):
+# 	model = Profile
+# 	form_class = ProfileUpdateForm
+# 	template_name = 'edit_profile.html'
+# 	# fields = ['image', 'last_name', 'email', 'bio']
+# 	success_url = reverse_lazy('home')
+
+# 	def get_context_data(self, *args, **kwargs):
+# 		users = Profile.objects.all()
+# 		context = super(EditProfilePageView, self).get_context_data(*args, **kwargs)
+# 		app_user = get_object_or_404(Profile, id=self.kwargs['pk'])
+# 		context['app_user'] = app_user
+# 		return context
+	# def get_object(self):
+	# 	return self.request.user
+	
+	
+# ------- end of used code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

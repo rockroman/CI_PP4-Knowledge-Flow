@@ -7,11 +7,22 @@ from django.contrib.auth.models import User
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
-
+# ----used code
 class Profileform(forms.ModelForm):
    
     role = forms.ChoiceField(widget=forms.RadioSelect(), choices=Profile.ROLE)
-    
+   
+    class Meta:
+        model = Profile
+        fields = ['image', 'first_name', 'last_name', 'email', 'role', 'bio']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.add_input(Submit('submit', 'CREATE PROFILE'))
+        
+
+class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['image','first_name', 'last_name', 'email', 'role', 'bio']
@@ -19,5 +30,12 @@ class Profileform(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.helper.add_input(Submit('submit', 'CREATE PROFILE'))
+        self.helper.add_input(Submit('submit', 'update PROFILE'))
 
+#  end of used code------------------  
+
+
+# class Profileform(forms.ModelForm):
+#     class Meta:
+#         model = Profile
+#         fields = ['image', 'first_name', 'last_name', 'email', 'role', 'bio']

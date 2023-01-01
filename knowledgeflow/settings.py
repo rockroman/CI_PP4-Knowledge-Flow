@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['knowledge-flow.herokuapp.com', 'localhost']
 
@@ -54,9 +54,11 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = 'create_myprofile'
+LOGIN_REDIRECT_URL = 'appuser_profile'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

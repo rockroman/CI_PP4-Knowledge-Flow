@@ -5,7 +5,7 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<h1 class="col-12 text-center"> {{ site_user }}</h1>
+<h1 class="col-12 text-center"> {{ user }}'Profile</h1>
 
 <!-- Profile page  -->
 <div class="container">
@@ -28,11 +28,11 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>{{ site_user.first_name }} {{ site_user.last_name }}</h4>
+                      <h4>{{ user.profile.first_name }} {{ user.profile.last_name }}</h4>
                       <p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <!-- <button class="btn btn-primary">Follow</button>
-                      <button class="btn btn-outline-primary">Message</button> -->
+                       <button class="btn btn-primary"><a class=" text-white" href="">Update profile</a></button>
+                      <!-- <button class="btn btn-outline-primary">Message</button>  -->
                     </div>
                   </div>
                 </div>
@@ -67,10 +67,19 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
+                      <h6 class="mb-0">Username</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{ user.username }} 
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        {{ site_user.first_name }} {{ site_user.last_name }}
+                        {{ user.profile.first_name }} {{ user.profile.last_name }}
                     </div>
                   </div>
                   <hr>
@@ -79,7 +88,7 @@
                       <h6 class="mb-0">Role</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        {{ site_user.role }}
+                        {{ user.profile.role }}
                     </div>
                   </div>
                   <hr>
@@ -88,7 +97,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        {{ site_user.email }}
+                        {{ user.email }}
                     </div>
                   </div>
                   <hr>
@@ -97,16 +106,16 @@
                       <h6 class="mb-0">Mobile</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (320) 380-4539
+                      
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
+                      <h6 class="mb-0">Bio</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                     {{ user.profile.bio }}
                     </div>
                   </div>
                   <hr>
