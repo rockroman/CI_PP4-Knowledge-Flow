@@ -58,8 +58,11 @@
                   </a>
                   
                   <div class="dropdown-menu  bg-dark">
-                    
-                    <a class="dropdown-item text-white" href="{% url 'appuser_profile' %} ">My profile</a>
+                    {% if user.profile is None %}
+                    <a class="dropdown-item text-white" href="{% url 'appuser_profile' %} ">Create profile</a>
+                    {% endif %}
+                    <a class="dropdown-item text-white" href="{% url 'see_profile' %} ">See profile</a>
+                    <a class="dropdown-item text-white" href="{% url 'edit_profile' %} ">Edit profile</a>
                     
                   
                     {% endif %}

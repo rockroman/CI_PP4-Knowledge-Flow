@@ -25,17 +25,10 @@ class Profileform(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image','first_name', 'last_name', 'email', 'role', 'bio']
+        fields = ['image','first_name', 'last_name', 'role', 'bio']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.add_input(Submit('submit', 'update PROFILE'))
 
-#  end of used code------------------  
-
-
-# class Profileform(forms.ModelForm):
-#     class Meta:
-#         model = Profile
-#         fields = ['image', 'first_name', 'last_name', 'email', 'role', 'bio']
