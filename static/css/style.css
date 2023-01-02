@@ -2,7 +2,20 @@
 *{
     margin: 0;
 }
+
+body{
+    /* background-color: black; */
+}
+h1,h2,h3{
+    color: white;
+    text-transform:uppercase;
+    font-weight: 700;
+}
 /*end general styles */
+
+/* sign up and login style  */
+
+/* sign up and login style  */
 
 /* nav-bar styles */
 
@@ -41,13 +54,28 @@
 }
 
 #logo{
-    color: red;
+    color: rgba(55, 140, 244, 0.971);
+    
 }
 /* end nav-bar styles */
+
+/* home page styles */
+.jumbotron-fluid{
+   background-image:url(/static/images/flow-home-big.jpg);
+   min-height:600px;
+   background-size: cover;
+   background-attachment: fixed;
+   /* background-position: center; */
+}
+
+
+/* end  home page styles */
+
+/* profile page syles */
 .breadcrumb{
     background-color: rgb(14, 14, 88);
     
 }
-/* profile page syles */
+
 /* end profile page syles */
 
