@@ -7,14 +7,16 @@ body{
     /* background-color: black; */
 }
 h1,h2,h3{
-    color: white;
+   
     text-transform:uppercase;
     font-weight: 700;
 }
 /*end general styles */
 
 /* sign up and login style  */
-
+.authentication-title{
+    color: black;
+}
 /* sign up and login style  */
 
 /* nav-bar styles */

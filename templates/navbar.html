@@ -58,18 +58,15 @@
                   </a>
                   
                   <div class="dropdown-menu  bg-dark">
-                    {% if user.profile is None %}
+                    
                     <a class="dropdown-item text-white" href="{% url 'appuser_profile' %} ">Create profile</a>
-                    {% endif %}
+                    
                     <a class="dropdown-item text-white" href="{% url 'see_profile' %} ">See profile</a>
                     <a class="dropdown-item text-white" href="{% url 'edit_profile' %} ">Edit profile</a>
                     
-                  
-                    {% endif %}
-                  
                   </div>
                 </li>
-                
+                {% endif %}
                 
                 <!-- <li class="nav-item">
                   <a class="nav-link" href="">Profile</a>
@@ -84,9 +81,11 @@
              {% else %} 
               <a class="navbar-brand authorization-link" href="{% url 'account_login' %}">Login</a>
               <a class="navbar-brand authorization-link" href="{% url 'account_signup' %}">Register</a>
-             {% endif %}
+              {% endif %}
               </span>
+              
             </div>
+            
             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
           </nav>
           
