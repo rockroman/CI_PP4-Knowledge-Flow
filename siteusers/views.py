@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
-from django.views.generic import CreateView, DetailView, UpdateView, TemplateView, View
+from django.views.generic import CreateView, DetailView, UpdateView, TemplateView, DeleteView
 from django.contrib.auth.models import User
 from .models import Profile
 from .forms import Profileform, ProfileUpdateForm
@@ -40,7 +40,14 @@ class EditProfilePageView(LoginRequiredMixin, generic.UpdateView):
 	def get_object(self, *args, **kwargs):
 		return self.request.user.profile
 
-	
+
+class DeleteProfileView(LoginRequiredMixin, DeleteView):
+	model = Profile
+	template_name = 'delete_profile.html'
+	success_url = reverse_lazy('home')
+
+	def get_object(self, *args, **kwargs):
+		return self.request.user.profile
 
 
 
