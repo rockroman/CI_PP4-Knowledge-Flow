@@ -10,7 +10,8 @@
         <form action="" method="POST">
             {% csrf_token %}
             <p>Are you sure you wnt to delete your profile</p>
-            <button class="btn btn-primary" type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Delete</button>
+            <button class="btn btn-primary" ><a  class="text-white" href="{% url 'see_profile' %}">Go Back</a></button> 
         </form>
     </div>  
     
