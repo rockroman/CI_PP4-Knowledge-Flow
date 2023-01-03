@@ -11,7 +11,6 @@ class Profile(models.Model):
         ('Student', 'Student')
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # username = models.CharField(max_length=30, unique=True)
     image = CloudinaryField('image', default='placeholder')
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)

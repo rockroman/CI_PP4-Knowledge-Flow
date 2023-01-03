@@ -122,23 +122,3 @@ class DeleteProfileView(LoginRequiredMixin, DeleteView):
 #         self.object = form.save()
 
 
-# @login_required      
-# def UserProfilePage(request):
-# 	if request.method == 'POST':
-# 		user_form = Userform(request.POST, instance=request.user)
-# 		profile_form = Profileform(request.POST, request.FILES, instance=request.user.profile)
-# 		if user_form.is_valid() and profile_form.is_valid():
-# 			user_form.save()
-# 			profile_form.save()
-# 			return redirect('home') 
-
-# 	else:
-# 		user_form = Userform(instance=request.user)
-# 		profile_form = Profileform(instance=request.user.profile)
-
-# 	context = {
-# 		'user_form': user_form,
-# 		'profile_form': profile_form
-# 	}
-	
-# 	return render(request, 'profile.html', context)
