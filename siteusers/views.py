@@ -11,8 +11,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
+from django.core.exceptions import ObjectDoesNotExist
 
-class AppUserProfile(generic.CreateView):
+
+class AppUserCreateProfile(generic.CreateView):
 	model = Profile
 	form_class = Profileform
 	template_name = 'create_profile.html'
@@ -20,6 +22,21 @@ class AppUserProfile(generic.CreateView):
 	def form_valid(self, form):
 		form.instance.user = self.request.user
 		return super().form_valid(form)
+
+class AppUserSetUpProfile(generic.UpdateView):
+	model = Profile
+	form_class = Profileform
+	template_name = 'create_profile.html'
+	success_url = reverse_lazy('see_profile')
+
+	def get_object(self, *args, **kwargs):
+		return self.request.user.profile
+
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super().form_valid(form)
+
+	
 
 
 class SeeProfilePageView(LoginRequiredMixin, DetailView):
@@ -49,6 +66,14 @@ class DeleteProfileView(LoginRequiredMixin, DeleteView):
 	def get_object(self, *args, **kwargs):
 		return self.request.user.profile
 
+
+def redirect_view(request):
+	if request.user.profile.role:
+		return redirect('home')
+	else:
+		return redirect('appuser_SetUp_profile')
+	
+	
 
 
 # class EditProfilePageView(UpdateView):

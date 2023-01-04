@@ -19,7 +19,8 @@ class Profileform(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.helper.add_input(Submit('submit', 'CREATE PROFILE'))
+        # self.helper.add_input(Submit('submit', 'CREATE PROFILE'))
+        self.helper.add_input(Submit('submit', 'SET PROFILE'))
         
 
 class ProfileUpdateForm(forms.ModelForm):
