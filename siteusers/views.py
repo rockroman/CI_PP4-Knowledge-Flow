@@ -14,14 +14,14 @@ from django.views import generic
 from django.core.exceptions import ObjectDoesNotExist
 
 
-class AppUserCreateProfile(generic.CreateView):
-	model = Profile
-	form_class = Profileform
-	template_name = 'create_profile.html'
+# class AppUserCreateProfile(generic.CreateView):
+# 	model = Profile
+# 	form_class = Profileform
+# 	template_name = 'create_profile.html'
 
-	def form_valid(self, form):
-		form.instance.user = self.request.user
-		return super().form_valid(form)
+# 	def form_valid(self, form):
+# 		form.instance.user = self.request.user
+# 		return super().form_valid(form)
 
 class AppUserSetUpProfile(generic.UpdateView):
 	model = Profile
@@ -73,27 +73,6 @@ def redirect_view(request):
 	else:
 		return redirect('appuser_SetUp_profile')
 	
-	
-
-
-# class EditProfilePageView(UpdateView):
-# 	model = Profile
-# 	form_class = ProfileUpdateForm
-# 	template_name = 'edit_profile.html'
-# 	# fields = ['image', 'last_name', 'email', 'bio']
-# 	success_url = reverse_lazy('user_profile_page.html')
-
-# 	def get_context_data(self, *args, **kwargs):
-# 		users = Profile.objects.all()
-# 		context = super(EditProfilePageView, self).get_context_data(*args, **kwargs)
-# 		app_user = get_object_or_404(Profile, id=self.kwargs['pk'])
-# 		context['app_user'] = app_user
-# 		return context
-	# def get_object(self):
-	# 	return self.request.user
-	
-	
-# ------- end of used code
 
 
 
