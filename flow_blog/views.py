@@ -4,6 +4,6 @@ from .models import BlogPost
 
 
 # Create your views here.
-class BlogPageView(generic.ListView):
+class BlogPageView(ListView):
     model = BlogPost
-    template_name = 'blog.html'
+    template_name = 'flow_blog/blog.html'

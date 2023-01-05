@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('home.urls'), name='home_urls'),
     path('siteusers/', include('siteusers.urls'), name='siteusers_urls'),
     path('accounts/', include('allauth.urls'),),
+    path('flow_blog/', include('flow_blog.urls'), name='flow_blog_urls'),
     
 ]
