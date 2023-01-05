@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AppUserSetUpProfile, SeeProfilePageView, EditProfilePageView, DeleteProfileView, redirect_view   # CreateProfileView, 
+from .views import AppUserSetUpProfile,SeeProfilePageView, EditProfilePageView, DeleteAppUser, redirect_view   # CreateProfileView,DeleteProfileView, 
 from . import views
 
 
@@ -8,7 +8,7 @@ urlpatterns = [
     # path('create_profile/', AppUserCreateProfile.as_view(), name='appuser_create_profile'),
     path('see_profile/', SeeProfilePageView.as_view(), name='see_profile'),
     path('edit_profile/', EditProfilePageView.as_view(), name='edit_profile'),
-    path('delete_profile/', DeleteProfileView.as_view(), name='delete_profile'),
+    path('delete_profile/', DeleteAppUser.as_view(), name='delete_profile'),
     path('redirect/', views.redirect_view, name='redirect'),
     
     

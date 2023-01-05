@@ -58,13 +58,13 @@ class EditProfilePageView(LoginRequiredMixin, generic.UpdateView):
 		return self.request.user.profile
 
 
-class DeleteProfileView(LoginRequiredMixin, DeleteView):
-	model = Profile
-	template_name = 'delete_profile.html'
-	success_url = reverse_lazy('home')
+# class DeleteProfileView(LoginRequiredMixin, DeleteView):
+# 	model = Profile
+# 	template_name = 'delete_profile.html'
+# 	success_url = reverse_lazy('home')
 
-	def get_object(self, *args, **kwargs):
-		return self.request.user.profile
+# 	def get_object(self, *args, **kwargs):
+# 		return self.request.user.profile
 
 
 def redirect_view(request):
@@ -75,6 +75,23 @@ def redirect_view(request):
 	
 
 
+class DeleteAppUser(LoginRequiredMixin, generic.DeleteView):
+	model = User
+	template_name = 'delete_profile.html'
+	# success_url = reverse_lazy('accounts/logout')
+
+	def get_object(self, *args, **kwargs):
+		return self.request.user
+	
+	def post(self, request, *args, **kwargs):
+		if Profile.objects.filter(user=request.user).exists():
+			profile = Profile.objects.filter(user=request.user)
+			profile.delete()
+		
+		request.user.is_active = False
+		request.user.save()
+
+		return HttpResponseRedirect(reverse_lazy('account_logout'))
 
 
 
