@@ -5,6 +5,54 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<h1>HELLO BLOG</h1>
+
+<section id="blog-body" class=" ">
+  <h2 class="text-center m-2 mb-4"> LATEST BLOGS</h2>
+  
+  <div class="container pt-3">
+    <div class="row">
+        {% for post in object_list %}
+      <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+          <!-- <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top"> -->
+          <img src="{% static 'images/blog_default.jpg' %}" alt="" class="card-img-top">
+          <div class="card-body">
+            <p class="text-muted">{{ post.creator }} | {{ post.created_on }}</p>
+            <h5 class="card-title">{{ post.title }}</h5>
+            <hr>
+            <p class="card-text">{{ post.body}}</p>
+            <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+                <!-- <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1516214104703-d870798883c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">Sunset</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+                    <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                      <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 mb-4">
+                  <div class="card">
+                    <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
+                    <div class="card-body">
+                      <p class="text-muted">author and date</p>
+                      <h5 class="card-title">Sunset</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum, rerum voluptates ipsam eos quo tempore iusto dolore modi dolorum in pariatur. Incidunt repellendus praesentium quae!</p>
+                    <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                      <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                    </div>
+                  </div>
+                  </div> -->
+    
+  </div>
+</section>
 
 {% endblock %}

@@ -5,6 +5,9 @@
 
 body{
     /* background-color: black; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 h1,h2,h3{
    
@@ -70,8 +73,53 @@ h1,h2,h3{
    /* background-position: center; */
 }
 
+#header{
+    background-image:url(/static/images/flow-home-big.jpg);
+  }
+
 
 /* end  home page styles */
+
+
+/* blog main page styles */
+
+/*  */
+/* blog main page styles */
+
+#blog-body{
+    margin-top: -10px;
+}
+.ion-minus{
+    padding:0px 10px;
+}
+
+.blog {
+	background-color:#f6f6f6;
+	padding:60px 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.blog .blog-column a{
+    color: #5db4c0;
+    text-decoration: none;
+}
+
+.blog  span {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.blog  .blog-detail {
+    margin-top: 10px;
+}
+
+.fa.fa-user, .fa.fa-clock-o {
+    padding-right: 10px;
+    color: #909090;
+    font-size: 11px;
+}
+
+
 
 /* profile page syles */
 .breadcrumb{
