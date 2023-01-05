@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home',
     'siteusers',
+    'flow_blog',
 ]
 
 SITE_ID = 1
