@@ -8,3 +8,9 @@ class BlogPageView(ListView):
     model = BlogPost
     context_object_name = 'blog_post'
     template_name = 'flow_blog/blog.html'
+
+
+class BlogDetailView(DetailView):
+
+    model = BlogPost
+    template_name = 'blog_details.html'
