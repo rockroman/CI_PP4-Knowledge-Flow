@@ -11,14 +11,14 @@
   
   <div class="container pt-3">
     <div class="row">
-        {% for post in object_list %}
+        {% for post in blog_post %}
       <div class="col-lg-6 mb-4">
         <div class="card h-100">
           <!-- <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top"> -->
           <img src="{% static 'images/blog_default.jpg' %}" alt="" class="card-img-top">
           <div class="card-body">
             <p class="text-muted">{{ post.creator }} | {{ post.created_on }}</p>
-            <h5 class="card-title">{{ post.title }}</h5>
+            <h5 class="card-title"> <a href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </h5>
             <hr>
             <p class="card-text">{{ post.body}}</p>
             <a href="" class="btn btn-outline-success btn-sm">Read More</a>
