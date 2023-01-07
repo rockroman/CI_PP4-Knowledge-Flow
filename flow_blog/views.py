@@ -20,8 +20,7 @@ class BlogDetailView(DetailView):
 class AddBlogView(CreateView):
 
     model = BlogPost
-    template_name = 'add_blog.html'
+    template_name = 'flow_blog/add_blog.html'
     fields = [
         'title', 'cover_image', 'body'
     ]
-

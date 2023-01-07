@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<small>ADD BLOG POST</small>
+<h1 class="col-12 text-center"> ADD BLOG POST</h1>
+<div class="container">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% crispy form %}
+        <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">POST</button>
+    </form>
+</div>  
 
 
 
