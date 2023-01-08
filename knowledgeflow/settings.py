@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['knowledge-flow.herokuapp.com', 'localhost']
 
@@ -56,8 +56,8 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 # LOGIN_REDIRECT_URL = 'appuser_SetUp_profile'
-# LOGIN_REDIRECT_URL = 'redirect'
-LOGIN_REDIRECT_URL = 'set_role'
+LOGIN_REDIRECT_URL = 'redirect'
+# LOGIN_REDIRECT_URL = 'set_role'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 

@@ -4,18 +4,37 @@
 {% block content %}
 
 
-    <h1 class="col-12 text-center">  {{ user }} register as a</h1>
+    <h1 class="col-12 text-center">  {{ user }}  you can register as :</h1>
    
-    <div class="container">
-        <form action="" method="POST" >
-            {% csrf_token %}
-            <!-- {{ form | crispy }} -->
-            {% crispy form %}
-            
-            <!-- <button type="submit" name="Mentor">MENTOR</button>
-            <button type="submit" name="student">STUDENT</button> -->
-            
-        </form>
+    <div class="container ">
+       
+        <div class="card-group ">
+            <div class="card mx-3">
+              <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <form action="" method="POST" >
+                    {% csrf_token %}
+                    {{ mentor_form.as_p }}
+                   <button  class= "btn btn-primary "type="submit">MENTOR</button>
+                </form>
+              </div>
+            </div>
+            <div class="card mx-3">
+              <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <form action="" method="POST" >
+                    {% csrf_token %}
+                    {{ student_form.as_p }}
+                    <button class="btn btn-primary"  type="submit">STUDENT</button>
+                </form>
+               
+              </div>
+            </div>
+        </div>
         
     </div>  
     

@@ -11,23 +11,22 @@ from crispy_forms.layout import Submit
 # ----used code
 class Profileform(forms.ModelForm):
 
-    role = forms.ChoiceField(widget=forms.RadioSelect(), choices=Profile.ROLE)
+    # role = forms.ChoiceField(widget=forms.RadioSelect(), choices=Profile.ROLE)
 
     class Meta:
         model = Profile
-        fields = ['image', 'first_name', 'last_name', 'email', 'role', 'bio']
+        fields = ['image', 'first_name', 'last_name', 'email','bio']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        # self.helper.add_input(Submit('submit', 'CREATE PROFILE'))
         self.helper.add_input(Submit('submit', 'SET PROFILE'))
 
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image','first_name', 'last_name',  'bio']
+        fields = ['image', 'first_name', 'last_name',  'bio']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -37,6 +36,7 @@ class ProfileUpdateForm(forms.ModelForm):
 
 class UpdateStudentRole(forms.ModelForm):
     role = forms.ChoiceField(choices=Profile.ROLE, widget=forms.HiddenInput())
+    student = forms.BooleanField(widget=forms.HiddenInput, initial=True)
 
     class Meta:
         model = Profile
@@ -46,10 +46,11 @@ class UpdateStudentRole(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.initial['role'] = 'Student'
-        self.helper.add_input(Submit('submit', 'STUDENT'))
+
 
 class UpdateMentorRole(forms.ModelForm):
     role = forms.ChoiceField(choices=Profile.ROLE, widget=forms.HiddenInput())
+    mentor = forms.BooleanField(widget=forms.HiddenInput, initial=True)
 
     class Meta:
         model = Profile
@@ -59,4 +60,3 @@ class UpdateMentorRole(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.initial['role'] = 'Mentor'
-        self.helper.add_input(Submit('submit', 'MENTOR'))
