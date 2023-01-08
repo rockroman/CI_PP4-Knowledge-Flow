@@ -7,11 +7,12 @@ from django.contrib.auth.models import User
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
+
 # ----used code
 class Profileform(forms.ModelForm):
-   
+
     role = forms.ChoiceField(widget=forms.RadioSelect(), choices=Profile.ROLE)
-   
+
     class Meta:
         model = Profile
         fields = ['image', 'first_name', 'last_name', 'email', 'role', 'bio']
@@ -21,15 +22,41 @@ class Profileform(forms.ModelForm):
         self.helper = FormHelper(self)
         # self.helper.add_input(Submit('submit', 'CREATE PROFILE'))
         self.helper.add_input(Submit('submit', 'SET PROFILE'))
-        
+
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image','first_name', 'last_name', 'role', 'bio']
+        fields = ['image','first_name', 'last_name',  'bio']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.add_input(Submit('submit', 'update PROFILE'))
 
+
+class UpdateStudentRole(forms.ModelForm):
+    role = forms.ChoiceField(choices=Profile.ROLE, widget=forms.HiddenInput())
+
+    class Meta:
+        model = Profile
+        fields = ['role']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.initial['role'] = 'Student'
+        self.helper.add_input(Submit('submit', 'STUDENT'))
+
+class UpdateMentorRole(forms.ModelForm):
+    role = forms.ChoiceField(choices=Profile.ROLE, widget=forms.HiddenInput())
+
+    class Meta:
+        model = Profile
+        fields = ['role']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.initial['role'] = 'Mentor'
+        self.helper.add_input(Submit('submit', 'MENTOR'))

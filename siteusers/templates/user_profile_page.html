@@ -29,7 +29,7 @@
                     {% if 'placeholder' in user.profile.image.url %}
                     <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150"> -->
                     <img  class="rounded-circle" width="150" src="{% static 'images/default.jpg' %}">
-                    s
+                    
                     {% else %}
                     {% load cloudinary %}
                     {% cloudinary  user.profile.image format="WebP" width=180 height=170 crop='fill' radius='max' className='cld-responsive' %}

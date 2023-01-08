@@ -9,7 +9,7 @@
 <div class="container">
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {% crispy form %}
+        {{ form | crispy }}
         <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">POST</button>
     </form>
 </div>  

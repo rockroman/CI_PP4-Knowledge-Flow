@@ -1,6 +1,8 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.template.defaultfilters import slugify
 
 
 # Create your models here.
@@ -15,3 +17,11 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title + ' | ' + str(self.creator)
+
+    def get_absolute_url(self):
+        return reverse("blog_details", kwargs={"pk": self.pk})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
