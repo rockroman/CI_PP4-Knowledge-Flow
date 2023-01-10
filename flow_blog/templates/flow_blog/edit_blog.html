@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+{% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
+
+<h1 class="col-12 text-center"> EDIT BLOG POST</h1>
+<div class="container">
+    <div class="form-group">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+             {{ form.as_p }}
+            <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">UPDATE</button>
+        </form>
+    </div>
+</div>  
+
+
+
+
+{% endblock %}

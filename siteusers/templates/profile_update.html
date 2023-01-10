@@ -7,6 +7,17 @@
     <h1 class="col-12 text-center"> {{ user }}'s Profile</h1>
    
     <div class="container">
+        <div class="row ">
+            <div class="col d-flex justify-content-center">
+                {% if 'placeholder' in user.profile.image.url %}
+                    <img  class="rounded-circle" width="150" src="{% static 'images/default.jpg' %}">
+                {% load cloudinary %}
+                {% else %}
+                {% cloudinary  user.profile.image format="WebP" width=180 height=170 crop='fill' radius='max' className='cld-responsive' %}
+                {% endif %}
+            </div>
+        </div>
+
         <div class="form-group">
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}

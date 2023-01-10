@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import BlogPost
 from .forms import BlogForm
 
@@ -23,4 +23,9 @@ class AddBlogView(CreateView):
     model = BlogPost
     form_class = BlogForm
     template_name = 'flow_blog/add_blog.html'
-    
+
+
+class UpdateBlogView(UpdateView):
+    model = BlogPost
+    template_name = 'flow_blog/edit_blog.html'
+    fields = ['title', 'body', 'cover_image']
