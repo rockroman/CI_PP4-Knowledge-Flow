@@ -7,11 +7,13 @@
 
 <h1 class="col-12 text-center"> ADD BLOG POST</h1>
 <div class="container">
-    <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form | crispy }}
-        <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">POST</button>
-    </form>
+    <div class="form-group">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+             {{ form.as_p }}
+            <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">POST</button>
+        </form>
+    </div>
 </div>  
 
 

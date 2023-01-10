@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'crispy_forms',
+    'image_uploader_widget',
     'home',
     'siteusers',
     'flow_blog',

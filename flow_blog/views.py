@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import BlogPost
+from .forms import BlogForm
 
 
 # Create your views here.
@@ -20,7 +21,6 @@ class BlogDetailView(DetailView):
 class AddBlogView(CreateView):
 
     model = BlogPost
+    form_class = BlogForm
     template_name = 'flow_blog/add_blog.html'
-    fields = [
-        'title', 'creator', 'cover_image', 'body'
-    ]
+    
