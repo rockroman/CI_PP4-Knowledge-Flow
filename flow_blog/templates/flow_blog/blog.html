@@ -19,6 +19,7 @@
           <div class="card-body">
             <p class="text-muted">{{ post.creator }} | {{ post.created_on }}</p>
             <h5 class="card-title"> <a href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </h5>
+            <a href="{% url 'edit_blog' post.pk %}"><button class="btn btn-warning pl-5 pr-5">EDIT</button></a>
             <hr>
             <p class="card-text">{{ post.body}}</p>
             <a href="" class="btn btn-outline-success btn-sm">Read More</a>

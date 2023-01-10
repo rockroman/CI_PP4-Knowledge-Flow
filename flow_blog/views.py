@@ -28,4 +28,5 @@ class AddBlogView(CreateView):
 class UpdateBlogView(UpdateView):
     model = BlogPost
     template_name = 'flow_blog/edit_blog.html'
-    fields = ['title', 'body', 'cover_image']
+    # fields = ['title', 'body', 'cover_image']
+    form_class = BlogForm

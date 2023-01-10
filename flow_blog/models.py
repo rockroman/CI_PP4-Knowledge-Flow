@@ -15,11 +15,14 @@ class BlogPost(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-updated_on']
+
     def __str__(self):
         return self.title + ' | ' + str(self.creator)
 
     def get_absolute_url(self):
-        return reverse("blog_details", kwargs={"pk": self.pk})
+        return reverse("blog_page")
 
     def save(self, *args, **kwargs):
         if not self.slug:
