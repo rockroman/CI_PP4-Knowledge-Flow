@@ -56,7 +56,6 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-# LOGIN_REDIRECT_URL = 'appuser_SetUp_profile'
 LOGIN_REDIRECT_URL = 'redirect'
 # LOGIN_REDIRECT_URL = 'set_role'
 LOGOUT_REDIRECT_URL = '/'

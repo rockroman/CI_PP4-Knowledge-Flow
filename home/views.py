@@ -7,10 +7,6 @@ from siteusers.models import Profile
 
 # Create your views here.
 
-class HomeView( generic.TemplateView):
+
+class HomeView(generic.TemplateView):
     template_name = 'index.html'
-   
-
-
-
-    

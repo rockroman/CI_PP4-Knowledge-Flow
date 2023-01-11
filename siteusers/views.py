@@ -70,6 +70,8 @@ class DeleteAppUser(LoginRequiredMixin, generic.DeleteView):
 
 
 def redirect_view(request):
+    # if request.user.is_anonymous:
+    #     return redirect('accounts_signup')
     if request.user.profile.role:
         return redirect('home')
     else:
