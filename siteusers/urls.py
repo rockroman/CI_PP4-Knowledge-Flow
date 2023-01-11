@@ -10,5 +10,6 @@ urlpatterns = [
     path('delete_profile/', DeleteAppUser.as_view(), name='delete_profile'),
     path('redirect/', views.redirect_view, name='redirect'),
     path('set_role/', views.SetProfileRole, name='set_role'),
+    path('protect_profile/', views.protect_profile_view, name='protect_profile'),
 
 ]

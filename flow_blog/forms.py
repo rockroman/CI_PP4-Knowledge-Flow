@@ -1,4 +1,4 @@
-from django import forms 
+from django import forms
 from .models import BlogPost
 from cloudinary.models import CloudinaryField
 
@@ -19,5 +19,3 @@ class BlogForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control'}),
 
         }
-
-       

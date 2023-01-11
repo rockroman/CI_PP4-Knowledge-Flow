@@ -70,8 +70,6 @@ class DeleteAppUser(LoginRequiredMixin, generic.DeleteView):
 
 
 def redirect_view(request):
-    # if request.user.is_anonymous:
-    #     return redirect('accounts_signup')
     if request.user.profile.role:
         return redirect('home')
     else:
@@ -101,3 +99,10 @@ def SetProfileRole(request):
     }
 
     return render(request, 'choose_role.html', context=context)
+
+
+def protect_profile_view(request):
+    if request.user.profile.role:
+        return redirect('appuser_SetUp_profile')
+    else:
+        return redirect('set_role')

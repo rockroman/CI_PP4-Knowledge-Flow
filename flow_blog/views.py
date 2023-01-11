@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    ListView, DetailView, CreateView, UpdateView, DeleteView)
 from .models import BlogPost
 from .forms import BlogForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -14,12 +15,6 @@ class BlogPageView(ListView):
     context_object_name = 'blog_post'
     template_name = 'flow_blog/blog.html'
 
-    # def test_func(self):
-    #     return self.request.user.profile.role
-
-    # def handle_no_permission(self):
-    #     return redirect('set_role')
-
 
 @method_decorator(login_required, name='dispatch')
 class BlogDetailView(UserPassesTestMixin, DetailView):
@@ -29,14 +24,12 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
     template_name = 'flow_blog/blog_details.html'
 
     def test_func(self):
-        if self.request.user.profile.role and self.request.user.profile.bio:
+        if self.request.user.profile.role and self.request.user.profile.first_name:
             return self.request.user
 
     def handle_no_permission(self):
-        if self.request.user.profile.role is None:
-            return redirect('set_role')
-        else:
-            return redirect('appuser_SetUp_profile')
+        if self.request.user:
+            return redirect('protect_profile')
 
 
 class AddBlogView(LoginRequiredMixin, CreateView):
