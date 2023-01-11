@@ -7,7 +7,7 @@
     <h1 class="col-12 text-center"> {{ user.username }}'s Profile</h1>
    
     <div class="container">
-        <form action="" method="POST">
+        <form action="" method="POST" class="p-3">
             {% csrf_token %}
             {% crispy form %}
             

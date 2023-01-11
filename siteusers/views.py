@@ -70,10 +70,10 @@ class DeleteAppUser(LoginRequiredMixin, generic.DeleteView):
 
 
 def redirect_view(request):
-    if request.user.profile.role:
+    if request.user.profile.role and request.user.profile.first_name:
         return redirect('home')
     else:
-        return redirect('set_role')
+        return redirect('protect_profile')
 
 
 def SetProfileRole(request):

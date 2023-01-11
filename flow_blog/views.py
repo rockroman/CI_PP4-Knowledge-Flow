@@ -7,6 +7,7 @@ from .forms import BlogForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -24,7 +25,7 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
     template_name = 'flow_blog/blog_details.html'
 
     def test_func(self):
-        if self.request.user.profile.role and self.request.user.profile.first_name:
+        if self.request.user.profile.role and self.request.user.profile.bio:
             return self.request.user
 
     def handle_no_permission(self):
@@ -32,7 +33,8 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
             return redirect('protect_profile')
 
 
-class AddBlogView(LoginRequiredMixin, CreateView):
+@method_decorator(login_required, name='dispatch')
+class AddBlogView(UserPassesTestMixin, CreateView):
 
     model = BlogPost
     form_class = BlogForm
@@ -42,11 +44,30 @@ class AddBlogView(LoginRequiredMixin, CreateView):
         form.instance.creator = self.request.user
         return super().form_valid(form)
 
+    def test_func(self):
+        if self.request.user.profile.role and self.request.user.profile.bio:
+            return self.request.user
 
-class UpdateBlogView(LoginRequiredMixin, UpdateView):
+    def handle_no_permission(self):
+        return redirect('protect_profile')
+
+
+@method_decorator(login_required, name='dispatch')
+class UpdateBlogView(UserPassesTestMixin, UpdateView):
     model = BlogPost
     template_name = 'flow_blog/edit_blog.html'
     form_class = BlogForm
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        if self.request.user.profile.role and self.request.user.profile.bio:
+            return self.request.user
+
+    def handle_no_permission(self):
+        return redirect('protect_profile')
 
 
 class DeleteBlogView(LoginRequiredMixin, DeleteView):
