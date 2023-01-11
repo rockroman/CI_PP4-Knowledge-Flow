@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import BlogPost
 from .forms import BlogForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -48,5 +49,11 @@ class AddBlogView(LoginRequiredMixin, CreateView):
 class UpdateBlogView(LoginRequiredMixin, UpdateView):
     model = BlogPost
     template_name = 'flow_blog/edit_blog.html'
-    # fields = ['title', 'body', 'cover_image']
     form_class = BlogForm
+
+
+class DeleteBlogView(LoginRequiredMixin, DeleteView):
+    model = BlogPost
+    context_object_name = 'blog_post'
+    template_name = 'flow_blog/delete_blog.html'
+    success_url = reverse_lazy('blog_page')
