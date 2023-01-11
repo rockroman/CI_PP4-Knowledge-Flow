@@ -10,12 +10,11 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = ('title', 'cover_image', 'creator', 'body')
+        fields = ('title', 'cover_image', 'body')
 
         widgets = {
             'title': forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': 'Blog Title'}),
-            'creator': forms.Select(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
 
         }

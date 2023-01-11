@@ -38,6 +38,10 @@ class AddBlogView(LoginRequiredMixin, CreateView):
     form_class = BlogForm
     template_name = 'flow_blog/add_blog.html'
 
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
 
 class UpdateBlogView(LoginRequiredMixin, UpdateView):
     model = BlogPost
