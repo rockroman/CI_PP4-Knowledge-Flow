@@ -1,20 +1,30 @@
 {% extends 'base.html' %}
+
 {% load crispy_forms_tags %}
+
 {% load static %}
 
 {% block content %}
+
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<h1 class="col-12 text-center"> EDIT BLOG POST</h1>
-<div class="container pt-3">
-    <div class="form-group">
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-             {{ form.as_p }}
-            <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">UPDATE</button>
-        </form>
+{% if user.is_authenticated %}
+  {% if user == post.creator %}%}
+
+    <h1 class="col-12 text-center"> EDIT BLOG POST</h1>
+    <div class="container pt-3">
+        <div class="form-group">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">UPDATE</button>
+            </form>
+        </div>
     </div>
-</div>  
+    {% else %}
+        <h2 class="text-center pt-5 ">We know you're not the correct user</h2>
+    {% endif %}
+{% endif %} 
 
 
 

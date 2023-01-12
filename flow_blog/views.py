@@ -70,8 +70,18 @@ class UpdateBlogView(UserPassesTestMixin, UpdateView):
         return redirect('protect_profile')
 
 
-class DeleteBlogView(LoginRequiredMixin, DeleteView):
+class DeleteBlogView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = BlogPost
     context_object_name = 'blog_post'
     template_name = 'flow_blog/delete_blog.html'
     success_url = reverse_lazy('blog_page')
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        blogpost = self.get_object()
+        if self.request.user == blogpost.creator:
+            return True
+        return False
