@@ -28,3 +28,15 @@ class BlogPost(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    blogpost = models.ForeignKey(
+        BlogPost, on_delete=models.CASCADE, related_name='comments')
+    content = models.TextField(max_length=500)
+    status = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.autor + 'comment'

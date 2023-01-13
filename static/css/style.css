@@ -9,10 +9,29 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-h1,h2,h3{
+h1{
+    @media screen 
+and (min-device-width: 315px) 
+and (max-device-width: 700px) 
+{ 
+
+          font-size: 5vw;
+
+
+}
+    
+}
+
+
+h2,h3{
    
     text-transform:uppercase;
     font-weight: 700;
+}
+
+#message{
+    z-index: 1000;
+    opacity: 85%;
 }
 /*end general styles */
 

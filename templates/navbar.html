@@ -89,40 +89,23 @@
             </div>
             
             <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-          </nav>
+           </nav>
+
+           {% for message in messages %}
+           <div class="alert {{ message.tags }} alert-dismissible fade show text-center mb-0" role="alert">
+             <strong>{{ message | safe }}</strong> 
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+         </div>
+       
+       
+         {% endfor%}
+       
           
     </header>
      <!-- end navigation -->
      {% endblock nav-bar %}
-<!-- 
-    hero
-    -->
-    <!-- <section>
-
-    </section>  -->
-    <!-- end hero -->
-   
-    <!-- 'myprofile' user.profile.id -->
-    <!-- 'edit_myprofile' profile.user.id -->
-    <!-- section 1-------------------------------------------------------------------------------- -->
-<!--     
-    <section> -->
-
-    <!-- </section> -->
-    <!--end section 1------------------------------------------------------------------------------ -->
-
-
-    <!-- section 2-------------------------------------------------------------------------------- -->
-    <!-- <section>
-    
-
-    
-    </section> -->
-    <!--end  section 2-------------------------------------------------------------------------------- -->
-
-    <!-- <footer>
-
-    </footer> -->
 
   
 <!-- 
