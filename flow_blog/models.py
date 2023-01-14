@@ -39,4 +39,4 @@ class Comment(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.autor + 'comment'
+        return self.author.username + '|comment on ' + self.blogpost.title

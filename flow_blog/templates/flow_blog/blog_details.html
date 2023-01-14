@@ -27,12 +27,49 @@
             <a href="" class="btn btn-outline-success btn-sm">Read More</a>
             <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
           </div>
+          <!--comments-->
+<div class="section ">
+  <div class="container ">
+      <h2>Comments||({{post_comments_count}})</h2>
+      <div class="row ">
+          <div class="col-lg-8 mx-auto ">
+              <!--display coment-->
+              <div class="media-list">
+                  {% for comment in post_comments %}
+                  <div>
+                      <!-- <img class="rounded-circle" width="50" height="50" src="{% static 'images/default.jpg' %}"> -->
+                      <div class="media-body border bg-outline-primary">
+                          <div class="small-1 ">
+                            <img class="rounded-circle" width="50" height="50" src="{% static 'images/default.jpg' %}">
+                              <b> {{comment.author}}</b>
+                              <br>
+                              <time class="ml-4 opaciy-70 small-3"> {{comment.date}}</time>
+                          </div>
+                          <p> {{comment.content}}</p>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+              <!--display the form-->
+              <form method="POST" >
+                  {% csrf_token %}
+                  <div class="form-group">
+                      {{form}}
+                  </div> 
+                  <button class="btn btn-primary btn-block " type="submit">Comment</button>   
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+          
         </div>
         <!-- <a href="{% url 'blog_page' %}"><button class="btn btn-secondary"> Back To Blog Page</button></a> -->
     </div>
   </div>
   
 </div>
+
 
 
 {% endblock %}

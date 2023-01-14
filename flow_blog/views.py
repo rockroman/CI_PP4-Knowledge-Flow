@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.urls import reverse_lazy
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView)
-from .models import BlogPost
-from .forms import BlogForm
+from .models import BlogPost, Comment
+from .forms import BlogForm, CommentForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -23,6 +23,8 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
     model = BlogPost
     context_object_name = 'post'
     template_name = 'flow_blog/blog_details.html'
+    slug_field = 'slug'
+    form = CommentForm
 
     def test_func(self):
         if self.request.user.profile.role and self.request.user.profile.bio:
@@ -31,6 +33,28 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
     def handle_no_permission(self):
         if self.request.user:
             return redirect('protect_profile')
+
+    def post(self, request, *args, **kwargs):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            blogpost = self.get_object()
+            form.instance.author = request.user
+            form.instance.blogpost = blogpost
+            form.save()
+
+        return redirect(reverse('blog_details', kwargs={'pk': blogpost.pk}))
+
+    def get_context_data(self, **kwargs):
+        post_comments_count = Comment.objects.all().filter(
+            blogpost=self.object.id).count()
+        post_comments = Comment.objects.all().filter(blogpost=self.object.id)
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'form': self.form,
+            'post_comments': post_comments,
+            'post_comments_count': post_comments_count,
+        })
+        return context
 
 
 @method_decorator(login_required, name='dispatch')
