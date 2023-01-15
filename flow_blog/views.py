@@ -7,7 +7,9 @@ from .forms import BlogForm, CommentForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 
 
 # Create your views here.
@@ -33,7 +35,7 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
     def handle_no_permission(self):
         if self.request.user:
             return redirect('protect_profile')
-
+    
     def post(self, request, *args, **kwargs):
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -41,8 +43,10 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
             form.instance.author = request.user
             form.instance.blogpost = blogpost
             form.save()
-
-        return redirect(reverse('blog_details', kwargs={'pk': blogpost.pk}))
+            return HttpResponseRedirect(reverse('blog_details', kwargs={'pk': blogpost.pk})) 
+            # return HttpResponse('blog_details')
+        else:
+            form = CommentForm()
 
     def get_context_data(self, **kwargs):
         post_comments_count = Comment.objects.all().filter(
@@ -109,3 +113,39 @@ class DeleteBlogView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == blogpost.creator:
             return True
         return False
+
+
+# class CommentDeleteView(UserPassesTestMixin, DeleteView):
+#     model = Comment
+#     template_name = 'flow_blog/blog_details.html'
+#     success_url = reverse_lazy('blog_details')
+
+#     def test_func(self):
+#         comment = self.get_object()
+#         if self.request.user == comment.author:
+#             return True
+#         else:
+#             return False
+
+# def delete_comment(request, pk):
+#     post = BlogPost.objects.all()
+#     comment = Comment.objects.filter(id=pk)
+#     if request.user == comment.author:
+#         comment.delete()
+#         messages.success('deleted comment')
+#         return HttpResponseRedirect(reverse('blog_page'))
+#     else:
+#         print('no no')
+   
+
+def delete_comment(request, comment_id):
+    users_comment = get_object_or_404(Comment, pk=comment_id)
+    if request.user == users_comment.author:
+        users_comment.delete()
+        messages.success(request, 'COMMENT IS DELETED') 
+        # return HttpResponseRedirect(reverse('blog_page'))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        messages.error(request, "CAN'T DELETE COMMENT(YOU ARE NOT CREATOR) ")
+        # return HttpResponseRedirect(reverse('blog_page'))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

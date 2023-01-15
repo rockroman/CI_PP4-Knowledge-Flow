@@ -4,7 +4,7 @@
 }
 
 body{
-    /* background-color: black; */
+    background-color: rgb(88, 87, 87);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -83,7 +83,7 @@ h2,h3{
 }
 /* end nav-bar styles */
 
-/* home page styles */
+/* home page styles-------------------------------------------------------------------------------------------- */
 .jumbotron-fluid{
    background-image:url(/static/images/flow-home-big.jpg);
    min-height:600px;
@@ -96,8 +96,16 @@ h2,h3{
     background-image:url('/static/images/flow-home-big.jpg');
   }
 
+/* midle section styles--------------------------- */
 
-/* end  home page styles */
+
+
+
+
+/* end midle section styles--------------------------- */
+
+
+/* end  home page styles ---------------------------------------------------------------------------------------*/
 
 
 /* blog main page styles */

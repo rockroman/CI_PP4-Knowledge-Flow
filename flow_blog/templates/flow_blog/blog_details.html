@@ -8,68 +8,92 @@
 <div class="container">
 
   <div class="row mt-4 justify-content-center">
-    <div class="col-md-8 mb-4">
-        <div class="card h-100">
-          <!-- <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top"> -->
-          <img src="{% static 'images/blog_default.jpg' %}" alt="" class="  card-img-top">
-          <a href="{% url 'blog_page' %}"><button class="mt-2 btn btn-secondary"> Back To Blog Page</button></a>
-          <div class="card-body">
-            <p class="text-muted">{{ post.creator }} | {{ post.created_on }}</p>
-            <h5 class="card-title"> <a href="">{{ post.title }}</a> </h5>
-            {% if user.is_authenticated %}
-                {% if user == post.creator %}
-                    <a href="{% url 'edit_blog' post.pk %}"><button class="btn btn-warning pl-5 pr-5">EDIT</button></a>
-                    <a href="{% url 'delete_blog' post.pk %}"><button class="btn btn-danger pl-5 pr-5">DELETE</button></a>
-                {% endif %}   
-            {% endif %}
-            <hr>
-            <p class="card-text">{{ post.body}}</p>
-            <a href="" class="btn btn-outline-success btn-sm">Read More</a>
-            <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
-          </div>
-          <!--comments-->
-<div class="section ">
-  <div class="container ">
-      <h2>Comments||({{post_comments_count}})</h2>
-      <div class="row ">
-          <div class="col-lg-8 mx-auto ">
-              <!--display coment-->
-              <div class="media-list">
-                  {% for comment in post_comments %}
-                  <div>
-                      <!-- <img class="rounded-circle" width="50" height="50" src="{% static 'images/default.jpg' %}"> -->
-                      <div class="media-body border bg-outline-primary">
-                          <div class="small-1 ">
-                            <img class="rounded-circle" width="50" height="50" src="{% static 'images/default.jpg' %}">
-                              <b> {{comment.author}}</b>
-                              <br>
-                              <time class="ml-4 opaciy-70 small-3"> {{comment.date}}</time>
-                          </div>
-                          <p> {{comment.content}}</p>
-                      </div>
-                  </div>
-                  {% endfor %}
-              </div>
-              <!--display the form-->
-              <form method="POST" >
-                  {% csrf_token %}
-                  <div class="form-group">
-                      {{form}}
-                  </div> 
-                  <button class="btn btn-primary btn-block " type="submit">Comment</button>   
-              </form>
-          </div>
-      </div>
-  </div>
-</div>
-          
-        </div>
-        <!-- <a href="{% url 'blog_page' %}"><button class="btn btn-secondary"> Back To Blog Page</button></a> -->
-    </div>
-  </div>
-  
-</div>
+        <div class="col-md-8 mb-4">
+            <div class="card h-100">
+            <!-- <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top"> -->
+            <img src="{% static 'images/blog_default.jpg' %}" alt="" class="  card-img-top">
+            <a href="{% url 'blog_page' %}"><button class="mt-2 btn btn-secondary"> Back To Blog Page</button></a>
+            <div class="card-body">
+                    <p class="text-muted">{{ post.creator }} | {{ post.created_on }}</p>
+                    <h5 class="card-title"> <a href="">{{ post.title }}</a> </h5>
+                    {% if user.is_authenticated %}
+                        {% if user == post.creator %}
+                            <a href="{% url 'edit_blog' post.pk %}"><button class="btn btn-warning pl-5 pr-5">EDIT</button></a>
+                            <a href="{% url 'delete_blog' post.pk %}"><button class="btn btn-danger pl-5 pr-5">DELETE</button></a>
+                        {% endif %}   
+                    {% endif %}
+                    <hr>
+                    <p class="card-text">{{ post.body}}</p>
+                    <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                    <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+            </div>
+            <!--comments-->
+        <div class="section ">
+                <div class="container ">
+                    <h4 class="ml-5 text-muted"><i class="far fa-comments"></i>{{post_comments_count}} Comments </h4>
+                    <div class="row ">
+                        <div class="col-lg-8 mx-auto ">
+                            <!--display coment-->
+                            <div class="media-list">
+                                {% for comment in post_comments %}
+                                <div>
+                                    <!-- <img class="rounded-circle" width="50" height="50" src="{% static 'images/default.jpg' %}"> -->
+                                    <div class="media-body border bg-outline-primary">
+                                        <div class="small-1 ">
+                                            <img class="rounded-circle" width="30" height="30" src="{% static 'images/default.jpg' %}">
+                                            <b> {{comment.author}}</b>
+                                            <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time>
+                                            <br>
+                                            <hr>
+                                            <!-- <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time> -->
+                                        </div>
+                                        <p> {{comment.content}}</p>
+                                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'delete_comment' comment.id %}">Delete</a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <!--display the form-->
+                            <form  method="POST" id="comment_form" autocomplete="off">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {{form}}
 
+                                </div>
+                                <button class="btn btn-primary btn-block " type="submit" id="comment-btn"  >Comment</button>   
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+     <!-- </div> -->
+  </div>
+</div>
 
 
 {% endblock %}
+<script type="text/javascript">
+    const commentBtn = document.querySelector('#comment-btn');
+    const commentForm = document.querySelector('#comment_form');
+ 
+     $(document).on('submit','comment_form',function(e){
+         e.preventDefault();
+         $.ajax({
+             type:'POST',
+             url:'{% url "blog_details" post.pk %}',
+             data:
+             {
+                 content:$("#comment-text").val(),
+                 csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+             },
+             success:function(){
+                   alert('Saved');
+                     }
+             })
+         });
+
+ 
+ </script>

@@ -28,6 +28,8 @@ class CommentForm(forms.ModelForm):
                 'class': 'md-textarea form-control',
                 'placeholder': 'your comment....',
                 'rows': '3',
+                'id': 'comment-text',
+                
             }
         )
     )

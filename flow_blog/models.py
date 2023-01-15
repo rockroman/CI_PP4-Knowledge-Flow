@@ -38,5 +38,8 @@ class Comment(models.Model):
     content = models.TextField(max_length=500)
     status = models.BooleanField(default=True)
 
+    class Meta:
+        ordering = ['-created']
+
     def __str__(self):
         return self.author.username + '|comment on ' + self.blogpost.title
