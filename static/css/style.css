@@ -1,26 +1,31 @@
 /* general styles */
 *{
     margin: 0;
+    box-sizing: border-box;
 }
+/* #title{
+    color: #131416;
+    font-size: 45px;
+} */
 
 body{
-    background-color: rgb(88, 87, 87);
+    /* background-image:url(/static/images/flow-home-big.jpg); */
+    /* background-image:url(/static/images/pexels-francesco-ungaro-464379-new.jpg);
+    background-size: cover;
+    /* background-attachment: fixed; */
+    background-color: #090909; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 h1{
-    @media screen 
-and (min-device-width: 315px) 
-and (max-device-width: 700px) 
-{ 
-
-          font-size: 5vw;
+ 
+    font-size: 3.5em;
+    text-transform: uppercase;
 
 
 }
     
-}
 
 
 h2,h3{
@@ -78,22 +83,22 @@ h2,h3{
 }
 
 #logo{
-    color: rgba(55, 140, 244, 0.971);
+    color: #378cf4f8;
     
 }
 /* end nav-bar styles */
 
 /* home page styles-------------------------------------------------------------------------------------------- */
 .jumbotron-fluid{
-   background-image:url(/static/images/flow-home-big.jpg);
-   min-height:600px;
+   /* background-image:url(/static/images/flow-home-big.jpg); */
+   min-height:450px;
    background-size: cover;
    background-attachment: fixed;
-   /* background-position: center; */
+   background-position: center;
 }
 
 #header{
-    background-image:url('/static/images/flow-home-big.jpg');
+    /* background-image:url('/static/images/flow-home-big.jpg'); */
   }
 
 /* midle section styles--------------------------- */
@@ -156,3 +161,170 @@ h2,h3{
 
 /* end profile page syles */
 
+
+
+
+
+
+
+/* ------------ midlle cards styles-------------- */
+
+  .card1 img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    max-height: max(10rem, 30vh);
+    aspect-ratio: 4/3;
+    mix-blend-mode: var(--card-blend-mode);
+  }
+  .card1 img ~ * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .card1 > :last-child {
+    margin-bottom: 0;
+  }
+  .card1:hover, .card1:focus-within {
+    --card-gradient: #0f3862 max(8.5rem, 20vh);
+  }
+  
+  /* Additional demo display styles */
+ 
+
+  
+  .card1 h3 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .card1 a {
+    color: inherit;
+  }
+  
+  .card-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-gap: 1.5rem;
+    max-width: 100vw;
+    /* width: 120ch; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+
+/* ------------ end midlle cards styles-------------- */
+
+
+
+.fadedfx {
+    background-color: #fe5652;
+    visibility: hidden;
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    animation-duration: 2.5s;
+    -webkit-animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0.0;
+    }
+   
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+
+.card1{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    --card-gradient: rgba(0, 0, 0, 0.8);
+    --card-gradient: #1c2835, #0957e7;
+    --card-blend-mode: overlay;
+    background-color: rgb(9, 33, 52);
+    border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    padding-bottom: 1rem;
+    background-image: linear-gradient(var(--card-gradient), white max(9.5rem, 27vh));
+    overflow: hidden;
+    
+
+}
+
+
+/* ----------------------background img------- play */
+#mycard{
+    background-color: rgb(14, 39, 60);
+    
+}
+
+/* --------------new hero section--------------------- */
+
+#hero{
+  height: 100vh;
+}
+.hero-text{
+  color: #378cf4f8;
+  
+
+}
+
+.headline {
+  left: 90px;
+  
+} 
+.clipped {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+  min-height: 350px;
+  background-image: url(/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.jpg);
+  background-position: center;
+  background-size: cover
+}
+@media screen and (max-width: 900px){
+  .headline {
+    left: 40px;
+   
+  } 
+}
+
+
+@media screen and (max-width: 650px){
+  .headline {
+    left: 20px;
+  } 
+  .clipped {
+    clip-path: none;
+    max-height: 300px !important;
+  }
+}
