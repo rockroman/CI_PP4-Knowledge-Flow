@@ -3,16 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-/* #title{
-    color: #131416;
-    font-size: 45px;
-} */
+
 
 body{
-    /* background-image:url(/static/images/flow-home-big.jpg); */
-    /* background-image:url(/static/images/pexels-francesco-ungaro-464379-new.jpg);
-    background-size: cover;
-    /* background-attachment: fixed; */
     background-color: #090909; 
     margin: 0;
     padding: 0;
@@ -40,9 +33,14 @@ h2,h3{
 }
 /*end general styles */
 
-/* sign up and login style  */
+/* sign up  style  */
 .authentication-title{
     color: black;
+}
+
+#signup-body{
+  background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.jpg');
+  
 }
 /* sign up and login style  */
 
@@ -161,10 +159,14 @@ h2,h3{
 
 /* end profile page syles */
 
+/* ---------set role---------- */
+.card-img-top {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  }
 
-
-
-
+/* ------------end set role------------- */
 
 
 /* ------------ midlle cards styles-------------- */
@@ -228,8 +230,8 @@ h2,h3{
   .fadeIn {
     animation-name: fadeIn;
     -webkit-animation-name: fadeIn;
-    animation-duration: 2.5s;
-    -webkit-animation-duration: 2.5s;
+    animation-duration: 1.8s;
+    -webkit-animation-duration: 1.8s;
     animation-timing-function: ease-in-out;
     -webkit-animation-timing-function: ease-in-out;
     visibility: visible !important;

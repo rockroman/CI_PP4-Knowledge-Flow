@@ -8,8 +8,10 @@
 
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
+<body id="signup-body">
+  
 
-<div class="container mt-5 p-3">
+<div class="container mt-5 p-3 " >
   <!-- <div class="row justify-content-center">
     <div class="col-md-8 mt-3 offset-md-2">
       <h2 class="authentication-title">{% trans "Sign In" %}</h2>
@@ -38,33 +40,30 @@
 
 
   
-<div class="row py-3">
-	<div class="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-		<div class="card shadow">
-			<div class="card-body">
-				<h5 class="card-title text-decoration-underline">Login</h5>
+  <div class="row py-3"  >
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title text-decoration-underline">Login</h5>
 
-				<form method="POST" action="{% url 'account_login' %}">
-					{% csrf_token %} {{ form|crispy }} {% if redirect_field_value %}
-					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-					{% endif %}
-					<button class="btn btn-sm btn-dark" type="submit">Login</button>
-					<div>
-						<a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-
-        
-   
+          <form method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %} {{ form|crispy }} {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="btn btn-sm btn-dark" type="submit">Login</button>
+            <div>
+              <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
  
 </div>
 <!-- <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> -->
   
  
 
-
+</body>
 {% endblock %}

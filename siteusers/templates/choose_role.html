@@ -2,15 +2,17 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
+<body id="signup-body">
+  
 
-
-    <h1 class="col-12 text-center">  {{ user }}  you can register as :</h1>
+<div class="container mt-3" >
+    <h1 class="col-12 text-center text-white">  {{ user }}  you can register as :</h1>
    
-    <div class="container ">
+    
        
-        <div class="card-group ">
-            <div class="card mx-3">
-              <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Card image cap">
+        <div class="card-group " >
+            <div class="card mx-3 " >
+              <img class="card-img-top"  src="{% static 'images/blog_default.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -38,6 +40,6 @@
         
     </div>  
     
-
+  </body>
 
 {% endblock content %}

@@ -9,7 +9,7 @@
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
 {% if user.is_authenticated %}
-  {% if user == post.creator %}%}
+  {% if user == blogpost.creator %}
 
     <h1 class="col-12 text-center"> EDIT BLOG POST</h1>
     <div class="container pt-3">

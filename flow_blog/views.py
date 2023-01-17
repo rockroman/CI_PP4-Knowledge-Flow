@@ -43,6 +43,7 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
             form.instance.author = request.user
             form.instance.blogpost = blogpost
             form.save()
+            messages.success(request, 'YOU ADDED A NEW COMMENT')
             return HttpResponseRedirect(reverse('blog_details', kwargs={'pk': blogpost.pk})) 
             # return HttpResponse('blog_details')
         else:
@@ -87,7 +88,7 @@ class UpdateBlogView(UserPassesTestMixin, UpdateView):
     form_class = BlogForm
 
     def form_valid(self, form):
-        form.instance.creator = self.request.user
+        form.instance.creator == self.request.user
         return super().form_valid(form)
 
     def test_func(self):

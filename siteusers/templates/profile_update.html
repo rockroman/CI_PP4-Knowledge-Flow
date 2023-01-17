@@ -4,21 +4,23 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-    <h1 class="col-12 text-center text-white"> {{ user }}'s Profile</h1>
+    <!-- <h2 class="col-12 text-center text-white display-5"> {{ user }}'s Profile</h2> -->
    
     <div class="container">
         <div class="row ">
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex justify-content-center  ">
+                
                 {% if 'placeholder' in user.profile.image.url %}
                     <img  class="rounded-circle" width="150" src="{% static 'images/default.jpg' %}">
                 {% load cloudinary %}
                 {% else %}
-                {% cloudinary  user.profile.image format="WebP" width=180 height=170 crop='fill' radius='max' className='cld-responsive' %}
+                {% cloudinary  user.profile.image format="WebP" width=130 height=120 crop='fill' radius='max' className='cld-responsive' %}
                 {% endif %}
+                <h2 class=" text-center text-white display-5 pt-4 "> {{ user }}'s Profile</h2>
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group bg-secondary p-5 pl-4 pr-4">
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <!-- {% crispy form %} -->
