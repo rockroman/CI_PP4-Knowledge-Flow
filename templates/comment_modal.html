@@ -1,0 +1,25 @@
+{% block comment_modal %}
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-uppercase " id="commentModalLabel">Are You sure</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+            <!-- <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body text-center text-muted">
+          Do you really want to Delete this comment?
+        </div>
+        <div class="modal-footer justify-content-center">
+        
+          <a class="btn btn-danger " href="{% url 'delete_comment' comment.id %}" >DELETE</a>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Go back</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- end modal -->
+{% endblock comment_modal %}

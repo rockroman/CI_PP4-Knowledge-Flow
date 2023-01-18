@@ -1,3 +1,10 @@
 from django.test import TestCase
+from django.urls import reverse, resolve
+import pytest
 
-# Create your tests here.
+
+class TestingUrls:
+
+    def test_home_url(self):
+        path = reverse('home')
+        assert resolve(path).view_name == 'home'

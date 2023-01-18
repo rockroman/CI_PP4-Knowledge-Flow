@@ -13,7 +13,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Home</a>
+              <a href="#!" class="{% url 'home' %}">Home</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -29,7 +29,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Blog</a>
+              <a href="{% url 'blog_page' %}" class="text-white">Blog</a>
             </h6>
           </div>
           <!-- Grid column -->

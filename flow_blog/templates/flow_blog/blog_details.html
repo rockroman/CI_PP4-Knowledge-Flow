@@ -9,7 +9,7 @@
 
   <div class="row mt-4 justify-content-center">
         <div class="col-md-8 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 ">
             <!-- <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top"> -->
             <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" class="  card-img-top">
             <a href="{% url 'blog_page' %}"><button class="mt-2 btn btn-secondary"> Back To Blog Page</button></a>
@@ -31,7 +31,7 @@
         <div class="section ">
                 <div class="container ">
                     <h4 class="ml-5 text-muted"><i class="far fa-comments"></i>{{post_comments_count}} Comments </h4>
-                    <div class="row ">
+                    <div class="row p-3">
                         <div class="col-lg-8 mx-auto ">
                             <!--display coment-->
                             <div class="media-list">
@@ -48,15 +48,20 @@
                                             <!-- <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time> -->
                                         </div>
                                         <p> {{comment.content}}</p>
-                                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'delete_comment' comment.id %}">Delete</a>
+                                
                                         <!-- modal btn -->
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                            Launch demo modal
+                                        <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#commentModal">
+                                            DELETE
                                           </button>
 
                                         <!-- modal btn -->
                                     </div>
                                 </div>
+                                {% block comment_modal %}{% include 'comment_modal.html' %}{% endblock comment_modal %}
+
+                                <!-- Modal -->
+
+                                <!-- end modal -->
                                 {% endfor %}
                             </div>
                             <!--display the form-->
@@ -78,47 +83,6 @@
      <!-- </div> -->
   </div>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 {% endblock %}
-<!-- <script type="text/javascript">
-    const commentBtn = document.querySelector('#comment-btn');
-    const commentForm = document.querySelector('#comment_form');
- 
-     $(document).on('submit','comment_form',function(e){
-         e.preventDefault();
-         $.ajax({
-             type:'POST',
-             url:'{% url "blog_details" post.pk %}',
-             data:
-             {
-                 content:$("#comment-text").val(),
-                 csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
-             },
-             success:function(){
-                   alert('Saved');
-                     }
-             })
-         });
-
- 
- </script> -->
