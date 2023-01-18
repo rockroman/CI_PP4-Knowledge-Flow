@@ -10,10 +10,11 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 h1{
  
-    font-size: 3.5em;
+    /* font-size: 1rem; */
     text-transform: uppercase;
 
 
@@ -87,17 +88,7 @@ h2,h3{
 /* end nav-bar styles */
 
 /* home page styles-------------------------------------------------------------------------------------------- */
-.jumbotron-fluid{
-   /* background-image:url(/static/images/flow-home-big.jpg); */
-   min-height:450px;
-   background-size: cover;
-   background-attachment: fixed;
-   background-position: center;
-}
 
-#header{
-    /* background-image:url('/static/images/flow-home-big.jpg'); */
-  }
 
 /* midle section styles--------------------------- */
 
@@ -298,6 +289,8 @@ h2,h3{
 }
 .hero-text{
   color: #378cf4f8;
+  font-size: 3.5rem;
+  text-transform: uppercase;
   
 
 }
@@ -308,16 +301,21 @@ h2,h3{
 } 
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
-  min-height: 350px;
+  /* min-height: 350px; */
   background-image: url(/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.jpg);
   background-position: center;
-  background-size: cover
+  background-size: cover;
+  height: 100%;
+ 
 }
 @media screen and (max-width: 900px){
   .headline {
     left: 40px;
    
   } 
+  .hero-text{
+    font-size: 2.5rem;
+  }
 }
 
 
@@ -327,6 +325,11 @@ h2,h3{
   } 
   .clipped {
     clip-path: none;
-    max-height: 300px !important;
+    height: 50%;
+    
+  }
+
+  h1{
+    font-size: 2rem;
   }
 }

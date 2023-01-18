@@ -11,13 +11,13 @@
 {% if user.is_authenticated %}
   {% if user == blogpost.creator %}
 
-    <h1 class="col-12 text-center"> EDIT BLOG POST</h1>
+    <h1 class="col-12 text-center text-white"> EDIT BLOG POST</h1>
     <div class="container pt-3">
-        <div class="form-group">
+        <div class="form-group bg-secondary p-3">
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="btn btn-primary pl-5 pr-5 p-2 font-weight-bold" type="submit">UPDATE</button>
+                <button class="btn btn-success pl-5 pr-5 p-2 font-weight-bold" type="submit">UPDATE</button>
             </form>
         </div>
     </div>

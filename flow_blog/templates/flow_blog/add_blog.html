@@ -5,9 +5,9 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<h1 class="col-12 text-center"> ADD BLOG POST</h1>
+<h1 class="col-12 text-center text-white"> ADD BLOG POST</h1>
 <div class="container">
-    <div class="form-group">
+    <div class="form-group bg-secondary p-3">
         <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
             {% csrf_token %}
              {{ form.as_p }}

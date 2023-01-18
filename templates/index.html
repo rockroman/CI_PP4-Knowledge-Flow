@@ -3,97 +3,68 @@
     {% block content %} 
     {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
     <!--  hero section -->
-    <section class="container-fluid p-0 ">
-      
-        <!-- <div class=" jumbotron-fluid text-center p-3 "style="height:45vh" >
-                <h1 class="col-12 text-white font-weight-bold mt-5"> knowledge is key</h1>
-                <p class="lead text-white-50 font-weight-bold">share your knowledge with us</p>
-                <a href="" class="btn btn-outline-secondary text-white pl-5 pr-5 p-2 bg-primary">Click</a>
-        </div> --> 
-       
-        
-        <div class="d-sm-flex align-items-center justify-content-between w-100"  id="hero">
-          <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
-            <!-- <span class="text-white text-uppercase">Subheadline</span> -->
-            <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text" >is the key</span></h1>
-            <a href="#" class="btn btn-success px-5 py-3 text-white text-uppercase mt-3 mt-sm-0">Get Started</a>
-          </div>
-          <!-- in mobile remove the clippath -->
-          <div class="col-md-8 h-100 clipped fadeIn">
-        
-          </div>
-        </div>
-
-
-    </section > 
-    <!-- end hero -->
-
-    <!-- bottom hero -->
-    <div class="container-fluid d-flex justify-content-center">
-        <ul class="card-wrapper justify-content-center p-3">
-
-            <li class="card1" id="mycard">
-                <img class="fadeIn" src='/static/images/lightingRodrigoSouza.jpg' alt=''>
-                <h3><a href="">What a Fantabulous Title!</a></h3>
-                <p>Lorem ipsum sit dolor amit</p>
-            </li>
-          
-
-            <li class="card1">              <img class="fadeIn" src='https://images.unsplash.com/photo-1611083360739-bdad6e0eb1fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-              <h3><a href="">What a Fantabulous Title!</a></h3>
-              <p>Lorem ipsum sit dolor amit</p>
-            </li>
-            <li class="card1">
-              <img src='https://images.unsplash.com/photo-1613230485186-2e7e0fca1253?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-              <h3><a href="">Positively Terrific Title</a></h3>
-              <p>Lorem ipsum sit dolor amit</p>
-            </li>
-          </ul>
+<section class="container-fluid p-0 ">
+  <div class="d-sm-flex align-items-center justify-content-between w-100"  id="hero">
+    <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
+      <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text" >is the key</span></h1>
+      <a href="#" class="btn btn-success px-5 py-3 text-white text-uppercase mt-3 mt-sm-0">Get Started</a>
     </div>
+    <!-- in mobile remove the clippath -->
+    <div class="col-md-8 clipped fadeIn">
+  
+    </div>
+  </div>     
+</section > 
+    <!-- end hero -->
+       
+<section>
+    <h2 class="text-center text-white">ULTIMATE WAY TO KNOWLEDGE</h2>
+</section>
+    <!-- bottom hero -->
+<section class="container-fluid d-flex justify-content-center mt-3">
+    <div class="card-wrapper justify-content-center p-3">
+          <div class="card1" id="mycard">
+            <img class="fadeIn" src='/static/images/lightingRodrigoSouza.jpg' alt=''>
+            <h3 class="text-center"><a href=""> Teach or Learn directly and <span class="">FREE</span></a></h3>
+            <!-- <p>Lorem ipsum sit dolor amit</p> -->
+          </div>
+          <div class="card1">              <img class="fadeIn" src='https://images.unsplash.com/photo-1611083360739-bdad6e0eb1fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
+            <h3><a href="">What a Fantabulous Title!</a></h3>
+            <p>Lorem ipsum sit dolor amit</p>
+          </div>
+          <div class="card1">
+            <img src='https://images.unsplash.com/photo-1613230485186-2e7e0fca1253?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
+            <h3><a href="">Positively Terrific Title</a></h3>
+            <p>Lorem ipsum sit dolor amit</p>
+          </div>          
+    </div>
+</section>    
 
-    
-    
     <!-- end bottom hero -->
 
     <!-- midlle section-->
-    <section>
-        <a id="title" class="text-dark " href="">{{ blogpost.title }}</a>
-
-    </section>
-    
     
     <!-- end middle section -->
-    <section>
-        <section class="bg-gray-40">
-            <div class="container py-5 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-6 col-xl-6">
-          
-                  <div class="card text-white" style="background-color: #040831; border-radius: 15px;">
-                    <div class="card-body p-5">
-          
-                      <i class="fas fa-quote-left fa-2x mb-4"></i>
-          
-                      <p class="lead">Genius is one percent inspiration and ninety-nine percent perspiration.</p>
-          
-                      <hr>
-          
-                      <div class="d-flex justify-content-between">
-                        <p class="mb-0">Thomas Edison</p>
-                        
-                      </div>
-          
-                    </div>
-                  </div>
-          
-                </div>
+<section>
+  <section class="bg-gray-40">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-6 col-xl-6">
+          <div class="card text-white" style="background-color: #040831; border-radius: 15px;">
+            <div class="card-body p-5"> 
+              <i class="fas fa-quote-left fa-2x mb-4"></i>
+              <p class="lead">Genius is one percent inspiration and ninety-nine percent perspiration.</p>
+              <hr>
+              <div class="d-flex justify-content-between">
+                <p class="mb-0">Thomas Edison</p>
               </div>
             </div>
-          </section>
-        
-       
-        
-    </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
 
     
 
