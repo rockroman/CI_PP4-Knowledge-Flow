@@ -3,7 +3,7 @@ from .models import BlogPost, Comment
 from cloudinary.models import CloudinaryField
 
 # ---3rd party ----------
-from image_uploader_widget.widgets import ImageUploaderWidget
+
 
 
 class BlogForm(forms.ModelForm):
