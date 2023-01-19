@@ -23,13 +23,17 @@
                       {% if user.is_authenticated %}
                           {% if user == post.creator %}
                           <a href="{% url 'edit_blog' post.pk %}"><button class="btn btn-warning pl-5 pr-5">EDIT</button></a>
-                          <a href="{% url 'delete_blog' post.pk %}"><button class="btn btn-danger pl-5 pr-5">DELETE</button></a>
+                          <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#blogModal">
+                            DELETE
+                          </button>
+                          {% block blog_modal %}{% include 'blog_modal.html' %}{% endblock blog_modal %}
                           {% endif %}
                       {% endif %}
                       <hr>
                       <p class="card-text">{{ post.body|slice:":200"}}</p>
                       <a href="{% url 'blog_details' post.pk %}" class="btn btn-outline-success btn-sm">Read More</a>
                       <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                      
                     </div>
                   </div>
               </div>
@@ -37,6 +41,27 @@
             </div>
       </div>
   </section>
+ 
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a href=""><button class="btn btn-danger pl-5 pr-5">DELETE</button></a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
 </body>
 
 {% endblock %}

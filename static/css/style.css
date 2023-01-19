@@ -302,7 +302,7 @@ h2,h3{
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
   /* min-height: 350px; */
-  background-image: url(/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.jpg);
+  background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.jpg');
   background-position: center;
   background-size: cover;
   height: 100%;
