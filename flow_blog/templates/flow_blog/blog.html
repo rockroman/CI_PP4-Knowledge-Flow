@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
+
 {% load static %}
+
 
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
@@ -15,20 +17,27 @@
                 {% for post in blog_post %}
             <div class="col-lg-6 mb-4">
                   <div class="card h-100">
-                    <!-- <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top"> -->
-                    <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" class="card-img-top">
+                    {% if 'placeholder' in post.cover_image.url %}
+                    <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" width="450" height="250" class="card-img-top">
+                    {% else %}
+
+                    {% load cloudinary %}
+                    {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image'  %}
+                   
+                    {% endif %}
                     <div class="card-body">
                       <p class="text-muted">{{ post.creator }} | {{ post.created_on }}</p>
                       <h5 class="card-title"> <a href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </h5>
                       {% if user.is_authenticated %}
                           {% if user == post.creator %}
-                          <a href="{% url 'edit_blog' post.pk %}"><button class="btn btn-warning pl-5 pr-5">EDIT</button></a>
-                          <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#blogModal">
-                            DELETE
-                          </button>
+                          
+                          <a href="{% url 'edit_blog' post.pk %}"><i class="fas fa-edit fa-lg text-dark "></i></a>
+                          <button type="button" data-toggle="modal" data-target="#blogModal" class="btn border-0 mb-1"><i class="far fa-trash-alt fa-lg text-danger"></i></i></button>
+                          
                           {% block blog_modal %}{% include 'blog_modal.html' %}{% endblock blog_modal %}
                           {% endif %}
                       {% endif %}
+                      <h6 class=" text-muted d-flex justify-content-end"><i class="far fa-comments"></i>{{post_comments_count}} Comments </h6>
                       <hr>
                       <p class="card-text">{{ post.body|slice:":200"}}</p>
                       <a href="{% url 'blog_details' post.pk %}" class="btn btn-outline-success btn-sm">Read More</a>
@@ -39,29 +48,23 @@
               </div>
               {% endfor %}
             </div>
+
       </div>
   </section>
  
-  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href=""><button class="btn btn-danger pl-5 pr-5">DELETE</button></a>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
 </body>
 
+
+
+
+
+
+
 {% endblock %}
+<a href="{% url 'edit_blog' post.pk %}"><button class="btn btn-warning pl-5 pr-5">EDIT</button></a>
+<button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#blogModal">
+  DELETE
+</button>
+
+ 
