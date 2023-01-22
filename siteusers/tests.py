@@ -1,21 +1,21 @@
-# from django.test import TestCase
-# import pytest
-# from .models import Profile
+from django.test import TestCase
+from .models import Profile, User
+from django.contrib.auth import get_user_model
+
 
 # # Create your tests here.
 
 
-# @pytest.mark.django_db
-# def test_is_profile_creation():
-#     profile = Profile.objects.create(
-#         user='rock',
-#         image='default.jpg',
-#         first_name='Roman',
-#         last_name='Red',
-#         email='rock.red@gmail.com',
-#         bio='mine biography',
-#         role='Student',
+class TestSiteusersModels(TestCase):
 
-#     )
-#     assert profile.first_name == 'Roman'
-#     assert profile.role == 'Student'
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+                username='testuser',
+                password='secret')
+        self.profile = Profile.objects.update(
+            user=self.user,
+        )
+
+    def test_is_profile_created(self):
+        profile = Profile.objects.filter().last()
+        self.assertEquals(profile.user.username, 'testuser')
