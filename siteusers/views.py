@@ -8,7 +8,8 @@ from django.views.generic import (
 )
 from django.contrib.auth.models import User
 from .models import Profile
-from .forms import Profileform, ProfileUpdateForm, UpdateMentorRole, UpdateStudentRole
+from .forms import Profileform,  UpdateMentorRole, UpdateStudentRole
+# ProfileUpdateForm,
 from django.urls import reverse_lazy
 from crispy_forms.helper import FormHelper
 from django.http import HttpResponse
@@ -43,7 +44,8 @@ class SeeProfilePageView(LoginRequiredMixin, DetailView):
 
 class EditProfilePageView(LoginRequiredMixin, generic.UpdateView):
     model = Profile
-    form_class = ProfileUpdateForm
+    # form_class = ProfileUpdateForm
+    form_class = Profileform
     template_name = 'profile_update.html'
     success_url = reverse_lazy('see_profile')
 

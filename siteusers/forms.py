@@ -6,29 +6,56 @@ from crispy_forms.layout import Submit
 
 
 # ----used code
+# class Profileform(forms.ModelForm):
+
+
+#     class Meta:
+#         model = Profile
+#         fields = ['image', 'first_name', 'last_name', 'email','bio']
+
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         self.helper = FormHelper(self)
+#         self.helper.add_input(Submit('submit', 'SET PROFILE'))
+
 class Profileform(forms.ModelForm):
 
-    # role = forms.ChoiceField(widget=forms.RadioSelect(), choices=Profile.ROLE)
-
-    class Meta:
-        model = Profile
-        fields = ['image', 'first_name', 'last_name', 'email','bio']
-
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(Profileform, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.add_input(Submit('submit', 'SET PROFILE'))
+        try:
+            self.fields['email'].initial = self.instance.user.email
+        except User.DoesNotExist:
+            pass
 
+    email = forms.EmailField(label="Primary email")
 
-class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image', 'first_name', 'last_name', 'email',  'bio']
+        fields = ['image', 'first_name', 'last_name', 'email', 'bio']
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper(self)
-        self.helper.add_input(Submit('submit', 'update PROFILE'))
+    def save(self, *args, **kwargs):
+        """
+        Update the primary email address on the related User object as well.
+        """
+        u = self.instance.user
+        u.email = self.cleaned_data['email']
+        u.save()
+        profile = super(Profileform, self).save(*args, **kwargs)
+        return profile
+
+
+# class ProfileUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = Profile
+#         fields = ['image', 'first_name', 'last_name', 'email',  'bio']
+
+
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         self.helper = FormHelper(self)
+#         self.helper.add_input(Submit('submit', 'update PROFILE'))
 
 
 class UpdateStudentRole(forms.ModelForm):
