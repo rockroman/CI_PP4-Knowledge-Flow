@@ -1,10 +1,13 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
-import pytest
 
 
-# class TestingUrls:
+class TestHomeView(TestCase):
 
-#     def test_home_url(self):
-#         path = reverse('home')
-#         assert resolve(path).view_name == 'home'
+    def test_loading_home_page(self):
+        response = self.client.get('')
+        self.assertEqual(response.status_code, 200)
+
+    def test_load_right_template(self):
+        response = self.client.get('')
+        self.assertTemplateUsed(response, 'index.html') 
