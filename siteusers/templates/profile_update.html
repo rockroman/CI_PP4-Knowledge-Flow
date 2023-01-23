@@ -10,21 +10,22 @@
         <div class="row ">
             <div class="col d-flex justify-content-center  ">
                 
-                {% if 'placeholder' in user.profile.image.url %}
+                <!-- {% if 'placeholder' in user.profile.image.url %}
                     <img  class="rounded-circle" width="150" src="{% static 'images/default.jpg' %}">
                 {% load cloudinary %}
                 {% else %}
                 {% cloudinary  user.profile.image format="WebP" width=130 height=120 crop='fill' radius='max' className='cld-responsive' %}
-                {% endif %}
+                {% endif %} -->
                 <h2 class=" text-center text-white display-5 pt-4 "> {{ user }}'s Profile</h2>
             </div>
         </div>
 
         <div class="form-group bg-secondary p-5 pl-4 pr-4">
+            <div class="row mb-2 pl-3"><img  class="rounded-circle" width="80" src="{% static 'images/default.jpg' %}"></div>
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <!-- {% crispy form %} -->
-                {{ form.image|as_crispy_field }}
+                {{ form.image }}
                 <div class="form-row">
                     <div class="form-group col-md mb-0">
                         {{ form.first_name|as_crispy_field }}
@@ -35,7 +36,16 @@
                     
                 </div>
                 {{ form.email|as_crispy_field}}
-                {{ form.website_url|as_crispy_field}}
+                <div class="form-row">
+                    <div class="form-group col-md mb-0">
+                        {{ form.website_url|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md mb-0">
+                        {{ form.linkedIn_url|as_crispy_field}}
+                    </div>
+                    
+                </div>
+
                 {{ form.bio|as_crispy_field }}
                 <button type="submit" class="btn btn-primary">Update Profile</button>
             </form>

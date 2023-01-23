@@ -29,7 +29,15 @@
         
                 </div>
                 {{ form.email|as_crispy_field}}
-                {{ form.website_url|as_crispy_field}}
+                <div class="form-row">
+                    <div class="form-group col-md mb-0">
+                        {{ form.website_url|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md mb-0">
+                        {{ form.linkedIn_url|as_crispy_field}}
+                    </div>
+                    
+                </div>
                 {{ form.bio|as_crispy_field }}
                 <button type="submit" class="btn btn-success">Set Profile</button>
             </form>

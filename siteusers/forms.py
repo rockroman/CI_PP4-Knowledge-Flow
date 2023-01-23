@@ -11,8 +11,7 @@ class Profileform(forms.ModelForm):
         super(Profileform, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.fields['website_url'].required = False
-        
-        # self.fields['linkedIn_url'].required = False
+        self.fields['linkedIn_url'].required = False
         self.helper.add_input(Submit('submit', 'SET PROFILE'))
         try:
             self.fields['email'].initial = self.instance.user.email
@@ -25,9 +24,10 @@ class Profileform(forms.ModelForm):
         model = Profile
         fields = [
             'image', 'first_name', 'last_name', 'email', 'website_url', 
-            'bio']
+            'linkedIn_url', 'bio']
         labels = {
-            'website_url': 'Website url (optional)'
+            'website_url': 'Website url (optional)',
+            'linkedIn_url': 'LinkedIn url (optional)'
         }
 
     def save(self, *args, **kwargs):
