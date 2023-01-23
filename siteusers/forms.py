@@ -5,24 +5,13 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
 
-# ----used code
-# class Profileform(forms.ModelForm):
-
-
-#     class Meta:
-#         model = Profile
-#         fields = ['image', 'first_name', 'last_name', 'email','bio']
-
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         self.helper = FormHelper(self)
-#         self.helper.add_input(Submit('submit', 'SET PROFILE'))
-
 class Profileform(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(Profileform, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
+        self.fields['website_url'].required = False
+        self.fields['linkedIn_url'].required = False
         self.helper.add_input(Submit('submit', 'SET PROFILE'))
         try:
             self.fields['email'].initial = self.instance.user.email
@@ -30,10 +19,13 @@ class Profileform(forms.ModelForm):
             pass
 
     email = forms.EmailField(label="Primary email")
+    
 
     class Meta:
         model = Profile
-        fields = ['image', 'first_name', 'last_name', 'email', 'bio']
+        fields = [
+            'image', 'first_name', 'last_name', 'email', 'website_url',
+            'linkedIn_url' 'bio']
 
     def save(self, *args, **kwargs):
         """

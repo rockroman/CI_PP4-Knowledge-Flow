@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.urls import reverse_lazy
 from django.views.generic import (
-    ListView, DetailView, CreateView, UpdateView, DeleteView)
+    ListView, DetailView, CreateView, UpdateView, DeleteView, View)
 from .models import BlogPost, Comment
 from .forms import BlogForm, CommentForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -44,7 +44,8 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
             form.instance.blogpost = blogpost
             form.save()
             messages.success(request, 'YOU ADDED A NEW COMMENT')
-            return HttpResponseRedirect(reverse('blog_details', kwargs={'pk': blogpost.pk})) 
+            return HttpResponseRedirect(
+                reverse('blog_details', kwargs={'pk': blogpost.pk})) 
             # return HttpResponse('blog_details')
         else:
             form = CommentForm()

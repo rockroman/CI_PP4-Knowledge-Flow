@@ -37,7 +37,7 @@
                           {% block blog_modal %}{% include 'blog_modal.html' %}{% endblock blog_modal %}
                           {% endif %}
                       {% endif %}
-                      <h6 class=" text-muted d-flex justify-content-end"><i class="far fa-comments"></i>{{post_comments_count}} Comments </h6>
+                      <h6 class=" text-muted d-flex justify-content-end">{{post_comments_count}}<i class="far fa-comments"></i> Comments </h6>
                       <hr>
                       <p class="card-text">{{ post.body|slice:":200"}}</p>
                       <a href="{% url 'blog_details' post.pk %}" class="btn btn-outline-success btn-sm">Read More</a>
