@@ -44,7 +44,6 @@ class SeeProfilePageView(LoginRequiredMixin, DetailView):
 
 class EditProfilePageView(LoginRequiredMixin, generic.UpdateView):
     model = Profile
-    # form_class = ProfileUpdateForm
     form_class = Profileform
     template_name = 'profile_update.html'
     success_url = reverse_lazy('see_profile')

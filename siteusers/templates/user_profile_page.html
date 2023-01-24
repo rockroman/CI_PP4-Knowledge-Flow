@@ -111,11 +111,13 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
+                      <h6 class="mb-0">Category</h6>
                     </div>
+                    {% for category in user.profile.category.all %}
                     <div class="col-sm-9 text-secondary">
-                      
+                        {{ category }}   
                     </div>
+                    {% endfor %}
                   </div>
                   <hr>
                   <div class="row">

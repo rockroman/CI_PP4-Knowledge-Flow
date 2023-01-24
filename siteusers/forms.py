@@ -1,6 +1,7 @@
 from django import forms
 from .models import Profile
 from django.contrib.auth.models import User
+from categories.models import LearningCategory
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
@@ -19,12 +20,15 @@ class Profileform(forms.ModelForm):
             pass
 
     email = forms.EmailField(label="Primary email")
+    category = forms.ModelMultipleChoiceField(
+        queryset=LearningCategory.objects.all(), widget=forms.CheckboxSelectMultiple() )
 
     class Meta:
         model = Profile
+
         fields = [
-            'image', 'first_name', 'last_name', 'email', 'website_url', 
-            'linkedIn_url', 'bio']
+            'image', 'first_name', 'last_name', 'email', 'category',
+            'website_url', 'linkedIn_url', 'bio']
         labels = {
             'website_url': 'Website url (optional)',
             'linkedIn_url': 'LinkedIn url (optional)'
