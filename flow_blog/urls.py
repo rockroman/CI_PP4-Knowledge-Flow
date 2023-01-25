@@ -8,6 +8,7 @@ from .views import (
     )
     # DeleteBlogView,
 
+
 urlpatterns = [
     path('', BlogPageView.as_view(), name='blog_page'),
     path('blog/blog/<int:pk>', BlogDetailView.as_view(), name='blog_details'),

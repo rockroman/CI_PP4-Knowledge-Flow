@@ -1,0 +1,21 @@
+<!-- add to categories view -->
+
+def list_of_categories(request):
+    category_list = LearningCategory.objects.all()
+    context = {
+        'category_list': category_list
+    }
+    return context
+
+
+<!-- add to navbar just below categories -->
+<div class="dropdown-menu  bg-dark">
+    {% for category in category_list %}
+    <a class="dropdown-item text-white" href="/categories/category/{{ category.name }}">{{ category.name }}</a>
+  
+    {% endfor %}
+
+
+<!-- ad to settings as context processor -->
+
+'categories.views.list_of_categories',

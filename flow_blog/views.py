@@ -122,11 +122,9 @@ def delete_blog(request, post_id):
     if request.user == post.creator:
         post.delete()
         messages.success(request, 'BLOG-POST IS DELETED') 
-        # return HttpResponseRedirect(reverse('blog_page'))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, "CAN'T BLOG-POST(YOU ARE NOT CREATOR) ")
-        # return HttpResponseRedirect(reverse('blog_page'))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
@@ -135,9 +133,7 @@ def delete_comment(request, comment_id):
     if request.user == users_comment.author:
         users_comment.delete()
         messages.success(request, 'COMMENT IS DELETED') 
-        # return HttpResponseRedirect(reverse('blog_page'))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, "CAN'T DELETE COMMENT(YOU ARE NOT CREATOR) ")
-        # return HttpResponseRedirect(reverse('blog_page'))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
