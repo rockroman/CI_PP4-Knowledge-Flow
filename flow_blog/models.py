@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from siteusers.models import LearningCategory
 from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
 
@@ -9,6 +10,7 @@ from django.template.defaultfilters import slugify
 class BlogPost(models.Model):
     title = models.CharField(max_length=200, unique=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
+    # category = models.ForeignKey(Lea, on_delete)
     slug = models.SlugField(max_length=100, unique=True)
     body = models.TextField()
     cover_image = CloudinaryField('image', default='placeholder')

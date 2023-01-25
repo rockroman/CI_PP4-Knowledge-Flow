@@ -21,13 +21,14 @@ class Profileform(forms.ModelForm):
 
     email = forms.EmailField(label="Primary email")
     category = forms.ModelMultipleChoiceField(
-        queryset=LearningCategory.objects.all(), widget=forms.CheckboxSelectMultiple() )
+        queryset=LearningCategory.objects.all(),
+        widget=forms.CheckboxSelectMultiple())
 
     class Meta:
         model = Profile
 
         fields = [
-            'image', 'first_name', 'last_name', 'email', 'category',
+            'image', 'first_name', 'last_name', 'email', 
             'website_url', 'linkedIn_url', 'bio']
         labels = {
             'website_url': 'Website url (optional)',
