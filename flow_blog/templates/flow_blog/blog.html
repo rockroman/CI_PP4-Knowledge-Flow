@@ -26,7 +26,7 @@
                    
                     {% endif %}
                     <div class="card-body">
-                      <p class="text-muted">{{ post.creator }} | {{ post.created_on }}</p>
+                      <p class="text-muted d-flex justify-content-between">{{ post.creator }} | {{ post.created_on }} <strong>{{ post.category }}</strong></p> 
                       <h5 class="card-title"> <a href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </h5>
                       {% if user.is_authenticated %}
                           {% if user == post.creator %}

@@ -10,7 +10,8 @@ from django.template.defaultfilters import slugify
 class BlogPost(models.Model):
     title = models.CharField(max_length=200, unique=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
-    # category = models.ForeignKey(Lea, on_delete)
+    category = models.ForeignKey(
+        LearningCategory, on_delete=models.PROTECT, null=True)
     slug = models.SlugField(max_length=100, unique=True)
     body = models.TextField()
     cover_image = CloudinaryField('image', default='placeholder')

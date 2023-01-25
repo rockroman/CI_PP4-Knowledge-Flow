@@ -10,7 +10,7 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = ('title', 'cover_image', 'body')
+        fields = ('title', 'cover_image','category', 'body')
 
         widgets = {
             'title': forms.TextInput(
