@@ -7,26 +7,144 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<h1>{{ cat_list.cat}}</h1>
 
+<section class="main-content">
+  <div class="container">
+    <h1 class="text-center text-uppercase text-primary">{{ cat_list.cat }}</h1>
+    
+    <h3 class="text-center text-white mb-5">Frequently Asked Questions</h3>
+    <br>
+    <br>
+    
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{% static '/images/blog_default.jpg'  %}" alt="FAQ" class="img-fluid" width="740" height="590">
+      </div>
+      <div class="col-sm-6">
+        <div id="accordion">
+          <div class="accordion-card mb-3">
+            <div class="accordion-card__header bg-dark p-1 pl-3" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <h5 class="mb-0">
+                <span class="text-white">What do I get?</span>
+              </h5>
+              <i class="fa fa-caret-down drop-icon text-white"></i>
+            </div>					  
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="accordion-card__body text-white">
+             hjgkjkjgkjgkjg
 
-{% for post in cat_list.posts %}
-<div class="col-md-4 bg-light">
-<a class="text-white" href="">
-  <div class="card mb-4 box-shadow">
-    <div class="card-body">
-      <h2 style="font-size:18px;font-weight:bold">{{post.title}}</h2>
-      <p class="card-text text-dark">{{post.body}}</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-card mb-3">
+            <div class="accordion-card__header collapsed bg-dark  p-1 pl-3" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <h5 class="mb-0">
+                <span class="text-white">Where do I get?</span>
+              </h5>
+              <i class="fa fa-caret-down drop-icon text-white"></i>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="accordion-card__body text-white">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi praesentium ipsam itaque nemo harum aut
+              obcaecati. Distinctio explicabo veniam debitis quam repudiandae nesciunt possimus quis asperiores
+              voluptatum nulla voluptate labore, facere expedita dolorem libero, ipsam nobis adipisci reprehenderit? Vel
+              assumenda tempore ad quaerat unde, fugit eos voluptate, atque voluptatem neque ullam.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-card mb-3">
+            <div class="accordion-card__header collapsed  bg-dark  p-1 pl-3" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <h5 class="mb-0">
+                <span class="text-white">Mentors avaliablle for {{ cat_list.cat }}</span>
+              </h5>
+              <i class="fa fa-caret-down drop-icon text-white"></i>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="accordion-card__body ">
+                <!-- card user -->
+               
+                  <div class="card bg-white p-3 mb-4 shadow">
+                      <div class="d-flex justify-content-between mb-4">
+                          <div class="user-info d-flex">
+                              <div class="user-info__img">
+                                  <img src="{% static '/images/default.jpg'  %}" alt="User Img" class="rounded-circle mr-3"  width="55" height="55">
+                              </div>
+                              <div class="user-info__basic">
+                                  <h5 class="mb-0">Kiran Acharya</h5>
+                                  <p class="text-muted mb-0">28 yrs, Male</p>
+                              </div>
+                          </div>
+                          <div class="dropdown open ">
+                              <a href="#" class="px-2 text-dark" id="triggerId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                  <i class="fa fa-ellipsis-v"></i>
+                              </a>
+                              <div class="dropdown-menu " aria-labelledby="triggerId1">
+                                  <a class="dropdown-item" href="#"><i class="fa fa-pencil mr-1"></i> Edit</a>
+                                  <a class="dropdown-item text-danger" href="#"><i class="fa fa-trash mr-1"></i> Delete</a>
+                              </div>
+                          </div>
+                      </div>
+                      <h6 class="mb-0">+91 9876543215</h6>
+                      <a href="#!"><small>Contact</small></a>
+                      <div class="d-flex justify-content-between mt-4">
+                          <div>
+                              <h5 class="mb-0">06:00 PM
+                                  <small class="ml-1">2 Feb 2021</small>
+                              </h5>
+                          </div>
+                          <span class="text-success font-weight-bold">Consult</span>
+                      </div>
+               
+              </div>
+             <!-- end  card -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div> 
+</section>
+<section id="blog-body" class="mt-3">
+  <h2 class="text-center text-primary m-2 mb-4"> LATEST BLOGS</h2>
+
+  <div class="container pt-3">
+        <div class="row">
+          {% for post in cat_list.posts %}
+        <div class="col-lg-6 mb-4">
+              <div class="card h-100">
+                {% if 'placeholder' in post.cover_image.url %}
+                <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" width="450" height="250" class="card-img-top">
+                {% else %}
+
+                {% load cloudinary %}
+                {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image'  %}
+               
+                {% endif %}
+                <div class="card-body">
+                  <p class="text-muted d-flex justify-content-between">{{ post.creator }} | {{ post.created_on }} <strong>{{ post.category }}</strong></p> 
+                  <h5 class="card-title"> <a href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </h5>
+                  {% if user.is_authenticated %}
+                      {% if user == post.creator %}
+                      
+                      <a href="{% url 'edit_blog' post.pk %}"><i class="fas fa-edit fa-lg text-dark "></i></a>
+                      <button type="button" data-toggle="modal" data-target="#blogModal" class="btn border-0 mb-1"><i class="far fa-trash-alt fa-lg text-danger"></i></i></button>
+                      
+                      {% block blog_modal %}{% include 'blog_modal.html' %}{% endblock blog_modal %}
+                      {% endif %}
+                  {% endif %}
+                  <h6 class=" text-muted d-flex justify-content-end">{{post_comments_count}}<i class="far fa-comments"></i> Comments </h6>
+                  <hr>
+                  <p class="card-text">{{ post.body|slice:":200"}}</p>
+                  <a href="{% url 'blog_details' post.pk %}" class="btn btn-outline-success btn-sm">Read More</a>
+                  <!-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> -->
+                  
+                </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
   </div>
-  </a>
-</div>
-{% endfor %}
+</section>
 
-
-
-
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}
 {% endblock %}

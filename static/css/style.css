@@ -334,3 +334,72 @@ h2,h3{
     font-size: 2rem;
   }
 }
+
+
+/* learning categories styles */
+
+.main-content {
+	padding-top: 40px;
+	padding-bottom: 100px;
+}
+
+.flex-center {
+	align-items: center;
+}
+
+#accordion .accordion-card {
+	background: transparent;
+	border: 0;
+	margin-bottom: 30px;
+}
+#accordion .accordion-card__header {
+
+	padding: 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#accordion .accordion-card__header.collapsed .drop-icon {
+	transform: rotate(0deg);
+}
+#accordion .accordion-card__header h5 {
+	display: flex;
+	align-items: center;
+}
+#accordion .accordion-card__header h5 span {
+	margin-left: 10px;
+}
+#accordion .accordion-card__header .drop-icon {
+	margin-right: 15px;
+	transform: rotate(180deg);
+	transition: all 0.2s;
+}
+#accordion .accordion-card__body {
+	padding: 25px;
+	/* background: #fff; */
+	border-radius: 5px;
+	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* mentor category card section---------------------------------- */
+
+
+.user-info {
+	display: flex;
+	align-items: center;
+}
+.user-info__img img {
+	margin-right: 15px;
+	height: 55px;
+	width: 55px;
+	border-radius: 45px;
+	border: 3px solid #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
