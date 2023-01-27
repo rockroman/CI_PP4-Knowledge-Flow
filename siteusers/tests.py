@@ -6,16 +6,29 @@ from django.contrib.auth import get_user_model
 # # Create your tests here.
 
 
-class TestSiteusersModels(TestCase):
+class TestSiteusersModel(TestCase):
 
+    @classmethod
     def setUp(self):
-        self.user = get_user_model().objects.create_user(
-                username='testuser',
-                password='secret')
-        self.profile = Profile.objects.update(
+        # Create test user
+        self.user = User.objects.create(
+            username='MyTestUser',
+            password='mypass79',
+            email='test@user.com',
+            id='1',
+        )
+        self.user.save()
+
+        self.user_profile = Profile.objects.update(
             user=self.user,
+            first_name='miki'
+
         )
 
     def test_is_profile_created(self):
-        profile = Profile.objects.filter().last()
-        self.assertEquals(profile.user.username, 'testuser')
+        # profile created is empty except user.username  until updating
+        user_profile = Profile.objects.filter().last()
+        self.assertEquals(user_profile.user.username, 'MyTestUser')
+        self.assertEquals(user_profile.first_name, 'miki')
+        self.assertEquals(user_profile.bio, '')
+        

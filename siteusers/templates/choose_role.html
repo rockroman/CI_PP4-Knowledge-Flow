@@ -2,44 +2,46 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
-<body id="signup-body">
-  
 
-<div class="container mt-3" >
-    <h1 class="col-12 text-center text-white">  {{ user }}  you can register as :</h1>
-   
-    
-       
-        <div class="card-group " >
-            <div class="card mx-3 " >
-              <img class="card-img-top"  src="{% static 'images/blog_default.jpg' %}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <form action="" method="POST" >
-                    {% csrf_token %}
-                    {{ mentor_form.as_p }}
-                   <button  class= "btn btn-primary "type="submit">MENTOR</button>
-                </form>
-              </div>
-            </div>
-            <div class="card mx-3">
-              <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <form action="" method="POST" >
-                    {% csrf_token %}
-                    {{ student_form.as_p }}
-                    <button class="btn btn-primary"  type="submit">STUDENT</button>
-                </form>
-               
-              </div>
-            </div>
+<body id="signup-body">
+
+
+  <div class="container mt-3">
+    <h1 class="col-12 text-center text-white"> {{ user }} you can register as :</h1>
+
+
+
+    <div class="card-group ">
+      <div class="card mx-3 ">
+        <img class="card-img-top" src="{% static 'images/mentor_pixabay_Harish Sharma.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Be a Mentor</h5>
+          <p class="card-text">Become a Mentor by sharing knowledge, advice, and resources as well as providing guidance,
+            motivation, emotional support, and role modeling.</p>
+          <form action="" method="POST">
+            {% csrf_token %}
+            {{ mentor_form.as_p }}
+            <button class="btn btn-primary font-weight-bold" type="submit">MENTOR</button>
+          </form>
         </div>
-        
-    </div>  
-    
-  </body>
+      </div>
+      <div class="card mx-3">
+        <img class="card-img-top" src="{% static 'images/student_pixabay_Gerd Altmann.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Be a Student</h5>
+          <p class="card-text">Register as a Student,Learn,strive grow , develop new skill and challenge yourself</p>
+          <form action="" method="POST">
+            {% csrf_token %}
+            {{ student_form.as_p }}
+            <button class="btn btn-primary font-weight-bold" type="submit">STUDENT</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
 
 {% endblock content %}
