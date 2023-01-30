@@ -50,20 +50,21 @@
                                         <p> {{comment.content}}</p>
                                 
                                         <!-- modal btn -->
-                                        <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#commentModal">
+                                        {% if request.user ==  comment.author %}
+                                        <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#my-{{comment.id}}"> 
                                             DELETE
-                                          </button>
+                                        </button>
+                                        <!-- Modal -->
+                                        <!-- end modal -->
+                                        {% block comment_modal %}{% include 'comment_modal.html' %}{% endblock comment_modal %}
+                                        {% endif %}
 
-                                        <!-- modal btn -->
                                     </div>
                                 </div>
-                                {% block comment_modal %}{% include 'comment_modal.html' %}{% endblock comment_modal %}
-
-                                <!-- Modal -->
-
-                                <!-- end modal -->
-                                {% endfor %}
+                                
+                                {% endfor %}   
                             </div>
+                            
                             <!--display the form-->
                             <form  method="POST" id="comment_form" autocomplete="off">
                                 {% csrf_token %}
@@ -73,7 +74,9 @@
                                 </div>
                                 <button class="btn btn-primary btn-block " type="submit" id="comment-btn"  >Comment</button>   
                             </form>
+                            
                         </div>
+                        
                     </div>
                 </div>
             </div>
