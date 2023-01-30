@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-   
+{% load static %}
     {% block content %} 
     {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
     <!--  hero section -->
@@ -41,10 +41,8 @@
               </div>
         </div>
     </section>
-    
-        <!-- end bottom hero -->
-    
-    
+    <!-- end bottom hero -->
+
       <section class="bg-gray-40">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -63,6 +61,11 @@
           </div>
         </div>
       </section>
+
+      <div class="container-fluid p-0">
+        <img src="{% static 'images/pexels-pixabay-planet-big.jpg' %}" id="planet" alt="" loading="lazy">
+  
+      </div>
     {% block footer %}{% include 'footer.html' %}{% endblock footer %}
   </div>
 </body>    
