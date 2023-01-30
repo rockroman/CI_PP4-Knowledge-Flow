@@ -307,8 +307,8 @@ h2,h3{
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
   /* min-height: 350px; */
-  /* background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.jpg'); */
-  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg');
+  background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.webp');
+  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg'); */
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -330,6 +330,7 @@ h2,h3{
     left: 20px;
   } 
   .clipped {
+    background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow-small_1.webp');
     clip-path: none;
     height: 50%;
     
