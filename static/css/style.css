@@ -86,7 +86,10 @@ h2,h3{
 /* end nav-bar styles */
 
 /* home page styles-------------------------------------------------------------------------------------------- */
-
+ .quote-card {
+  background-color:#040831;
+  border-radius: 15px;
+}
 
 /* midle section styles--------------------------- */
 

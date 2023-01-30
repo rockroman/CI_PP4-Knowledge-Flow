@@ -10,7 +10,6 @@
   <div class="row mt-4 justify-content-center">
         <div class="col-md-8 mb-4">
             <div class="card h-100 ">
-            <!-- <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top"> -->
             <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" class="  card-img-top">
             <a href="{% url 'blog_page' %}"><button class="mt-2 btn btn-secondary"> Back To Blog Page</button></a>
             <div class="card-body">
@@ -48,14 +47,10 @@
                                             <!-- <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time> -->
                                         </div>
                                         <p> {{comment.content}}</p>
-                                
-                                        <!-- modal btn -->
                                         {% if request.user ==  comment.author %}
                                         <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#my-{{comment.id}}"> 
                                             DELETE
                                         </button>
-                                        <!-- Modal -->
-                                        <!-- end modal -->
                                         {% block comment_modal %}{% include 'comment_modal.html' %}{% endblock comment_modal %}
                                         {% endif %}
 
@@ -64,7 +59,6 @@
                                 
                                 {% endfor %}   
                             </div>
-                            
                             <!--display the form-->
                             <form  method="POST" id="comment_form" autocomplete="off">
                                 {% csrf_token %}
@@ -82,8 +76,6 @@
             </div>
             
         </div>
-        
-     <!-- </div> -->
   </div>
 </div>
 

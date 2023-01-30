@@ -35,7 +35,7 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
     def handle_no_permission(self):
         if self.request.user:
             return redirect('protect_profile')
-    
+
     def post(self, request, *args, **kwargs):
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -45,8 +45,7 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
             form.save()
             messages.success(request, 'YOU ADDED A NEW COMMENT')
             return HttpResponseRedirect(
-                reverse('blog_details', kwargs={'pk': blogpost.pk})) 
-            # return HttpResponse('blog_details')
+                reverse('blog_details', kwargs={'pk': blogpost.pk}))
         else:
             form = CommentForm()
 
@@ -105,7 +104,7 @@ def delete_blog(request, post_id):
     post = get_object_or_404(BlogPost, pk=post_id)
     if request.user == post.creator:
         post.delete()
-        messages.success(request, 'BLOG-POST IS DELETED') 
+        messages.success(request, 'BLOG-POST IS DELETED')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, "CAN'T BLOG-POST(YOU ARE NOT CREATOR) ")
@@ -116,7 +115,7 @@ def delete_comment(request, comment_id):
     users_comment = get_object_or_404(Comment, pk=comment_id)
     if request.user.id == users_comment.author.id:
         users_comment.delete()
-        messages.success(request, 'COMMENT IS DELETED') 
+        messages.success(request, 'COMMENT IS DELETED')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, "CAN'T DELETE COMMENT(YOU ARE NOT CREATOR) ")
