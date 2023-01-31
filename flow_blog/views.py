@@ -105,10 +105,10 @@ def delete_blog(request, post_id):
     if request.user == post.creator:
         post.delete()
         messages.success(request, 'BLOG-POST IS DELETED')
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return HttpResponseRedirect(reverse('blog_page'))
     else:
         messages.error(request, "CAN'T BLOG-POST(YOU ARE NOT CREATOR) ")
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return HttpResponseRedirect(reverse('blog_page'))
 
 
 def delete_comment(request, comment_id):

@@ -17,8 +17,9 @@
                     <h5 class="card-title"> <a href="">{{ post.title }}</a> </h5>
                     {% if user.is_authenticated %}
                         {% if user == post.creator %}
-                            <a href="{% url 'edit_blog' post.pk %}"><button class="btn btn-warning pl-5 pr-5">EDIT</button></a>
-                            <a href="{% url 'delete_blog' post.pk %}"><button class="btn btn-danger pl-5 pr-5">DELETE</button></a>
+                        <a href="{% url 'edit_blog' post.pk %}"><i class="fas fa-edit fa-lg text-dark "></i></a>
+                        <button type="button" data-toggle="modal" data-target="#my-{{ post.id }}" class="btn border-0 mb-1"><i class="far fa-trash-alt fa-lg text-danger"></i></i></button>
+                        {% block blog_modal %}{% include 'blog_modal.html' %}{% endblock blog_modal %}
                         {% endif %}   
                     {% endif %}
                     <hr>

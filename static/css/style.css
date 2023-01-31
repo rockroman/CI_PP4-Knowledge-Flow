@@ -92,7 +92,6 @@ h2,h3{
 }
 
 #planet{
-  width: 100vw;
 }
 
 /* midle section styles--------------------------- */
@@ -165,56 +164,29 @@ h2,h3{
 /* ------------end set role------------- */
 
 
-/* ------------ midlle cards styles-------------- */
+/* ------------ team cards styles-------------- */
+.social-link {
+  width: 30px;
+  height: 30px;
+  /* border: 1px solid #ddd; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(221, 225, 231);
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+}
 
-  .card1 img {
-    border-radius: 0.5rem 0.5rem 0 0;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    max-height: max(10rem, 30vh);
-    aspect-ratio: 4/3;
-    mix-blend-mode: var(--card-blend-mode);
-  }
-  .card1 img ~ * {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-  .card1 > :last-child {
-    margin-bottom: 0;
-  }
-  .card1:hover, .card1:focus-within {
-    --card-gradient: #0f3862 max(8.5rem, 20vh);
-  }
-  
-  /* Additional demo display styles */
- 
-
-  
-  .card1 h3 {
-    margin-top: 1rem;
-    font-size: 1.25rem;
-  }
-  
-  .card1 a {
-    color: inherit;
-  }
-  
-  .card-wrapper {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-    grid-gap: 1.5rem;
-    max-width: 100vw;
-    /* width: 120ch; */
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+.social-link:hover, .social-link:focus {
+  background: rgb(12, 12, 14);
+  text-decoration: none;
+  color: rgb(20, 103, 228);
+}
 
 
-/* ------------ end midlle cards styles-------------- */
+
+/* ------------ end team cards styles-------------- */
 
 
 
@@ -307,8 +279,8 @@ h2,h3{
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
   /* min-height: 350px; */
-  background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.webp');
-  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg'); */
+  /* background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.webp'); */
+  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -330,7 +302,7 @@ h2,h3{
     left: 20px;
   } 
   .clipped {
-    background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow-small_1.webp');
+    background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
     clip-path: none;
     height: 50%;
     
