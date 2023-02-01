@@ -1,10 +1,11 @@
-from django.test import TestCase, Client
+from django.test import TestCase, Client, RequestFactory
 from .models import Profile, User
 from .forms import Profileform
 from django.contrib.auth import get_user_model
-from django.urls import reverse, resolve
+from django.urls import reverse, resolve, reverse_lazy
 from home.views import HomeView
 from home import views
+from .views import AppUserSetUpProfile, SeeProfilePageView
 
 
 # # Create your tests here.
@@ -15,6 +16,7 @@ class TestSiteusersModel(TestCase):
     @classmethod
     def setUp(self):
         # Create test user
+        
         self.user = User.objects.create(
             username='MyTestUser',
             password='mypass79',
@@ -59,28 +61,68 @@ class TestSiteusersModel(TestCase):
         user_profile = Profile.objects.get(user=user)
         response = client.get(user_profile.get_absolute_url())
         self.assertEqual(response.status_code, 200)
-        
 
 
-class TestProfileForm(TestCase):
-   
+class TestAppUserSetUpProfile(TestCase):
     @classmethod
     def setUp(self):
+        self.factory = RequestFactory()
         # Create test user
         self.user = User.objects.create(
             username='NewTestUser',
-            password='mypass333',
-            email='Newtest@user.com',
+            password='mypass79',
+            email='test@user.com',
             id='1',
         )
         self.user.save()
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            first_name='Rock'
 
-    def test_form_init_method(self):
-        form = Profileform({
-            'website_url': ''
-        })
-        self.assertTrue(form.is_valid())
-
-
+        )
+        self.form_data={
+            
+        }
     
+    def test_success_url(self):
+        client = Client()
+        response = client.get(reverse_lazy('see_profile'))
+        self.assertEqual(response.status_code, 302)
+
+    def test_get_object_method(self):
+        request = self.factory.get('create_profile/')
+        request.user = self.user
+        response = AppUserSetUpProfile.as_view()(request)
+        self.assertEqual(response.status_code, 200)
+
+
+class TestProfilePageView(TestCase):
+    @classmethod
+    def setUp(self):
+        self.factory = RequestFactory()
+        # Create test user
+        self.user = User.objects.create(
+            username='NewTestUser3',
+            password='mypass79',
+            email='test@user.com',
+            id='1',
+        )
+        self.user.save()
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            first_name='Rock'
+
+        )
+
+    def test_details(self):
+        request = self.factory.get('see_profile/')
+        request.user = self.user
+        response = SeeProfilePageView.as_view()(request)
+        self.assertEqual(response.status_code, 200)
+
+
+        
+            
+
+
 
