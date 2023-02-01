@@ -10,4 +10,4 @@ class TestHomeView(TestCase):
 
     def test_load_right_template(self):
         response = self.client.get('')
-        self.assertTemplateUsed(response, 'index.html') 
+        self.assertTemplateUsed(response, 'index.html')

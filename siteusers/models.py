@@ -18,8 +18,10 @@ class Profile(models.Model):
     email = models.EmailField(max_length=100)
     category = models.ManyToManyField(
         LearningCategory, related_name='user_learning_categoy')
-    website_url = models.URLField(max_length=100, default='https://www.google.com/')
-    linkedIn_url = models.URLField(max_length=100, default='https://www.linkedin.com/')
+    website_url = models.URLField(
+        max_length=100, default='https://www.google.com/')
+    linkedIn_url = models.URLField(
+        max_length=100, default='https://www.linkedin.com/')
     bio = models.TextField(max_length=1000)
     role = models.CharField(max_length=20, choices=ROLE)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -31,4 +33,3 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
-    

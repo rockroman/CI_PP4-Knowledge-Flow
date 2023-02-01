@@ -16,7 +16,7 @@ class TestSiteusersModel(TestCase):
     @classmethod
     def setUp(self):
         # Create test user
-        
+
         self.user = User.objects.create(
             username='MyTestUser',
             password='mypass79',
@@ -80,10 +80,10 @@ class TestAppUserSetUpProfile(TestCase):
             first_name='Rock'
 
         )
-        self.form_data={
-            
+        self.form_data = {
+
         }
-    
+
     def test_success_url(self):
         client = Client()
         response = client.get(reverse_lazy('see_profile'))
@@ -119,10 +119,3 @@ class TestProfilePageView(TestCase):
         request.user = self.user
         response = SeeProfilePageView.as_view()(request)
         self.assertEqual(response.status_code, 200)
-
-
-        
-            
-
-
-

@@ -1,16 +1,42 @@
 from django import forms
+from django.contrib.auth.models import User
 from .models import BlogPost, Comment
 from cloudinary.models import CloudinaryField
-from cloudinary.forms import CloudinaryFileField 
+from cloudinary.forms import CloudinaryFileField
+from siteusers.models import Profile
+from crispy_forms.helper import FormHelper
 
 # ---3rd party ----------
+
+# class BlogForm(forms.ModelForm):
+#     class Meta:
+#             model = BlogPost
+#             fields = ('title', 'cover_image','category', 'body')
+
+#             widgets = {
+#                 'title': forms.TextInput(
+#                     attrs={'class': 'form-control', 'placeholder': 'Blog Title'}),
+#                 'body': forms.Textarea(attrs={'class': 'form-control'}),
+
+#             }
+
+#     def __init__(self, *args, **kwargs):
+#         user = kwargs.pop('user', None)
+#         super(BlogForm, self).__init__(*args, **kwargs)
+#         self.helper = FormHelper(self)
+
+
+#         try:
+#             self.fields['category'].choices = Profile.objects.filter()
+#         except User.DoesNotExist:
+#             pass
 
 
 class BlogForm(forms.ModelForm):
 
     class Meta:
         model = BlogPost
-        fields = ('title', 'cover_image','category', 'body')
+        fields = ('title', 'cover_image', 'category', 'body')
 
         widgets = {
             'title': forms.TextInput(

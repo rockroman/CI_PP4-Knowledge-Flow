@@ -13,5 +13,3 @@ class TestBlogModel(TestCase):
             creator=test_user,
         )
         self.assertEqual(str(blog), 'test title | miki')
-
-

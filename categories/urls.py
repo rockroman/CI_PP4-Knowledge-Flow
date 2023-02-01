@@ -4,6 +4,8 @@ from .models import LearningCategory
 
 
 urlpatterns = [
-    path('category/<category>/', views.LearningCategoryListView.as_view(), name='category')
+    path(
+        'category/<category>/',
+        views.LearningCategoryListView.as_view(), name='category')
 
 ]

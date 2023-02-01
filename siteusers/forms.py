@@ -28,7 +28,7 @@ class Profileform(forms.ModelForm):
         model = Profile
 
         fields = [
-            'image', 'first_name', 'last_name', 'email', 'category', 
+            'image', 'first_name', 'last_name', 'email', 'category',
             'website_url', 'linkedIn_url', 'bio']
         labels = {
             'website_url': 'Website url (optional)',

@@ -68,6 +68,13 @@ class AddBlogView(UserPassesTestMixin, CreateView):
     model = BlogPost
     form_class = BlogForm
     template_name = 'flow_blog/add_blog.html'
+    # added code
+    # def get_form_kwargs(self):
+    #     kwargs = super(AddBlogView, self).get_form_kwargs()
+    #     kwargs['user'] = self.request.user # pass the 'user' in kwargs
+    #     return kwargs
+
+    # end
 
     def form_valid(self, form):
         form.instance.creator = self.request.user
