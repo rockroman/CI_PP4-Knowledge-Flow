@@ -8,11 +8,12 @@
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
 
+
 <section class="main-content">
   <div class="container">
     <h1 class="text-center text-uppercase text-primary">{{ cat_list.cat }}</h1>
     
-    <h3 class="text-center text-white mb-5">Learn to Take control,Maintain your own money</h3>
+    <h2 class=" h3 text-center text-white mb-5">Learn to Take control,Maintain your own money</h2>
     <br>
     <br>
     
@@ -65,7 +66,13 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="accordion-card__body ">
                 <!-- card user -->
-               
+                {% for mentor in mentors_list %}
+                  {% for category in mentor.category.all %}
+                    {% if cat_list.cat == category.name %}
+                    <h6 class=" text-white">{{ mentor.first_name }}</h6>
+                
+                    <h6 class="text-white">{{ mentor.bio }}</h6>
+                    
                   <div class="card bg-white p-3 mb-4 shadow">
                       <div class="d-flex justify-content-between mb-4">
                           <div class="user-info d-flex">
@@ -73,8 +80,8 @@
                                   <img src="" alt="User Img" class="rounded-circle mr-3"  width="55" height="55">
                               </div>
                               <div class="user-info__basic">
-                                  <h5 class="mb-0">Kiran Acharya</h5>
-                                  <p class="text-muted mb-0">28 yrs, Male</p>
+                                  <h5 class="mb-0">{{ mentor.first_name }}</h5>
+                                  <p class="text-muted mb-0 ml-1">{{ mentor.last_name }}</p>
                               </div>
                           </div>
                           <div class="dropdown open ">
@@ -91,15 +98,19 @@
                       <a href="#!"><small>Contact</small></a>
                       <div class="d-flex justify-content-between mt-4">
                           <div>
-                              <h5 class="mb-0">06:00 PM
-                                  <small class="ml-1">2 Feb 2021</small>
+                            <small>Joined</small>
+                              <h5 class="mb-0">
+                                  <small class="ml-1">{{ mentor.created_on }}</small>
                               </h5>
                           </div>
                           <span class="text-success font-weight-bold">Consult</span>
                       </div>
-               
+              
               </div>
              <!-- end  card -->
+                {% endif %}
+              {% endfor %}
+             {% endfor %}
             </div>
           </div>
         </div>
@@ -151,3 +162,6 @@
 
 {% block footer %}{% include 'footer.html' %}{% endblock footer %}
 {% endblock %}
+
+
+newuser123

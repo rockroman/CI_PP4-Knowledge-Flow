@@ -12,6 +12,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 
 
+
 # Create your views here.
 class BlogPageView(ListView):
     model = BlogPost
@@ -69,10 +70,11 @@ class AddBlogView(UserPassesTestMixin, CreateView):
     form_class = BlogForm
     template_name = 'flow_blog/add_blog.html'
     # added code
-    # def get_form_kwargs(self):
-    #     kwargs = super(AddBlogView, self).get_form_kwargs()
-    #     kwargs['user'] = self.request.user # pass the 'user' in kwargs
-    #     return kwargs
+
+    def get_form_kwargs(self):
+        kwargs = super(AddBlogView, self).get_form_kwargs()
+        kwargs['user'] = self.request.user  # pass the 'user' in kwargs
+        return kwargs
 
     # end
 
@@ -86,6 +88,7 @@ class AddBlogView(UserPassesTestMixin, CreateView):
 
     def handle_no_permission(self):
         return redirect('protect_profile')
+        
 
 
 @method_decorator(login_required, name='dispatch')
