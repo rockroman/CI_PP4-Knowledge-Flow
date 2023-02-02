@@ -9,29 +9,6 @@ from siteusers.models import LearningCategory, Profile
 
 # ---3rd party ----------
 
-# class BlogForm(forms.ModelForm):
-#     class Meta:
-#             model = BlogPost
-#             fields = ('title', 'cover_image','category', 'body')
-
-#             widgets = {
-#                 'title': forms.TextInput(
-#                     attrs={'class': 'form-control', 'placeholder': 'Blog Title'}),
-#                 'body': forms.Textarea(attrs={'class': 'form-control'}),
-
-#             }
-
-#     def __init__(self, *args, **kwargs):
-#         user = kwargs.pop('user', None)
-#         super(BlogForm, self).__init__(*args, **kwargs)
-#         self.helper = FormHelper(self)
-
-
-#         try:
-#             self.fields['category'].choices = Profile.objects.filter()
-#         except User.DoesNotExist:
-#             pass
-
 
 class BlogForm(forms.ModelForm):
 
@@ -45,7 +22,7 @@ class BlogForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control'}),
 
         }
-    
+
     def __init__(self, user=None, **kwargs):
         super(BlogForm, self).__init__(**kwargs)
         current_user = Profile.objects.get(user=user)

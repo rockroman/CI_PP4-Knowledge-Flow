@@ -68,16 +68,18 @@
                 <!-- card user -->
                 {% for mentor in mentors_list %}
                   {% for category in mentor.category.all %}
-                    {% if cat_list.cat == category.name %}
-                    <h6 class=" text-white">{{ mentor.first_name }}</h6>
-                
-                    <h6 class="text-white">{{ mentor.bio }}</h6>
-                    
+                    {% if cat_list.cat == category.name %} 
                   <div class="card bg-white p-3 mb-4 shadow">
                       <div class="d-flex justify-content-between mb-4">
                           <div class="user-info d-flex">
                               <div class="user-info__img">
-                                  <img src="" alt="User Img" class="rounded-circle mr-3"  width="55" height="55">
+                                {% if 'placeholder' in mentor.image.url %}
+                                <img src="{% static 'images/default.jpg' %}" alt="User Img" class="rounded-circle mr-3"  width="55" height="55">
+                                {% else %}
+                                {% load cloudinary %}
+                                {% cloudinary  mentor.image format="WebP" width=55 height=55 crop='fill' radius='max' className='cld-responsive' %}
+                                {% endif %}
+                                  <!-- <img src="" alt="User Img" class="rounded-circle mr-3"  width="55" height="55"> -->
                               </div>
                               <div class="user-info__basic">
                                   <h5 class="mb-0">{{ mentor.first_name }}</h5>
@@ -94,11 +96,12 @@
                               </div>
                           </div>
                       </div>
-                      <h6 class="mb-0">+91 9876543215</h6>
-                      <a href="#!"><small>Contact</small></a>
+                      <!-- <a href="#!"><small>Contact Me</small></a> -->
+                      <span class="h5"><u>Contact Me</u></span>
+                      <h6 class="p mb-0">{{ mentor.email }}</h6>
                       <div class="d-flex justify-content-between mt-4">
                           <div>
-                            <small>Joined</small>
+                            <small><em>Joined</em></small>
                               <h5 class="mb-0">
                                   <small class="ml-1">{{ mentor.created_on }}</small>
                               </h5>

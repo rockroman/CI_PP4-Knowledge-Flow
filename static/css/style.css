@@ -382,7 +382,7 @@ h2,h3{
 	height: 55px;
 	width: 55px;
 	border-radius: 45px;
-	border: 3px solid #fff;
+	border: 3px solid rgb(10, 10, 10);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
