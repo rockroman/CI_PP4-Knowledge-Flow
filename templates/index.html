@@ -7,9 +7,9 @@
   <div class="container-fluid p-0">
     <section class="container-fluid p-0 ">
       <div class="d-sm-flex align-items-center justify-content-between w-100"  id="hero">
-        <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
+        <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline ">
           <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text" >is the key</span></h1>
-          <a href="#" class="btn btn-success px-5 py-3 text-white text-uppercase mt-3 mt-sm-0">Get Started</a>
+          <a href="{% url 'account_login' %}" class="btn btn-success  px-5 py-3  font-weight-bold text-uppercase text-black-50 mt-3 mt-sm-0 ">Get Started</a>
         </div>
         <!-- in mobile remove the clippath -->
         <div class="col-md-8 clipped fadeIn">
@@ -20,26 +20,28 @@
         <!-- end hero -->
     
     <section>
-        <h2 class="text-center text-white">ULTIMATE WAY TO KNOWLEDGE</h2>
+        <h2 class="text-center text-white bg-dark mb-0">ULTIMATE WAY TO KNOWLEDGE</h2>
     </section>
         <!-- bottom hero -->
 
     <!-- end bottom hero -->
+   
 
 
-      <div class="container-fluid p-0" id="planet">
-
-          <img
-          sizes="(max-width: 640px) 620px, 100vw"
-          srcset="https://res.cloudinary.com/dgzrzlcs4/image/upload/f_auto,q_80,w_256/v1675084303/static/images/uln1s8gbk4zfffobpjkr.webp 256w, 
-                  https://res.cloudinary.com/dgzrzlcs4/image/upload/f_auto,q_80,w_512/v1675084303/static/images/uln1s8gbk4zfffobpjkr.webp 512w, 
-                  https://res.cloudinary.com/dgzrzlcs4/image/upload/f_auto,q_80,w_728/v1675084303/static/images/uln1s8gbk4zfffobpjkr.webp 728w, 
-                  https://res.cloudinary.com/dgzrzlcs4/image/upload/f_auto,q_80,w_1024/v1675084303/static/images/uln1s8gbk4zfffobpjkr.webp 1024w, 
-                  https://res.cloudinary.com/dgzrzlcs4/image/upload/f_auto,q_80,w_1350/v1675084303/static/images/uln1s8gbk4zfffobpjkr.webp 1350w," 
-            
-          src="https://res.cloudinary.com/dgzrzlcs4/image/upload/f_auto,q_80,w_512/v1675084303/static/images/uln1s8gbk4zfffobpjkr.webp 512w"
-          alt />
-  
+      <div class="container-fluid p-1 mt-0 bg-dark " id="my-index-planet" >
+        <div class="row d-flex justify-content-center  ">
+          <div class="col-sm-4 col-xl-4 p-2 m-2 border border-white">
+            <ul class="text-white ">
+              <li>some thing</li>
+              <li>other stuff to do</li>
+              <li>maybe not </li>
+              <li> or so lot</li>
+            </ul>    
+          </div>
+          <div class="col-sm-4 col-xl-4 p-2 m-2 border border-white">
+             rerrer
+          </div>
+      </div>
       </div>
       <section class="bg-gray-40">
         <div class="container py-5 h-100">
@@ -66,7 +68,9 @@
           <!-- Team item -->
           <div class="col-xl-3 col-sm-6 mb-5 ">
               <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-0 text-white">Manuella Nevoresky</h5><span class="small text-uppercase text-muted text-white">CEO - Founder</span>
+                  <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
+                
+                  <span class="small text-uppercase text-white ">CEO - Founder</span>
                 
                   <ul class="social mb-0 list-inline mt-3">
                       <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
@@ -81,7 +85,8 @@
           <!-- Team item -->
           <div class="col-xl-3 col-sm-6 mb-5 ">
               <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-0 text-white">Manuella Nevoresky</h5><span class="small text-uppercase text-muted text-white">CEO - Founder</span>
+                  <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
+                  <span class="small text-uppercase  text-white">CEO - Founder</span>
                 
                   <ul class="social mb-0 list-inline mt-3">
                       <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
@@ -96,7 +101,8 @@
           <!-- Team item -->
           <div class="col-xl-3 col-sm-6 mb-5 ">
               <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-0 text-white">Manuella Nevoresky</h5><span class="small text-uppercase text-muted text-white">CEO - Founder</span>
+                  <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
+                  <span class="small text-uppercase  text-white">CEO - Founder</span>
                 
                   <ul class="social mb-0 list-inline mt-3">
                       <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
@@ -111,9 +117,12 @@
           <!-- Team item -->
           <div class="col-xl-3 col-sm-6 mb-5 ">
               <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-0 text-white">Manuella Nevoresky</h5><span class="small text-uppercase text-muted text-white">CEO - Founder</span>
+                  <h5 class="mb-1 text-white">Manuella Nevoresky</h5>
+                  <hr class="mt-1">
+                  <span class="small text-uppercase  text-white">CEO - Founder</span>
+                  
                 
-                  <ul class="social mb-0 list-inline mt-3">
+                  <ul class="social mb-0 list-inline mt-2">
                       <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
                       <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
                       <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>

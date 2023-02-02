@@ -107,3 +107,12 @@ def protect_profile_view(request):
         return redirect('appuser_SetUp_profile')
     else:
         return redirect('set_role')
+
+
+def list_of_mentors(request):
+
+    mentors_list = Profile.objects.filter(role='Mentor').all()
+    context = {
+        'mentors_list': mentors_list
+    }
+    return context

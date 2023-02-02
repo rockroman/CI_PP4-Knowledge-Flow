@@ -89,9 +89,15 @@ h2,h3{
  .quote-card {
   background-color:#040831;
   border-radius: 15px;
+ 
 }
 
-#planet{
+#my-index-planet{
+  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674254110/sgbmuzrlxqxf5p0cvizg.jpg'); */
+  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg'); */
+  
+   height: 400px; 
+
 }
 
 /* midle section styles--------------------------- */
