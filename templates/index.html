@@ -1,140 +1,177 @@
 {% extends 'base.html' %}
 {% load static %}
-    {% block content %} 
-    {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
-    <!--  hero section -->
+{% block content %}
+{% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
+
+
 <body>
+  <!--  hero section -->
   <div class="container-fluid p-0">
     <section class="container-fluid p-0 ">
-      <div class="d-sm-flex align-items-center justify-content-between w-100"  id="hero">
+      <div class="d-sm-flex align-items-center justify-content-between w-100" id="hero">
         <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline ">
-          <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text" >is the key</span></h1>
-          <a href="{% url 'account_login' %}" class="btn btn-success  px-5 py-3  font-weight-bold text-uppercase text-black-50 mt-3 mt-sm-0 ">Get Started</a>
+          <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text">is the key</span>
+          </h1>
+          <a href="{% url 'account_login' %}"
+            class="btn btn-success  px-5 py-3  font-weight-bold text-uppercase text-black-50 mt-3 mt-sm-0 ">Get
+            Started</a>
         </div>
         <!-- in mobile remove the clippath -->
         <div class="col-md-8 clipped fadeIn">
-    
+
         </div>
       </div>
-    </section >
-        <!-- end hero -->
-    
-    <section>
-        <h2 class="text-center text-white bg-dark mb-0">ULTIMATE WAY TO KNOWLEDGE</h2>
     </section>
-        <!-- bottom hero -->
+    <!-- end hero -->
+
+    <!-- <section>
+      <h2 class="text-center text-white bg-dark mb-0">ULTIMATE WAY TO KNOWLEDGE</h2>
+    </section> -->
+    <!-- bottom hero -->
 
     <!-- end bottom hero -->
-   
 
 
-      <div class="container-fluid p-1 mt-0 bg-dark " id="my-index-planet" >
-        <div class="row d-flex justify-content-center  ">
-          <div class="col-sm-4 col-xl-4 p-2 m-2 border border-white">
-            <ul class="text-white ">
-              <li>some thing</li>
-              <li>other stuff to do</li>
-              <li>maybe not </li>
-              <li> or so lot</li>
-            </ul>    
-          </div>
-          <div class="col-sm-4 col-xl-4 p-2 m-2 border border-white">
-             rerrer
-          </div>
-      </div>
-      </div>
-      <section class="bg-gray-40">
-        <div class="container py-5 h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-md-8 col-xl-8">
-              <div class="card quote-card text-white" id="quote" >
-                <div class="card-body p-5">
-                  <i class="fas fa-quote-left fa-2x mb-4"></i>
-                  <h5 class="lead">Genius is one percent inspiration and ninety-nine percent perspiration.</h5>
-                  <hr>
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">Thomas Edison</p>
-                  </div>
+
+    <div class="container-fluid p-1 mt-0 bg-dark  " id="my-index-planet">
+      <h2 class="text-center text-white bg-dark mb-0">ULTIMATE WAY TO KNOWLEDGE</h2>
+        <div class="row">
+            <div class="col-md-6">
+              <h3 class=" h4 pt-5 text-center text-success">list with checkmarks</h3>
+              <ul class="list-display list-checkmarks text-white">
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet</li>
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
+                </li>
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Integer molestie lorem at massa</li>
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Facilisis in pretium nisl aliquet</li>
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h2 class=" h4 pt-5 text-center text-success">list with checkmarks</h2>
+              <ul class="list-display list-checkmarks text-white">
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet</li>
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
+                </li>
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Integer molestie lorem at massa</li>
+                <li><i class="fas fa-check-square pr-2 text-success"></i>Facilisis in pretium nisl aliquet</li>
+                <!-- <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
+                </li> -->
+              </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-gray-40">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-8 col-xl-8">
+            <div class="card quote-card text-white" id="quote">
+              <div class="card-body p-5">
+                <i class="fas fa-quote-left fa-2x mb-4"></i>
+                <h5 class="lead">Genius is one percent inspiration and ninety-nine percent perspiration.</h5>
+                <hr>
+                <div class="d-flex justify-content-between">
+                  <p class="mb-0">Thomas Edison</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-          <!-- new cards -->
+      </div>
+    </section>
+
+    <!-- new cards -->
     <div class="container">
       <div class="row text-center p-3">
-  
-          <!-- Team item -->
-          <div class="col-xl-3 col-sm-6 mb-5 ">
-              <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
-                
-                  <span class="small text-uppercase text-white ">CEO - Founder</span>
-                
-                  <ul class="social mb-0 list-inline mt-3">
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                  </ul>
-              </div>
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5 ">
+          <div class="bg-dark rounded shadow-sm py-5 px-4 "><img
+              src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
+
+            <span class="small text-uppercase text-white ">CEO - Founder</span>
+
+            <ul class="social mb-0 list-inline mt-3">
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+              </li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
           </div>
-          <!-- End -->
-  
-          <!-- Team item -->
-          <div class="col-xl-3 col-sm-6 mb-5 ">
-              <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
-                  <span class="small text-uppercase  text-white">CEO - Founder</span>
-                
-                  <ul class="social mb-0 list-inline mt-3">
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                  </ul>
-              </div>
+        </div>
+        <!-- End -->
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5 ">
+          <div class="bg-dark rounded shadow-sm py-5 px-4 "><img
+              src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
+            <span class="small text-uppercase  text-white">CEO - Founder</span>
+
+            <ul class="social mb-0 list-inline mt-3">
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+              </li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
           </div>
-          <!-- End -->
-  
-          <!-- Team item -->
-          <div class="col-xl-3 col-sm-6 mb-5 ">
-              <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
-                  <span class="small text-uppercase  text-white">CEO - Founder</span>
-                
-                  <ul class="social mb-0 list-inline mt-3">
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                  </ul>
-              </div>
+        </div>
+        <!-- End -->
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5 ">
+          <div class="bg-dark rounded shadow-sm py-5 px-4 "><img
+              src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-2 text-white">Manuella Nevoresky</h5>
+            <span class="small text-uppercase  text-white">CEO - Founder</span>
+
+            <ul class="social mb-0 list-inline mt-3">
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+              </li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
           </div>
-          <!-- End -->
-  
-          <!-- Team item -->
-          <div class="col-xl-3 col-sm-6 mb-5 ">
-              <div class="bg-dark rounded shadow-sm py-5 px-4 "><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                  <h5 class="mb-1 text-white">Manuella Nevoresky</h5>
-                  <hr class="mt-1">
-                  <span class="small text-uppercase  text-white">CEO - Founder</span>
-                  
-                
-                  <ul class="social mb-0 list-inline mt-2">
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
-                      <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
-                  </ul>
-              </div>
+        </div>
+        <!-- End -->
+
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5 ">
+          <div class="bg-dark rounded shadow-sm py-5 px-4 "><img
+              src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-1 text-white">Manuella Nevoresky</h5>
+            <hr class="mt-1">
+            <span class="small text-uppercase  text-white">CEO - Founder</span>
+
+
+            <ul class="social mb-0 list-inline mt-2">
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+              </li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
           </div>
-          <!-- End -->
+        </div>
+        <!-- End -->
       </div>
-  </div>      
-      <!-- end our team -->
+    </div>
+    <!-- end our team -->
     {% block footer %}{% include 'footer.html' %}{% endblock footer %}
   </div>
-</body>    
+</body>
 {% endblock content %}

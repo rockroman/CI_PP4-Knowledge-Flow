@@ -86,27 +86,132 @@ h2,h3{
 /* end nav-bar styles */
 
 /* home page styles-------------------------------------------------------------------------------------------- */
- .quote-card {
+
+/* Hero section-------------------- */
+#hero{
+  height: 80vh;
+  /* height: 100vh; */
+}
+.hero-text{
+  color: #378cf4f8;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  
+
+}
+
+.headline {
+  left: 90px;
+  
+} 
+.clipped {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+  /* min-height: 350px; */
+  /* background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.webp'); */
+  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+ 
+}
+@media screen and (max-width: 900px){
+  .headline {
+    left: 40px;
+   
+  } 
+  .hero-text{
+    font-size: 2.5rem;
+  }
+}
+
+
+@media screen and (max-width: 650px){
+  .headline {
+    left: 20px;
+  } 
+  .clipped {
+    background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
+    clip-path: none;
+    height: 50%;
+    
+  }
+
+  h1{
+    font-size: 2rem;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.8s;
+  -webkit-animation-duration: 1.8s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+  }
+ 
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* End Hero section-------------------- */
+
+#my-index-planet{
+
+   /* height: 400px;  */
+}
+
+/* midle section styles(ULTIMATE WAY TO KNOWLEDGE)------------------- */
+.list-display li {
+  margin-bottom:.4rem;
+  font-size:1.1rem;
+}
+.list-checkmarks {
+  padding-left:1.5rem;
+}
+.list-checkmarks li {
+  list-style-type:none;
+  padding-left:1rem;
+}
+
+
+.quote-card {
   background-color:#040831;
   border-radius: 15px;
  
 }
 
-#my-index-planet{
-  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674254110/sgbmuzrlxqxf5p0cvizg.jpg'); */
-  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg'); */
-  
-   height: 400px; 
-
-}
-
-/* midle section styles--------------------------- */
-
-
-
-
-
 /* end midle section styles--------------------------- */
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* end  home page styles ---------------------------------------------------------------------------------------*/
@@ -196,128 +301,13 @@ h2,h3{
 
 
 
-.fadedfx {
-    background-color: #fe5652;
-    visibility: hidden;
-  }
-  
-  .fadeIn {
-    animation-name: fadeIn;
-    -webkit-animation-name: fadeIn;
-    animation-duration: 1.8s;
-    -webkit-animation-duration: 1.8s;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-timing-function: ease-in-out;
-    visibility: visible !important;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0.0;
-    }
-   
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0.0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-
-
-
-.card1{
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 0.25rem;
-    --card-gradient: rgba(0, 0, 0, 0.8);
-    --card-gradient: #1c2835, #0957e7;
-    --card-blend-mode: overlay;
-    background-color: rgb(9, 33, 52);
-    border-radius: 0.5rem;
-    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
-    padding-bottom: 1rem;
-    background-image: linear-gradient(var(--card-gradient), white max(9.5rem, 27vh));
-    overflow: hidden;
-    
-
-}
-
-
 /* ----------------------background img------- play */
 #mycard{
     background-color: rgb(14, 39, 60);
     
 }
 
-/* --------------new hero section--------------------- */
 
-#hero{
-  height: 100vh;
-}
-.hero-text{
-  color: #378cf4f8;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  
-
-}
-
-.headline {
-  left: 90px;
-  
-} 
-.clipped {
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
-  /* min-height: 350px; */
-  /* background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.webp'); */
-  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
-  background-position: center;
-  background-size: cover;
-  height: 100%;
- 
-}
-@media screen and (max-width: 900px){
-  .headline {
-    left: 40px;
-   
-  } 
-  .hero-text{
-    font-size: 2.5rem;
-  }
-}
-
-
-@media screen and (max-width: 650px){
-  .headline {
-    left: 20px;
-  } 
-  .clipped {
-    background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
-    clip-path: none;
-    height: 50%;
-    
-  }
-
-  h1{
-    font-size: 2rem;
-  }
-}
 
 
 /* learning categories styles */
