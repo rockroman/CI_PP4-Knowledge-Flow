@@ -12,7 +12,7 @@ from flow_blog.models import BlogPost
 class HomeView(generic.TemplateView):
     template_name = 'index.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(HomeView, self).get_context_data(**kwargs)
-        context['blogpost'] = BlogPost.objects.last()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super(HomeView, self).get_context_data(**kwargs)
+    #     context['blogpost'] = BlogPost.objects.last()
+    #     return context
