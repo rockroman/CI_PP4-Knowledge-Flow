@@ -73,7 +73,7 @@ class AddBlogView(UserPassesTestMixin, CreateView):
     # extract the user so it can be passed into form
     def get_form_kwargs(self):
         kwargs = super(AddBlogView, self).get_form_kwargs()
-        kwargs['user'] = self.request.user  # pass the 'user' in kwargs
+        kwargs['user'] = self.request.user  # pass the 'user' in kwargs 
         return kwargs
 
     # end
@@ -88,14 +88,35 @@ class AddBlogView(UserPassesTestMixin, CreateView):
 
     def handle_no_permission(self):
         return redirect('protect_profile')
-        
 
+
+# @method_decorator(login_required, name='dispatch')
+# class UpdateBlogView(UserPassesTestMixin, UpdateView):
+#     model = BlogPost
+#     template_name = 'flow_blog/edit_blog.html'
+#     form_class = BlogForm
+
+#     def form_valid(self, form):
+#         form.instance.creator == self.request.user
+#         return super().form_valid(form)
+
+#     def test_func(self):
+#         if self.request.user.profile.role and self.request.user.profile.bio:
+#             return self.request.user
+
+#     def handle_no_permission(self):
+#         return redirect('protect_profile')
 
 @method_decorator(login_required, name='dispatch')
 class UpdateBlogView(UserPassesTestMixin, UpdateView):
     model = BlogPost
     template_name = 'flow_blog/edit_blog.html'
     form_class = BlogForm
+
+    def get_form_kwargs(self):
+        kwargs = super(UpdateBlogView, self).get_form_kwargs()
+        kwargs['user'] = self.request.user  # pass the 'user' in kwargs 
+        return kwargs
 
     def form_valid(self, form):
         form.instance.creator == self.request.user
@@ -107,6 +128,8 @@ class UpdateBlogView(UserPassesTestMixin, UpdateView):
 
     def handle_no_permission(self):
         return redirect('protect_profile')
+
+
 
 
 @login_required
