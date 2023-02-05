@@ -89,7 +89,7 @@ h2,h3{
 
 /* Hero section-------------------- */
 #hero{
-  height: 80vh;
+  height: 90vh;
   /* height: 100vh; */
 }
 .hero-text{
@@ -132,7 +132,8 @@ h2,h3{
   .clipped {
     background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
     clip-path: none;
-    height: 50%;
+    /* height: 50%; */
+    height: 40%;
     
   }
 

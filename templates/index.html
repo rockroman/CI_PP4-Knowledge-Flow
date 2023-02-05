@@ -8,66 +8,58 @@
 
 <body>
   <!--  hero section -->
-  <div class="container-fluid p-0">
-    <section class="container-fluid p-0 ">
-      <div class="d-sm-flex align-items-center justify-content-between w-100" id="hero">
-        <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline ">
-          <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text">is the key</span>
-          </h1>
-          <a href="{% url 'account_login' %}"
-            class="btn btn-success  px-5 py-3  font-weight-bold text-uppercase text-black-50 mt-3 mt-sm-0 ">Get
-            Started</a>
-        </div>
-        <!-- in mobile remove the clippath -->
-        <div class="col-md-8 clipped fadeIn">
-
+    <section class="container-fluid">
+      <div class="row">
+        <div class="d-sm-flex align-items-center justify-content-between w-100" id="hero">
+          <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline ">
+            <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text">is the key</span>
+            </h1>
+            <a href="{% url 'account_login' %}"
+              class="btn btn-success  px-5 py-3  font-weight-bold text-uppercase text-black-50 mt-3 mt-sm-0 ">Get
+              Started</a>
+          </div>
+          <div class="col-md-8 clipped fadeIn">
+          </div>
         </div>
       </div>
     </section>
     <!-- end hero -->
-
-    <!-- <section>
-      <h2 class="text-center text-white bg-dark mb-0">ULTIMATE WAY TO KNOWLEDGE</h2>
-    </section> -->
+   
     <!-- bottom hero -->
-
-    <!-- end bottom hero -->
-
-
-
-    <div class="container-fluid p-1 mt-0 bg-dark  " id="my-index-planet">
+    <div class="container-fluid  mt-0 bg-dark  " id="my-index-planet">
       <h2 class="text-center text-white bg-dark mb-0">ULTIMATE WAY TO KNOWLEDGE</h2>
-        <div class="row">
-            <div class="col-md-6">
-              <h3 class=" h4 pt-5 pb-3 text-center text-success">list with checkmarks</h3>
-              <ul class="list-display list-checkmarks text-white">
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet</li>
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
-                </li>
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Integer molestie lorem at massa</li>
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Facilisis in pretium nisl aliquet</li>
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <h2 class=" h4 pt-5 pb-3 text-center text-success">list with checkmarks</h2>
-              <ul class="list-display list-checkmarks text-white">
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet</li>
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
-                </li>
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Integer molestie lorem at massa</li>
-                <li><i class="fas fa-check-square pr-2 text-success"></i>Facilisis in pretium nisl aliquet</li>
-                <!-- <li><i class="fas fa-check-square pr-2 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Eligendi, ipsa? Asperiores nobis, aliquid repellat earum soluta expedita voluptate sapiente nam vel.
-                </li> -->
-              </ul>
-            </div>
+      <div class="row">
+          <div class="col-md-6 ">
+            <h3 class=" h4 pt-5 pb-3 text-center text-success">How to use the App</h3>
+            <ul class="list-display list-checkmarks text-white">
+              <li><i class="fas fa-check-square pr-2 text-success"></i>Register for an Account</li>
+              <li><i class="fas fa-check-square pr-2 text-success"></i>Choose to be a "MENTOR" or "STUDENT"
+              </li>
+              <li><i class="fas fa-check-square pr-2 text-success"></i>Set up your profile </li>
+              <li><i class="fas fa-check-square pr-2 text-success"></i>Share your Knowledge by posting a blog within
+                Learning category</li>
+              <li><i class="fas fa-check-square pr-2 text-success"></i>Learn ,explore and find a Mentor on Each Category
+                Page
+              </li>
+            </ul>
+          </div>
+        <div class="col-md-6 ">
+          <h2 class=" h4 pt-5 pb-3 text-center text-success">Why Knowledge Flow</h2>
+          <ul class="list-display list-checkmarks text-white pr-3">
+            <li><i class="fas fa-check-square pr-2 text-success"></i>Flexibility: Knowledge flow offers the
+              flexibility to learn at your own pace and on your own schedule, allowing you to fit education into your
+              busy lifestyle</li>
+            <li><i class="fas fa-check-square pr-2 text-success"></i>No Cost:Learn for free without need for physical
+              classrooms, textbooks, or other traditional learning materials.
+            </li>
+            <li><i class="fas fa-check-square pr-2 text-success"></i>Real Experience:
+            Connect with our Mentors and benefit with 1 on 1 Learning</li>
+
+          </ul>
         </div>
+      </div>
     </div>
+    <!-- end bottom hero -->
 
     <section class="bg-gray-40">
       <div class="container py-5 h-100">
@@ -86,7 +78,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> 
 
     <!-- new cards -->
     <div class="container">
@@ -178,41 +170,40 @@
 
     <div class="container-fluid" id="about">
       <div class="row">
-          <div class="col-md-6 col-xl-4">
-              <div class="form-group bg-dark p-5 pl-4 pr-4 rounded">
-                  <form action="" method="POST" enctype="multipart/form-data">
-                      <h3 class="text-center text-warning"> GET IN TOUCH</h3>
-                      {% csrf_token %}
-      
-                      <div class="form-row">
-                          <div class="form-group col-md mb-0 text-white">
-                              {{ form.name|as_crispy_field }}
-                          </div>
-                      </div>
-                      <div class="text-white">{{ form.email|as_crispy_field}}</div>
-                      <div class="text-white">{{ form.phone|as_crispy_field}}</div>
-                      <div class="form-row">
-                          <div class="form-group col-md mb-0 text-white">
-                              {{ form.company|as_crispy_field}}
-                          </div>
-                          <div class="form-group col-md mb-0 text-white">
-                              {{ form.subject|as_crispy_field}}
-                          </div>
-      
-                      </div>
-                      <div class="text-white">{{ form.message|as_crispy_field }}</div>
-                      <button type="submit" class="btn btn-warning ">SUBMIT</button>
-                  </form>
+        <div class="col-md-6 col-xl-4">
+          <div class="form-group bg-dark p-5 pl-4 pr-4 rounded">
+            <form action="" method="POST" enctype="multipart/form-data">
+              <h3 class="text-center text-warning"> GET IN TOUCH</h3>
+              {% csrf_token %}
+
+              <div class="form-row">
+                <div class="form-group col-md mb-0 text-white">
+                  {{ form.name|as_crispy_field }}
+                </div>
               </div>
+              <div class="text-white">{{ form.email|as_crispy_field}}</div>
+              <div class="text-white">{{ form.phone|as_crispy_field}}</div>
+              <div class="form-row">
+                <div class="form-group col-md mb-0 text-white">
+                  {{ form.company|as_crispy_field}}
+                </div>
+                <div class="form-group col-md mb-0 text-white">
+                  {{ form.subject|as_crispy_field}}
+                </div>
+
+              </div>
+              <div class="text-white">{{ form.message|as_crispy_field }}</div>
+              <button type="submit" class="btn btn-warning ">SUBMIT</button>
+            </form>
           </div>
+        </div>
       </div>
     </div>
 
-    
+
 
 
     <!-- end contact form -->
     {% block footer %}{% include 'footer.html' %}{% endblock footer %}
-  </div>
 </body>
 {% endblock content %}
