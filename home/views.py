@@ -5,13 +5,12 @@ from siteusers.models import Profile
 from flow_blog.models import BlogPost
 from .forms import ContactUsForm
 from django.views.generic  import TemplateView
-from django.views.generic.edit import FormMixin
+
 from django.conf import settings
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 
-# Create your views here.
-
+# Create your views here
 
 # class HomeView(generic.TemplateView):
 #     template_name = 'index.html'
