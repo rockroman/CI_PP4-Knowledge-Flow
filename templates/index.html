@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
+
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
 
@@ -171,6 +173,45 @@
       </div>
     </div>
     <!-- end our team -->
+
+    <!-- contact form -->
+
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-6 col-xl-4">
+              <div class="form-group bg-dark p-5 pl-4 pr-4 rounded">
+                  <form action="" method="POST" enctype="multipart/form-data">
+                      <h3 class="text-center text-warning"> GET IN TOUCH</h3>
+                      {% csrf_token %}
+      
+                      <div class="form-row">
+                          <div class="form-group col-md mb-0 text-white">
+                              {{ form.name|as_crispy_field }}
+                          </div>
+                      </div>
+                      <div class="text-white">{{ form.email|as_crispy_field}}</div>
+                      <div class="text-white">{{ form.phone|as_crispy_field}}</div>
+                      <div class="form-row">
+                          <div class="form-group col-md mb-0 text-white">
+                              {{ form.company|as_crispy_field}}
+                          </div>
+                          <div class="form-group col-md mb-0 text-white">
+                              {{ form.subject|as_crispy_field}}
+                          </div>
+      
+                      </div>
+                      <div class="text-white">{{ form.message|as_crispy_field }}</div>
+                      <button type="submit" class="btn btn-warning ">SUBMIT</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    
+
+
+    <!-- end contact form -->
     {% block footer %}{% include 'footer.html' %}{% endblock footer %}
   </div>
 </body>
