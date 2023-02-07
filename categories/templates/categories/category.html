@@ -71,7 +71,7 @@
                     {% if cat_list.cat == category.name %} 
                     {% if mentor.user != user %} 
                      
-                  <div class="card bg-white p-3 mb-4 shadow">
+                  <div class="card bg-dark p-3 mb-4 shadow">
                       <div class="d-flex justify-content-between mb-4">
                           <div class="user-info d-flex">
                               <div class="user-info__img">
@@ -84,11 +84,11 @@
                                   <!-- <img src="" alt="User Img" class="rounded-circle mr-3"  width="55" height="55"> -->
                               </div>
                               <div class="user-info__basic">
-                                  <h5 class="mb-0">{{ mentor.first_name }}</h5>
-                                  <p class="text-muted mb-0 ml-1">{{ mentor.last_name }}</p>
+                                  <h5 class="mb-0 text-white text-capitalize">{{ mentor.first_name }} {{ mentor.last_name }}</h5>
+                                  <!-- <p class="text-muted mb-0 ml-1"></p> -->
                               </div>
                           </div>
-                          <div class="dropdown open ">
+                          <!-- <div class="dropdown open ">
                               <a href="#" class="px-2 text-dark" id="triggerId1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                   <i class="fa fa-ellipsis-v"></i>
                               </a>
@@ -96,19 +96,24 @@
                                   <a class="dropdown-item" href="#"><i class="fa fa-pencil mr-1"></i> Edit</a>
                                   <a class="dropdown-item text-danger" href="#"><i class="fa fa-trash mr-1"></i> Delete</a>
                               </div>
-                          </div>
+                          </div> -->
                       </div>
                       <!-- <a href="#!"><small>Contact Me</small></a> -->
-                      <span class="h5"><u>Contact Me</u></span>
-                      <h6 class="p mb-0">{{ mentor.email }}</h6>
+
+                      <div class=" mb-0 text-warning"> <u>short bio</u>
+                        <p class="text-white">{{ mentor.bio }}</p>
+
+                      </div>   
+                      <span class="h6 text-warning"><u>Contact</u></span>
+                      <div class="p mb-0 h6 text-white "><em class=" text-warning">email:</em> {{ mentor.email }}</div>
                       <div class="d-flex justify-content-between mt-4">
                           <div>
-                            <small><em>Joined</em></small>
+                            <small class="text-white"><em>Joined</em></small>
                               <h5 class="mb-0">
-                                  <small class="ml-1">{{ mentor.created_on }}</small>
+                                  <small class="ml-1 text-white h6">{{ mentor.created_on }}</small>
                               </h5>
                           </div>
-                          <span class="text-success font-weight-bold">Consult</span>
+                          <!-- <span class="text-success font-weight-bold">Consult</span> -->
                       </div>
               
               </div>

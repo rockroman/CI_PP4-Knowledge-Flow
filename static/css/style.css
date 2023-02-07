@@ -108,7 +108,9 @@ h2,h3{
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
   /* min-height: 350px; */
   /* background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.webp'); */
-  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
+  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp'); */
+  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,q_93,w_1100/v1675369377/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f042ad021dc9.webp');
+  
   background-position: center;
   background-size: cover;
   height: 100%;

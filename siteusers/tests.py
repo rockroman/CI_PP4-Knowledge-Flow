@@ -164,3 +164,13 @@ class TestEditProfilePageView(TestCase):
         response = EditProfilePageView.as_view()(request)
         self.assertEqual(response.status_code, 200)
 
+
+def test_protect_profile_view(self):
+    
+
+   
+   
+    
+    
+
+

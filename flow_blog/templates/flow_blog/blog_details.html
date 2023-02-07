@@ -9,24 +9,45 @@
 
   <div class="row mt-4 justify-content-center">
         <div class="col-md-8 mb-4">
-            <div class="card h-100 bg-dark" >
-            <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" class="  card-img-top">
-            <a href="{% url 'blog_page' %}"><button class="mt-2 btn btn-warning"> Back To Blog Page</button></a>
-            <div class="card-body">
-                    <p class="text-white">{{ post.creator }} | {{ post.created_on }}</p>
-                    <h5 class="card-title"> <div class="text-warning text-capitalize">{{ post.title }}</div> </h5>
-                    {% if user.is_authenticated %}
-                        {% if user == post.creator %}
-                        <a href="{% url 'edit_blog' post.pk %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                          </svg></a>
-                        <button type="button" data-toggle="modal" data-target="#my-{{ post.id }}" class="btn border-0 mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-trash3" viewBox="0 0 16 16">
-                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-                          </svg></button>
-                        {% block blog_modal %}{% include 'blog_modal.html' %}{% endblock blog_modal %}
-                        {% endif %}   
-                    {% endif %}
+            <div class="card h-100 " style="background-color: #090909;" >
+                {% if 'placeholder' in post.cover_image.url %}
+                <!-- <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" width="450" height="250"
+                  class="card-img-top"> -->
+                <img
+                  src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088520/static/images/us-wah-x8HupeZdK7Y-unsplash-cup.5ff494c59c0f.webp"
+                  alt="" class="card-img-top" width="450" height="250">
+                {% else %}
+    
+                {% load cloudinary %}
+                {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image'  %}
+    
+                {% endif %}
+            
+            <div class="card-body pt-1">
+                <h5 class=" h3 card-title text-warning text-capitalize text-center">{{ post.title }} </h5>
+                    <div class="d-flex justify-content-between align-items-centre mb-3">
+                        <div class="text-white m-0 d-flex flex-column">
+                            <p class="text-white mb-0">{{ post.creator }}</p>
+                            <p class="text-white">{{ post.created_on }}</p>
+                            
+                        </div>
+                        <!-- <a href="{% url 'blog_page' %}"><button class="mt-2 btn btn-outline-warning"> Back To Blog Page</button></a> -->
+                    <!-- </div> -->
+                        <div>
+                            {% if user.is_authenticated %}
+                                {% if user == post.creator %}
+                                <a href="{% url 'edit_blog' post.pk %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                </svg></a>
+                                <button type="button" data-toggle="modal" data-target="#my-{{ post.id }}" class="btn border-0 mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-trash3" viewBox="0 0 16 16">
+                                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                                </svg></button>
+                                {% block blog_modal %}{% include 'blog_modal.html' %}{% endblock blog_modal %}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
                     <hr>
                     <p class="card-text text-white">{{ post.body}}</p>
                     <!-- <a href="" class="btn btn-outline-success btn-sm">Read More</a> -->
@@ -35,28 +56,52 @@
             <!--comments-->
         <div class="section ">
                 <div class="container ">
-                    <h4 class="ml-5 text-muted">({{post_comments_count}}) <i class="far fa-comments"></i> Comments </h4>
-                    <div class="row p-3">
+                    <h4 class=" text-muted">({{post_comments_count}}) <i class="far fa-comments"></i> Comments </h4>
+                    <div class="row p-3 ">
                         <div class="col-lg-8 mx-auto ">
                             <!--display coment-->
                             <div class="media-list">
                                 {% for comment in post_comments %}
                                 <div>
                                     <!-- <img class="rounded-circle" width="50" height="50" src="{% static 'images/default.jpg' %}"> -->
-                                    <div class="media-body border bg-outline-primary">
-                                        <div class="small-1 ">
-                                            <img class="rounded-circle" width="30" height="30" src="{% static 'images/default.jpg' %}">
-                                            <b> {{comment.author}}</b>
-                                            <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time>
-                                            <br>
-                                            <hr>
+                                    <div class="media-body rounded  p-2">
+                                        <div class="small-1 pl-2 d-flex justify-content-between">
+                                            <div>
+                                                <img class="rounded-circle" width="40" height="40" src="{% static 'images/default.jpg' %}">
+                                                <b class="text-white"> {{comment.author}} </b>
+                                            </div>
+                                                    <!-- 3 dots menu -->
+                                                <div class="dropdown ">
+                                                    <button style="border:none; background:none; outline:none;" type="button" data-toggle="dropdown">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical text-white" viewBox="0 0 16 16">
+                                                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                          </svg>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                    <li> 
+                                                        <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#my-{{comment.id}}"> 
+                                                            DELETE
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">BBBB BBB</a>
+                                                    </li>
+                        
+                                                    </ul>
+                                                </div>
+                                                    <!-- end 3 dots menu -->
+                                
+                                            
+                                            <!-- <time class="ml-4 opacity-70 small-3 text-white"> {{comment.created}}</time> -->
+                                            <!-- <br> -->
+                                            <!-- <hr> -->
                                             <!-- <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time> -->
                                         </div>
-                                        <p> {{comment.content}}</p>
+                                        <p class="ml-5 text-white pl-1"> {{comment.content}}</p>
                                         {% if request.user ==  comment.author %}
-                                        <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#my-{{comment.id}}"> 
+                                        <!-- <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#my-{{comment.id}}"> 
                                             DELETE
-                                        </button>
+                                        </button> -->
                                         {% block comment_modal %}{% include 'comment_modal.html' %}{% endblock comment_modal %}
                                         {% endif %}
 
@@ -66,13 +111,22 @@
                                 {% endfor %}   
                             </div>
                             <!--display the form-->
-                            <form  method="POST" id="comment_form" autocomplete="off">
+                            <form  method="POST" id="comment_form" autocomplete="off" class="mt-2">
                                 {% csrf_token %}
-                                <div class="form-group">
+                                <div class="form-group d-flex">
                                     {{form}}
+                                    <!-- <button class="btn btn-primary btn-block " type="submit" id="comment-btn"  >Comment</button>  -->
 
+                                
+                                    <div class="d-flex align-items-end">
+                                        <button class="btn-sm bg-success pb-2 pl-2 rounded-circle" type="submit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-cursor-fill"  viewBox="0 0 16 16" style="transform: rotate(45deg)">
+                                                <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <button class="btn btn-primary btn-block " type="submit" id="comment-btn"  >Comment</button>   
+                                <!-- <button class="btn btn-primary btn-block " type="submit" id="comment-btn"  >Comment</button>    -->
                             </form>
                             
                         </div>
