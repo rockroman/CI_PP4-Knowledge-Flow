@@ -84,7 +84,10 @@
                                                         </button>
                                                     </li>
                                                     <li>
-                                                        <a href="#">BBBB BBB</a>
+                                                        <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#updatemy-{{comment.id}}"> 
+                                                            update
+                                                        </button>
+
                                                     </li>
                         
                                                     </ul>
@@ -103,6 +106,7 @@
                                             DELETE
                                         </button> -->
                                         {% block comment_modal %}{% include 'comment_modal.html' %}{% endblock comment_modal %}
+                                        {% block update_comment_modal %}{% include 'update_comment_modal.html' %}{% endblock update_comment_modal %}
                                         {% endif %}
 
                                     </div>
@@ -111,7 +115,7 @@
                                 {% endfor %}   
                             </div>
                             <!--display the form-->
-                            <form  method="POST" id="comment_form" autocomplete="off" class="mt-2">
+                            <form  method="POST" id="comment_form" autocomplete="off" class="mt-2" >
                                 {% csrf_token %}
                                 <div class="form-group d-flex">
                                     {{form}}
@@ -138,6 +142,9 @@
         </div>
   </div>
 </div>
+<script>
+
+</script>
 
 
 

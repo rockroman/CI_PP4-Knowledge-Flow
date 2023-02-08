@@ -5,8 +5,10 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse, resolve, reverse_lazy
 from home.views import home
 from home import views
-from .views import AppUserSetUpProfile, SeeProfilePageView, EditProfilePageView
+from .views import AppUserSetUpProfile, SeeProfilePageView, EditProfilePageView, protect_profile_view
 from .forms import Profileform
+from django.http import HttpRequest
+from http import HTTPStatus
 
 
 # # Create your tests here.
@@ -165,12 +167,65 @@ class TestEditProfilePageView(TestCase):
         self.assertEqual(response.status_code, 200)
 
 
-def test_protect_profile_view(self):
-    
+class TestProtectProfileView(TestCase):
+    # self.factory = RequestFactory()
+    # Create test user
+    @classmethod
+    def setUp(self):
+        self.factory = RequestFactory()
+        # Create test user
+        self.user = User.objects.create(
+            username='NewTestUser2',
+            password='mypass799',
+            email='test@user2.com',
+            id='1',
+        )
+        self.user.save()
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            first_name='Rock2',
+            last_name='Roman2',
+            email='test@user2.com',
+            bio='my biography',
+            role='Student'
 
-   
-   
-    
-    
+        )
+        
 
 
+    def test_protect_profile(self):
+        request = self.factory.get('protect_profile/')
+        request.user = self.user
+        response = protect_profile_view(request)
+        self.assertEqual(response.status_code, 302)
+        # self.assertTemplateUsed('profile_update.html')
+    
+    # def test_protect_profile2(self):
+    #     request = self.factory.get('protect_profile/')
+    #     request.user = self.user
+    #     request.profile = Profile.objects.update(
+    #         user=self.user,
+    #         first_name='Rock2',
+    #         last_name='Roman2',
+    #         email='test@user2.com',
+    #         bio='my biography',
+    #         role='Student'
+
+    #     )
+        
+    #     response = protect_profile_view(request)
+    #     # self.assertEqual(response.status_code, 302)
+    #     self.assertEqual(request.user.profile.role, "Student")
+
+    # ------------- testing Forms
+
+
+class TestProfileForm(TestCase):
+    def setUp(self):
+        self.url = reverse_lazy('see_profile')
+
+    def test_profile_update_page_exists(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 302)
+        
+       

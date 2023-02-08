@@ -12,7 +12,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 
 
-
 # Create your views here.
 class BlogPageView(ListView):
     model = BlogPost
@@ -69,11 +68,11 @@ class AddBlogView(UserPassesTestMixin, CreateView):
     model = BlogPost
     form_class = BlogForm
     template_name = 'flow_blog/add_blog.html'
-    
+
     # extract the user so it can be passed into form
     def get_form_kwargs(self):
         kwargs = super(AddBlogView, self).get_form_kwargs()
-        kwargs['user'] = self.request.user  # pass the 'user' in kwargs 
+        kwargs['user'] = self.request.user  # pass the 'user' in kwargs
         return kwargs
 
     # end
@@ -115,7 +114,7 @@ class UpdateBlogView(UserPassesTestMixin, UpdateView):
 
     def get_form_kwargs(self):
         kwargs = super(UpdateBlogView, self).get_form_kwargs()
-        kwargs['user'] = self.request.user  # pass the 'user' in kwargs 
+        kwargs['user'] = self.request.user  # pass the 'user' in kwargs
         return kwargs
 
     def form_valid(self, form):
@@ -128,8 +127,6 @@ class UpdateBlogView(UserPassesTestMixin, UpdateView):
 
     def handle_no_permission(self):
         return redirect('protect_profile')
-
-
 
 
 @login_required
@@ -153,3 +150,47 @@ def delete_comment(request, comment_id):
     else:
         messages.error(request, "CAN'T DELETE COMMENT(YOU ARE NOT CREATOR) ")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+# def update_comment(request, comment_id):
+#     # users_comment = get_object_or_404(Comment, id=comment_id)
+#     if request.user.id == users_comment.author.id:      
+#         if request.method == 'POST':
+#             users_comment = get_object_or_404(Comment, id=comment_id)
+#             updatet_content = request.POST['content']
+#             users_comment.content = updatet_content
+#             users_comment.save()
+#             messages.success(request, 'COMMENT IS UPDATED')
+#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+#     else:
+#         messages.error(request, "CAN'T UPDATE COMMENT(YOU ARE NOT CREATOR) ")
+#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def update_comment(request,comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    form = CommentForm(instance=comment)
+    if request.method != 'POST':
+        form = CommentForm(instance=comment, user=request.user)
+        return HttpResponse(form.as_p())
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'COMMENT IS UPDATED')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        messages.error(request, "CAN'T UPDATE COMMENT(YOU ARE NOT CREATOR) ")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))  
+
+
+# class UpdateCommentView(UpdateView):
+#     model=Comment
+#     form_class = CommentForm
+#     fields=['content']
+#     template_name = 'flow_blog/update_comment_modal.html'
+
+#     def form_valid(self, form):
+#         form.instance.author == self.request.user
+#         comment = form.instance
+#         return super().form_valid(form)

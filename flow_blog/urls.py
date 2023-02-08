@@ -4,7 +4,7 @@ from . import views
 from .views import (
     BlogPageView, BlogDetailView,
     AddBlogView, UpdateBlogView,
-    delete_comment
+    delete_comment,  # UpdateCommentView
 
     # CommentDeleteView   # delete_blog
     )
@@ -19,5 +19,12 @@ urlpatterns = [
     path(
         'delete_comment/<int:comment_id>/',
         views.delete_comment, name='delete_comment'),
+    
     path('delete_blog/<int:post_id>/', views.delete_blog, name='delete_blog'),
+    path(
+        'update_comment/<int:comment_id>/',
+        views.update_comment, name='update_comment'),
+    # path(
+    #     'update_comment/<int:comment_id>/',
+    #     UpdateCommentView.as_view(), name='update_comment'),
 ]
