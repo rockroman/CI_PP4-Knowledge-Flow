@@ -53,6 +53,10 @@
                     <!-- <a href="" class="btn btn-outline-success btn-sm">Read More</a> -->
                     
             </div>
+            <!-- sliding element -->
+           
+
+            <!-- end sliding element -->
             <!--comments-->
         <div class="section ">
                 <div class="container ">
@@ -64,7 +68,7 @@
                                 {% for comment in post_comments %}
                                 <div>
                                     <!-- <img class="rounded-circle" width="50" height="50" src="{% static 'images/default.jpg' %}"> -->
-                                    <div class="media-body rounded  p-2">
+                                    <div class="media-body rounded  p-2" >
                                         <div class="small-1 pl-2 d-flex justify-content-between">
                                             <div>
                                                 <img class="rounded-circle" width="40" height="40" src="{% static 'images/default.jpg' %}">
@@ -72,8 +76,8 @@
                                             </div>
                                                     <!-- 3 dots menu -->
                                                 <div class="dropdown ">
-                                                    <button style="border:none; background:none; outline:none;" type="button" data-toggle="dropdown">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical text-white" viewBox="0 0 16 16">
+                                                    <button style="border:none; background:none; outline:none;" type="button" data-toggle="dropdown" id="treeDots">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots-vertical text-white treeDots" viewBox="0 0 16 16">
                                                             <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                                                           </svg>
                                                     </button>
@@ -84,7 +88,7 @@
                                                         </button>
                                                     </li>
                                                     <li>
-                                                        <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#updatemy-{{comment.id}}"> 
+                                                        <button  class=" btn btn-danger btn-sm mt-1 mb-1 update" data-toggle="modal" data-target="#updatemy-{{comment.id}}" id="tree" > 
                                                             update
                                                         </button>
 
@@ -92,6 +96,7 @@
                         
                                                     </ul>
                                                 </div>
+                                            
                                                     <!-- end 3 dots menu -->
                                 
                                             
@@ -100,7 +105,7 @@
                                             <!-- <hr> -->
                                             <!-- <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time> -->
                                         </div>
-                                        <p class="ml-5 text-white pl-1"> {{comment.content}}</p>
+                                        <p class="ml-5 text-white pl-1" id="comment-body"> {{comment.content}} </p>
                                         {% if request.user ==  comment.author %}
                                         <!-- <button  class="btn btn-danger btn-sm mt-1 mb-1" data-toggle="modal" data-target="#my-{{comment.id}}"> 
                                             DELETE
@@ -115,7 +120,7 @@
                                 {% endfor %}   
                             </div>
                             <!--display the form-->
-                            <form  method="POST" id="comment_form" autocomplete="off" class="mt-2" >
+                            <form  method="POST" id="comment_form" autocomplete="off" class="mt-2" data-url="{% url 'blog_details' post.pk %}">
                                 {% csrf_token %}
                                 <div class="form-group d-flex">
                                     {{form}}
@@ -123,7 +128,7 @@
 
                                 
                                     <div class="d-flex align-items-end">
-                                        <button class="btn-sm bg-success pb-2 pl-2 rounded-circle" type="submit">
+                                        <button class="btn-sm bg-success pb-2 pl-2 rounded-circle" type="submit" id="commentButton">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-cursor-fill"  viewBox="0 0 16 16" style="transform: rotate(45deg)">
                                                 <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
                                             </svg>
@@ -143,7 +148,9 @@
   </div>
 </div>
 <script>
-
+function show(){
+  document.querySelector('#sidebar').classList.toggle('active')
+}
 </script>
 
 

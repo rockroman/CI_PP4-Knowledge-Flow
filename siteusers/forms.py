@@ -14,10 +14,11 @@ class Profileform(forms.ModelForm):
         self.fields['website_url'].required = False
         self.fields['linkedIn_url'].required = False
         self.helper.add_input(Submit('submit', 'SET PROFILE'))
-        try:
-            self.fields['email'].initial = self.instance.user.email
-        except User.DoesNotExist:
-            pass
+        self.fields['email'].initial = self.instance.user.email
+        # try:
+        #     self.fields['email'].initial = self.instance.user.email
+        # except User.DoesNotExist:
+        #     pass
 
     email = forms.EmailField(label="Primary email")
     category = forms.ModelMultipleChoiceField(

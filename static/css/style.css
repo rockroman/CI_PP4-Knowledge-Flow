@@ -261,9 +261,26 @@ h2,h3{
 
 
 /* profile page syles */
-.breadcrumb{
+/* .breadcrumb{
     background-color: rgb(14, 14, 88);
     
+} */
+
+#top-plate{
+  background-color: rgb(14, 14, 88);
+  height: 45px;
+
+  display: flex; 
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem; 
+  border-radius: .25rem;
+  
+} 
+
+.my-profile-card{
+  max-height: 500px;
+  overflow: auto;
 }
 
 /* end profile page syles */
@@ -378,5 +395,10 @@ h2,h3{
 	border: 3px solid rgb(10, 10, 10);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+
 
 
