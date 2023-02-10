@@ -21,12 +21,12 @@
     
     <div class="row">
       <div class="col-sm-6">
-        
-        <!-- <img src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676052457/knwjvchxliabsbylfjea.webp" alt="FAQ" class="img-fluid" width="740" height="590"> -->
-        
+        {% if 'placeholder' in category.category_image.url %}
+        <img src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676052457/knwjvchxliabsbylfjea.webp" alt="FAQ" class="img-fluid" width="740" height="590">
+        {% else %}
         {% load cloudinary %}
         {% cloudinary category.category_image  format="WebP" width=740 height=590 crop='fill'   class='cat_image' %}
-      
+        {% endif %}
       </div>
       <div class="col-sm-6">
         <div id="accordion">
