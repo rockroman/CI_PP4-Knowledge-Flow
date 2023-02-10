@@ -4,6 +4,11 @@ for (let image of images){
   image.classList.add("card-img-top");
 }
 
+let Catimages = document.querySelectorAll('.cat_image');
+for (let image of Catimages){
+  image.classList.add("img-fluid");
+}
+
 // $(document).ready(function(){
 
 
@@ -20,23 +25,7 @@ for (let image of images){
 //   });
 // });
 
-// $(document).ready(function(){
 
-
-//   $('.treeDots').click(function(){
-//     let serializedData = 
-//     $('#comment-body').html();
-//     console.log(serializedData);
-
-//     $('#comment-text').html(serializedData);
-    
-
-   
-
-    
-    
-//   });
-// });
 
 
 // $('.updateBtn').on('click', function (event) {

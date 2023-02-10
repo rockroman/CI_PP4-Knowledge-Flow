@@ -12,6 +12,8 @@
 <section class="main-content">
   <div class="container">
     <h1 class="text-center text-uppercase text-primary">{{ cat_list.cat }}</h1>
+    {% for category in category_list %}
+      {% if cat_list.cat == category.name %}
     
     <h2 class=" h3 text-center text-white mb-5">Learn to Take control,Maintain your own money</h2>
     <br>
@@ -19,7 +21,12 @@
     
     <div class="row">
       <div class="col-sm-6">
-        <img src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674864046/static/images/personal_finance_Mohamed%20Hassan_small.d8b20188740d.png" alt="FAQ" class="img-fluid" width="740" height="590">
+        
+        <!-- <img src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676052457/knwjvchxliabsbylfjea.webp" alt="FAQ" class="img-fluid" width="740" height="590"> -->
+        
+        {% load cloudinary %}
+        {% cloudinary category.category_image  format="WebP" width=740 height=590 crop='fill'   class='cat_image' %}
+      
       </div>
       <div class="col-sm-6">
         <div id="accordion">
@@ -32,10 +39,13 @@
             </div>					  
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="accordion-card__body text-white">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi praesentium ipsam itaque nemo harum aut
+                <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi praesentium ipsam itaque nemo harum aut
                 obcaecati. Distinctio explicabo veniam debitis quam repudiandae nesciunt possimus quis asperiores
                 voluptatum nulla voluptate labore, facere expedita dolorem libero, ipsam nobis adipisci reprehenderit? Vel
-                assumenda tempore ad quaerat unde, fugit eos voluptate, atque voluptatem neque ullam.
+                assumenda tempore ad quaerat unde, fugit eos voluptate, atque voluptatem neque ullam. -->
+                
+                {{ category.description }}
+                
 
               </div>
             </div>
@@ -56,6 +66,9 @@
               </div>
             </div>
           </div>
+            {% endif %}
+          {% endfor %}
+
           <div class="accordion-card mb-3">
             <div class="accordion-card__header collapsed  bg-dark  p-2 pl-3" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               <h5 class="mb-0">
