@@ -55,6 +55,7 @@ class EditProfilePageView(LoginRequiredMixin, generic.UpdateView):
 class DeleteAppUser(LoginRequiredMixin, generic.DeleteView):
     model = User
     template_name = 'delete_profile.html'
+    # template_name = 'delete_profile_modal.html'
 
     def get_object(self, *args, **kwargs):
         return self.request.user

@@ -1,6 +1,5 @@
-
-{% block update_comment_modal %}
-  <div class="modal fade" id="updatemy-{{comment.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{% block delete_profile_modal %}
+  <div class="modal fade" id="profile_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header flex-column align-items-center">
@@ -14,11 +13,11 @@
           Do you really want to Delete this comment?
         </div> -->
         <div class="modal-footer justify-content-center">
-            <form action="{% url 'update_comment' comment.id  %}" method="POST" enctype="multipart/form-data" class="modal-body">
+            <form action="{% url 'delete_profile' %}" method="POST" enctype="multipart/form-data" class="modal-body">
               <!-- <form  method="POST" > -->
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button class="btn btn-success" id="comment-done">update</button>
+                
+                <button class="btn btn-danger" type="submit">Delete</button>
             </form>
            
             <button type="submit" class="btn btn-primary go-back" data-dismiss="modal">Go back</button>
@@ -27,5 +26,4 @@
     </div>
 </div>
 
-{% endblock update_comment_modal %}
-
+{% endblock delete_profile_modal %}

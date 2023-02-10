@@ -169,9 +169,9 @@ def delete_comment(request, comment_id):
 def update_comment(request,comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     form = CommentForm(instance=comment)
-    if request.method != 'POST':
-        form = CommentForm(instance=comment, user=request.user)
-        return HttpResponse(form.as_p())
+    # if request.method != 'POST':
+    #     form = CommentForm(instance=comment, user=request.user)
+    #     return HttpResponse(form.as_p())
     
     if request.method == 'POST':
         form = CommentForm(request.POST, instance=comment)

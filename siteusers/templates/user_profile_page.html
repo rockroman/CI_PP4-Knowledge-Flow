@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block content %}
+
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
 <h1 class="col-12 text-center text-white"> {{ user }}'s Profile</h1>
@@ -32,16 +33,14 @@
                           <p class="text-secondary mb-1">Full Stack Developer</p>
                           <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                           <button class="btn btn-primary m-2"><a class=" text-white" href="{% url 'edit_profile' %}">Update profile</a></button>
-                          <button class="btn btn-danger m-2"><a class=" text-white" href="{% url 'delete_profile' %}">Delete profile</a></button>
+                          <button class="btn btn-danger m-2 "><a class=" text-white" href="{% url 'delete_profile' %}">Delete profile</a></button>
                           <!-- <button class="btn btn-outline-primary">Message</button>  -->
+                          
                           </div>
                       </div>
                   </div>
               </div>
           </div>
-
-
-
 
 
 
@@ -177,7 +176,7 @@
                   </div>
                 </div>
               </div>-->
-
+       
  {% block footer %}{% include 'footer.html' %}{% endblock footer %}
 
 {% endblock content %} 

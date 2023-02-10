@@ -20,32 +20,125 @@ for (let image of images){
 //   });
 // });
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
 
-  $('.treeDots').click(function(){
-    let serializedData = 
-    $('#comment-body').html();
-    console.log(serializedData);
+//   $('.treeDots').click(function(){
+//     let serializedData = 
+//     $('#comment-body').html();
+//     console.log(serializedData);
 
-    $('#comment-text').html(serializedData);
+//     $('#comment-text').html(serializedData);
     
 
    
 
     
     
-  });
-});
+//   });
+// });
 
 
-// $('.comment-cont').on('click', function (event) {
+// $('.updateBtn').on('click', function (event) {
 //   if (event.target = this) {
-//     console.log('You clicked a container');
-//     // var par = $(event.target).parent();
+//     // console.log('You clicked btn');
+//     var par = $(event.target).parent();
+//     // console.log(par);
 //     // console.log(par);
     
-
+//     console.log(par.children('#comment-body').html());
+//     let oldComment= par.children('#comment-body').html();
+//     $('#comment-text').html(oldComment)
+//     // par.children('#comment-text').html(oldComment)
+//     //  let last =par.children().last()
+//     //  console.log(last);
+//     //  console.log(last.children(":first-child"))
+//     // last.children('.modal-body').html('nono')
+//     // last.children('#comment-text').html('nono')
+    
+  
  
 //   }
 // });
+
+
+// $('.updateBtn').on('click', function (event) {
+//   if (event.target = this) {
+    
+//     var par = $(event.target).parent();
+
+    
+//     console.log(par.children('#comment-body').html());
+//     let oldComment= par.children('#comment-body').html();
+//     $('.modal-body').each(function(){
+//     $('#comment-text').html(oldComment)
+//     });
+ 
+    
+  
+ 
+//   }
+// });
+
+// $('.updateBtn').each(function(){
+//   $(this).on("click", function(event){
+//     if (event.target = this) {
+    
+//       var par = $(event.target).parent();
+  
+      
+//       console.log(par.children('#comment-body').html());
+//       let oldComment= par.children('#comment-body').html();
+//       $('.modal-body').each(function(){
+//       $('.md-textarea').html(oldComment)
+//       });
+   
+      
+    
+   
+//     }
+
+//   });
+// });
+$('.updateBtn').each(function(){
+  $(this).on("click", function(event){
+    if (event.target = this) {
+    
+      var par = $(event.target).parent();
+  
+      
+      console.log(par.children('#comment-body').html());
+      let oldComment= par.children('#comment-body').html();
+      $('.modal-body').each(function(){
+      $('.md-textarea').html(oldComment)
+      }); 
+    
+    }
+
+
+
+  });
+  $('#comment-done').on('click', function(){
+    $('.md-textarea').html('')
+    
+
+  })
+
+});
+
+// $('.go-back').each(function(){
+
+//   $(this).on('click', function(event){
+//     if(event.target = this){
+//       $('.md-textarea').html('');
+
+//     }
+  
+  
+//   });
+
+// });
+
+
+
+

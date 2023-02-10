@@ -4,17 +4,19 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-    <h1 class="col-12 text-center"> {{ user }}'s Profile</h1>
-   
-    <div class="container">
-        <form action="" method="POST">
+    <h1 class="col-12 text-center p-4 text-white"> {{ user }}'s Profile</h1>
+    <p  class="text-white text-center">Are you sure you wnt to delete your profile</p>
+    <div class="container col-3 bg-dark d-flex justify-content-center p-4">
+        <form action="" method="POST" class="bg-dark ">
             {% csrf_token %}
-            <p>Are you sure you wnt to delete your profile</p>
+            <!-- <p  class="text-white text-center">Are you sure you wnt to delete your profile</p> -->
             <button class="btn btn-danger" type="submit">Delete</button>
-            <button class="btn btn-primary" ><a  class="text-white" href="{% url 'see_profile' %}">Go Back</a></button> 
+             
         </form>
+        <div class="">
+            <button class="btn btn-primary" ><a  class="text-white" href="{% url 'see_profile' %}">Go Back</a></button>
+        </div>
     </div>  
     
-
 
 {% endblock content %}
