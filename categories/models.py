@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-# Create your models here.
 class LearningCategory(models.Model):
     maker = models.ForeignKey(User, on_delete=models.PROTECT)
     name = models.CharField(max_length=50)

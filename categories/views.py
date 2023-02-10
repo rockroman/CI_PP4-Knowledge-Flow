@@ -6,8 +6,6 @@ from . models import LearningCategory
 from flow_blog.models import BlogPost
 from siteusers.models import Profile
 
-# Create your views here.
-
 
 class LearningCategoryListView(LoginRequiredMixin, ListView):
     template_name = 'categories/category.html'
@@ -20,21 +18,6 @@ class LearningCategoryListView(LoginRequiredMixin, ListView):
                 category__name=self.kwargs['category'])
         }
         return content
-
-# class LearningCategoryListView(LoginRequiredMixin, ListView):
-#     template_name = 'categories/category.html'
-#     context_object_name = 'cat_list'
-
-#     def get_queryset(self):
-#         content = {
-#             'cat': self.kwargs['category'],
-#             'posts': BlogPost.objects.filter(
-#                 category__name=self.kwargs['category']),
-#             'mentor': Profile.objects.filter(
-#                 category__name=self.kwargs['category']
-#             )
-#         }
-#         return content
 
 
 def list_of_categories(request):
