@@ -89,8 +89,8 @@ h2,h3{
 
 /* Hero section-------------------- */
 #hero{
-  height: 90vh;
-  /* height: 100vh; */
+  /* height: 90vh; */
+  height: 100vh;
 }
 .hero-text{
   color: #378cf4f8;
@@ -129,7 +129,7 @@ h2,h3{
 
 @media screen and (max-width: 650px){
   .headline {
-    left: 20px;
+    /* left: 20px; */
   } 
   .clipped {
     background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');

@@ -11,8 +11,8 @@
   <section class="container-fluid">
     <div class="row">
       <div class="d-sm-flex align-items-center justify-content-between w-100" id="hero">
-        <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline ">
-          <h1 class=" my-4 font-weight-bold mr-2 hero-text">your knowledge <span class="hero-text">is the key</span>
+        <div class="col-md-4 col-sm mb-4 mb-sm-0 pl-5">
+          <h1 class=" my-4 font-weight-bold  hero-text ">your knowledge <span class="hero-text">is the key</span>
           </h1>
           <a href="{% url 'account_login' %}"
             class="btn btn-success  px-5 py-3  font-weight-bold text-uppercase text-black-50 mt-3 mt-sm-0 ">Get
@@ -165,25 +165,41 @@
   <!-- <section class="bg-gray-40"> -->
     <div class="container-fluid h-100" style="background-color:#040831;">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-6 col-xl-6">
+        <div class="col-md-6 col-xl-4">
+
           <div class="card quote-card text-white" id="quote">
             <div class="card-body p-5">
               <i class="fas fa-quote-left fa-2x mb-4"></i>
+
               <!-- <h5 class="lead">Genius is one percent inspiration and ninety-nine percent perspiration.</h5> -->
               <!-- <h5 class="lead">Knowledge is not just about what we know, but about how we think.</h5> -->
+
               <h5 class="lead">The pursuit of knowledge is a noble task, and the more we learn, the more the journey becomes its own reward.</h5>
               <hr>
               <div class="d-flex justify-content-between">
+
                 <!-- <p class="mb-0">Thomas Edison</p> -->
                 <!-- <p class="mb-0">Richard Feynman</p> -->
+
                 <p class="mb-0">Stephen Hawking</p>
               </div>
             </div>
           </div>
+
+          <!-- <div class="card quote-card text-white" id="quote">
+            <div class="card-body p-5">
+
+              <img src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676071275/hieg59wk6idevhcantjc.webp" alt="" id="logo-bottom" class="img-fluid" width="590" height="300">
+              
+
+              
+            </div>
+          </div> -->
+
         </div>
-        <article class="col-md-6 col-xl-6 p-5">
-          <h5 class="text-white"> ABOUT US</h5>
-          <p style="max-width: 350px;" class="text-white">
+        <article class="col-md-6 col-xl-6 p-5 d-flex flex-column align-items-center">
+          <h5 class="text-white ml-5"> ABOUT US</h5>
+          <p style="max-width: 350px;" class="text-white ml-5">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
             type specimen book. It has
@@ -221,35 +237,76 @@
   <!-- contact form -->
 
   <div class="container-fluid" id="about">
-    <div class="row">
-      <div class="col-md-6 col-xl-4">
-        <div class="form-group bg-dark p-5 pl-4 pr-4 rounded">
-          <form  method="POST" enctype="multipart/form-data">
-            <h3 class="text-center text-warning"> GET IN TOUCH</h3>
-            {% csrf_token %}
+      <div class="row d-flex justify-content-center align-items-center ">
+        <!-- old form -->
+            <!-- <div class="col-md-6 col-xl-4">
+              <div class="form-group bg-dark p-5 pl-4 pr-4 rounded" >
+                <form  method="POST" enctype="multipart/form-data" >
+                  <h3 class="text-center text-warning"> GET IN TOUCH</h3>
+                  {% csrf_token %}
 
+                  <div class="form-row">
+                    <div class="form-group col-md mb-0 text-white">
+                      {{ form.name|as_crispy_field }}
+                    </div>
+                  </div>
+                  <div class="text-white">{{ form.email|as_crispy_field}}</div>
+                  <div class="text-white">{{ form.phone|as_crispy_field}}</div>
+                  <div class="form-row">
+                    <div class="form-group col-md mb-0 text-white">
+                      {{ form.company|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md mb-0 text-white">
+                      {{ form.subject|as_crispy_field}}
+                    </div>
+
+                  </div>
+                  <div class="text-white">{{ form.message|as_crispy_field }}</div>
+                  <button type="submit" class="btn btn-warning ">SUBMIT</button>
+                </form>
+              </div>
+            </div> -->
+        <!-- end old form -->
+
+        <!-- new form -->
+        <div class="col-md-6 col-xl-4 bg-dark ">
+          <form method="post" enctype="multipart/form-data" class="p-3">
+            {% csrf_token %}
             <div class="form-row">
-              <div class="form-group col-md mb-0 text-white">
+              <div class="form-group col-md-6 mb-0">
                 {{ form.name|as_crispy_field }}
               </div>
+              <div class="form-group col-md-6 mb-0">
+                {{ form.email|as_crispy_field }}
+              </div>
             </div>
-            <div class="text-white">{{ form.email|as_crispy_field}}</div>
-            <div class="text-white">{{ form.phone|as_crispy_field}}</div>
             <div class="form-row">
-              <div class="form-group col-md mb-0 text-white">
-                {{ form.company|as_crispy_field}}
+              <div class="form-group col-md-6 mb-0">
+                {{ form.phone|as_crispy_field }}
               </div>
-              <div class="form-group col-md mb-0 text-white">
-                {{ form.subject|as_crispy_field}}
+              <div class="form-group col-md-6 mb-0">
+                {{ form.company|as_crispy_field }}
               </div>
-
+              <!-- {{ form.subject|as_crispy_field }} -->
             </div>
-            <div class="text-white">{{ form.message|as_crispy_field }}</div>
-            <button type="submit" class="btn btn-warning ">SUBMIT</button>
+            <div class="form-row">
+              {{ form.message|as_crispy_field }}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Sign in</button>
           </form>
         </div>
+
+        <!-- end new form -->
+
+          <div class="col-md-6 col-xl-8">
+              <div class="card-body p-5">
+
+                <img src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676071275/hieg59wk6idevhcantjc.webp" alt="" id="logo-bottom" class="img-fluid" width="590" height="300">
+                
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 
 
