@@ -5,7 +5,8 @@ from flow_blog.models import BlogPost
 
 
 class TestCategoryView(TestCase):
-    def setUp(self,**kwargs):
+    @classmethod
+    def setUp(self):
         # creating and saving a new test user
 
         self.user = User.objects.create(
@@ -23,23 +24,17 @@ class TestCategoryView(TestCase):
             start_quote='Reading is the key'
         )
         test_category.save()
-        # content = {
-        #     'cat': 'Reading',
-        #     'posts': BlogPost.objects.filter(category__name='Reading')
-        # }        
-        # post = BlogPost.objects.filter(category__name='Reading') 
+        post = BlogPost.objects.filter(category__name=test_category.name)
 
-
-        
-    # def test_the_response_code(self):
-    #     # creating a client
-    #     self.factory = RequestFactory()
-    #     request = self.factory.get('category/<category>/')
-    #     request.user = self.user
-    #     # qs = LearningCategoryListView.get_queryset(self)
-    #     response = LearningCategoryListView.as_view()(request)
-    #     self.assertEqual(response., 2)
-        
+    def test_the_queryset_return(self):
+        # creating the client
+        self.factory = RequestFactory()
+        request = self.factory.get('category/<category>/')
+        # instantiating a view
+        view = LearningCategoryListView()
+        view.kwargs = {'category': 'test_category'}
+        qs = view.get_queryset()
+        self.assertEqual(qs['cat'], 'test_category')
 
     def test_is_the_right_template_used(self):
         # creating a client
