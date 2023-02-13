@@ -7,4 +7,6 @@ class ContactUsForm(forms.Form):
     phone = forms.CharField(max_length=20, required=False)
     company = forms.CharField(max_length=50, required=False)
     subject = forms.CharField(max_length=50, required=True)
-    message = forms.CharField(widget=forms.Textarea(), required=True)
+    message = forms.CharField(widget=forms.Textarea(
+        attrs={"rows": 4}
+    ), required=True)
