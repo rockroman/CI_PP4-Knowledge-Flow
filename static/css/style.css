@@ -309,7 +309,7 @@ h2,h3{
   font-size: 1.2rem;
 }
 
-.social-link:hover, .social-link:focus {
+.social-link:hover{
   background: rgb(12, 12, 14);
   text-decoration: none;
   color: rgb(20, 103, 228);

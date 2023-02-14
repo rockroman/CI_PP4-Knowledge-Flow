@@ -3,6 +3,7 @@ from siteusers.models import Profile, User
 from .models import BlogPost, Comment
 from .views import BlogDetailView,AddBlogView
 from django.contrib.auth.models import AnonymousUser
+from .forms import BlogForm
 
 
 class TestBlogDetailView(TestCase):
@@ -41,8 +42,8 @@ class TestBlogDetailView(TestCase):
         self.assertEqual(response.status_code, 302)
       
 
-
 class TestAddBlogView(TestCase):
+    @classmethod
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create(
@@ -62,7 +63,36 @@ class TestAddBlogView(TestCase):
         )        
 
         self.post = BlogPost.objects.create(
-            creator= self.user,
+            creator=self.user,
             title='my test'
         )
+    def test_get_from_kwargs(self):
+        self.factory = RequestFactory()
+        # request = self.factory.post('blog/add_blog/', {
+        #     'title': 'Rocky new',
+        #     'creator': self.user,
+        #     'body': 'text of blog'
+           
+
+        # })
+        request = self.factory.get('')
+        request.user = self.user
+        view = AddBlogView()
+        view.request = request
+        # response = view(request)
+        kwargs = view.get_form_kwargs()
+        # self.assertEqual(response.status_code, 302)
+        self.assertIn('user', kwargs)
+        self.assertEqual(kwargs['user'], self.user)
+        
+        
+        
+        
+        
+
+
+      
+
+
+
 

@@ -31,6 +31,6 @@ class TestBlogForm(TestCase):
         )
 
     def test_that_title_is_required(self):
-        form = BlogForm(data= {'title': ''})
+        form = BlogForm(data={'title': ''})
         self.assertFalse(form.is_valid())
 
