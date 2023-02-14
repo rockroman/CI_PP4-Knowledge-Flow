@@ -32,16 +32,39 @@ h2,h3{
 }
 /*end general styles */
 
-/* sign up  style  */
+/* authentication pages styles */
+
+
+/* sign up and login styles   */
 .authentication-title{
     color: black;
 }
 
-#signup-body{
+#account-body{
   background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg');
+ height: 100vh;
+ width: 100vw;
   
 }
-/* sign up and login style  */
+
+.account{
+  color: #01092def;
+
+}
+/* end sign up and login style  */
+
+/* profile delete styles */
+
+.delete-profile{
+  max-width: 350px;
+}
+
+/* end profile delete styles */
+
+
+
+
+/* end authentication pages styles */
 
 /* nav-bar styles */
 

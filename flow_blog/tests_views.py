@@ -1,7 +1,7 @@
 from django.test import TestCase, Client, RequestFactory
 from siteusers.models import Profile, User
 from .models import BlogPost, Comment
-from .views import BlogDetailView,AddBlogView
+from .views import BlogDetailView, AddBlogView
 from django.contrib.auth.models import AnonymousUser
 from .forms import BlogForm
 
@@ -29,7 +29,7 @@ class TestBlogDetailView(TestCase):
         )
 
     def test_test_function(self):
-        
+
         self.factory = RequestFactory()
         request = self.factory.get('blog/blog/<int:pk>')
         request.user = self.user
@@ -37,10 +37,10 @@ class TestBlogDetailView(TestCase):
         view = BlogDetailView()
         view.request = request
         client = Client()
-        
+
         self.client.force_login(self.user)
         self.assertEqual(response.status_code, 302)
-      
+
 
 class TestAddBlogView(TestCase):
     @classmethod
@@ -60,19 +60,19 @@ class TestAddBlogView(TestCase):
             bio='my biography',
             role='Student'
 
-        )        
+        )
 
         self.post = BlogPost.objects.create(
             creator=self.user,
             title='my test'
         )
+
     def test_get_from_kwargs(self):
         self.factory = RequestFactory()
         # request = self.factory.post('blog/add_blog/', {
         #     'title': 'Rocky new',
         #     'creator': self.user,
         #     'body': 'text of blog'
-           
 
         # })
         request = self.factory.get('')
@@ -84,15 +84,3 @@ class TestAddBlogView(TestCase):
         # self.assertEqual(response.status_code, 302)
         self.assertIn('user', kwargs)
         self.assertEqual(kwargs['user'], self.user)
-        
-        
-        
-        
-        
-
-
-      
-
-
-
-

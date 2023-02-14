@@ -3,6 +3,7 @@ from siteusers.models import Profile, User
 from .models import BlogPost, Comment
 from .forms import BlogForm
 
+
 class TestBlogForm(TestCase):
     @classmethod
     def setUp(self):
@@ -21,10 +22,10 @@ class TestBlogForm(TestCase):
             bio='my biography',
             role='Student'
 
-        )        
+        )
 
         self.post = BlogPost.objects.create(
-            creator= self.user,
+            creator=self.user,
             title='my test',
             body='My test text',
             cover_image='placeholder'
@@ -33,4 +34,3 @@ class TestBlogForm(TestCase):
     def test_that_title_is_required(self):
         form = BlogForm(data={'title': ''})
         self.assertFalse(form.is_valid())
-
