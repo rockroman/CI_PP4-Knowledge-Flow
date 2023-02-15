@@ -233,6 +233,10 @@ h2,h3{
   color: #ffffff;
 }
 
+.loginform > a{
+  color: #378cf4f8;
+}
+
 .contact{
   background-color: #01092def;
 

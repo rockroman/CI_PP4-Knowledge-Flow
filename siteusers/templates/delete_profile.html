@@ -4,18 +4,16 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-    <h1 class="col-12 text-center  text-white"> {{ user }}'s Profile</h1>
-    <p  class="text-white text-center">Are you sure you wnt to delete your profile</p>
-    <h2 class="h5 text-white text-center">You wont be able to register with same username </h2>
+    <h1 class="h3 col-12 text-center text-white mt-3 mb-4"> Are you sure you want to delete your Profile</h1>
+    <h2 class="h5 text-white text-center mt-3">You wont be able to register with same username </h2>
     <div class="container bg-dark p-4 delete-profile">
-        <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-around" >
             <form action="" method="POST" class="bg-dark  ">
                 {% csrf_token %}
-                <!-- <p  class="text-white text-center">Are you sure you wnt to delete your profile</p> -->
-                <button class="btn btn-danger" type="submit">Delete</button>
+                <button class="btn btn-danger font-weight-bold" type="submit">Delete</button>
             
             </form>
-            <button class="btn btn-primary" ><a  class="text-white" href="{% url 'see_profile' %}">Go Back</a></button>
+            <a class="text-dark btn  btn-success  font-weight-bold" href="{% url 'see_profile' %}" style="background-color: #59cb57;">Go Back</a>
         </div>
         
             
