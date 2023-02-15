@@ -229,11 +229,11 @@ h2,h3{
 /* end midle section styles--------------------------- */
 
 
-.loginform{
+.formlabel{
   color: #ffffff;
 }
 
-.loginform > a{
+.formlabel > a{
   color: #378cf4f8;
 }
 

@@ -24,7 +24,7 @@
             <div class="row mb-2 pl-3">
                 <img  class="rounded-circle" width="80" src="{% static 'images/default.jpg' %}">
             </div>
-            <form action="" method="POST" enctype="multipart/form-data" class="loginform">
+            <form action="" method="POST" enctype="multipart/form-data" class="formlabel">
                 {% csrf_token %}
                 <!-- {% crispy form %} -->
                 {{ form.image }}

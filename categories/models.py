@@ -1,10 +1,21 @@
+"""
+A module for Categories models
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class LearningCategory(models.Model):
+    """
+    Categories model used as a choice of every
+    user to learn from and write about it
+    """
     maker = models.ForeignKey(User, on_delete=models.PROTECT)
     name = models.CharField(max_length=50)
     category_image = CloudinaryField('image', default='placeholder')

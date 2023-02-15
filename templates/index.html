@@ -370,7 +370,7 @@
       <h3 class="text-lg-left text-white">CONTACT US</h3>
       <div class="">
         <div class="card-body bg-dark">
-          <form method="POST" class="loginform">
+          <form method="POST" class="formlabel">
             {% csrf_token %}
             {{ form.name|as_crispy_field }}
             {{ form.email|as_crispy_field }}
