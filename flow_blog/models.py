@@ -1,13 +1,24 @@
+"""
+A module for flow_blog models
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-from siteusers.models import LearningCategory
 from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
+# Internal:
+from siteusers.models import LearningCategory
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-# Create your models here.
 class BlogPost(models.Model):
+    """
+    BlogPost model used for each
+    blog uploaded by the user
+    """
     title = models.CharField(max_length=200, unique=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(
@@ -34,6 +45,9 @@ class BlogPost(models.Model):
 
 
 class Comment(models.Model):
+    """
+     model for users Comments
+    """
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     blogpost = models.ForeignKey(

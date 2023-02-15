@@ -1,12 +1,23 @@
+"""
+A module for siteusers models
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
+# Internal:
 from categories.models import LearningCategory
-# Create your models here.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class Profile(models.Model):
+    """
+    Profile model used as an account
+    for each registered user
+    """
     ROLE = (
         ('Mentor', 'Mentor'),
         ('Student', 'Student')

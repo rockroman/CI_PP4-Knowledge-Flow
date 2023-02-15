@@ -1,4 +1,13 @@
 /* general styles */
+/* Colors pallet */
+:root {
+  --rose-gold: #ebcfcc;
+  --background-body: #090909;
+  --dark-gray: #484f5c;
+  --white: #fff;
+}
+
+
 *{
     margin: 0;
     box-sizing: border-box;
@@ -6,7 +15,7 @@
 
 
 body{
-    background-color: #090909; 
+    background-color:var(--background-body); 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,10 +23,7 @@ body{
 }
 h1{
  
-    /* font-size: 1rem; */
     text-transform: uppercase;
-
-
 }
     
 h2,h3{
@@ -37,7 +43,7 @@ h2,h3{
 
 /* sign up and login styles   */
 .authentication-title{
-    color: black;
+    color:var(--background-body);
 }
 
 #account-body{
@@ -69,17 +75,17 @@ h2,h3{
 /* nav-bar styles */
 
 .navbar-light .navbar-nav .nav-link{
-    color: white;
+    color: #ffffff;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
-    color: rgb(196, 222, 239);
+    color: #c4deef;
     font-weight: 700;
     
     transform: scale(1.05)
 }
 .navbar-light .navbar-nav .active>.nav-link{
-    color: white;
+    color: #ffffff;
 
 }
 
@@ -89,7 +95,7 @@ h2,h3{
 } 
 
 .navbar-light .navbar-brand {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: 800;
     
@@ -97,7 +103,7 @@ h2,h3{
 }
 
 .navbar-light .navbar-brand:hover{
-    color: rgb(196, 222, 239);
+    color: #c4deef;
     transform: scale(1.1)
 
 }
@@ -255,22 +261,22 @@ h2,h3{
 #blog-body{
     margin-top: -10px;
 }
-.ion-minus{
+/* .ion-minus{
     padding:0px 10px;
-}
+} */
 
-.blog {
+/* .blog {
 	background-color:#f6f6f6;
 	padding:60px 0px;
     font-family: 'Raleway', sans-serif;
-}
+} */
 
-.blog .blog-column a{
+/* .blog .blog-column a{
     color: #5db4c0;
     text-decoration: none;
-}
+} */
 
-.blog  span {
+/* .blog  span {
     font-size: 17px;
     font-weight: 700;
 }
@@ -283,7 +289,7 @@ h2,h3{
     padding-right: 10px;
     color: #909090;
     font-size: 11px;
-}
+} */
 
 
 

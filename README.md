@@ -4,10 +4,9 @@
 [View live website](https://pic-pals-pp4.herokuapp.com/)
 
 ## Table of Contents
-
+0. [About](#about)
 1. [Project Goals](#project-goals)
     1. [User Goals](#user-goals)
-    2. [Site Owner Goals](#site-owner-goals)
 2. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
     2. [User Requirements and Expectations](#user-requirements-and-expectations)
@@ -56,17 +55,36 @@
     4. [Misc](#misc)
 13. [Acknowledgements](#acknowledgements)
 
+## About
 
+The Knowledge Flow is a Learning and Blogging application that allows users to post blogs  in
+a chosen categories add comments, learn from the content of a blog or a comment and find out a mentor available 
+for each category and reach out and connect with them.
+
+***
 ## Project Goals
+Primary goals of the Project(web app):
+- Give users  an online solution to Learn  or Teach 
+ in a certain category
+- Enable users to express themselves through a written form
+in comfort of their environment and provide or get some 
+valuable information that will help them or others develop more
+knowledge. 
+  
 
 ### User Goals
+- Ability to create content
+- Be able to share content and give an opinion on a topic
+- Ability to amend and update content
+- Chance to connect with a variety of interesting individuals. 
 
-
-### Site Owner Goals
 
 ## User Experience
 
 ### Target Audience
+- People with a desire to teach and share their knowledge
+- Individuals that want to learn and expand the knowledge
+- People who's wants to be productive and save time while learning 
 
 
 ### User Requirements and Expectations
