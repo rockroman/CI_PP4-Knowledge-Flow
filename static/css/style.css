@@ -5,6 +5,7 @@
   --background-body: #090909;
   --dark-gray: #484f5c;
   --white: #fff;
+  --hover-active:#007bff;
 }
 
 
@@ -36,6 +37,10 @@ h2,h3{
     z-index: 1000;
     opacity: 85%;
 }
+
+.active:hover{
+  transform: scale(1.1)
+}
 /*end general styles */
 
 /* authentication pages styles */
@@ -50,7 +55,12 @@ h2,h3{
   background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg');
  height: 100vh;
  width: 100vw;
-  
+ /* min-height: 100vh;
+ min-height: -webkit-fill-available; */
+}
+
+#my{
+  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg');
 }
 
 .account{
@@ -239,8 +249,9 @@ h2,h3{
   color: #ffffff;
 }
 
-.formlabel > a{
+.formlabel  a{
   color: #378cf4f8;
+  font-weight: bold;
 }
 
 .contact{

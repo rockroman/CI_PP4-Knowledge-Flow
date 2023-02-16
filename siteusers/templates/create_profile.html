@@ -4,47 +4,44 @@
 {% block content %}
 
 
-    <h1 class="col-12 text-center text-white"> {{ user.username }}'s Profile</h1>
-   
-    <!-- <div class="container">
-        <form action="" method="POST" class="p-3">
+<h1 class="col-12 text-center text-white"> {{ user.username }}'s Profile</h1>
+<div class="container">
+    <div class="form-group bg-dark p-5 pl-4 pr-4">
+        <form class="formlabel" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {% crispy form %}
+            <!-- {% crispy form %} -->
+            <label for="id_image" class="requiredField">image</label>
+            {{ form.image }}
             
+            <div class="form-row mt-2">
+                <div class="form-group col-md mb-0">
+                    {{ form.first_name|as_crispy_field }}
+                </div>
+                <div class="form-group col-md mb-0">
+                    {{ form.last_name|as_crispy_field }}
+                </div>
+    
+            </div>
+            {{ form.email|as_crispy_field}}
+            <fieldset>
+                <!-- <legend>Choose category</legend> -->
+            {{ form.category|as_crispy_field}}
+            </fieldset>
+            <div class="form-row">
+                <div class="form-group col-md mb-0">
+                    {{ form.website_url|as_crispy_field}}
+                </div>
+                <div class="form-group col-md mb-0">
+                    {{ form.linkedIn_url|as_crispy_field}}
+                </div>
+                
+            </div>
+            {{ form.bio|as_crispy_field }}
+            <button type="submit" class="btn btn-primary active">Set Profile</button>
         </form>
-    </div>  -->
-    <div class="container">
-        <div class="form-group bg-secondary p-5 pl-4 pr-4">
-            <form action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <!-- {% crispy form %} -->
-                {{ form.image|as_crispy_field }}
-                <div class="form-row">
-                    <div class="form-group col-md mb-0">
-                        {{ form.first_name|as_crispy_field }}
-                    </div>
-                    <div class="form-group col-md mb-0">
-                        {{ form.last_name|as_crispy_field }}
-                    </div>
-        
-                </div>
-                {{ form.email|as_crispy_field}}
-                {{ form.category|as_crispy_field}}
-                <div class="form-row">
-                    <div class="form-group col-md mb-0">
-                        {{ form.website_url|as_crispy_field}}
-                    </div>
-                    <div class="form-group col-md mb-0">
-                        {{ form.linkedIn_url|as_crispy_field}}
-                    </div>
-                    
-                </div>
-                {{ form.bio|as_crispy_field }}
-                <button type="submit" class="btn btn-success">Set Profile</button>
-            </form>
-        </div>
-        
     </div>
+    
+</div>
 
 
 {% endblock content %}

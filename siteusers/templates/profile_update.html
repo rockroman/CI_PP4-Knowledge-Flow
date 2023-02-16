@@ -22,7 +22,9 @@
 
         <div class="form-group bg-dark p-5 pl-4 pr-4">
             <div class="row mb-2 pl-3">
+                {% if 'placeholder' in user.profile.image.url %}
                 <img  class="rounded-circle" width="80" src="{% static 'images/default.jpg' %}">
+                {% endif %}
             </div>
             <form action="" method="POST" enctype="multipart/form-data" class="formlabel">
                 {% csrf_token %}
