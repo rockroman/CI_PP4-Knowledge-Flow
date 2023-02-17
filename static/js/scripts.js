@@ -26,68 +26,6 @@ for (let image of Catimages){
 // });
 
 
-
-
-// $('.updateBtn').on('click', function (event) {
-//   if (event.target = this) {
-//     // console.log('You clicked btn');
-//     var par = $(event.target).parent();
-//     // console.log(par);
-//     // console.log(par);
-    
-//     console.log(par.children('#comment-body').html());
-//     let oldComment= par.children('#comment-body').html();
-//     $('#comment-text').html(oldComment)
-//     // par.children('#comment-text').html(oldComment)
-//     //  let last =par.children().last()
-//     //  console.log(last);
-//     //  console.log(last.children(":first-child"))
-//     // last.children('.modal-body').html('nono')
-//     // last.children('#comment-text').html('nono')
-    
-  
- 
-//   }
-// });
-
-
-// $('.updateBtn').on('click', function (event) {
-//   if (event.target = this) {
-    
-//     var par = $(event.target).parent();
-
-    
-//     console.log(par.children('#comment-body').html());
-//     let oldComment= par.children('#comment-body').html();
-//     $('.modal-body').each(function(){
-//     $('#comment-text').html(oldComment)
-//     });
- 
-    
-  
- 
-//   }
-// });
-
-// $('.updateBtn').each(function(){
-//   $(this).on("click", function(event){
-//     if (event.target = this) {
-    
-//       var par = $(event.target).parent();
-  
-      
-//       console.log(par.children('#comment-body').html());
-//       let oldComment= par.children('#comment-body').html();
-//       $('.modal-body').each(function(){ 
-//       $('.md-textarea').html(oldComment)
-//       }); 
-    
-//     }
-
-
-
-//   });
-
 $('.updateBtn').each(function(){
   $(this).on("click", function(event){
     if (event.target = this) {
@@ -113,20 +51,13 @@ $('.updateBtn').each(function(){
     
 
   });
-  // end of working code
-
-  // new code
-
-
-  //end new code
- 
 
 });
 
 
 
 
-
+// detect when closing modal
 $('.comment').on('hide.bs.modal', function (e) {
   console.log('modal closed');
   $('.modal-body').each(function(){
@@ -134,17 +65,4 @@ $('.comment').on('hide.bs.modal', function (e) {
    
     });
 });
-
-
-
-
-
-// detect if modal is open
-// $('.comment').on('hide.bs.modal', function (e) {
-//   console.log('modal closed');
-//   $('.modal-body').each(function(){
-//     $('.md-textarea').html('')
-//     });
-// });
-
 
