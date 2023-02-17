@@ -9,6 +9,17 @@ for (let image of Catimages){
   image.classList.add("img-fluid");
 }
 
+
+$('.user_image').each(function(){
+  $(this).attr('alt', ' profile image uploaded by user')
+})
+
+$('.blog_image').each(function(){
+  $(this).attr('alt', ' Blog image uploaded by user')
+})
+
+
+
 // $(document).ready(function(){
 
 

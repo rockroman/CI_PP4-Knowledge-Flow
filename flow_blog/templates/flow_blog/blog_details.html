@@ -63,7 +63,13 @@
                                     <div class="media-body rounded p-2 border-bottom border-white-50 mb-4" >
                                         <div class="small-1 pl-2 d-flex justify-content-between">
                                             <div>
-                                                <img class="rounded-circle" width="40" height="40" src="{% static 'images/default.jpg' %}">
+                                                {% if 'placeholder' in comment.author.profile.image.url %}
+                                                <img class="rounded-circle" width="40" height="40" src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676059220/ulz150vcncji3r5nobhs.webp"
+                                                alt="default avatar image of any user">
+                                                {% else %}
+                                                {% load cloudinary %}
+                                                {% cloudinary  comment.author.profile.image format="WebP" width=40 height=40 crop='fill' radius='max' class='user_image' %}
+                                                {% endif %}
                                                 <b class="text-white"> {{comment.author}} <small class="text-white-50 opacity-70">commented</small></b>
                                             </div>
                                             
@@ -71,7 +77,7 @@
                                             
                                             <!-- <time class="ml-4 opaciy-70 small-3"> {{comment.created}}</time> -->
                                         </div>
-                                        <p class="ml-5 text-white pl-1" id="comment-body"> {{comment.content}} </p>
+                                        <p class=" text-white pl-1" id="comment-body"> {{comment.content}} </p>
                                         <hr class="text-white">
                                         {% if request.user ==  comment.author %}
                                         <button  class="btn btn-sm updateBtn border-0" data-toggle="modal" data-target="#updatemy-{{comment.id}}" aria-label="update-comment-button" > 
