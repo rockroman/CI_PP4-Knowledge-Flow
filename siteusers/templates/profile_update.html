@@ -20,7 +20,8 @@
                 src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676059220/ulz150vcncji3r5nobhs.webp"
                 alt=" image of light blue person figure">
                 {% else %}
-                {% cloudinary  user.profile.image format="WebP" width=80 height=80 crop='fill' radius='max' class=user_image %}
+                {% load cloudinary %}
+                {% cloudinary  user.profile.image format="WebP" width=80 height=80 crop='fill' radius='max' class='user_image' %}
             {% endif %}
         </div>
         <form action="" method="POST" enctype="multipart/form-data" class="formlabel">
