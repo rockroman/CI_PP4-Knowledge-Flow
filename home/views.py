@@ -34,9 +34,10 @@ def home(request):
                 from_email=settings.EMAIL_HOST_USER,
                 recipient_list=['2rock.rakic@gmail.com']
             )
+            messages.success(request, 'THANK YOU FOR YOUR MESSAGE')
 
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        form = ContactUsForm() 
+        form = ContactUsForm()
 
     return render(request, 'index.html', {'form': form})

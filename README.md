@@ -89,8 +89,28 @@ knowledge.
 
 ### User Requirements and Expectations
 
+- Application with a clear purpose
+- Easy and intuitive user interface that allows quick and efficient navigation
+- Responsive and visually good design
+- Engaging content within the limit of set categories
+- Way to engage with a team or a developer
+
+##### Back to [top](#table-of-contents)
 
 ### User stories
+
+1. As an authenticated user I would like to see a home page and have an Idea what the application is about
+2. As an authenticated user I would like to be able to choose a way to get benefit from the app with choosing the right role
+3. As an authenticated user I would like to have a full access to the content of an web app
+4. As an authenticated user I would like a functionality to create profile(account)
+5. As an authenticated user I would like functionality to upload a supporting image to my profile and change it when I desire
+6. As an authenticated user I would like a functionality to update or delete profile (account) if not planning to use web app anymore
+7. As an authenticated user I would like functionality to pick different types of learning categories in my profile and change them later
+8. As an authenticated user I would like functionality to see and read blog posts that other users created
+9. As an authenticated user I would like functionality to leave a comment on a blog post 
+10. As an authenticated user I would like functionality to add blog post and share it with other users
+11. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed. 
+
 
 ### Site Owner Stories
 

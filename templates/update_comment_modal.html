@@ -1,6 +1,6 @@
 
 {% block update_comment_modal %}
-  <div class="modal fade" id="updatemy-{{comment.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade comment" id="updatemy-{{comment.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header flex-column align-items-center">
@@ -18,10 +18,10 @@
               <!-- <form  method="POST" > -->
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="btn btn-success" id="comment-done">update</button>
+                <button class="btn btn-success active" id="comment-done">update</button>
             </form>
            
-            <button type="submit" class="btn btn-primary go-back" data-dismiss="modal">Go back</button>
+            <button type="submit" class="btn btn-primary active go-back" data-dismiss="modal">Go back</button>
         </div>
       </div>
     </div>

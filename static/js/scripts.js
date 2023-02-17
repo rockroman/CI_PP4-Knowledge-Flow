@@ -78,17 +78,16 @@ for (let image of Catimages){
       
 //       console.log(par.children('#comment-body').html());
 //       let oldComment= par.children('#comment-body').html();
-//       $('.modal-body').each(function(){
+//       $('.modal-body').each(function(){ 
 //       $('.md-textarea').html(oldComment)
-//       });
-   
-      
+//       }); 
     
-   
 //     }
 
+
+
 //   });
-// });
+
 $('.updateBtn').each(function(){
   $(this).on("click", function(event){
     if (event.target = this) {
@@ -98,7 +97,7 @@ $('.updateBtn').each(function(){
       
       console.log(par.children('#comment-body').html());
       let oldComment= par.children('#comment-body').html();
-      $('.modal-body').each(function(){
+      $('.modal-body').each(function(){ 
       $('.md-textarea').html(oldComment)
       }); 
     
@@ -107,27 +106,45 @@ $('.updateBtn').each(function(){
 
 
   });
+  // working-code
   $('#comment-done').on('click', function(){
     $('.md-textarea').html('')
+    $('#comment-text').html('')
     
 
-  })
+  });
+  // end of working code
+
+  // new code
+
+
+  //end new code
+ 
 
 });
 
-// $('.go-back').each(function(){
 
-//   $(this).on('click', function(event){
-//     if(event.target = this){
-//       $('.md-textarea').html('');
 
-//     }
-  
-  
-//   });
 
+
+$('.comment').on('hide.bs.modal', function (e) {
+  console.log('modal closed');
+  $('.modal-body').each(function(){
+    $('.md-textarea').html('')
+   
+    });
+});
+
+
+
+
+
+// detect if modal is open
+// $('.comment').on('hide.bs.modal', function (e) {
+//   console.log('modal closed');
+//   $('.modal-body').each(function(){
+//     $('.md-textarea').html('')
+//     });
 // });
-
-
 
 

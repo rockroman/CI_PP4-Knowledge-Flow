@@ -4,60 +4,54 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-    <!-- <h2 class="col-12 text-center text-white display-5"> {{ user }}'s Profile</h2> -->
-   
-    <div class="container">
-        <div class="row ">
-            <div class="col d-flex justify-content-center  ">
-                
-                <!-- {% if 'placeholder' in user.profile.image.url %}
-                    <img  class="rounded-circle" width="150" src="{% static 'images/default.jpg' %}">
-                {% load cloudinary %}
+<!-- <h2 class="col-12 text-center text-white display-5"> {{ user }}'s Profile</h2> -->
+
+<div class="container">
+    <div class="row ">
+        <div class="col d-flex justify-content-center  ">
+            <h2 class=" text-center text-white display-5 pt-4 "> {{ user }}'s Profile</h2>
+        </div>
+    </div>
+
+    <div class="form-group bg-dark p-5 pl-4 pr-4">
+        <div class="row mb-2 pl-3">
+            {% if 'placeholder' in user.profile.image.url %}
+            <img class="rounded-circle" width="80"
+                src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1676059220/ulz150vcncji3r5nobhs.webp"
+                alt=" image of light blue person figure">
                 {% else %}
-                {% cloudinary  user.profile.image format="WebP" width=130 height=120 crop='fill' radius='max' className='cld-responsive' %}
-                {% endif %} -->
-                <h2 class=" text-center text-white display-5 pt-4 "> {{ user }}'s Profile</h2>
-            </div>
+                {% cloudinary  user.profile.image format="WebP" width=80 height=80 crop='fill' radius='max' %}
+            {% endif %}
         </div>
-
-        <div class="form-group bg-dark p-5 pl-4 pr-4">
-            <div class="row mb-2 pl-3">
-                {% if 'placeholder' in user.profile.image.url %}
-                <img  class="rounded-circle" width="80" src="{% static 'images/default.jpg' %}">
-                {% endif %}
-            </div>
-            <form action="" method="POST" enctype="multipart/form-data" class="formlabel">
-                {% csrf_token %}
-                <!-- {% crispy form %} -->
-                {{ form.image }}
-                <div class="form-row">
-                    <div class="form-group col-md mb-0">
-                        {{ form.first_name|as_crispy_field }}
-                    </div>
-                    <div class="form-group col-md mb-0">
-                        {{ form.last_name|as_crispy_field }}
-                    </div>
-                    
+        <form action="" method="POST" enctype="multipart/form-data" class="formlabel">
+            {% csrf_token %}
+            <label for="id_image" class="requiredField">image</label>
+            {{ form.image }}
+            <div class="form-row mt-4">
+                <div class="form-group col-md mb-0">
+                    {{ form.first_name|as_crispy_field }}
                 </div>
-                {{ form.email|as_crispy_field}}
-                {{ form.category|as_crispy_field}}
-                <div class="form-row">
-                    <div class="form-group col-md mb-0">
-                        {{ form.website_url|as_crispy_field}}
-                    </div>
-                    <div class="form-group col-md mb-0">
-                        {{ form.linkedIn_url|as_crispy_field}}
-                    </div>
-                    
+                <div class="form-group col-md mb-0">
+                    {{ form.last_name|as_crispy_field }}
                 </div>
 
-                {{ form.bio|as_crispy_field }}
-                <!-- <button type="submit" class="btn  text-white font-weight-bold contact">Update Profile</button> -->
-                <button type="submit" class="btn btn-primary active  text-white  ">Update Profile</button>
-            </form>
-        </div>
-    </div>  
-    
+            </div>
+            {{ form.email|as_crispy_field}}
+            {{ form.category|as_crispy_field}}
+            <div class="form-row">
+                <div class="form-group col-md mb-0">
+                    {{ form.website_url|as_crispy_field}}
+                </div>
+                <div class="form-group col-md mb-0">
+                    {{ form.linkedIn_url|as_crispy_field}}
+                </div>
+            </div>
+            {{ form.bio|as_crispy_field }}
+            <button type="submit" class="btn btn-primary active  text-white  ">Update Profile</button>
+        </form>
+    </div>
+</div>
+
 
 
 {% endblock content %}
