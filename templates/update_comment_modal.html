@@ -8,9 +8,9 @@
            Update this comment?
         </div> 
         <div class="modal-footer justify-content-center">
-            <form action="{% url 'update_comment' comment.id  %}" method="POST" enctype="multipart/form-data" class="modal-body">
+            <form action="{% url 'update_comment' comment.id  %}" method="POST" enctype="multipart/form-data" class="modal-body" autocomplete="off">
                 {% csrf_token %}
-                {{ form.as_p }}
+                <div class="mb-2" id="com-text">{{ form.content }}</div>
                 <button class="btn btn-success active" id="comment-done">update</button>
             </form>
             <button type="submit" class="btn btn-primary active go-back" data-dismiss="modal">Go back</button>

@@ -48,7 +48,9 @@ $('.updateBtn').each(function(){
       let oldComment= par.children('#comment-body').html();
       $('.modal-body').each(function(){ 
       $('.md-textarea').html(oldComment)
-      }); 
+      });
+      // new code 
+      //end  new code 
     
     }
 
@@ -73,6 +75,7 @@ $('.comment').on('hide.bs.modal', function (e) {
   console.log('modal closed');
   $('.modal-body').each(function(){
     $('.md-textarea').html('')
+    // $('#com-text').html('')
    
     });
 });

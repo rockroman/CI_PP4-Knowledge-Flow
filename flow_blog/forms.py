@@ -9,6 +9,7 @@ from siteusers.models import LearningCategory, Profile
 
 # ---3rd party ----------
 
+
 class BlogForm(forms.ModelForm):
 
     class Meta:
@@ -28,25 +29,6 @@ class BlogForm(forms.ModelForm):
         self.fields['category'].queryset = current_user.category.all()
 
 
-# class BlogForm(forms.ModelForm):
-
-#     class Meta:
-#         model = BlogPost
-#         fields = ('title', 'cover_image', 'category', 'body')
-
-#         widgets = {
-#             'title': forms.TextInput(
-#                 attrs={'class': 'form-control', 'placeholder': 'Blog Title'}),
-#             'body': forms.Textarea(attrs={'class': 'form-control'}),
-
-#         }
-
-#     def __init__(self, user=None, **kwargs):
-#         super(BlogForm, self).__init__(**kwargs)
-#         current_user = Profile.objects.get(user=user)
-#         self.fields['category'].queryset = current_user.category.all()
-
-
 class CommentForm(forms.ModelForm):
 
     content = forms.CharField(
@@ -63,4 +45,4 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['content',]
+        fields = ['content']
