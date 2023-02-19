@@ -12,15 +12,15 @@
     2. [User Requirements and Expectations](#user-requirements-and-expectations)
     3. [User Stories](#user-stories)
     4. [Site Owner Stories](#site-owner-stories)
-3. [Technical Design](#technical-design)
-    1. [Agile Design](#agile-design)
-    2. [CRUD Functionality](#crud-functionality)
+3. [Design](#design)
     1. [Colours](#colours)
     2. [Fonts](#fonts)
     3. [Structure](#structure)
     4. [Database](#database)
     5. [Data Models](#data-models)
     6. [Wireframes](#wireframes)
+    1. [Agile Design](#agile-design)
+    2. [CRUD Functionality](#crud-functionality)
 4. [Technologies Used](#technologies-used)
     1. [Coding Languages](#coding-languages)
     2. [Frameworks and Tools](#frameworks-and-tools)
@@ -109,19 +109,38 @@ knowledge.
 8. As an authenticated user I would like functionality to see and read blog posts that other users created
 9. As an authenticated user I would like functionality to leave a comment on a blog post 
 10. As an authenticated user I would like functionality to add blog post and share it with other users
-11. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed. 
-
+11. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
+12. As an authenticated user I would like to upload a blog in a selected category
+13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable 
+14. As a user I would like web app to be fully responsive and to have the same experience when using
+on any device 
+15. As an returning user user I would like functionality to set a new password and use the web app even if I forgot the old password
+16.  As an returning user user I would like functionality to leave a feedback or send a mesage to a site owner or a web app Team
 
 ### Site Owner Stories
 
+1. As a Site Owner I would like that every un-authenticated user has  limited
+functionality of a website  until he is registered.
+2. As a Site Owner I would like that authenticated users have full access to web app and its functionality
+3. As a Site Owner I would like that each data entry is validated before stored in database
+4. As a Site Owner I would like that users an leave a message or feedback via contact form or 
+5. As a Site Owner I would like that users have more than one way of comunicating with team or myself
+6. As a Site Owner I would like that each 'Mentor' user cant see himself on the list of available mentors for his respective category(user wont be contacting himself)
+7. As a Site Owner I would like that each authenticated user gets prompt messages when performing CRUD(Create,Read,Update,Delete) operations when using web app.
+8. As a Site Owner I would like that each authenticated user has option to get access to an app if he forgots password for any reason via (Reset password functionality)
 
-## Technical Design
 
-### Agile design
 
-### CRUD Functionality
 
+## Design
+***
 ### Colours
+Web app is utilizing  dark theme with black and blue colors, it is enhancing user experience by reducing eye strain and improving visibility in low-light environments.
+
+The Color pallet was created using [Coolors.co](https://coolors.co/)
+<details><summary>See colour pallet</summary>
+<img src="docs/readme/color-pallet-PP4.png">
+</details>
 
 ### Fonts
 

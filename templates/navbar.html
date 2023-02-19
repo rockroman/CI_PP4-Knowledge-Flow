@@ -22,7 +22,9 @@
                     </a>
                     <div class="dropdown-menu bg-dark">
                       <a class="dropdown-item text-white" href="{% url 'blog_page' %}" >Blogs</a>
+                      {% if user.is_authenticated %}
                       <a class="dropdown-item text-white" href="{% url 'add_blog' %}">Add Blog</a>
+                      {% endif %}
 
                     </div>
                   </li>
