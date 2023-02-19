@@ -3,36 +3,38 @@
 {% load static %}
 {% block content %}
   
-    <div class="container">
-      <h1 class=" text-center text-white"> {{ user }} you can register as :</h1>
-          <div class="card-group">
-            <div class="card mx-3">
-              <img class="card-img-top" src="https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,w_550/v1674858361/static/images/mentor_pixabay_Harish%20Sharma.c7c45c949979.webp" alt="Card image cap">
-              <div class="card-body d-flex flex-column ">
-                <h5 class="card-title">Be a Mentor</h5>
-                <p class="card-text">Become a Mentor by sharing knowledge, advice, and resources as well as providing guidance,
-                  motivation, emotional support, and role modeling.</p>
-                <form class="mt-auto" method="POST">
-                  {% csrf_token %}
-                  {{ mentor_form.as_p }}
-                  <button class="btn btn-primary active font-weight-bold" type="submit">MENTOR</button>
-                </form>
+    <div id="account-body">
+      <div class="container">
+        <h1 class=" text-center text-white"> {{ user }} you can register as :</h1>
+            <div class="card-group">
+              <div class="card mx-3">
+                <img class="card-img-top" src="https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,w_550/v1674858361/static/images/mentor_pixabay_Harish%20Sharma.c7c45c949979.webp" alt="Card image cap">
+                <div class="card-body d-flex flex-column ">
+                  <h5 class="card-title">Be a Mentor</h5>
+                  <p class="card-text">Become a Mentor by sharing knowledge, advice, and resources as well as providing guidance,
+                    motivation, emotional support, and role modeling.</p>
+                  <form class="mt-auto" method="POST">
+                    {% csrf_token %}
+                    {{ mentor_form.as_p }}
+                    <button class="btn btn-primary active font-weight-bold" type="submit">MENTOR</button>
+                  </form>
+                </div>
+              </div>
+              <div class="card mx-3 ">
+      
+                <img class="card-img-top" src="https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,w_540/v1674858362/static/images/student_pixabay_Gerd%20Altmann.931efc5b12f0.webp" alt="Card image cap">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Be a Student</h5>
+                  <p class="card-text">Register as a Student,Learn,strive grow , develop new skill and challenge yourself</p>
+                  <form  method="POST" class="mt-auto">
+                    {% csrf_token %}
+                    {{ student_form.as_p }}
+                    <button class="btn btn-primary active font-weight-bold " type="submit">STUDENT</button>
+                  </form>
+                </div>
               </div>
             </div>
-            <div class="card mx-3 ">
-              
-              <img class="card-img-top" src="https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,w_540/v1674858362/static/images/student_pixabay_Gerd%20Altmann.931efc5b12f0.webp" alt="Card image cap">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Be a Student</h5>
-                <p class="card-text">Register as a Student,Learn,strive grow , develop new skill and challenge yourself</p>
-                <form  method="POST" class="mt-auto">
-                  {% csrf_token %}
-                  {{ student_form.as_p }}
-                  <button class="btn btn-primary active font-weight-bold " type="submit">STUDENT</button>
-                </form>
-              </div>
-            </div>
-          </div>
+      </div>
+      
     </div>
-    
 {% endblock content %}

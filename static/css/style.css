@@ -20,6 +20,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
    
 }
 h1{
@@ -52,12 +53,18 @@ h2,h3{
 }
 
 #account-body{
-  background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg');
+  /* background: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_fill,q_100,w_1393/v1676765565/medxsi6zd4lih6pjn6xi.webp')
+ center/cover no-repeat  ; */
+ background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_fill,q_100,w_1393/v1676765565/medxsi6zd4lih6pjn6xi.webp');
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
  height: 100vh;
  width: 100vw;
- /* min-height: 100vh;
- min-height: -webkit-fill-available; */
+
 }
+
+
 
 #my{
   background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.jpg');
@@ -145,17 +152,13 @@ h2,h3{
 } 
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
-  /* min-height: 350px; */
-  /* background-image: url('/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.webp'); */
-  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp'); */
   background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,q_93,w_1100/v1675369377/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f042ad021dc9.webp');
-  
   background-position: center;
   background-size: cover;
   height: 100%;
  
 }
-@media screen and (max-width: 900px){
+/* @media screen and (max-width: 900px){
   .headline {
     left: 40px;
    
@@ -163,17 +166,15 @@ h2,h3{
   .hero-text{
     font-size: 2.5rem;
   }
-}
+} */
 
 
-@media screen and (max-width: 650px){
-  .headline {
-    /* left: 20px; */
-  } 
+/* @media screen and (max-width: 650px){
+
   .clipped {
     background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
     clip-path: none;
-    /* height: 50%; */
+   
     height: 40%;
     
   }
@@ -181,7 +182,7 @@ h2,h3{
   h1{
     font-size: 2rem;
   }
-}
+} */
 
 .fadeIn {
   animation-name: fadeIn;
@@ -272,43 +273,8 @@ h2,h3{
 #blog-body{
     margin-top: -10px;
 }
-/* .ion-minus{
-    padding:0px 10px;
-} */
 
-/* .blog {
-	background-color:#f6f6f6;
-	padding:60px 0px;
-    font-family: 'Raleway', sans-serif;
-} */
-
-/* .blog .blog-column a{
-    color: #5db4c0;
-    text-decoration: none;
-} */
-
-/* .blog  span {
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.blog  .blog-detail {
-    margin-top: 10px;
-}
-
-.fa.fa-user, .fa.fa-clock-o {
-    padding-right: 10px;
-    color: #909090;
-    font-size: 11px;
-} */
-
-
-
-/* profile page syles */
-/* .breadcrumb{
-    background-color: rgb(14, 14, 88);
-    
-} */
+/* end blog styles */
 
 #top-plate{
   background-color: rgb(14, 14, 88);
@@ -421,11 +387,7 @@ h2,h3{
 	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-/* mentor category card section---------------------------------- */
-
+/* mentor category card section-------------------- */
 
 .user-info {
 	display: flex;
@@ -440,9 +402,52 @@ h2,h3{
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/*  end mentor category card section--------------------*/
+
+
+/* media queries */
+
+@media screen and (max-width: 900px){
+
+  /*  hero section */
+  .headline {
+    left: 40px;
+   
+  } 
+  .hero-text{
+    font-size: 2.5rem;
+  }
 
 
 
+}
+
+
+
+@media screen and (max-width: 650px){
+ 
+  /* hero section */
+  .clipped {
+    background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
+    clip-path: none;
+    /* height: 50%; */
+    height: 40%;
+    
+  }
+
+  h1{
+    font-size: 2rem;
+  }
+
+  /* account pages background */
+  #account-body{
+    background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_fill,h_900,q_100,w_670/v1676765565/medxsi6zd4lih6pjn6xi.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+  }
+}
 
 
 
