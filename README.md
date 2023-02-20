@@ -143,5 +143,35 @@ The Color pallet was created using [Coolors.co](https://coolors.co/)
 </details>
 
 ### Fonts
+Google fonts "Ubuntu sans-serif " were used for this project as It offers modern and versatile design and  is optimized for on-screen legibility.
+<details><summary>See Ubuntu font</summary>
+<img src="docs/readme/color-pallet-PP4.png">
+</details>
+
+
+## Project Structure 
+
+#### Web app  pages
+Clean dark theme was used troughout entire project, intuitive and simple navigation and 
+clear message about value of knowledge was main driver for delivering the project.
+
+#### sections:
+1.  Home page divided into 6 sections with simple and intuitive navigation
+- Hero Section with supporting image and clear call to action
+- Bottom hero that's going deeper with an hero headline and displays some benefits and ways to use the web app
+- Team section that presents members responsible for delivering a fnished project
+- About section with a quote
+- Contact section  with a simple form and a web app banner
+- Footer with some navigation social media links
+2. Blog Page where user can see latest blogs posted with links to a more detail vie of each blog
+3. Add blog page with a simple form 
+4. Profile page where all the data about user is stored
+5. 3 Category pages
+- Personal finance
+- Leadership
+- Time management 
+- each page consists of headline, supporting image , sections that describes category, describes importance ,benefits and section where user can see available mentors for that category.
+then section with blogs related to that category
+
 
 

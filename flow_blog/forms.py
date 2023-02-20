@@ -40,7 +40,8 @@ class CommentForm(forms.ModelForm):
                 'id': 'comment-text',
 
             }
-        )
+        ),
+        label=''
     )
 
     class Meta:

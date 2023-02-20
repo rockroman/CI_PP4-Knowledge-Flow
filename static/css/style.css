@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Mitr&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&family=Montserrat&family=Ubuntu&display=swap');
 /* general styles */
 /* Colors pallet */
 :root {
-  --rose-gold: #ebcfcc;
+  --hero-text:#378cf4f8;
   --background-body: #090909;
   --dark-gray: #484f5c;
   --white: #fff;
@@ -13,7 +13,10 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    
 }
+
 
 
 body{
@@ -140,7 +143,7 @@ h2,h3{
   height: 100vh;
 }
 .hero-text{
-  color: #378cf4f8;
+  color: var(--hero-text);
   font-size: 3.5rem;
   text-transform: uppercase;
   
