@@ -9,11 +9,7 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
-
-# Create your views here
-
-# class HomeView(generic.TemplateView):
-#     template_name = 'index.html'
+from django.contrib import messages
 
 
 def home(request):
@@ -24,12 +20,10 @@ def home(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
-            phone = form.cleaned_data['phone']
-            company = form.cleaned_data['company']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             send_mail(
-                subject=subject,
+                subject=name,
                 message=message,
                 from_email=settings.EMAIL_HOST_USER,
                 recipient_list=['2rock.rakic@gmail.com']
