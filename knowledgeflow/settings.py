@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['knowledge-flow.herokuapp.com', 'localhost']
 
@@ -98,7 +98,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'categories.views.list_of_categories',
                 'siteusers.views.list_of_mentors',
-                
+
             ],
         },
     },
@@ -107,13 +107,12 @@ TEMPLATES = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # AUTHENTICATION_BACKENDS = [
-    
 #     # Needed to login by username in Django admin, regardless of `allauth`
 #     'django.contrib.auth.backends.ModelBackend',
 
 #     # `allauth` specific authentication methods, such as login by e-mail
 #     'allauth.account.auth_backends.AuthenticationBackend',
-    
+
 # ]
 
 WSGI_APPLICATION = 'knowledgeflow.wsgi.application'
@@ -122,18 +121,18 @@ WSGI_APPLICATION = 'knowledgeflow.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+
+# }
 
 
 

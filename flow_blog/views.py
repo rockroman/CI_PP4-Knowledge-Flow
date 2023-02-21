@@ -48,6 +48,7 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
                 reverse('blog_details', kwargs={'pk': blogpost.pk}))
         else:
             form = CommentForm()
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     def get_context_data(self, **kwargs):
         post_comments_count = Comment.objects.all().filter(

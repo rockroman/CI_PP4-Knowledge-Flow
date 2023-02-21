@@ -1,7 +1,7 @@
 from django.test import TestCase, Client, RequestFactory
 from siteusers.models import Profile, User
 from .models import BlogPost, Comment
-from .views import BlogDetailView, AddBlogView,delete_blog
+from .views import BlogDetailView, AddBlogView, delete_blog
 from django.contrib.auth.models import AnonymousUser
 from .forms import BlogForm, CommentForm
 
@@ -10,6 +10,7 @@ class TestBlogDetailView(TestCase):
     @classmethod
     def setUp(self):
         self.factory = RequestFactory()
+        self.cient = Client()
         # Create test user
         self.user = User.objects.create(
             username='TestUser11',
@@ -18,22 +19,25 @@ class TestBlogDetailView(TestCase):
             id='11',
         )
         self.user.save()
+        self.user.set_password('mypass11')
+        self.user.save()
+
         self.user_profile = Profile.objects.update(
             user=self.user,
             first_name='Rock',
             last_name='Roman',
             email='test@user11.com',
-            bio='my biography',
+            bio='',
             role='Student'
 
         )
+
         self.post = BlogPost.objects.create(
             creator=self.user,
             title='my test',
             id='22'
-            
-        )
 
+        )
 
     def test_test_function(self):
 
@@ -48,46 +52,53 @@ class TestBlogDetailView(TestCase):
         self.client.force_login(self.user)
         self.assertEqual(response.status_code, 302)
 
-    # def test_post_method(self):
-    #     post = BlogPost.objects.create(
-    #         creator=self.user,
-    #         title='my test post',
-    #         id='12'            
+    def test_is_user_profile_set_right(self):
+        # logged in user didnt set profile right
+        self.client.login(username='TestUser11', password='mypass11')
+        response = self.client.get('/flow_blog/blog/blog/22')
+        # user is redirected to setting his profile,
+        # can't access the content
+        self.assertEqual(response.status_code, 302)
+        # user sets his profile right
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            bio='my bio is set'
 
-    #     )
-        # form = CommentForm(data={
-        #     'author': self.user,
-        #     'blogpost':post,
-        #     'content': 'test post'
-        # })
-        # self.factory = RequestFactory()
-        # request = self.factory.post('blog/blog/<int:pk>', data={
-        #    'author': self.user,
-        #     'blogpost':post,
-        #     'content': 'test post' 
+        )
+        response = self.client.get('/flow_blog/blog/blog/22')
+        # user can access the content
+        self.assertEqual(response.status_code, 200)
 
-        # })
-        # request.user = self.user
-        # view = BlogDetailView.as_view()
-        # response = view(request)
-        # self.assertEqual(Comment.objects.filter(blogpost=post).count(),1)
-        # self.assertTrue(form.is_valid())
+    def test_posting_a_comment(self):
+        self.client.login(username='TestUser11', password='mypass11')
+        # user sets his profile right
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            bio='my bio is set'
 
-    # def test_context_data(self):
-    #     self.client = Client()
-    #     post = BlogPost.objects.create(
-    #         creator=self.user,
-    #         title='my test post',
-    #         id='12'            
+        )
+        # # user navigates to blogpost and adds a comment
+        response = self.client.post('/flow_blog/blog/blog/22', {
+            'author': self.user,
+            'blogpost': self.post,
+            'content': 'new comment'
+        })
+        # # comment is added
+        self.assertEqual(response.status_code, 302)
+        # user tries to add comment without content
+        response = self.client.post('/flow_blog/blog/blog/22', {
+            'author': self.user,
+            'blogpost': self.post,
+            'content': ''
+        })
+        self.assertEqual(response.status_code, 302)
+        # no new comments since there was no content of a comment
+        self.assertEqual(Comment.objects.filter(author=self.user).count(), 1)
+        
+        
 
-    #     )
-    #     form = CommentForm()
-    #     comment = Comment.objects.create(
-    #         blogpost=post,
-    #         author=self.user,
-    #         content='test content')
-    #     response = self.client.get('blog/blog/<int:pk>')
-    #     self.assertIn('TestUser11',response.context)
+
+
 
 
 class TestAddBlogView(TestCase):
@@ -114,16 +125,6 @@ class TestAddBlogView(TestCase):
             role=''
 
         )
-        # self.user2 = User.objects.create(
-        #     username='NewTester',
-        #     password='test123',
-        #     email='testing@bo.com',
-        #     id='22'
-
-        # )
-        # self.user2.save()
-        # self.user.set_password('test123')
-        # self.user.save()
 
         self.post = BlogPost.objects.create(
             creator=self.user,
@@ -137,12 +138,10 @@ class TestAddBlogView(TestCase):
         request.user = self.user
         view = AddBlogView()
         view.request = request
-        # response = view(request)
         kwargs = view.get_form_kwargs()
-        # self.assertEqual(response.status_code, 302)
         self.assertIn('user', kwargs)
         self.assertEqual(kwargs['user'], self.user)
-    
+
     def test_if_user_didnt_set_profile_role(self):
         self.client.login(username='testRock', password='mynewpass')
         response = self.client.get('/flow_blog/')
@@ -157,9 +156,6 @@ class TestAddBlogView(TestCase):
         # response = self.client.get('/flow_blog/blog/blog/31')
         response = self.client.get('/flow_blog/blog/add_blog/')
         self.assertEqual(response.status_code, 200)
-
-        
-
 
 
 class TestDeleteBlog(TestCase):
