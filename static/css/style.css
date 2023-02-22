@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mitr&family=Montserrat&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 /* general styles */
 /* Colors pallet */
 :root {
@@ -17,7 +17,8 @@ html{
 *{
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    
     
 }
 
@@ -48,7 +49,7 @@ h2,h3{
 }
 
 .active:hover{
-  transform: scale(1.1)
+  transform: scale(1.06)
 }
 /*end general styles */
 

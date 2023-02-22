@@ -14,9 +14,15 @@
       <div class="col-md-4 col-sm mb-4 mb-sm-0 pl-5">
         <h1 class=" my-4 font-weight-bold  hero-text ">your knowledge <span class="hero-text">is the key</span>
         </h1>
+        {% if user.is_authenticated %}
         <a href="{% url 'account_login' %}"
-          class="btn btn-success  px-5 py-3  font-weight-bold text-uppercase text-black-50 mt-3 mt-sm-0 ">Get
+        class="btn btn-success active px-5 py-3  font-weight-bold text-uppercase text-white mt-3 mt-sm-0 ">Get
+        Started</a>
+        {% else %}
+        <a href="{% url 'account_login' %}"
+          class="btn btn-success active px-5 py-3  font-weight-bold text-uppercase text-white mt-3 mt-sm-0 ">Get
           Started</a>
+          {% endif %}  
       </div>
       <div class="col-md-8 clipped fadeIn">
       </div>

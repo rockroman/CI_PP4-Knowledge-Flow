@@ -143,8 +143,8 @@ The Color pallet was created using [Coolors.co](https://coolors.co/)
 </details>
 
 ### Fonts
-Google fonts "Ubuntu sans-serif " were used for this project as It offers modern and versatile design and  is optimized for on-screen legibility.
-<details><summary>See Ubuntu font</summary>
+Google fonts "'Rubik', sans-serif" modern and versatile font were used for this project as it offers  clean and legible design, which makes it easy to read on screens of different sizes and resolutions. It has a neutral appearance and doesn't have any distracting features that can make it difficult to read.
+<details><summary>See Rubik font</summary>
 <img src="docs/readme/color-pallet-PP4.png">
 </details>
 

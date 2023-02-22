@@ -24,6 +24,8 @@ class Profileform(forms.ModelForm):
     category = forms.ModelMultipleChoiceField(
         queryset=LearningCategory.objects.all(),
         widget=forms.CheckboxSelectMultiple())
+    website_url = forms.URLField(max_length=60)
+    linkedIn_url = forms.URLField(max_length=50)
 
     class Meta:
         model = Profile
@@ -45,18 +47,6 @@ class Profileform(forms.ModelForm):
         u.save()
         profile = super(Profileform, self).save(*args, **kwargs)
         return profile
-
-
-# class ProfileUpdateForm(forms.ModelForm):
-#     class Meta:
-#         model = Profile
-#         fields = ['image', 'first_name', 'last_name', 'email',  'bio']
-
-
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         self.helper = FormHelper(self)
-#         self.helper.add_input(Submit('submit', 'update PROFILE'))
 
 
 class UpdateStudentRole(forms.ModelForm):
