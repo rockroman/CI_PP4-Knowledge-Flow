@@ -10,6 +10,7 @@ from django.utils.decorators import method_decorator
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 # Create your views here.
@@ -64,19 +65,18 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
 
 
 @method_decorator(login_required, name='dispatch')
-class AddBlogView(UserPassesTestMixin, CreateView):
+class AddBlogView(UserPassesTestMixin, SuccessMessageMixin, CreateView):
 
     model = BlogPost
     form_class = BlogForm
     template_name = 'flow_blog/add_blog.html'
+    success_message = 'YOU ADDED A NEW BLOG'
 
     # extract the user so it can be passed into form
     def get_form_kwargs(self):
         kwargs = super(AddBlogView, self).get_form_kwargs()
         kwargs['user'] = self.request.user  # pass the 'user' in kwargs
         return kwargs
-
-    # end
 
     def form_valid(self, form):
         form.instance.creator = self.request.user
@@ -108,10 +108,11 @@ class AddBlogView(UserPassesTestMixin, CreateView):
 #         return redirect('protect_profile')
 
 @method_decorator(login_required, name='dispatch')
-class UpdateBlogView(UserPassesTestMixin, UpdateView):
+class UpdateBlogView(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     model = BlogPost
     template_name = 'flow_blog/edit_blog.html'
     form_class = BlogForm
+    success_message = 'YOU UPDATED YOUR BLOG'
 
     def get_form_kwargs(self):
         kwargs = super(UpdateBlogView, self).get_form_kwargs()

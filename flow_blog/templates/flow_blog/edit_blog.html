@@ -13,11 +13,11 @@
 
     <h1 class="col-12 text-center text-white"> EDIT BLOG POST</h1>
     <div class="container pt-3">
-        <div class="form-group bg-secondary p-3">
-            <form action="" method="POST" enctype="multipart/form-data">
+        <div class="form-group bg-dark p-3">
+            <form action="" method="POST" enctype="multipart/form-data" class="formlabel">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="btn btn-success pl-5 pr-5 p-2 font-weight-bold" type="submit">UPDATE</button>
+                <button class="btn btn-success active pl-5 pr-5 p-2 font-weight-bold" type="submit">UPDATE</button>
             </form>
         </div>
     </div>
