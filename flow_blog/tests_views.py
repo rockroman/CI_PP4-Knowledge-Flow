@@ -95,11 +95,6 @@ class TestBlogDetailView(TestCase):
         # no new comments since there was no content of a comment
         self.assertEqual(Comment.objects.filter(author=self.user).count(), 1)
         
-        
-
-
-
-
 
 class TestAddBlogView(TestCase):
     @classmethod
