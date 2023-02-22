@@ -19,24 +19,6 @@ $('.blog_image').each(function(){
 })
 
 
-
-// $(document).ready(function(){
-
-
-//   $('#commentButton').click(function(){
-//     let serializedData = 
-//     $('#comment_form').serialize();
-
-//     $.ajax({
-//       url: $('#comment_form').data('url'),
-//       data: serializedData,
-//       type: 'POST'
-//     })
-    
-//   });
-// });
-
-
 $('.updateBtn').each(function(){
   $(this).on("click", function(event){
     if (event.target = this) {
@@ -68,8 +50,6 @@ $('.updateBtn').each(function(){
 });
 
 
-
-
 // detect when closing modal
 $('.comment').on('hide.bs.modal', function (e) {
   console.log('modal closed');
@@ -79,6 +59,15 @@ $('.comment').on('hide.bs.modal', function (e) {
    
     });
 });
+
+// dissmiss django messages
+// setTimeout(function(){
+//   let messages= document.getElementById('msg');
+//   let alert = new bootstrap.Alert(messages);
+//   alert.fadeOut('slow');
+
+// },1500)
+$('#msg').hide().fadeIn(0).delay(1500).fadeOut(1300); 
 
 // const navlink = document.querySelectorAll(".nav-link");
 // navlink.forEach(elem => elem.addEventListener("click", smoothscroll));

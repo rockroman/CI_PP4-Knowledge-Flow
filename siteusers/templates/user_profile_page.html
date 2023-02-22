@@ -29,9 +29,9 @@
                             {% cloudinary  user.profile.image format="WebP" width=150 height=155 crop='fill' radius='max' class='user_image' %}
                             {% endif %}
                             <div class="mt-3">
-                                <h4>{{ user.profile.first_name }} {{ user.profile.last_name }}</h4>
-                                <p class="text-secondary mb-1">Knowledge Flow {{ user.profile.role }}</p>
-                                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                <h4 class="text-capitalize font-weight-bold">{{ user.profile.first_name }} {{ user.profile.last_name }}</h4>
+                                <p class="text-secondary mb-1">Knowledge Flow</p>
+                                <p class="text-muted font-size-sm">{{ user.profile.role }}</p>
                                 <a class=" text-white btn btn-secondary m-2" href="{% url 'edit_profile' %}" >Update
                                     profile</a>
                                 <a class=" text-white btn btn-danger m-2" href="{% url 'delete_profile' %}">Delete
