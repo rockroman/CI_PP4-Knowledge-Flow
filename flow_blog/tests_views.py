@@ -4,6 +4,8 @@ from .models import BlogPost, Comment
 from .views import BlogDetailView, AddBlogView, delete_blog
 from django.contrib.auth.models import AnonymousUser
 from .forms import BlogForm, CommentForm
+from django.urls import reverse
+from django.contrib.contenttypes.models import ContentType
 
 
 class TestBlogDetailView(TestCase):
@@ -152,6 +154,14 @@ class TestAddBlogView(TestCase):
         response = self.client.get('/flow_blog/blog/add_blog/')
         self.assertEqual(response.status_code, 200)
 
+    def test_form_valid(self):
+        self.client.login(username='testRock', password='mynewpass')
+        pass
+   
+   
+        
+
+
 
 class TestDeleteBlog(TestCase):
 
@@ -215,3 +225,56 @@ class TestDeleteBlog(TestCase):
         self.assertRedirects(response, '/flow_blog/')
         response = self.client.get('/flow_blog/', follow=True)
         self.assertEqual(BlogPost.objects.all().count(), 1)
+
+
+class TestDeleteComment(TestCase):
+    def setUp(self):
+        self.client = Client()
+        # Create test user
+        self.user = User.objects.create(
+            username='testRock',
+            password='mynewpass',
+            email='test.rock@bo.com',
+            id='79'
+
+        )
+        self.user.save()
+        # set password. Otherwise hash affects ability to log in.
+        self.user.set_password('mynewpass')
+        self.user.save()
+        # updating user profile
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            first_name='Rock',
+            last_name='Roman',
+            email='test@user11.com',
+            bio='my biography',
+            role='Student',
+            id='10'
+
+        )
+        self.post = BlogPost.objects.create(
+            creator=self.user,
+            title='my test',
+            body='new test body',
+            id='31'
+        )
+
+    def test_comment_deletion(self):
+        self.user = User.objects.create_user(username='testuser', password='password')
+        self.comment = Comment.objects.create(
+            author=self.user,
+            blogpost=self.post,
+            id=31,
+            content='Test comment',
+           
+        )
+
+        self.client.force_login(self.user)
+        response = self.client.post(reverse('delete_comment', kwargs={'comment_id': self.comment.id}))
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(Comment.objects.filter(pk=self.comment.pk).exists())
+
+
+
+
