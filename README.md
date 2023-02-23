@@ -15,7 +15,7 @@
 3. [Design](#design)
     1. [Colours](#colours)
     2. [Fonts](#fonts)
-    3. [Structure](#structure)
+    3. [Project Structure](#project-structure)
     4. [Database](#database)
     5. [Data Models](#data-models)
     6. [Wireframes](#wireframes)
@@ -172,6 +172,25 @@ clear message about value of knowledge was main driver for delivering the projec
 - Time management 
 - each page consists of headline, supporting image , sections that describes category, describes importance ,benefits and section where user can see available mentors for that category.
 then section with blogs related to that category
+
+### Code structure
+Project code structure is organized and divided into various application folders and constructed using Django Framework 
+#### Project Apps:
+- Home app - constructed to deliver basic information for the User about the app via Home page with simple an intuitive navigation(links in nav-bar and footer to navigate throughout app), basic contact form for user feedback and footer
+
+- Siteusers app- this app provide user authentication and profile management functionality,full CRUD functonality, so user can create a an account, select a role that provides further functionality and usage, update profile, upload supporting images for a profile
+
+- flow_blog app - constructed to deliver CRUD functions of a blogging app, where  structure includes the necessary files for running the application, including the views, models, and templates required to create, read, update, and delete blog posts and comments 
+
+- categories app - delivers  functionality for users to select and manage learning categories for their profile and blog posts. The app includes views and templates for displaying a list of available categories and enabling users to select which learning categories they want to be associated with their profile and blog posts. 
+
+#### Other django apps:
+- **settings.py**: This file contains configuration settings for your Django project, such as database settings, installed apps, and middleware.
+- **Procfile**: This file is used to specify the commands that should be executed when your Django app is deployed on a hosting platform.
+- **static**: This directory contains the base CSS and JavaScript files 
+- **templates**- base level folder with basic templates extended throughout other templates like : base.html, navbar.html, footer.html, also templates for user authentication and also each app has its own templates folder with html files to support the app functinalit and reusability
+- **requirements.txt**: This file lists the dependencies required for  Django project to run.
+- **env.py**: This file is used to store environment variables for a Django project or application, such as database connection details or API keys. best practice is including this file into th gitignore file so  the values can be easily accessed and used by the project without being exposed in the code or configuration files.
 
 
 

@@ -61,48 +61,35 @@ $('.comment').on('hide.bs.modal', function (e) {
 });
 
 // dissmiss django messages
-// setTimeout(function(){
-//   let messages= document.getElementById('msg');
-//   let alert = new bootstrap.Alert(messages);
-//   alert.fadeOut('slow');
 
-// },1500)
 $('#msg').hide().fadeIn(0).delay(1500).fadeOut(1300); 
 
-// const navlink = document.querySelectorAll(".nav-link");
-// navlink.forEach(elem => elem.addEventListener("click", smoothscroll));
-// function smoothscroll(event){
-//   event.preventDefault();
-//   const targetId = event.currentTarget.getAttribute("href");
-//   window.scrollTo({
-//     top: document.querySelector(targetId).offsetTop,
-//     behavior: "smooth"
-//   })
-// }
+// back to top button source  https://mdbootstrap.com/docs/standard/extended/back-to-top/
+//Get the button
+let mybutton = document.getElementById("btn-back-to-top");
 
-// jQuery(document).ready(function() {
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
 
-//   // Scrolling for anchor links in within the same page
-//   jQuery('a[href*="#"]:not([href="#"])').click(function(){
-//       _hash = this.hash;
-//       _scroll_it( _hash );
-//   });
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
+   
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
 
-//   // scrolling for anchor links coming from a different page
-//   var _hash = window.location.hash;
-//   if( _hash.length > 0 ){     
-//       window.scrollTo(0, 0);
-      
-//       setTimeout( function() { 
-//           _scroll_it( _hash );
-//       }, 300 );       
-//   }
-  
-//   function _scroll_it( _hash ){
-//       jQuery('html,body').animate({
-//           scrollTop: jQuery( _hash ).offset().top
-//       }, 300 );
-//   }
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
-// });
 
