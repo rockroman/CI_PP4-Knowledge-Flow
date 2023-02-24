@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main  class="d-flex" id="account-body">
+    <div class="container-fluid fof d-flex flex-column align-items-center m-auto">
+        <h1 class=" h1 text-danger font-weight-bold pb-3 display-1 "> 500</h1>
+        <h2 class="h2 text-white font-weight-bold pb-3 display-3 text-center bg-danger p-2">internal server error</h2>
+        <a href="{% url 'home' %}" class="btn btn-success active pl-5 pr-5">Home</a>
+    </div>   
+  </main>
+
+
+{% endblock %}

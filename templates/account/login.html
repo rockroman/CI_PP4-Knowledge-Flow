@@ -1,22 +1,11 @@
 {% extends "base.html" %} {% load crispy_forms_tags %}
 
-
 {% load i18n %}
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<!-- <div  class="d-flex" id="account-body">
-  <div class="container-fluid fof d-flex flex-column align-items-center m-auto">
-      
-      <h1 class=" h1 text-warning font-weight-bold pb-3 display-1 "> 403</h1>
-      <h2 class="h2 text-white font-weight-bold pb-3 display-3 text-center">Not allowed here</h2>
-      <a href="{% url 'home' %}" class="btn btn-success active pl-5 pr-5"> Back Home</a>
-  </div>
-
-</div> -->
- 
 
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 <div id="account-body"> 
@@ -41,4 +30,5 @@
         </div> 
     </div>
 </div>
+
 {% endblock %}
