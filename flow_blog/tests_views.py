@@ -96,7 +96,7 @@ class TestBlogDetailView(TestCase):
         self.assertEqual(response.status_code, 302)
         # no new comments since there was no content of a comment
         self.assertEqual(Comment.objects.filter(author=self.user).count(), 1)
-        
+
 
 class TestAddBlogView(TestCase):
     @classmethod
@@ -156,11 +156,6 @@ class TestAddBlogView(TestCase):
 
     def test_form_valid(self):
         self.client.login(username='testRock', password='mynewpass')
-        pass
-   
-   
-        
-
 
 
 class TestDeleteBlog(TestCase):
@@ -261,19 +256,42 @@ class TestDeleteComment(TestCase):
         )
 
     def test_comment_deletion(self):
-        self.user = User.objects.create_user(username='testuser', password='password')
+        # creating test user
+        self.user = User.objects.create_user(
+            username='testuser', password='password')
+        # creating test comment
         self.comment = Comment.objects.create(
             author=self.user,
             blogpost=self.post,
             id=31,
             content='Test comment',
-           
-        )
 
+        )
+        # 2nd test user
+        self.user2 = User.objects.create_user(
+            username='2ndtestuser', password='password2')
+        # 2nd test comment
+        self.comment2 = Comment.objects.create(
+            author=self.user2,
+            blogpost=self.post,
+            id=33,
+            content='Testing comment',
+
+        )
+        # login as first test user
         self.client.force_login(self.user)
-        response = self.client.post(reverse('delete_comment', kwargs={'comment_id': self.comment.id}))
+        #  first test useris deleting his coment
+        response = self.client.post(reverse(
+            'delete_comment', kwargs={'comment_id': self.comment.id}))
         self.assertEqual(response.status_code, 302)
+        # comment deleted
         self.assertFalse(Comment.objects.filter(pk=self.comment.pk).exists())
+        # first test user tries deletion of 2nd test users comment
+        response = self.client.post(reverse(
+            'delete_comment', kwargs={'comment_id': self.comment2.id}))
+        # comment is not deleted
+        self.assertTrue(Comment.objects.filter(pk=self.comment2.pk).exists())
+
 
 
 

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import handler404, handler500
+from .views import handler404, handler500, handler403
 
 
 urlpatterns = [
@@ -25,9 +25,10 @@ urlpatterns = [
     path('accounts/', include('allauth.urls'),),
     path('flow_blog/', include('flow_blog.urls'), name='flow_blog_urls'),
     path('categories/', include('categories.urls'), name='categories_urls'),
-    
+
 
 ]
 
 handler404 = handler404
 handler500 = handler500
+handler403 = handler403
