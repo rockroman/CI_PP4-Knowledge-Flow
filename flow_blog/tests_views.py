@@ -1,7 +1,7 @@
 from django.test import TestCase, Client, RequestFactory
 from siteusers.models import Profile, User
 from .models import BlogPost, Comment
-from .views import BlogDetailView, AddBlogView, delete_blog
+from .views import BlogDetailView, AddBlogView, delete_blog, UpdateBlogView
 from django.contrib.auth.models import AnonymousUser
 from .forms import BlogForm, CommentForm
 from django.urls import reverse
@@ -143,19 +143,71 @@ class TestAddBlogView(TestCase):
         self.client.login(username='testRock', password='mynewpass')
         response = self.client.get('/flow_blog/')
         self.assertEqual(response.status_code, 200)
-        # response = self.client.get('/flow_blog/blog/blog/31')
         response = self.client.get('/flow_blog/blog/add_blog/')
         self.assertEqual(response.status_code, 302)
         self.user_profile = Profile.objects.update(
             user=self.user,
             role='Student'
         )
-        # response = self.client.get('/flow_blog/blog/blog/31')
         response = self.client.get('/flow_blog/blog/add_blog/')
         self.assertEqual(response.status_code, 200)
 
     def test_form_valid(self):
         self.client.login(username='testRock', password='mynewpass')
+
+
+class TestUpdateBlogView(TestCase):
+    @classmethod
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create(
+            username='testRock',
+            password='mynewpass',
+            email='test.rock@bo.com',
+            id='11'
+
+        )
+        self.user.save()
+        self.user.set_password('mynewpass')
+        self.user.save()
+
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            first_name='Rock',
+            last_name='Roman',
+            email='test@user11.com',
+            bio='my biography',
+            role=''
+
+        )
+
+        self.post = BlogPost.objects.create(
+            creator=self.user,
+            title='my test',
+            body='my test blog',
+            id='31'
+        )
+
+    def test_get_from_kwargs(self):
+        self.factory = RequestFactory()
+        request = self.factory.get('')
+        request.user = self.user
+        view = UpdateBlogView()
+        view.request = request
+        kwargs = view.get_form_kwargs()
+        self.assertIn('user', kwargs)
+        self.assertEqual(kwargs['user'], self.user)
+
+    def test_updating_blog_with_or_without_profile_role(self):
+        self.client.login(username='testRock', password='mynewpass')
+        response = self.client.get('/flow_blog/blog/edit_blog/31')
+        self.assertEqual(response.status_code, 302)
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            role='Student'
+        )
+        response = self.client.get('/flow_blog/blog/edit_blog/31')
+        self.assertEqual(response.status_code, 200)
 
 
 class TestDeleteBlog(TestCase):
@@ -297,6 +349,7 @@ class TestUpdateCommentView(TestCase):
     @classmethod
     def setUp(self):
         self.client = Client()
+        # creating test user
         self.user = User.objects.create(
             username='newTester', password='new password'
         )
@@ -312,21 +365,24 @@ class TestUpdateCommentView(TestCase):
             id='15'
 
         )
+        # creating test post
         self.post = BlogPost.objects.create(
             creator=self.user,
             title='my test title',
             body='new test body',
-            id='35'
+            id='35',
+
         )
+        # creating 2nd test user
         self.user2 = User.objects.create(
             username='rockTestuser', password='rockpass'
         )
         self.user2.save()
-    
+
     def test_updating_comment(self):
-        
+
         self.client.force_login(self.user)
-     # creating test comment
+        # creating test comment
         self.comment = Comment.objects.create(
             author=self.user,
             blogpost=self.post,
@@ -334,44 +390,30 @@ class TestUpdateCommentView(TestCase):
             content='Test comment one',
 
         )
-
-
+        # checking if comment is created
         self.assertTrue(Comment.objects.filter(pk=self.comment.pk).exists())
-        response = self.client.get('/flow_blog/blog/blog/35',follow=True)
+        response = self.client.get('/flow_blog/blog/blog/35', follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(Comment.objects.filter(pk=self.comment.pk).count(), 1)
         self.assertTrue(self.comment.content == 'Test comment one')
-        self.comment.content ='changed'
+        # changing the content of a commment by his author
+        self.comment.content = 'changed'
         response = self.client.post(reverse('update_comment', kwargs={
             'comment_id': self.comment.id,
-            
+
         }), self.comment.__dict__)
         self.comment.refresh_from_db()
         self.assertEqual(response.status_code, 302)
+        # comment is updated
         self.assertTrue(self.comment.content == 'changed')
-        self.comment2 = Comment.objects.create(
-            author=self.user2,
-            blogpost=self.post,
-            id=36,
-            content='new comment for sure',
-
+        # creating second user
+        self.unauthorized_user = User.objects.create(
+            username='hacker', password='password'
         )
-        self.assertTrue(Comment.objects.filter(pk=self.comment2.pk).exists())
-        response = self.client.post(reverse('update_comment', kwargs={
-            'comment_id': self.comment.id,
-            
-        }))
-        self.assertEqual(response.status_code, 302)
-        self.assertTrue(self.comment2.content == 'new comment for sure')
-
-
-        
-        
-
-       
-
-
-
-
-
-
+        self.client.force_login(self.unauthorized_user)
+        # user not author of the comment trying to update it
+        response = self.client.post(
+            reverse('update_comment', kwargs={'comment_id': self.comment.id}),
+            {'content': 'Changed comment content'})
+        # comment is not updated 
+        self.assertEqual(self.comment.content, 'changed')
