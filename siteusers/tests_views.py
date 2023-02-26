@@ -95,6 +95,7 @@ class TestEditProfilePageView(TestCase):
             id='1',
         )
         self.user.save()
+        
         self.user_profile = Profile.objects.update(
             user=self.user,
             first_name='Rock2',
@@ -125,56 +126,38 @@ class TestProtectProfileView(TestCase):
             id='1',
         )
         self.user.save()
+        self.user.set_password('mypass799')
+        self.user.save()
+        # self.user_profile = Profile.objects.update(
+        #     user=self.user,
+        #     # first_name='Rock2',
+        #     # last_name='Roman2',
+        #     # email='test@user2.com',
+        #     bio='my biography',
+        #     role=''
+
+        # )
+
+    def test_protect_profile(self):
+        self.client = Client()
+        self.client.login(username='NewTestUser2', password='mypass799')
+        # attempt to get view without setting profile role
+        response = self.client.get('/siteusers/protect_profile/')
+        self.assertEqual(response.status_code, 302)
+        # user redirected to set profile role
+        self.assertRedirects(response, '/siteusers/set_role/')
+        # user sets only profile role
         self.user_profile = Profile.objects.update(
             user=self.user,
-            first_name='Rock2',
-            last_name='Roman2',
-            email='test@user2.com',
-            bio='my biography',
             role='Student'
 
         )
-        
-
-
-    def test_protect_profile(self):
-        request = self.factory.get('protect_profile/')
-        request.user = self.user
-        response = protect_profile_view(request)
+        response = self.client.get('/siteusers/protect_profile/')
+        # user gets redirected to create full profile
         self.assertEqual(response.status_code, 302)
-        # self.assertTemplateUsed('profile_update.html')
+        self.assertRedirects(response, '/siteusers/create_profile/')
+        
+        
+
+ 
     
-    # def test_protect_profile2(self):
-    #     request = self.factory.get('protect_profile/')
-    #     request.user = self.user
-    #     request.profile = Profile.objects.update(
-    #         user=self.user,
-    #         first_name='Rock2',
-    #         last_name='Roman2',
-    #         email='test@user2.com',
-    #         bio='my biography',
-    #         role='Student'
-
-    #     )
-        
-    #     response = protect_profile_view(request)
-    #     # self.assertEqual(response.status_code, 302)
-    #     self.assertEqual(request.user.profile.role, "Student")
-
-    # ------------- testing Forms
-
-
-# class TestProfileForm(TestCase):
-#     def setUp(self):
-#         self.url = reverse_lazy('see_profile')
-#         self.user = User.objects.create(username='Mike',email='mike@bo.com')
-
-#     def test_profile_update_page_exists(self):
-#         response = self.client.get(self.url)
-#         self.assertEqual(response.status_code, 302)
-        
-#     def test_is_user_email_updated(self):
-#         form = Profileform(instance=self.user, data={
-#             'email': 'newmail@net.com'
-#         })
-#         self.assertTrue(form.is_valid())

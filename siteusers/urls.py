@@ -22,3 +22,8 @@ urlpatterns = [
         views.protect_profile_view, name='protect_profile'),
 
 ]
+
+
+
+    
+    
