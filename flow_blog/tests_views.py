@@ -293,6 +293,85 @@ class TestDeleteComment(TestCase):
         self.assertTrue(Comment.objects.filter(pk=self.comment2.pk).exists())
 
 
+class TestUpdateCommentView(TestCase):
+    @classmethod
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create(
+            username='newTester', password='new password'
+        )
+        self.user.save()
+        # updating user profile
+        self.user_profile = Profile.objects.update(
+            user=self.user,
+            first_name='Rocky',
+            last_name='Romano',
+            email='test@user15.com',
+            bio='my biography is',
+            role='Student',
+            id='15'
+
+        )
+        self.post = BlogPost.objects.create(
+            creator=self.user,
+            title='my test title',
+            body='new test body',
+            id='35'
+        )
+        self.user2 = User.objects.create(
+            username='rockTestuser', password='rockpass'
+        )
+        self.user2.save()
+    
+    def test_updating_comment(self):
+        
+        self.client.force_login(self.user)
+     # creating test comment
+        self.comment = Comment.objects.create(
+            author=self.user,
+            blogpost=self.post,
+            id=33,
+            content='Test comment one',
+
+        )
+
+
+        self.assertTrue(Comment.objects.filter(pk=self.comment.pk).exists())
+        response = self.client.get('/flow_blog/blog/blog/35',follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(Comment.objects.filter(pk=self.comment.pk).count(), 1)
+        self.assertTrue(self.comment.content == 'Test comment one')
+        self.comment.content ='changed'
+        response = self.client.post(reverse('update_comment', kwargs={
+            'comment_id': self.comment.id,
+            
+        }), self.comment.__dict__)
+        self.comment.refresh_from_db()
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(self.comment.content == 'changed')
+        self.comment2 = Comment.objects.create(
+            author=self.user2,
+            blogpost=self.post,
+            id=36,
+            content='new comment for sure',
+
+        )
+        self.assertTrue(Comment.objects.filter(pk=self.comment2.pk).exists())
+        response = self.client.post(reverse('update_comment', kwargs={
+            'comment_id': self.comment.id,
+            
+        }))
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(self.comment2.content == 'new comment for sure')
+
+
+        
+        
+
+       
+
+
+
 
 
 
