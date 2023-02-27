@@ -48,10 +48,10 @@ h2,h3{
     font-weight: 700;
 }
 
-#message{
+/* #message{
     z-index: 1000;
     opacity: 85%;
-}
+} */
 
 .active:hover{
   transform: scale(1.06)
