@@ -65,14 +65,6 @@
                   </div>
                 </li>
                 {% endif %}
-                
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="">Profile</a>
-                </li> -->
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="#">Login</a>
-                </li> -->
-              </ul>
               <span>
              {% if user.is_authenticated %}
               <a class="navbar-brand authorization-link" href="{% url 'account_logout' %}">Logout</a>
@@ -88,7 +80,7 @@
            </nav>
 
            {% for message in messages %}
-           <div class="alert {{ message.tags }} alert-dismissible fade show text-center mb-0" role="alert" id="msg">
+           <div class="alert {{ message.tags }} alert-dismissible fade show text-center mb-0 p-3" role="alert" id="msg">
              <strong>{{ message | safe }}</strong> 
              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                <span aria-hidden="true">&times;</span>

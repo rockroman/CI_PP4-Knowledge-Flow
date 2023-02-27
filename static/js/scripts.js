@@ -1,4 +1,3 @@
-
 let images = document.querySelectorAll('.blog_image');
 for (let image of images){
   image.classList.add("card-img-top");
@@ -31,20 +30,17 @@ $('.updateBtn').each(function(){
       $('.modal-body').each(function(){ 
       $('.md-textarea').html(oldComment)
       });
-      // new code 
-      //end  new code 
-    
+
     }
 
 
 
   });
-  // working-code
+// working-code
   $('#comment-done').on('click', function(){
     $('.md-textarea').html('')
     $('#comment-text').html('')
     
-
   });
 
 });
@@ -55,8 +51,7 @@ $('.comment').on('hide.bs.modal', function (e) {
   console.log('modal closed');
   $('.modal-body').each(function(){
     $('.md-textarea').html('')
-    // $('#com-text').html('')
-   
+    
     });
 });
 
@@ -68,7 +63,7 @@ $('#msg').hide().fadeIn(0).delay(1500).fadeOut(1300);
 //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 300px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
 };
@@ -78,10 +73,9 @@ function scrollFunction() {
     document.body.scrollTop > 300 ||
     document.documentElement.scrollTop > 300
   ) {
-   
-    mybutton.style.display = "block";
+    $("#btn-back-to-top").fadeIn(1200)
   } else {
-    mybutton.style.display = "none";
+    $("#btn-back-to-top").fadeOut(800);
   }
 }
 // When the user clicks on the button, scroll to the top of the document

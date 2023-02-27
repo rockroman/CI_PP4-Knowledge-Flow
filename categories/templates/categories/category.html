@@ -38,7 +38,10 @@
               <h5 class="mb-0">
                 <span class="text-white">Intro to {{ cat_list.cat }} </span>
               </h5>
-              <i class="fa fa-caret-down drop-icon text-white"></i>
+              <!-- <i class="fa fa-caret-down drop-icon text-white"></i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+              </svg>
             </div>
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="accordion-card__body text-white">
@@ -52,7 +55,10 @@
               <h5 class="mb-0">
                 <span class="text-white">Importance of {{ cat_list.cat }}</span>
               </h5>
-              <i class="fa fa-caret-down drop-icon text-white"></i>
+              <!-- <i class="fa fa-caret-down drop-icon text-white"></i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+              </svg>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="accordion-card__body text-white">
@@ -69,7 +75,10 @@
               <h5 class="mb-0">
                 <span class="text-white">Mentors avaliablle for {{ cat_list.cat }}</span>
               </h5>
-              <i class="fa fa-caret-down drop-icon text-white"></i>
+              <!-- <i class="fa fa-caret-down drop-icon text-white"></i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+              </svg>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="accordion-card__body ">
@@ -89,7 +98,7 @@
                           alt="User Img" class="rounded-circle mr-3" width="55" height="55">
                         {% else %}
                         {% load cloudinary %}
-                        {% cloudinary  mentor.image format="WebP" width=55 height=55 crop='fill' radius='max' className='cld-responsive' %}
+                        {% cloudinary  mentor.image format="WebP" width=55 height=55 crop='fill' radius='max' class='user_image' %}
                         {% endif %}
                         <!-- <img src="" alt="User Img" class="rounded-circle mr-3"  width="55" height="55"> -->
                       </div>
@@ -114,9 +123,21 @@
                     <p class="text-white">{{ mentor.bio|slice:":100" }}</p>
 
                   </div>
-                  <span class="h6 text-warning"><u>Contact</u></span>
-                  <div class="p mb-0 h6 text-white "><em class=" text-warning">email:</em> {{ mentor.email }}</div>
-                  <div class="d-flex justify-content-between mt-4">
+                  <span class="h6 text-warning font-weight-bold mb-0">Contact</span>
+                  
+                  <div class="p mb-0 h6 mt-2 text-white "><em class=" text-warning">email:</em> {{ mentor.email }}</div>
+                  {% if 'www.google.com' in mentor.website_url %}
+                  <div class="p mb-0 h6 mt-2  text-white "><em class=" text-warning">website:</em></div>
+                  {% else %}
+                  <div class="p mb-0 h6 mt-2  text-white "><em class=" text-warning">website:</em> {{ mentor.website_url }}</div>
+                  {% endif %}
+                  {% if 'www.google.com' in mentor.linkedIn_url %}
+                  <div class="p mb-0 h6 mt-2  text-white "><em class=" text-warning">LinkedIn:</em></div>
+                  {% else %}
+                  <div class="p mb-0 h6 mt-2  text-white "><em class=" text-warning">LinkedIn:</em> {{ mentor.linkedIn_url }}</div>
+                  {% endif %}
+                  <hr class="mb-0">
+                  <div class="d-flex justify-content-between mt-2">
                     <div>
                       <small class="text-white"><em>Joined</em></small>
                       <h5 class="mb-0">

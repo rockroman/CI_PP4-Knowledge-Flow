@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap'); */
+
 /* general styles */
 /* Colors pallet */
 :root {
@@ -13,7 +13,6 @@ html{
   scroll-behavior: smooth;
 }
 
-
 *{
     margin: 0;
     box-sizing: border-box;
@@ -21,8 +20,6 @@ html{
     
     
 }
-
-
 
 body{
     background-color:var(--background-body); 
@@ -144,6 +141,15 @@ h2,h3{
 }
 /* end nav-bar styles */
 
+/* django messages */
+
+#msg{
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  z-index: 100;
+}
+
 /* home page styles-------------------------------------------------------------------------------------------- */
 
 /* Hero section-------------------- */
@@ -165,7 +171,6 @@ h2,h3{
 } 
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
-  /* background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,q_93,w_1100/v1675369377/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f042ad021dc9.webp'); */
   background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_fit,w_900/v1675369377/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f042ad021dc9.webp');
   background-position: center;
   background-size: cover;
