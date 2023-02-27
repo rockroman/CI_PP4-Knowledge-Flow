@@ -192,5 +192,79 @@ Project code structure is organized and divided into various application folders
 - **requirements.txt**: This file lists the dependencies required for  Django project to run.
 - **env.py**: This file is used to store environment variables for a Django project or application, such as database connection details or API keys. best practice is including this file into th gitignore file so  the values can be easily accessed and used by the project without being exposed in the code or configuration files.
 
+## Database
+***
+<details><summary>(ERD)Physical database model</summary>
+<img src="docs/Knowledge-Flow-diagram2.jpeg">
+</details>
+
+- For this Django app I ve used PostgreSQL relational database management system.
+- model showed on the diagram visually represents the structure of a PostgreSQL database, including tables, columns, relationships, and constraints, that is actually stored in the database itself.
+
+### Data Models
+
+#### User model
+
+- User model as part of the Django allauth library contains basic information about authenticated user and contains folowing fields:
+username, password,email
+
+#### Profile model
+
+- Profile model is constructed as an extension of  user model  and there for has an <strong>one to one</strong> relationship with User model.also it related via <strong>Many To Many</strong> field with a Learning category model. it contains further data about authenticated user and has following fields: Image,first_name, last_name,email,category,website_url,linkedIn_url,bio,role,created_on,updated_on
+
+#### BlogPost model
+
+- BlogPost model is model used for each blogpost uploaded by the user,it has foreign key to the User model to associate each post with the author who created it, and another foreign key to the Category model to organize posts by topic or theme.By using foreign keys to establish these relationships model is associated with valid users and categories in the system. it consists of the 
+following fields:title,creator,category,slug,body,cover_image,created_on,updated_on
+
+#### Comment model
+
+- Comment model is used for any user comment on particular blog post there are 2 foreign keys one associated to a user and the other to a blog post fields of this model are:author,created,blogpost,content,status
+
+#### LearningCategory model 
+
+- LearningCategory model is used as an designed to provide a predefined list of categories that users can select from in their profile to indicate their areas of interest for learning, and also to serve as a set of categories that bloggers can assign to their posts to help other users discover relevant content. by using one model to represent both user interests and blog categories, the app can ensure consistency and avoid duplication in the category list. it has foreign key associated with a User. model fields are as follows:  maker,name,category_image,start_quote,description,importance_of_category.
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| maker          | user          | OneToOneField | User, on_delete=models.PROTECT    |
+| name           | name        | CharField    | max_length=50     |
+| category image| category_image   | CloudinaryField   | 'image', default='placeholder'      |
+| Start Quote    | start_quote    | CharField    | 'image', default='placeholder'     |
+| Last Name     | last_name     | CharField    | max_length=255, null=True      |
+| Description       | description       |TextField ManyToManyField |       |
+| Importance of category      |importance_of_category      | TextField    | null=True    |
+
+
+### Wireframes
+
+<details><summary>Big screens - laptop & desktop</summary>
+<img src="docs/wireframes/wireframes-desktop.png">
+</details>
+<details><summary>Medium screens - tablet</summary>
+<img src="docs/wireframes/wireframes-tablet.png">
+</details>
+<details><summary>Small screens - mobile</summary>
+<img src="docs/wireframes/wireframes-mobile.png">
+</details>
+
+***
+
+## Agile design
+
+### About
+- When I first tried to implement Agile methodology in my Django app, I found it challenging to balance the iterative development approach with the need for a solid plan and clear requirements.
+While I faced some setbacks and had to adjust my process along the way, the experience taught me valuable lessons about the importance of flexibility, communication, and continuous improvement in software development, and prepared me to approach future projects with a more agile mindset.
+usage of Milestones,Issues GitHub Projects and  Boards led to organizing the development in User Stories, Epics, Sprints
+
+- With my first try of using Agile methodology Im aware that planing and execution of agile could be better and would speed up the development procces but since its basicaly coomprehended to be collaborative,fast paced cyclical approach it felt odd to be implemented as a solo developer 
+
+- When faced with unexpected changes or challenges during development, I learned to be flexible and adjust my plan accordingly, often by reorganizing cards on my Kanban board and prioritizing tasks based on their importance and impact.
+This allowed me to respond more effectively to change, stay focused on the most critical issues, and ensure that my development process remained agile and adaptable
+
+
+
+
+
 
 
