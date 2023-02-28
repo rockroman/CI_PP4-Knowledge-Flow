@@ -153,39 +153,26 @@ class TestAddBlogView(TestCase):
         response = self.client.get('/flow_blog/blog/add_blog/')
         self.assertEqual(response.status_code, 200)
 
-    # def test_form_valid(self):
-    #     self.client.login(username='testRock', password='mynewpass')
-    #     profile = Profile.objects.get(user=self.user)
-    #     category = LearningCategory.objects.create(name='test category',maker=self.user)
-    #     profile.category.add(category)
-    #     profile = Profile.objects.update(
-    #         user=self.user,
-    #         role='Student'
-    #     )
-    #     # profile.save()
-    #     self.url = reverse('add_blog')
-    #     self.data = {
-    #         'title': 'Test Blog', 'body': 'This is a test blog.',
-    #         'category': category, 'id':'66'}
-    #     self.form = BlogForm(user=self.user, data=self.data)
-    #     current_user = Profile.objects.get(user=self.user)
-    #     # print('Current user:', current_user)
-    #     # print('User categories:', current_user.category.all())
-    #     # print('Category field queryset:', self.form.fields['category'].queryset)
-    #     # print('Form errors:', self.form.errors)        
-    #     self.assertTrue(self.form.is_valid())
-    #     response = self.client.post(self.url, data=self.data,)
-    #     self.assertEqual(response.status_code, 200)
-    #     # self.assertRedirects(response, reverse('blog_page'))
-    #     post1 = BlogPost.objects.filter(creator=self.user)
-    #     self.assertEqual(post1.creator, self.user)        
-    #     # print(self.form.fields)
-    #     # print(self.form.fields['category'].queryset)
-    #     # print(self.form.errors)
-
-
-
-
+    def test_form_valid(self):
+        self.client.login(username='testRock', password='mynewpass')
+        profile = Profile.objects.get(user=self.user)
+        category = LearningCategory.objects.create(
+            name='test category', maker=self.user)
+        profile.category.add(category)
+        profile = Profile.objects.update(
+            user=self.user,
+            role='Student'
+        )
+        self.url = reverse('add_blog')
+        self.data = {
+            'title': 'Test Blog', 'body': 'This is a test blog.',
+            'category': category.pk, 'id': '66',
+            'creator': self.user.profile.id}
+        response = self.client.post(self.url, data=self.data, follow=True)
+        # print(response)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(BlogPost.objects.filter(title='Test Blog').exists())
+        self.assertTrue(BlogPost.objects.all().count(), 2)
 
 
 class TestUpdateBlogView(TestCase):
@@ -240,6 +227,21 @@ class TestUpdateBlogView(TestCase):
         )
         response = self.client.get('/flow_blog/blog/edit_blog/31')
         self.assertEqual(response.status_code, 200)
+
+    # def test_form_valid(self):
+    #     self.client.login(username='testRock', password='mynewpass')
+    #     profile = Profile.objects.get(user=self.user)
+    #     category = LearningCategory.objects.create(name='test category',maker=self.user)
+    #     profile.category.add(category)
+    #     profile = Profile.objects.update(
+    #         user=self.user,
+    #         role='Student'
+    #     )
+    #     self.url = reverse('add_blog')
+    #     self.data = {
+    #         'title': 'Test Blog', 'body': 'This is a test blog.',
+    #         'category': category.pk, 'id':'66' , 'creator': self.user.profile.id }
+    #     response = self.client.post(self.url, data=self.data, follow=True)
 
 
 class TestDeleteBlog(TestCase):
