@@ -228,20 +228,23 @@ class TestUpdateBlogView(TestCase):
         response = self.client.get('/flow_blog/blog/edit_blog/31')
         self.assertEqual(response.status_code, 200)
 
-    # def test_form_valid(self):
-    #     self.client.login(username='testRock', password='mynewpass')
-    #     profile = Profile.objects.get(user=self.user)
-    #     category = LearningCategory.objects.create(name='test category',maker=self.user)
-    #     profile.category.add(category)
-    #     profile = Profile.objects.update(
-    #         user=self.user,
-    #         role='Student'
-    #     )
-    #     self.url = reverse('add_blog')
-    #     self.data = {
-    #         'title': 'Test Blog', 'body': 'This is a test blog.',
-    #         'category': category.pk, 'id':'66' , 'creator': self.user.profile.id }
-    #     response = self.client.post(self.url, data=self.data, follow=True)
+    def test_form_valid(self):
+        self.client.login(username='testRock', password='mynewpass')
+        profile = Profile.objects.get(user=self.user)
+        category = LearningCategory.objects.create(
+            name='test category', maker=self.user)
+        profile.category.add(category)
+        profile = Profile.objects.update(
+            user=self.user,
+            role='Student'
+        )
+        self.url = '/flow_blog/blog/edit_blog/31'
+        self.data = {
+            'title': 'Test Blog', 'body': 'This is a test blog.',
+            'category': category.pk, 'creator': self.user.profile.id}
+        response = self.client.post(self.url, data=self.data, follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(BlogPost.objects.filter(title='Test Blog').exists())
 
 
 class TestDeleteBlog(TestCase):
@@ -449,5 +452,5 @@ class TestUpdateCommentView(TestCase):
         response = self.client.post(
             reverse('update_comment', kwargs={'comment_id': self.comment.id}),
             {'content': 'Changed comment content'})
-        # comment is not updated 
+        # comment is not updated
         self.assertEqual(self.comment.content, 'changed')

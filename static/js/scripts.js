@@ -10,50 +10,80 @@ for (let image of Catimages){
 
 
 $('.user_image').each(function(){
-  $(this).attr('alt', ' profile image uploaded by user')
-})
-
-$('.blog_image').each(function(){
-  $(this).attr('alt', ' Blog image uploaded by user')
-})
-
-
-$('.updateBtn').each(function(){
-  $(this).on("click", function(event){
-    if (event.target = this) {
-    
-      var par = $(event.target).parent();
-  
-      
-      console.log(par.children('#comment-body').html());
-      let oldComment= par.children('#comment-body').html();
-      $('.modal-body').each(function(){ 
-      $('.md-textarea').html(oldComment)
-      });
-
-    }
-
-
-
-  });
-// working-code
-  $('#comment-done').on('click', function(){
-    $('.md-textarea').html('')
-    $('#comment-text').html('')
-    
-  });
-
+  $(this).attr('alt', ' profile image uploaded by user');
 });
 
+$('.blog_image').each(function(){
+  $(this).attr('alt', ' Blog image uploaded by user');
+});
+
+
+// $('.updateBtn').each(function(){
+//   $(this).on("click", function(event){
+//     if (event.target = this) {
+    
+//       var par = $(event.target).parent();
+  
+      
+//       console.log(par.children('#comment-body').html());
+//       let oldComment= par.children('#comment-body').html();
+//       $('.modal-body').each(function(){ 
+//       $('.md-textarea').html(oldComment)
+//       });
+
+//     }
+
+
+
+//   });
+
+
+// // working-code
+//   $('#comment-done').on('click', function(){
+//     $('.md-textarea').html('')
+//     $('#comment-text').html('')
+    
+//   });
+
+// });
+
+// new  better code
+$('.updateBtn').each(function(){
+  $(this).on("click", function(event){
+    event.target = this;
+    var par = $(this).parent();
+    console.log(par.children('#comment-body').html());
+    let oldComment= par.children('#comment-body').html();
+    $('.modal-body').each(function(){ 
+      $('.md-textarea').html(oldComment);
+    });
+  });
+
+
+// working-code
+  $('#comment-done').on('click', function(){
+    $('.md-textarea').html('');
+    $('#comment-text').html('');
+    
+  });
+
+
+
+});
 
 // detect when closing modal
 $('.comment').on('hide.bs.modal', function (e) {
   console.log('modal closed');
   $('.modal-body').each(function(){
-    $('.md-textarea').html('')
+    $('.md-textarea').html('');
     
     });
 });
+
+// end new better code
+
+
+ 
 
 // dissmiss django messages
 
@@ -73,7 +103,7 @@ function scrollFunction() {
     document.body.scrollTop > 300 ||
     document.documentElement.scrollTop > 300
   ) {
-    $("#btn-back-to-top").fadeIn(1200)
+    $("#btn-back-to-top").fadeIn(1200);
   } else {
     $("#btn-back-to-top").fadeOut(800);
   }

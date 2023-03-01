@@ -230,11 +230,11 @@ following fields:title,creator,category,slug,body,cover_image,created_on,updated
 | maker          | user          | OneToOneField | User, on_delete=models.PROTECT    |
 | name           | name        | CharField    | max_length=50     |
 | category image| category_image   | CloudinaryField   | 'image', default='placeholder'      |
-| Start Quote    | start_quote    | CharField    | 'image', default='placeholder'     |
-| Last Name     | last_name     | CharField    | max_length=255, null=True      |
-| Description       | description       |TextField ManyToManyField |       |
+| Start Quote    | start_quote    | CharField    |    |
+| Description       | description       |TextField ManyToManyField | max_length=255, null=True       |
 | Importance of category      |importance_of_category      | TextField    | null=True    |
 
+##### Back to [top](#table-of-contents) 
 
 ### Wireframes
 
@@ -265,6 +265,41 @@ This allowed me to respond more effectively to change, stay focused on the most 
 
 
 
+## Technologies Used
+
+### Languages & Frameworks
+
+- HTML 
+- CSS
+- Javascript
+- Boostrap 4
+- Python 3.10.2
+- Django 3.2
+
+### Libraries & Tools
+
+- [Am I Responsive](http://ami.responsivedesign.is/) was usedfor creating the multi-device mock-up at the top of this README.md file
+- [Balsamiq](https://balsamiq.com/) to create the projects wireframes
+- [Bootstrap 4.2](https://getbootstrap.com/). This project uses the Bootstrap library for UI components (Buttons, Card, Footer, Modal, Pagination, Navbar)
+- [Cloudinary](https://cloudinary.com/) to store static files
+- [Lucidcharts](https://lucid.app/) has been used in  project to design and document  data model architecture.
+- [Favicon.io](https://favicon.io) for making the site favicon
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for debugging of the code and checking site for responsiveness
+- [Boostrap icons](https://fontawesome.com/) - Icons from Boostrap icons  were used throughout the site
+- [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
+- [GitHub](https://github.com/) was used as a remote repository to store project code
+- [Google Fonts](https://fonts.google.com/) - for typography in project
+- [Looka](https://looka.com/)- for making the custom website logo
+
+
+- Validation:
+    - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) to validate the css in the project
+  - [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
+ 
+  - [JShint](https://jshint.com/) to validate custom script file
+  <!-- - [PEP8](http://pep8online.com/) to check code against Python conventions -->
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
+  - [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 
 
 
