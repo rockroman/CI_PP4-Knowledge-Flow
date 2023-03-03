@@ -20,27 +20,27 @@ $('.blog_image').each(function(){
 
 // code for updating comment in bootstrap modal
 
-$('.updateBtn').each(function(){
-  $(this).on("click", function(event){
+// $('.updateBtn').each(function(){
+//   $(this).on("click", function(event){
    
-    event.target = this;
-    var par = $(this).parent();
-    console.log(par.children('.comment-body').html());
-    let oldComment= par.children('.comment-body').html();
-    $('.modal-body').each(function(){ 
-      $('.md-textarea').html(oldComment);
-    });
-  });
+//     event.target = this;
+//     var par = $(this).parent();
+//     console.log(par.children('.comment-body').html());
+//     let oldComment= par.children('.comment-body').html();
+//     $('.modal-body').each(function(){ 
+//       $('.md-textarea').html(oldComment);
+//     });
+//   });
 
 
-// working-code
-  $('.comment-done').on('click', function(){
-    $('.md-textarea').html('');
-    $('#comment-text').html('');
+// // working-code
+//   $('.comment-done').on('click', function(){
+//     $('.md-textarea').html('');
+//     $('#comment-text').html('');
     
-  });
+//   });
 
-});
+// });
 
 
 // detect when closing modal

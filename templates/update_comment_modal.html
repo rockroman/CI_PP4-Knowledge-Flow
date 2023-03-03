@@ -13,7 +13,7 @@
             <div class="modal-footer justify-content-center" >
               <form action="{% url 'update_comment' comment_id %}"  method="POST" enctype="multipart/form-data" class="modal-body" autocomplete="off" id="update-comment-form">
                   {% csrf_token %}
-                  <div class="mb-2 my-form-content" > {{ form.content|attr:"id:comment.id" }}</div>
+                  <div class="mb-2 my-form-content" > {{ form.content|attr:"id:comment_id" }}</div>
                   <button class="btn btn-success active comment-done" >update</button>
               </form>
               <button type="submit" class="btn btn-primary active go-back" data-dismiss="modal">Go back</button>

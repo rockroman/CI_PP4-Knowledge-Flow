@@ -55,6 +55,9 @@ class Comment(models.Model):
     content = models.TextField(max_length=500)
     status = models.BooleanField(default=True)
 
+    def get_absolute_url(self):
+        return reverse('blog_details', kwargs={'pk': self.blogpost.pk})
+
     class Meta:
         ordering = ['-created']
 

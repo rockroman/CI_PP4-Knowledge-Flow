@@ -185,19 +185,19 @@ def delete_comment(request, comment_id):
 
 # end of working view
 
-def update_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    form = UpdateCommentForm(instance=comment)
+# def update_comment(request, comment_id):
+#     comment = get_object_or_404(Comment, id=comment_id)
+#     form = UpdateCommentForm(instance=comment)
 
-    if request.method == 'POST' and request.user.id == comment.author.id:
-        form = UpdateCommentForm(request.POST, instance=comment)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'COMMENT IS UPDATED')
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    else:
-        messages.error(request, "CAN'T UPDATE COMMENT(YOU ARE NOT CREATOR) ")
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+#     if request.method == 'POST' and request.user.id == comment.author.id:
+#         form = UpdateCommentForm(request.POST, instance=comment)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, 'COMMENT IS UPDATED')
+#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+#     else:
+#         messages.error(request, "CAN'T UPDATE COMMENT(YOU ARE NOT CREATOR) ")
+#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 def list_of_comments(request):
@@ -205,21 +205,11 @@ def list_of_comments(request):
     context['comment_id'] = Comment.objects.first().id 
     return context
 
-
-
-# def update_comment_modal(request, comment_id):
-#     # Get the comment object
-#     comment = Comment.objects.get(id=comment_id)
     
-#     # Create a form instance for the comment
-#     form = CommentForm(instance=comment)
-    
-#     # Render the modal template with the form and comment objects
-#     context = {'form': form, 'comment': comment}
-#     html = render(request, 'update_comment_modal.html', context=context)
-    
-#     # Return the rendered HTML as a response
-#     return HttpResponse(html)
+class UpdateCommentView(SuccessMessageMixin, UpdateView):
+    model = Comment
+    template_name = 'update_comment.html'
+    form_class = CommentForm
+    success_message = 'COMMENT IS UPDATED' 
 
-# def my_view(request):
-#     return render(request, 'test2.html')
+    # def post(self, request):
