@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView, DeleteView, View)
 from .models import BlogPost, Comment
-from .forms import BlogForm, CommentForm
+from .forms import BlogForm, CommentForm, UpdateCommentForm
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -168,12 +168,29 @@ def delete_comment(request, comment_id):
 #         messages.error(request, "CAN'T UPDATE COMMENT(YOU ARE NOT CREATOR) ")
 #         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+# working view
+# def update_comment(request, comment_id):
+#     comment = get_object_or_404(Comment, id=comment_id)
+#     form = CommentForm(instance=comment)
+
+#     if request.method == 'POST' and request.user.id == comment.author.id:
+#         form = CommentForm(request.POST, instance=comment)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, 'COMMENT IS UPDATED')
+#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+#     else:
+#         messages.error(request, "CAN'T UPDATE COMMENT(YOU ARE NOT CREATOR) ")
+#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+# end of working view
+
 def update_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
-    form = CommentForm(instance=comment)
+    form = UpdateCommentForm(instance=comment)
 
     if request.method == 'POST' and request.user.id == comment.author.id:
-        form = CommentForm(request.POST, instance=comment)
+        form = UpdateCommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
             messages.success(request, 'COMMENT IS UPDATED')
@@ -181,3 +198,28 @@ def update_comment(request, comment_id):
     else:
         messages.error(request, "CAN'T UPDATE COMMENT(YOU ARE NOT CREATOR) ")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+def list_of_comments(request):
+    context = {}
+    context['comment_id'] = Comment.objects.first().id 
+    return context
+
+
+
+# def update_comment_modal(request, comment_id):
+#     # Get the comment object
+#     comment = Comment.objects.get(id=comment_id)
+    
+#     # Create a form instance for the comment
+#     form = CommentForm(instance=comment)
+    
+#     # Render the modal template with the form and comment objects
+#     context = {'form': form, 'comment': comment}
+#     html = render(request, 'update_comment_modal.html', context=context)
+    
+#     # Return the rendered HTML as a response
+#     return HttpResponse(html)
+
+# def my_view(request):
+#     return render(request, 'test2.html')

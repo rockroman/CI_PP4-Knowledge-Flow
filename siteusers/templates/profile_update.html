@@ -24,7 +24,7 @@
                 {% cloudinary  user.profile.image format="WebP" width=80 height=80 crop='fill' radius='max' class='user_image' %}
             {% endif %}
         </div>
-        <form action="" method="POST" enctype="multipart/form-data" class="formlabel">
+        <form  method="POST" enctype="multipart/form-data" class="formlabel">
             {% csrf_token %}
             <label for="id_image" class="requiredField">image</label>
             {{ form.image }}

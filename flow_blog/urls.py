@@ -19,7 +19,6 @@ urlpatterns = [
     path(
         'delete_comment/<int:comment_id>/',
         views.delete_comment, name='delete_comment'),
-    
     path('delete_blog/<int:post_id>/', views.delete_blog, name='delete_blog'),
     path(
         'update_comment/<int:comment_id>/',
@@ -27,4 +26,5 @@ urlpatterns = [
     # path(
     #     'update_comment/<int:comment_id>/',
     #     UpdateCommentView.as_view(), name='update_comment'),
+
 ]

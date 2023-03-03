@@ -35,7 +35,8 @@ class Profileform(forms.ModelForm):
             'website_url', 'linkedIn_url', 'bio']
         labels = {
             'website_url': 'Website url (optional)',
-            'linkedIn_url': 'LinkedIn url (optional)'
+            'linkedIn_url': 'LinkedIn url (optional)',
+            
         }
 
     def save(self, *args, **kwargs):

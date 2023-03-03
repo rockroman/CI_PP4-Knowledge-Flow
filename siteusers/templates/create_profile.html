@@ -5,11 +5,10 @@
 
 
 <h1 class="col-12 text-center text-white"> {{ user.username }}'s Profile</h1>
-<div class="container">
+<main class="container">
     <div class="form-group bg-dark p-5 pl-4 pr-4">
         <form class="formlabel" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <!-- {% crispy form %} -->
             <label for="id_image" class="requiredField">image</label>
             {{ form.image }}
             
@@ -24,8 +23,8 @@
             </div>
             {{ form.email|as_crispy_field}}
             <fieldset>
-                <!-- <legend>Choose category</legend> -->
-            {{ form.category|as_crispy_field}}
+                <!-- <legend><small class="h6">Category*</small></legend> -->
+            {{ form.category|as_crispy_field }}
             </fieldset>
             <div class="form-row">
                 <div class="form-group col-md mb-0">
@@ -41,7 +40,7 @@
         </form>
     </div>
     
-</div>
+</main>
 
 
 {% endblock content %}

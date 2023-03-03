@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['knowledge-flow.herokuapp.com', 'localhost']
 
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'home',
     'siteusers',
     'flow_blog',
+    'widget_tweaks',
 ]
 
 SITE_ID = 1
@@ -98,6 +99,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'categories.views.list_of_categories',
                 'siteusers.views.list_of_mentors',
+                'flow_blog.views.list_of_comments',
 
             ],
         },

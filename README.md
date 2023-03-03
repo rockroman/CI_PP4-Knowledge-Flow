@@ -22,9 +22,9 @@
     1. [Agile Design](#agile-design)
     2. [CRUD Functionality](#crud-functionality)
 4. [Technologies Used](#technologies-used)
-    1. [Coding Languages](#coding-languages)
-    2. [Frameworks and Tools](#frameworks-and-tools)
-    3. [Libraries](#libraries)
+    1. [Languages & Frameworks](#languages--frameworks)
+    2. [Libraries and Tools](#libraries--tools)
+    
 5. [Features](#features)
 6. [Future implementation](#future-implementation)
     1. [Future Features](#future-features)
@@ -215,11 +215,32 @@ username, password,email
 #### BlogPost model
 
 - BlogPost model is model used for each blogpost uploaded by the user,it has foreign key to the User model to associate each post with the author who created it, and another foreign key to the Category model to organize posts by topic or theme.By using foreign keys to establish these relationships model is associated with valid users and categories in the system. it consists of the 
-following fields:title,creator,category,slug,body,cover_image,created_on,updated_on
+following fields:
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| title        | title      | CharField| max_length=200, unique=True  |
+| creator        | creator       |ForeignKey   | User, on_delete=models.CASCADE  |
+| category| category  | ForeignKey   | LearningCategory, on_delete=models.PROTECT, null=True     |
+|  slug   | slug   | SlugField   | max_length=100, unique=True  |
+| body       | body     |TextField |      |
+|  cover_image     | cover_image      | CloudinaryField  | 'image', default='placeholder'   |
+|  created_on     | created_on      | DateTimeField   | auto_now_add=True    |
+|  updated_on     | updated_on      | DateTimeField   | auto_now_add=True    |
+
 
 #### Comment model
 
-- Comment model is used for any user comment on particular blog post there are 2 foreign keys one associated to a user and the other to a blog post fields of this model are:author,created,blogpost,content,status
+- Comment model is used for any user comment on particular blog post there are 2 foreign keys one associated to a user and the other to a blog post fields of this model are:
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| author         |  author          | ForeignKey | User, on_delete=models.CASCADE   |
+| created        | created       | DateTimeField    | auto_now_add=True   |
+| blogpost| blogpost   | ForeignKey   | BlogPost, on_delete=models.CASCADE, related_name='comments'     |
+| content    | content    | TextField    | max_length=500   |
+| status       | status      |BooleanField | max_length=255, default=True     |
+
 
 #### LearningCategory model 
 
@@ -292,12 +313,150 @@ This allowed me to respond more effectively to change, stay focused on the most 
 - [Looka](https://looka.com/)- for making the custom website logo
 
 
+## Features
+
+***
+### Nav-bar and Logo
+
+- this feature is present throughout entire project except on a page where user is prompt to define his profile role for using the app, and since the incentive is to pick the role as its vital part of a user functionality of the web app I decided to not incude this feature in this part of the project.
+
+- Nav-bar consists of a links to a blog page, profile page, each of 3 learning category pages and link to about us section
+    - authenticated user has his username visible on the navbar and dropdown extends to a link to profile page
+    - unaithenticated user cant see (name link to profile) and blog page dropdown is restricted so he dont have access to CRUD functionality of a blog section while authenticated user has dropdown link to add blog.
+
+- Feature is fully responsive and on smaller screen sizes it coverts into a 'Hamburger menu'
+- User Story covered with this feature:
+
+<details><summary>See feature images</summary>
+
+![Logo and navbar](docs/features/feature-logo-and-navbar.JPG)
+![Logo and navbar](docs/features/feature-logo-and-navbar-hamburger.jpg)
+![Logo and navbar](docs/features/feature-logo-and-navbar-not-logged-user.JPG)
+![Logo and navbar](docs/features/feature-logo-and-navbar-logged-user.jpg)
+</details>
+
+
+### Homepage
+
+<details><summary>See Homepage</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+- this feature is First point of contact with a user, it consist of:
+ - hero section with a CTA(call to action button)
+    - CTA guides user depending if user is authenticated or not
+    - Authenticated user is redirected to see latest blogs and find his preferrence
+    - Unauthnticated user is redirected to a signup page.
+    - User Story covered with this feature:
+
+    <details><summary>See Hero section</summary>
+
+    ![Home page](docs/features/feature-home-page.JPG)
+    </details>
+
+- Featured section as an extension of a hero section with introduction to web app and small list 
+  of benefits when using the web app.
+  - User Story covered with this feature:
+
+    <details><summary>See Featured section </summary>
+    ![Home page](docs/features/feature-home-page.JPG)
+    </details>
+
+
+- Team Section that presents the team who delivered the app
+    - User Story covered with this feature:
+
+    <details><summary>See  Team Section </summary>
+
+    ![Home page](docs/features/feature-home-page.JPG)
+    </details>
+
+- About section with a famous quote is delivering a small peek into reasons for delivering the
+   app while effectively communicating  brand's values and invites users to engage with web app
+   - User Story covered with this feature:
+
+    <details><summary>See About section </summary>
+
+    ![Home page](docs/features/feature-home-page.JPG)
+    </details>
+
+- Contact section with a web app logo and small contact form this section purpose is to  
+  establish visual identity of a web app and to provide a convenient way for users to get in touch with a Team
+  - User Story covered with this feature: 
+
+    <details><summary>See Contact section</summary>
+
+    ![Home page](docs/features/feature-home-page.JPG)
+    </details>
+
+- Footer is intended to be extension of a nav-bar with links to home page, about us setion and blog page, links to social media pages to ensure multple ways that user can communicate with a team and one added detail of a developer git-hub page link with a timeframe ofproject development.
+    - User Story covered with this feature: 
+
+    <details><summary>See  Team Section </summary>
+
+    ![Home page](docs/features/feature-home-page.JPG)
+    </details>
+
+***
+
+
+
+
+
+
+
+
+
+- Homepage consists from following features:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - Validation:
     - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) to validate the css in the project
   - [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
  
   - [JShint](https://jshint.com/) to validate custom script file
-  <!-- - [PEP8](http://pep8online.com/) to check code against Python conventions -->
+  - [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
   - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
   - [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 

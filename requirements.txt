@@ -7,6 +7,7 @@ dj3-cloudinary-storage==0.0.6
 Django==3.2.16
 django-allauth==0.51.0
 django-crispy-forms==1.14.0
+django-widget-tweaks==1.4.12
 exceptiongroup==1.1.0
 gunicorn==20.1.0
 h11==0.14.0

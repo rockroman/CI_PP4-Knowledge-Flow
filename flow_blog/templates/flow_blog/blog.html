@@ -22,11 +22,11 @@
               class="card-img-top"> -->
             <img
               src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088520/static/images/us-wah-x8HupeZdK7Y-unsplash-cup.5ff494c59c0f.webp"
-              alt="" class="card-img-top" width="450" height="250">
+              alt="cup of coffee on a table with a not readme written on it " class="card-img-top" width="450" height="250">
             {% else %}
 
             {% load cloudinary %}
-            {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image'  %}
+            {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image' alt='Blog image uploaded by user' %}
 
             {% endif %}
             <div class="card-body">

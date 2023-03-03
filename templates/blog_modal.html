@@ -1,17 +1,14 @@
 {% block blog_modal %}
 <!-- Modal -->
-<div class="modal fade" id="my-{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+<div class="modal fade" id="my-{{ post.id }}" tabindex="-1" role="dialog" aria-label="deleting a blog with this modal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header flex-column align-items-center">
-          <h3><span><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
+          <div><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-          </svg></span></h3>
+          </svg></div>
           <h5 class="modal-title text-uppercase " id="blogModalLabel">Are You sure</h5>
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
-            <!-- <span aria-hidden="true">&times;</span>
-          </button> -->
         </div>
         <div class="modal-body text-center text-muted">
           Do you really want to Delete this Blog-Post?
@@ -21,7 +18,6 @@
         
           <a class="btn btn-danger " href="{% url 'delete_blog' post.id %}" >DELETE</a>
           <button type="button" class="btn btn-primary active text-white" data-dismiss="modal">Go back</button>
-          <!-- <button type="button" class="btn text-dark font-weight-bold" data-dismiss="modal" style="background-color: #59cb57;">Go back</button> -->
         </div>
       </div>
     </div>

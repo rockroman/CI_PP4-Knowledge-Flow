@@ -9,6 +9,7 @@ from .views import AppUserSetUpProfile, SeeProfilePageView, EditProfilePageView,
 from .forms import Profileform
 from django.http import HttpRequest
 from http import HTTPStatus
+from categories.models import LearningCategory
 
 
 class TestAppUserSetUpProfile(TestCase):
@@ -22,6 +23,8 @@ class TestAppUserSetUpProfile(TestCase):
             email='test@user.com',
             id='1',
         )
+        self.user.save()
+        self.user.set_password('mypass79')
         self.user.save()
         self.user_profile = Profile.objects.update(
             user=self.user,
@@ -44,17 +47,46 @@ class TestAppUserSetUpProfile(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_is_the_form_valid(self):
-        request = self.factory.post('create_profile/', {
-            'first_name': 'Rock',
-            'last_name': 'Roman',
-            'email': 'test@user.com',
-            'bio': 'my biography'
+        self.client = Client()
+        user2 = User.objects.create(
+            username='Tester22',
+            password='testpass',
+            id=88
+        )
+        user2.save()
+        user2.set_password('testpass')
+        user2.save()
+        self.assertTrue(Profile.objects.filter(user=user2).exists())
+        self.client.login(username='Tester22', password='testpass')
+        # response = self.client.post('/siteusers/set_role/', {
+        #     'role': 'Mentor's
+        # })
+        # self.assertEqual(response.status_code, 200)
+        profile = Profile.objects.get(user=user2)
+        profile = Profile.objects.update(
+            role='Mentor'
+        )
+        self.assertTrue(Profile.objects.filter(role='Mentor').exists())
+        self.category = LearningCategory.objects.create(
+            name='test category', maker=user2, id=22)
+        # profile.category.add(category)
+       
+        self.data={
+            'first_name': 'mi',
+            'last_name':'tooo',
+            'email': 'mustbe@net.com',
+            'category':self.category.pk,
+            'bio':'my bio'
 
-        })
-        request.user = self.user
-        view = AppUserSetUpProfile.as_view()
-        response = view(request)
+        }
+        response = self.client.get('/siteusers/create_profile')
+        # self.assertTrue(Profile.objects.filter(category=self.category.pk).exists())
         self.assertEqual(response.status_code, 200)
+        # self.assertTemplateUsed('create_profile.html')
+
+       
+
+        
 
 
 class TestProfilePageView(TestCase):
