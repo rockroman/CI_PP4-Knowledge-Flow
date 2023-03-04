@@ -28,7 +28,6 @@
 5. [Features](#features)
 6. [Future implementation](#future-implementation)
     1. [Future Features](#future-features)
-    2. [Improvements](#improvements)
 7. [Validation](#validation)
     1. [HTML](#html-validation)
     2. [CSS](#css-validation)
@@ -327,12 +326,21 @@ This allowed me to respond more effectively to change, stay focused on the most 
 - Feature is fully responsive and on smaller screen sizes it coverts into a 'Hamburger menu'
 - User Story covered with this feature:
 
-<details><summary>See feature images</summary>
+<details><summary>See Nav-bar and Logo</summary>
 
 ![Logo and navbar](docs/features/feature-logo-and-navbar.JPG)
 ![Logo and navbar](docs/features/feature-logo-and-navbar-hamburger.jpg)
 ![Logo and navbar](docs/features/feature-logo-and-navbar-not-logged-user.JPG)
 ![Logo and navbar](docs/features/feature-logo-and-navbar-logged-user.jpg)
+</details>
+
+### Back to top Button
+
+- This button is present an all pages
+- Makes navigating the page easier and its enhancing the user experience 
+<details><summary>See Back to top Button</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
 </details>
 
 
@@ -352,7 +360,7 @@ This allowed me to respond more effectively to change, stay focused on the most 
 
     <details><summary>See Hero section</summary>
 
-    ![Home page](docs/features/feature-home-page.JPG)
+    ![Hero section](docs/features/feature-home-page.JPG)
     </details>
 
 - Featured section as an extension of a hero section with introduction to web app and small list 
@@ -360,16 +368,16 @@ This allowed me to respond more effectively to change, stay focused on the most 
   - User Story covered with this feature:
 
     <details><summary>See Featured section </summary>
-    ![Home page](docs/features/feature-home-page.JPG)
+    ![Featured section](docs/features/feature-home-page.JPG)
     </details>
 
 
 - Team Section that presents the team who delivered the app
     - User Story covered with this feature:
 
-    <details><summary>See  Team Section </summary>
+    <details><summary>See Team Section</summary>
 
-    ![Home page](docs/features/feature-home-page.JPG)
+    ![Team Section](docs/features/feature-home-page.JPG)
     </details>
 
 - About section with a famous quote is delivering a small peek into reasons for delivering the
@@ -378,7 +386,7 @@ This allowed me to respond more effectively to change, stay focused on the most 
 
     <details><summary>See About section </summary>
 
-    ![Home page](docs/features/feature-home-page.JPG)
+    ![About section ](docs/features/feature-home-page.JPG)
     </details>
 
 - Contact section with a web app logo and small contact form this section purpose is to  
@@ -387,15 +395,15 @@ This allowed me to respond more effectively to change, stay focused on the most 
 
     <details><summary>See Contact section</summary>
 
-    ![Home page](docs/features/feature-home-page.JPG)
+    ![Contact section](docs/features/feature-home-page.JPG)
     </details>
 
 - Footer is intended to be extension of a nav-bar with links to home page, about us setion and blog page, links to social media pages to ensure multple ways that user can communicate with a team and one added detail of a developer git-hub page link with a timeframe ofproject development.
     - User Story covered with this feature: 
 
-    <details><summary>See  Team Section </summary>
+    <details><summary>See Team Section </summary>
 
-    ![Home page](docs/features/feature-home-page.JPG)
+    ![Team Section](docs/features/feature-home-page.JPG)
     </details>
 
 ***
@@ -407,9 +415,9 @@ This allowed me to respond more effectively to change, stay focused on the most 
  - For registering User must provide a username and strong enough password(for any errors user is prompted) 
  - User Story covered with this feature: 
 
-<details><summary>See  Register Page</summary>
+<details><summary>See Register Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Register Page](docs/features/feature-home-page.JPG)
 </details>
 
 ### Login page 
@@ -418,22 +426,22 @@ This allowed me to respond more effectively to change, stay focused on the most 
  - user must provide valid username and password
  - User Story covered with this feature: 
 
-<details><summary>See  Login Page</summary>
+<details><summary>See Login Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Login Page](docs/features/feature-home-page.JPG)
 </details>
 
 
 
 
-### Forgot password 
+### Forgot password page
  - This feature is also part of (django-allauth) and its included to help users
  start process of setting the new password if they forgot their password
   - User Story covered with this feature: 
 
-<details><summary>See Forgot password  Page</summary>
+<details><summary>See Forgot password Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Forgot password Page](docs/features/feature-home-page.JPG)
 </details>
 
 
@@ -445,7 +453,7 @@ This allowed me to respond more effectively to change, stay focused on the most 
 
 <details><summary>See Forgot password finished Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Forgot password finished Page](docs/features/feature-home-page.JPG)
 </details>
 
 
@@ -459,7 +467,7 @@ and upo clickinguser profile role is set
 
 <details><summary>See Set role Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Set role Page](docs/features/feature-home-page.JPG)
 </details>
 
 ### Create profile page
@@ -471,9 +479,9 @@ and upo clickinguser profile role is set
 - User is given an option to upload a supporting image to his profile
 - User Story covered with this feature: 
 
-<details><summary>See Create Page</summary>
+<details><summary>See Create profile Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Create profile Page](docs/features/feature-home-page.JPG)
 </details>
 
 ### Profile page
@@ -485,7 +493,7 @@ structured nicely into simple jet effective profile page example
 
 <details><summary>See Profile Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Profile Page](docs/features/feature-home-page.JPG)
 </details>
 
 ### Update Profile page
@@ -494,7 +502,7 @@ structured nicely into simple jet effective profile page example
 - User Story covered with this feature:
  <details><summary>See Update Profile Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Update Profile Page](docs/features/feature-home-page.JPG)
 </details>
 
 
@@ -505,7 +513,7 @@ structured nicely into simple jet effective profile page example
 - User Story covered with this feature:
  <details><summary>See Delete Profile Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Delete Profile Page](docs/features/feature-home-page.JPG)
 </details> 
 
 ### Blog page
@@ -513,9 +521,10 @@ structured nicely into simple jet effective profile page example
 - Blogs are displayed using a cards elements(blog card)
  <details><summary>See blog card</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![blog card page](docs/features/feature-home-page.JPG)
 </details>
-- Basic info displayed on a blog card:
+
+- Basic info about blogpost displayed on a blog card:
     - title of a blog
     - Creator of a blog
     - Date of publishing
@@ -524,70 +533,119 @@ structured nicely into simple jet effective profile page example
 - User Story covered with this feature:
  <details><summary>See Blog Page</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Blog Page](docs/features/feature-home-page.JPG)
 </details> 
 
+### Blog detail page
+- User must be authenticated to get access to a blog detail page
+- User can see full cntent of a blog post , all the comments posted for
+that blog post
+ <details><summary>See Blog detail Page</summary>
+
+![Blog detail Page](docs/features/feature-home-page.JPG)
+</details> 
+
+- If user is the creator of a blog two icons are displayed one for updating and other one
+for deleting a blog
+- The user have functionality to post a comment under the blog.
+- Two icons are also displayed under each comment that logged in user posted so he got options to delete or update a comment
+- User Story covered with this feature:
+ <details><summary>See Comment section</summary>
+
+![Comment section](docs/features/feature-home-page.JPG)
+</details> 
+
+### Delete blog (modal)
+- User is presented with a pop up modal
+- Two options in a modal one to delete a blogpost or to go back
+- User Story covered with this feature:
+ <details><summary>See Delete blog(modal)</summary>
+
+![Delete blog](docs/features/feature-home-page.JPG)
+</details> 
+
+### Add blog page
+- User is presented with add blog form
+- User can add title, supporting image for a blog, and body of a blog
+- Only one of the categories selected in user profile can be selected as a category of a blogpost 
+- User Story covered with this feature:
+ <details><summary>See Add blog page</summary>
+
+![Add blog page](docs/features/feature-home-page.JPG)
+</details>
+
+### Update comment page
+- User is redirected to a page where a comment modal is
+displayed so he can update comment or go back 
+- User Story covered with this feature:
+ <details><summary>See Update comment page</summary>
+
+![Add blog page](docs/features/feature-home-page.JPG)
+</details>
+
+### Delete comment (modal)
+- User is presented with a pop up modal where he got two options
+ to delete comment or go back
+- User Story covered with this feature:
+ <details><summary>See Delete comment (modal)</summary>
+
+![Add blog page](docs/features/feature-home-page.JPG)
+</details>
+
+### Learning Category page (x3)
+- This page contains information about each learning category.
+- Users can read about benefits when gaining knowledge about each category.
+- User can see mentors available by category and mentors' basic information and contact details.
+- Blogs related to the category are displayed on the page.
+- User Story covered by this feature:
+ <details><summary>See Delete Learning Category page</summary>
+
+![Add blog page](docs/features/feature-home-page.JPG)
+</details>
+
+### Error handling pages
+- Making the user experience good by handling errors that users can encounter
+(404, 403, and 500 errors)
+- User Story covered by this feature:
+ <details><summary>See Error pages</summary>
+
+![Add blog page](docs/features/feature-home-page.JPG)
+</details>
 
 
 
 
 
+## Future Features
+***
+For further releases of this web, there is a plan to implement new and improve
+some of the existing features
+
+1. Implement email validation before registering new users.
+2. Dynamically updating comments
+3. Implement replies for a comment section.
+4. Enable the mentor user to add new learning categories with administrator approval.
+5. Implement an internal messaging system between users (inbox).
 
 
+## Validation:
+***
+- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) to validate the css in the project
+- [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
+
+- [JShint](https://jshint.com/) to validate custom script file
+- [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
+- [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 
 
+## Testing
+***
 
-- Homepage consists from following features:
+## Bugs
+***
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Validation:
-    - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) to validate the css in the project
-  - [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
- 
-  - [JShint](https://jshint.com/) to validate custom script file
-  - [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
-  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
-  - [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
-
+## Deployment
+***
 
 
