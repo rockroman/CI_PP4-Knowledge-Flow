@@ -19,7 +19,7 @@
                       <form  method="POST" enctype="multipart/form-data" class="modal-body" autocomplete="off" id="update-comment-form">
                           {% csrf_token %}
                           <input type="hidden" name="next" value="{{ request.path }}">
-                          <div class="mb-2 my-form-content" > {{ form}}</div>
+                          <div class="mb-2 my-form-content" > {{ form.as_p }}</div>
                           <button class="btn btn-success active comment-done" type="submit" >update</button>
                       </form>
                       <!-- <button type="submit" class="btn btn-primary active go-back" data-dismiss="modal">Go back</button> -->

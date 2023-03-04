@@ -400,6 +400,135 @@ This allowed me to respond more effectively to change, stay focused on the most 
 
 ***
 
+ ### Register(sign up) Page
+
+ - This feature is presenting sign up form wich is par of django-allauth and for 
+ unauthenticated users CTA button from the home page is linked to this page so incentive is to get users registered so that they can experience the full benefits of th web app
+ - For registering User must provide a username and strong enough password(for any errors user is prompted) 
+ - User Story covered with this feature: 
+
+<details><summary>See  Register Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+### Login page 
+
+ - Returning users with created Profile(account) can get back and use the web app
+ - user must provide valid username and password
+ - User Story covered with this feature: 
+
+<details><summary>See  Login Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+
+
+
+### Forgot password 
+ - This feature is also part of (django-allauth) and its included to help users
+ start process of setting the new password if they forgot their password
+  - User Story covered with this feature: 
+
+<details><summary>See Forgot password  Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+
+
+
+### Reset password finished
+- after user puts his valid email to forgot password page he is redirected to this page and now can check his email for further directions
+  - User Story covered with this feature: 
+
+<details><summary>See Forgot password finished Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+
+### Set role page
+
+- After successful rgistration user is reirected  this page that gives Mentor or Student functionality of a web app
+- User can register as Student Or Mentor
+- Each card presented gives a brief description of a role selected
+and upo clickinguser profile role is set 
+- User Story covered with this feature: 
+
+<details><summary>See Set role Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+### Create profile page
+- User is presented with a form
+- User is filling the form and all the information is stored into the database
+- User must choose the category that he is interested in
+- Its mandatory to provide email address
+- Its requirement to fill all the fields except website and linkedIn url
+- User is given an option to upload a supporting image to his profile
+- User Story covered with this feature: 
+
+<details><summary>See Create Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+### Profile page
+- This feature is a summary of info provided in create profie page 
+structured nicely into simple jet effective profile page example
+- User can updatehis profile by clickin on a update profile button
+- user can delete profile by cicking on delete profile button
+- User Story covered with this feature: 
+
+<details><summary>See Profile Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+### Update Profile page
+- User presented with a same form from create profile page
+- User can update his profile info and all the datais updated in a database
+- User Story covered with this feature:
+ <details><summary>See Update Profile Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+
+
+### Delete Profile page
+- User is presented with two options
+- User can Delete his profile(he cant register with a same username again)
+- User can go back to profile page
+- User Story covered with this feature:
+ <details><summary>See Delete Profile Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details> 
+
+### Blog page
+- Latest Blogs published are presented on this page
+- Blogs are displayed using a cards elements(blog card)
+ <details><summary>See blog card</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details>
+- Basic info displayed on a blog card:
+    - title of a blog
+    - Creator of a blog
+    - Date of publishing
+    - Category of a blog
+
+- User Story covered with this feature:
+ <details><summary>See Blog Page</summary>
+
+![Home page](docs/features/feature-home-page.JPG)
+</details> 
+
+
+
 
 
 
