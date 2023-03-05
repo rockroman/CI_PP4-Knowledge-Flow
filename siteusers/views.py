@@ -17,6 +17,7 @@ from django.template import Context, loader
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
+from django.contrib import messages
 
 
 class AppUserSetUpProfile(SuccessMessageMixin, generic.UpdateView):
@@ -55,10 +56,11 @@ class EditProfilePageView(SuccessMessageMixin,
         return self.request.user.profile
 
 
-class DeleteAppUser(LoginRequiredMixin, generic.DeleteView):
+class DeleteAppUser(SuccessMessageMixin,
+                    LoginRequiredMixin, generic.DeleteView):
     model = User
     template_name = 'delete_profile.html'
-    # template_name = 'delete_profile_modal.html'
+    success_message = 'PROFILE IS DELETED'
 
     def get_object(self, *args, **kwargs):
         return self.request.user
@@ -90,11 +92,13 @@ def SetProfileRole(request):
             student_form = UpdateStudentRole(request.POST, instance=profile)
             if student_form.is_valid():
                 student_form.save()
+                messages.success(request, 'YOUR PROFILE ROLE IS STUDENT')
                 return redirect('appuser_SetUp_profile')
         if 'mentor' in request.POST:
             mentor_form = UpdateMentorRole(request.POST, instance=profile)
             if mentor_form.is_valid():
                 mentor_form.save()
+                messages.success(request, 'YOUR PROFILE ROLE IS MENTOR')
                 return redirect('appuser_SetUp_profile')
 
     context = {}

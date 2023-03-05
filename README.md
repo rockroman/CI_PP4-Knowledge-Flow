@@ -671,6 +671,15 @@ some of the existing features
 
 ### Heroku Deployment
 
+- Before deploying to heroku there are few things to have ready 
+ElephantSQL Database url,SECRET_KEY variable(genrate key different from provided one),CLOUDINARY_URL variable(after logging in the cloudinary website copy the 'cloudinary url' from your account dashboard as value of variable )
+- Create env.py(root level of your project) this file contains above mentioned
+variables in a form of:
+    -  os.environ['DATABASE_URL'] = 'value of ElephantSQL Database url' 
+    -  os.environ['SECRET_KEY'] = 'value of secret key' 
+    -  os.environ['CLOUDINARY_URL'] = 'value of 'cloudinary url' from your account dashboard'
+ 
+
 1. First, sign up or sign in to your Heroku account. Next, create a new app from the Heroku dashboard.
     <details><summary>See Image</summary>
 
@@ -679,9 +688,31 @@ some of the existing features
 
 2. Choose a unique name for your app and enter the region.Then, click on the 
     'Create App' button.
-    Once your app has been created, select the 'Settings' tab from the dashboard and navigate to 'Reveal Config Vars'. From there, paste the ElephantSQL Database URL into the DATABASE_URL environment variable.
+    Once your app has been created, select the 'Settings' tab from the dashboard and navigate to 'Reveal Config Vars'. From there, paste the: 
+    - ElephantSQL Database URL into the DATABASE_URL environment variable.
+    - SECRET_KEY variable  into the SECRET_KEY environment variable.
+    - CLOUDINARY_URL variable  into the CLOUDINARY_URL environment variable.
+    - add DISABLE_COLLECTSTATIC variablewith value of 1 (for initial deployment, later this variable can be removed)
+    - add variable named PORT with value of 8000
+
     <details><summary>See Image</summary>
 
     ![Add blog page](docs/features/feature-home-page.JPG)
     </details>
+
+3. Select Deploy option from the 'tabs'
+     <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
+
+4. From Deployment method section choose Connect to GitHub and click on it
+     <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
+
+5. 
+
+
 

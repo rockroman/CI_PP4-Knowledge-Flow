@@ -29,6 +29,17 @@
         <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
       </svg>
     </button>
+    <!-- messages -->
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible fade show text-center mb-0 p-3" role="alert" id="msg">
+       <strong>{{ message | safe }}</strong> 
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+   </div>
+ 
+ 
+   {% endfor%}
     {% block content %} 
     <!-- Content Goes here -->
    

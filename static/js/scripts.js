@@ -28,10 +28,6 @@ $('.comment').on('hide.bs.modal', function (e) {
 });
 
 
-
-
- 
-
 // dissmiss django messages
 
 $('#msg').hide().fadeIn(0).delay(1500).fadeOut(1300); 
