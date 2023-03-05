@@ -9,7 +9,7 @@
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
 {% if user.is_authenticated %}
-  {% if user == blogpost.creator %}
+ 
 
     <h1 class="col-12 text-center text-white"> EDIT BLOG POST</h1>
     <div class="container pt-3">
@@ -21,9 +21,7 @@
             </form>
         </div>
     </div>
-    {% else %}
-        <h2 class="text-center pt-5 ">We know you're not the correct user</h2>
-    {% endif %}
+  
 {% endif %} 
 
 

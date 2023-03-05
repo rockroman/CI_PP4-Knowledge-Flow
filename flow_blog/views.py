@@ -12,6 +12,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
+from django.http import HttpResponseForbidden
+
 
 # Create your views here.
 class BlogPageView(ListView):
@@ -64,8 +66,8 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
         return context
 
 
-@method_decorator(login_required, name='dispatch')
-class AddBlogView(UserPassesTestMixin, SuccessMessageMixin, CreateView):
+# @method_decorator(login_required, name='dispatch')
+class AddBlogView(UserPassesTestMixin,LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     model = BlogPost
     form_class = BlogForm
@@ -86,29 +88,12 @@ class AddBlogView(UserPassesTestMixin, SuccessMessageMixin, CreateView):
         if self.request.user.profile.role and self.request.user.profile.bio:
             return self.request.user
 
-    def handle_no_permission(self):
-        return redirect('protect_profile')
+    # def handle_no_permission(self):
+    #     return redirect('protect_profile')
 
 
 # @method_decorator(login_required, name='dispatch')
-# class UpdateBlogView(UserPassesTestMixin, UpdateView):
-#     model = BlogPost
-#     template_name = 'flow_blog/edit_blog.html'
-#     form_class = BlogForm
-
-#     def form_valid(self, form):
-#         form.instance.creator == self.request.user
-#         return super().form_valid(form)
-
-#     def test_func(self):
-#         if self.request.user.profile.role and self.request.user.profile.bio:
-#             return self.request.user
-
-#     def handle_no_permission(self):
-#         return redirect('protect_profile')
-
-@method_decorator(login_required, name='dispatch')
-class UpdateBlogView(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+class UpdateBlogView(UserPassesTestMixin,LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = BlogPost
     template_name = 'flow_blog/edit_blog.html'
     form_class = BlogForm
@@ -123,12 +108,18 @@ class UpdateBlogView(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
         form.instance.creator == self.request.user
         return super().form_valid(form)
 
-    def test_func(self):
-        if self.request.user.profile.role and self.request.user.profile.bio:
-            return self.request.user
+    # def test_func(self):
+    #     if self.request.user.profile.role and self.request.user.profile.bio:
+    #         return self.request.user
 
-    def handle_no_permission(self):
-        return redirect('protect_profile')
+    # def handle_no_permission(self):
+    #     return redirect('protect_profile')
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.creator:
+            return True
+        return False
 
 
 @login_required
@@ -205,11 +196,24 @@ def list_of_comments(request):
     context['comment_id'] = Comment.objects.first().id 
     return context
 
-    
-class UpdateCommentView(SuccessMessageMixin, UpdateView):
+
+class UpdateCommentView(LoginRequiredMixin, SuccessMessageMixin,
+                        UserPassesTestMixin, UpdateView):
     model = Comment
     template_name = 'update_comment.html'
     form_class = CommentForm
-    success_message = 'COMMENT IS UPDATED' 
+    success_message = 'COMMENT IS UPDATED'
 
-    # def post(self, request):
+    def form_valid(self, form):
+        form.instance.author.id == self.request.user.id
+        return super().form_valid(form)
+
+    def get_queryset(self):
+        qs = super(UpdateCommentView, self).get_queryset()
+        return qs.filter(author=self.request.user)
+
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user == comment.author:
+            return True
+        return False

@@ -9,7 +9,7 @@ from django.views.generic import (
 from django.contrib.auth.models import User
 from .models import Profile
 from .forms import Profileform,  UpdateMentorRole, UpdateStudentRole
-# ProfileUpdateForm,
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from crispy_forms.helper import FormHelper
 from django.http import HttpResponse
@@ -19,12 +19,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
 
-class AppUserSetUpProfile(generic.UpdateView):
+class AppUserSetUpProfile(SuccessMessageMixin, generic.UpdateView):
 
     model = Profile
     form_class = Profileform
     template_name = 'create_profile.html'
     success_url = reverse_lazy('see_profile')
+    success_message = 'YOUR PROFLE IS SET UP SUCCESSFULLY'
 
     def get_object(self, *args, **kwargs):
         return self.request.user.profile
@@ -42,11 +43,13 @@ class SeeProfilePageView(LoginRequiredMixin, DetailView):
         return self.request.user
 
 
-class EditProfilePageView(LoginRequiredMixin, generic.UpdateView):
+class EditProfilePageView(SuccessMessageMixin,
+                          LoginRequiredMixin, generic.UpdateView):
     model = Profile
     form_class = Profileform
     template_name = 'profile_update.html'
     success_url = reverse_lazy('see_profile')
+    success_message = 'PROFILE IS UPDATED'
 
     def get_object(self, *args, **kwargs):
         return self.request.user.profile

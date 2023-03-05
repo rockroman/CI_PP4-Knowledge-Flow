@@ -647,5 +647,41 @@ some of the existing features
 
 ## Deployment
 ***
+- During the initial phases of development, Knowledge Flow was deployed on Heroku. To avoid any potential deployment issues near the app's release, I made sure that the database and static files were accessible right from the start of the project.
 
+###  Creating Database ==> ElephantSQL
+1. To generate a managed PostgreSQL database, please proceed to ElephantSQL and either sign up or sign in to your account. Once you've logged in, click on the 'Create New Instance' button.
+    <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
+
+2. Name your database and select the 'Tiny Turtle' payment plan. Then, click on 'Select Region'
+    <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
+
+3. Select your preferred region and create the database instance.
+    After creating the instance, navigate to the instances page and click on the name of the database you selected earlier. Then, in the details section on the following page, copy the PostgreSQL URL.
+    <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
+
+### Heroku Deployment
+
+1. First, sign up or sign in to your Heroku account. Next, create a new app from the Heroku dashboard.
+    <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
+
+2. Choose a unique name for your app and enter the region.Then, click on the 
+    'Create App' button.
+    Once your app has been created, select the 'Settings' tab from the dashboard and navigate to 'Reveal Config Vars'. From there, paste the ElephantSQL Database URL into the DATABASE_URL environment variable.
+    <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
 
