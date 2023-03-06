@@ -5,13 +5,14 @@
   <head class="header" id="top">
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
+    <meta name="description" content="Knowledge flow blogging and learning app">
+    <meta name="keywords" content="learning app,blogging,knowledge,flow,category,comment,mentor,student">
+    <meta name="author" content="Roman Rakic">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="icon" type="image/xicon" href="{% static 'favicon/favicon.png' %}">
@@ -21,7 +22,6 @@
     <title>Knowledge Flow</title>
   </head >
   <body>
- 
  
 
     <button type="button" class="btn btn-success btn-floating btn-sm" id="btn-back-to-top" aria-label="Back to top button">
@@ -37,24 +37,18 @@
          <span aria-hidden="true">&times;</span>
        </button>
    </div>
- 
- 
+
    {% endfor%}
     {% block content %} 
-    <!-- Content Goes here -->
+
    
     {% endblock content %}
 
-
-
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js" integrity="sha512-nO7wgHUoWPYGCNriyGzcFwPSF+bPDOR+NvtOYy2wMcWkrnCNPKBcFEkU80XIN14UVja0Gdnff9EmydyLlOL7mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
      <!-- Custom JS files -->
     <script defer src="{% static 'js/scripts.js' %}"></script>
-
     
   </body>
 </html>

@@ -18,15 +18,14 @@
         <div class="col-lg-6 mb-4 ">
           <div class="card h-100 bg-dark">
             {% if 'placeholder' in post.cover_image.url %}
-            <!-- <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" width="450" height="250"
-              class="card-img-top"> -->
+
             <img
               src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088520/static/images/us-wah-x8HupeZdK7Y-unsplash-cup.5ff494c59c0f.webp"
               alt="cup of coffee on a table with a not readme written on it " class="card-img-top" width="450" height="250">
             {% else %}
 
             {% load cloudinary %}
-            {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image' alt='Blog image uploaded by user' %}
+            {% cloudinary  post.cover_image format="WebP" width=600 height=300 crop='fill' class='blog_image' alt='Blog image uploaded by user' %}
 
             {% endif %}
             <div class="card-body">
@@ -34,8 +33,6 @@
                 href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </div>
               <p class=" d-flex justify-content-between text-white-50">{{ post.creator }} | {{ post.created_on }}
                 <strong>{{ post.category }}</strong></p>
-              <!-- <h5 class="card-title "> <a class="text-warning"
-                  href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </h5> -->
               {% if user.is_authenticated %}
               {% if user == post.creator %}
 
