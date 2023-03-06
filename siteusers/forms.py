@@ -15,10 +15,6 @@ class Profileform(forms.ModelForm):
         self.fields['linkedIn_url'].required = False
         self.helper.add_input(Submit('submit', 'SET PROFILE'))
         self.fields['email'].initial = self.instance.user.email
-        # try:
-        #     self.fields['email'].initial = self.instance.user.email
-        # except User.DoesNotExist:
-        #     pass
 
     email = forms.EmailField(label="Primary email")
     category = forms.ModelMultipleChoiceField(
@@ -36,7 +32,8 @@ class Profileform(forms.ModelForm):
         labels = {
             'website_url': 'Website url (optional)',
             'linkedIn_url': 'LinkedIn url (optional)',
-            
+
+
         }
 
     def save(self, *args, **kwargs):

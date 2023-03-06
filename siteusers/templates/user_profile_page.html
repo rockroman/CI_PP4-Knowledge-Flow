@@ -6,7 +6,7 @@
 
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<h1 class="col-12 text-center text-white"> {{ user }}'s Profile</h1>
+<h1 class=" col-12 text-center text-white"> {{ user }}'s Profile</h1>
 
 <!-- Profile page  -->
 <div class="container">
@@ -29,8 +29,8 @@
                             {% cloudinary  user.profile.image format="WebP" width=150 height=155 crop='fill' radius='max' class='user_image' %}
                             {% endif %}
                             <div class="mt-3">
-                                <h4 class="text-capitalize font-weight-bold">{{ user.profile.first_name }}
-                                    {{ user.profile.last_name }}</h4>
+                                <h2 class="h4 text-capitalize font-weight-bold">{{ user.profile.first_name }}
+                                    {{ user.profile.last_name }}</h2>
                                 <!-- <p class="text-secondary mb-1">Knowledge Flow</p> -->
                                 <p class="text-muted font-size-sm">{{ user.profile.role }}</p>
                                 <a class=" text-white btn btn-secondary m-2" href="{% url 'edit_profile' %}">Update
@@ -80,7 +80,7 @@
                     <div class="card-body h-100 my-profile-card">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Username</h6>
+                                <span class="h6 mb-0">Username</span>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ user.username }}
@@ -89,7 +89,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Full Name</h6>
+                                <span class="h6 mb-0">Full Name</span>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ user.profile.first_name }} {{ user.profile.last_name }}
@@ -98,7 +98,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Role</h6>
+                                <span class="h6 mb-0">Role</span>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ user.profile.role }}
@@ -107,7 +107,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
+                                <span class="h6 mb-0">Email</span>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ user.profile.email }}
@@ -116,7 +116,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Category</h6>
+                                <span class="h6 mb-0">Category</span>
                             </div>
 
                             <div class="col-sm-9 text-secondary">
@@ -132,7 +132,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Bio</h6>
+                                <span class="h6 mb-0">Bio</span>
                             </div>
                             <div class="col-sm-9 text-secondary overflow-auto">
                                 {{ user.profile.bio }}

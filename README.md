@@ -712,7 +712,22 @@ variables in a form of:
     ![Add blog page](docs/features/feature-home-page.JPG)
     </details>
 
-5. 
+5. Find your github repository by name and connect
+     <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details>
+
+6. At the bottom of the page choose either automatic deployment manual 
+deployment(deploy by branch)
+     <details><summary>See Image</summary>
+
+    ![Add blog page](docs/features/feature-home-page.JPG)
+    </details> 
 
 
 
+### Forkig Github Repo
+
+
+### Clone a GitHub Repo

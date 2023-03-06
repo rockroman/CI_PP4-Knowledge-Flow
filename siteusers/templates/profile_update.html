@@ -4,12 +4,12 @@
 {% block content %}
 {% block nav-bar %}{% include 'navbar.html' %}{% endblock nav-bar %}
 
-<!-- <h2 class="col-12 text-center text-white display-5"> {{ user }}'s Profile</h2> -->
+
 
 <div class="container">
     <div class="row ">
         <div class="col d-flex justify-content-center  ">
-            <h2 class=" text-center text-white display-5 pt-4 "> {{ user }}'s Profile</h2>
+            <h1 class="h2 text-center text-white display-5 pt-4 "> {{ user }}'s Profile</h1>
         </div>
     </div>
 
@@ -38,7 +38,10 @@
 
             </div>
             {{ form.email|as_crispy_field}}
-            {{ form.category|as_crispy_field}}
+            <fieldset>
+                <legend></legend>
+                {{ form.category|as_crispy_field}}
+            </fieldset>
             <div class="form-row">
                 <div class="form-group col-md mb-0">
                     {{ form.website_url|as_crispy_field}}
