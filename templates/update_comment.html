@@ -4,15 +4,14 @@
 {% load widget_tweaks %}
 {% block content %}
   
-    <div id="account-body">
-      <main class="container">
-
+<div id="account-body">
+    <main class="container">
         <div class=""  tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header flex-column align-items-center">
                   <div class=" h4 modal-body text-center ">
-                   Update this comment?
+                    Update this comment?
                   </div> 
                   <div class="modal-footer justify-content-center update">
                     <div class="modal-footer justify-content-center" >
@@ -22,16 +21,13 @@
                           <div class="mb-2 my-form-content" > {{ form.as_p }}</div>
                           <button class="btn btn-success active comment-done" type="submit" >update</button>
                       </form>
-                      <!-- <button type="submit" class="btn btn-primary active go-back" data-dismiss="modal">Go back</button> -->
-                      <a class="btn btn-primary active  font-weight-bold" href= >Go Back</a>
+                      <a class="btn btn-primary active  font-weight-bold" href="{{ request.META.HTTP_REFERER }}" >Go Back</a>
                   </div>
                   </div>
                 </div>
               </div>
             </div>
         </div>
-
-        </main>
-      
-    </div>
+    </main>
+</div>
 {% endblock content %}
