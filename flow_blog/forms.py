@@ -1,13 +1,18 @@
+"""
+flow_blog forms module
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django import forms
 from django.contrib.auth.models import User
-from .models import BlogPost, Comment
-from cloudinary.models import CloudinaryField
-from cloudinary.forms import CloudinaryFileField
-from siteusers.models import Profile
 from crispy_forms.helper import FormHelper
+# from cloudinary.models import CloudinaryField
+# from cloudinary.forms import CloudinaryFileField
+# Internal:
+from .models import BlogPost, Comment
 from siteusers.models import LearningCategory, Profile
-
-# ---3rd party ----------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class BlogForm(forms.ModelForm):

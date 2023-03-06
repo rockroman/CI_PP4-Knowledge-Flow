@@ -1,7 +1,15 @@
+"""
+Category views test module
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase, Client, RequestFactory
+# Internal:
 from .views import LearningCategoryListView
 from .models import LearningCategory, User
 from flow_blog.models import BlogPost
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestCategoryView(TestCase):
@@ -41,4 +49,5 @@ class TestCategoryView(TestCase):
         client = Client()
         response = client.get('category/<category>/')
         # self.assertTemplateUsed('categories/category.html')
-        self.assertTemplateUsed('accounts/login/?next=/categories/category/Leadership/')
+        self.assertTemplateUsed(
+                'accounts/login/?next=/categories/category/Leadership/')

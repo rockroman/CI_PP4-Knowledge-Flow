@@ -21,7 +21,7 @@
                 alt=" image of light blue person figure">
                 {% else %}
                 {% load cloudinary %}
-                {% cloudinary  user.profile.image format="WebP" width=80 height=80 crop='fill' radius='max' class='user_image' %}
+                {% cloudinary  user.profile.image format="WebP" width=80 height=80 crop='fill' radius='max' class='user_image' alt='profile image uploaded by th user' %}
             {% endif %}
         </div>
         <form  method="POST" enctype="multipart/form-data" class="formlabel">
