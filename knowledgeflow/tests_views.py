@@ -15,6 +15,3 @@ class TestHandlerViews(TestCase):
     def test_403_error(self):
         factory = RequestFactory()
         request = factory.get('/')
-        # exception = Exception('Permission Denied')
-        # response = handler403(request,exception)
-        

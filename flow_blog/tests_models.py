@@ -1,12 +1,16 @@
 """
 A module for testing models
 """
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase, Client
+# Internal:
 from siteusers.models import Profile, User
 from .models import BlogPost, Comment
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-# Create your tests here.
 class TestBlogModel(TestCase):
 
     def test_string_method(self):
@@ -46,5 +50,3 @@ class TestCommentModel(TestCase):
         client = Client()
         response = client.get('')
         self.assertEqual(str(comment), 'miki|comment on New Title')
-
- 

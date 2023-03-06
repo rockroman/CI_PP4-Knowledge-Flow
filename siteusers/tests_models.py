@@ -1,12 +1,22 @@
+"""
+A module for testing models
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase, Client, RequestFactory
+# Internal:
 from .models import Profile, User
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestSiteusersModel(TestCase):
 
     @classmethod
     def setUp(self):
-        # Create test user
+        """
+        creating and saving a new test user
+        """
         self.user = User.objects.create(
             username='MyTestUser',
             password='mypass79',
@@ -23,7 +33,10 @@ class TestSiteusersModel(TestCase):
         )
 
     def test_is_profile_created(self):
-        # profile created is empty except user.username  until updating
+        """
+        profile created is empty except
+        user.username  until updating
+        """
         user_profile = Profile.objects.filter().last()
         self.assertEquals(user_profile.user.username, 'MyTestUser')
         self.assertEquals(user_profile.first_name, 'miki')

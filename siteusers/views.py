@@ -1,3 +1,9 @@
+"""
+A module for views
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import (
     render,
     redirect,
@@ -7,21 +13,25 @@ from django.views.generic import (
      CreateView, DetailView, UpdateView, TemplateView, DeleteView
 )
 from django.contrib.auth.models import User
-from .models import Profile
-from .forms import Profileform,  UpdateMentorRole, UpdateStudentRole
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from crispy_forms.helper import FormHelper
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.contrib import messages
+# Internal:
+from .models import Profile
+from .forms import Profileform,  UpdateMentorRole, UpdateStudentRole
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class AppUserSetUpProfile(SuccessMessageMixin, generic.UpdateView):
-
+    """
+    A class view to update
+    user profile
+    """
     model = Profile
     form_class = Profileform
     template_name = 'create_profile.html'
@@ -37,6 +47,10 @@ class AppUserSetUpProfile(SuccessMessageMixin, generic.UpdateView):
 
 
 class SeeProfilePageView(LoginRequiredMixin, DetailView):
+    """
+    A class view to see detail
+    of user profile
+    """
     model = Profile
     template_name = 'user_profile_page.html'
 
@@ -46,6 +60,10 @@ class SeeProfilePageView(LoginRequiredMixin, DetailView):
 
 class EditProfilePageView(SuccessMessageMixin,
                           LoginRequiredMixin, generic.UpdateView):
+    """
+    A class view for updating
+    profile object
+    """
     model = Profile
     form_class = Profileform
     template_name = 'profile_update.html'
@@ -58,6 +76,11 @@ class EditProfilePageView(SuccessMessageMixin,
 
 class DeleteAppUser(SuccessMessageMixin,
                     LoginRequiredMixin, generic.DeleteView):
+    """
+    A class view that handles a
+    deletion of profile object if
+    it exists
+    """
     model = User
     template_name = 'delete_profile.html'
     success_message = 'PROFILE IS DELETED'
@@ -77,6 +100,10 @@ class DeleteAppUser(SuccessMessageMixin,
 
 
 def redirect_view(request):
+    """
+    view that redirects users if profile is
+    not set up correctly
+    """
     if request.user.profile.role and request.user.profile.first_name:
         return redirect('home')
     else:
@@ -84,6 +111,10 @@ def redirect_view(request):
 
 
 def SetProfileRole(request):
+    """
+    view that handles setting the role
+    of the profile for each user
+    """
     profile = Profile.objects.get(user=request.user)
     student_form = UpdateStudentRole(instance=profile)
     mentor_form = UpdateMentorRole(instance=profile)
@@ -111,6 +142,11 @@ def SetProfileRole(request):
 
 
 def protect_profile_view(request):
+    """
+    view that enables users to have
+    crud functionality if profile role
+    is not set up
+    """
     if request.user.profile.role:
         return redirect('appuser_SetUp_profile')
     else:
@@ -118,7 +154,12 @@ def protect_profile_view(request):
 
 
 def list_of_mentors(request):
-
+    """
+    view that serves as a context
+    processor so all profile objects
+    with role of mentor can be queried within
+    every template
+    """
     mentors_list = Profile.objects.filter(role='Mentor').all()
     context = {
         'mentors_list': mentors_list

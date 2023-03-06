@@ -1,14 +1,30 @@
+"""
+A module for views
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django import forms
-from .models import Profile
 from django.contrib.auth.models import User
-from categories.models import LearningCategory
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+# Internal:
+from .models import Profile
+from categories.models import LearningCategory
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class Profileform(forms.ModelForm):
+    """
+    A class view for creating
+    and updating user profile
+    """
 
     def __init__(self, *args, **kwargs):
+        """
+        overriding init method and setting
+        email field as user object field
+        """
         super(Profileform, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.fields['website_url'].required = False
@@ -48,6 +64,10 @@ class Profileform(forms.ModelForm):
 
 
 class UpdateStudentRole(forms.ModelForm):
+    """
+    A class view for updating
+    profile role as a student
+    """
     role = forms.ChoiceField(choices=Profile.ROLE, widget=forms.HiddenInput())
     student = forms.BooleanField(widget=forms.HiddenInput, initial=True)
 
@@ -62,6 +82,10 @@ class UpdateStudentRole(forms.ModelForm):
 
 
 class UpdateMentorRole(forms.ModelForm):
+    """
+    A class view for updating
+    profile role as a mentor
+    """
     role = forms.ChoiceField(choices=Profile.ROLE, widget=forms.HiddenInput())
     mentor = forms.BooleanField(widget=forms.HiddenInput, initial=True)
 

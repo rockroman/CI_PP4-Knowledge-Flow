@@ -1,18 +1,29 @@
+"""
+A module for home views
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
-from siteusers.models import Profile
-from flow_blog.models import BlogPost
-from .forms import ContactUsForm
-from django.views.generic import TemplateView
-
 from django.conf import settings
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.views.generic import TemplateView
+# Internal:
+from siteusers.models import Profile
+from flow_blog.models import BlogPost
+from .forms import ContactUsForm
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def home(request):
+    """
+    view that renders homepage
+    and contact form
+    """
     form = ContactUsForm()
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
