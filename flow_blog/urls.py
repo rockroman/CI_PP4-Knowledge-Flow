@@ -1,14 +1,20 @@
+"""
+ module for flow_blog urls
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.urls import path
-from .models import BlogPost, Comment
 from . import views
+# Internal:
+from .models import BlogPost, Comment
 from .views import (
     BlogPageView, BlogDetailView,
     AddBlogView, UpdateBlogView,
     delete_comment, UpdateCommentView
 
-    # CommentDeleteView   # delete_blog
     )
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 urlpatterns = [
     path('', BlogPageView.as_view(), name='blog_page'),

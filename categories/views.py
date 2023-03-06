@@ -17,7 +17,7 @@ from django.views.generic import ListView
 
 class LearningCategoryListView(LoginRequiredMixin, ListView):
     """
-    A class view to view alist all the categories
+    A class view to view a list off all the categories
     """
     template_name = 'categories/category.html'
     context_object_name = 'cat_list'

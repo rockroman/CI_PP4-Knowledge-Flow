@@ -16,6 +16,9 @@ from siteusers.models import LearningCategory, Profile
 
 
 class BlogForm(forms.ModelForm):
+    """
+    A class for the blog creation form
+    """
 
     class Meta:
         model = BlogPost
@@ -29,6 +32,10 @@ class BlogForm(forms.ModelForm):
         }
 
     def __init__(self, user=True, **kwargs):
+        """
+        Link category choice from the profile form
+        to blog form
+        """
         super(BlogForm, self).__init__(**kwargs)
         current_user = Profile.objects.get(user=user)
         self.fields['category'].queryset = current_user.category.all()
@@ -43,7 +50,7 @@ class CommentForm(forms.ModelForm):
                 'placeholder': 'your comment....',
                 'rows': '3',
                 'id': 'comment',
-                
+
 
             }
         ),

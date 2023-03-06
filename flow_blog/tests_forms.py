@@ -1,12 +1,23 @@
+"""
+A module for testing forms
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase, Client
+# Internal:
 from siteusers.models import Profile, User
 from .models import BlogPost, Comment
 from .forms import BlogForm
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestBlogForm(TestCase):
     @classmethod
     def setUp(self):
+        """
+       creating and saving a new test user
+        """
         self.client = Client()
         self.user = User.objects.create(
             username='testRock',

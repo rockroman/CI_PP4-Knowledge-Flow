@@ -1,3 +1,6 @@
+"""
+A module for testing models
+"""
 from django.test import TestCase, Client
 from siteusers.models import Profile, User
 from .models import BlogPost, Comment
