@@ -62,7 +62,8 @@
               <hr>
               <p class="card-text text-white">{{ post.body|slice:":200"}}</p>
               <div class="d-flex justify-content-between align-items-centre">
-                <a href="{% url 'blog_details' post.pk %}" class="btn btn-outline-warning btn-sm">Read The Blog</a>
+                {% url 'blog_details' post.pk as blog_details_url %}
+                <button class="btn btn-outline-warning btn-sm" onclick="window.location='{{ blog_details_url }}'">Read The Blog</button>
                 <div class=" text-white d-flex justify-content-end ">{{post_comments_count}}<svg
                   xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-chat-dots mr-1"
                   viewBox="0 0 16 16">

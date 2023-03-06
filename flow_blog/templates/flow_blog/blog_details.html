@@ -15,7 +15,7 @@
                 {% if 'placeholder' in post.cover_image.url %}
                 <img
                   src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088520/static/images/us-wah-x8HupeZdK7Y-unsplash-cup.5ff494c59c0f.webp"
-                  alt="default blogpost image" class="card-img-top" width="450" height="250">
+                  alt="blogpost image if user is not uploading custom one" class="card-img-top" width="450" height="250">
                 {% else %}
     
                 {% load cloudinary %}
@@ -24,7 +24,7 @@
                 {% endif %}
             
             <div class="card-body pt-1">
-                <h5 class=" h3 card-title text-warning text-capitalize text-center">{{ post.title }} </h5>
+                <h1 class=" h3 card-title text-warning text-capitalize text-center">{{ post.title }} </h1>
                     <div class="d-flex justify-content-between align-items-centre mb-3">
                         <div class="text-white m-0 d-flex flex-column">
                             <p class="text-white mb-0">{{ post.creator }}</p>
@@ -55,7 +55,7 @@
        
         <div class="section ">
                 <div class="container ">
-                    <h4 class=" text-muted">({{post_comments_count}}) <i class="far fa-comments"></i> Comments </h4>
+                    <h2 class="h4 text-muted">({{post_comments_count}}) Comments </h2>
                     <div class="row p-3 ">
                         <div class="col-lg-8 mx-auto ">
                             <!--display coment-->
@@ -107,7 +107,7 @@
                                 <div class="form-group d-flex">
                                     {{form.as_p}} 
                                     <div class="d-flex align-items-end">
-                                        <button class="btn-sm bg-success pb-2 pl-2 rounded-circle ml-2" type="submit" id="commentButton" aria-label="post-comment-button">
+                                        <button class="btn-sm bg-success pb-2 pl-2 rounded-circle ml-1 mb-3" type="submit" id="commentButton" aria-label="post-comment-button">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-cursor-fill"  viewBox="0 0 16 16" style="transform: rotate(45deg)">
                                                 <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
                                             </svg>
