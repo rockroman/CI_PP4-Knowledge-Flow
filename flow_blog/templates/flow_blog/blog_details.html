@@ -16,7 +16,7 @@
                 {% else %}
     
                 {% load cloudinary %}
-                {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image'  %}
+                {% cloudinary  post.cover_image format="WebP" width=640 height=320 crop='fill' class='blog_image' alt='blog image uploaded by user' %}
     
                 {% endif %}           
             <div class="card-body pt-1">

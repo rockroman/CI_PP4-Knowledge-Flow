@@ -285,7 +285,7 @@ h2,h3{
 } 
 
 .my-profile-card{
-  max-height: 520px;
+  height: 520px;
   overflow: auto;
 }
 

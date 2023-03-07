@@ -16,7 +16,7 @@
                     motivation, emotional support, and role modeling.</p>
                   <form class="mt-auto" method="POST">
                     {% csrf_token %}
-                    {{ mentor_form.role|attr:"id:pk_role"|attr:"value:Mentor" }}
+                    {{ mentor_form.role|attr:"id:pk_role" }}
                     {{ mentor_form.mentor }}
                     <button class="btn btn-primary active font-weight-bold" type="submit">MENTOR</button>
                   </form>
