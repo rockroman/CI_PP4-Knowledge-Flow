@@ -14,19 +14,19 @@ html{
 }
 
 *{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
     
     
 }
 
 body{
-    background-color:var(--background-body); 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  background-color:var(--background-body); 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
    
 }
 /* back to top button  */
@@ -39,19 +39,14 @@ body{
 }
 h1{
  
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
     
 h2,h3{
    
-    text-transform:uppercase;
-    font-weight: 700;
+  text-transform:uppercase;
+  font-weight: 700;
 }
-
-/* #message{
-    z-index: 1000;
-    opacity: 85%;
-} */
 
 .active:hover{
   transform: scale(1.06)
@@ -106,10 +101,9 @@ h2,h3{
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
-    color: #c4deef;
-    font-weight: 700;
-    
-    transform: scale(1.05)
+color: #c4deef;
+font-weight: 700;
+transform: scale(1.05)
 }
 .navbar-light .navbar-nav .active>.nav-link{
     color: #ffffff;
@@ -117,7 +111,7 @@ h2,h3{
 }
 
 .navbar .dropdown-item:hover {
-    /* color: rgb(4, 0, 255); */
+
     background-color:#131416 ;
 } 
 
@@ -145,17 +139,15 @@ h2,h3{
 
 #msg{
   position: absolute;
-  
   left: 25%;
   right: 25%;
   z-index: 100;
 }
 
-/* home page styles-------------------------------------------------------------------------------------------- */
+/* home page styles-------------------------------------------------------*/
 
 /* Hero section-------------------- */
 #hero{
-  /* height: 90vh; */
   height: 100vh;
 }
 .hero-text{
@@ -182,11 +174,8 @@ h2,h3{
 
 .fadeIn {
   animation-name: fadeIn;
-  -webkit-animation-name: fadeIn;
   animation-duration: 1.8s;
-  -webkit-animation-duration: 1.8s;
   animation-timing-function: ease-in-out;
-  -webkit-animation-timing-function: ease-in-out;
   visibility: visible !important;
 }
 
@@ -209,15 +198,7 @@ h2,h3{
   }
 }
 
-
-
-
 /* End Hero section-------------------- */
-
-#my-index-planet{
-
-   /* height: 400px;  */
-}
 
 /* midle section styles(ULTIMATE WAY TO KNOWLEDGE)------------------- */
 .list-display li {
@@ -232,7 +213,6 @@ h2,h3{
   padding-left:1rem;
 }
 
-
 .quote-card {
   background-color:#040831;
   border-radius: 15px;
@@ -240,7 +220,6 @@ h2,h3{
 }
 
 /* end midle section styles--------------------------- */
-
 
 .formlabel{
   color: #ffffff;
@@ -256,22 +235,16 @@ h2,h3{
 
 }
 
+/* end  home page styles ---------------------------------------------------*/
 
-
-/* end  home page styles ---------------------------------------------------------------------------------------*/
-
-
-/* blog main page styles */
-
-/*  */
-/* blog main page styles */
-
+/* blog  styles */
 #blog-body{
     margin-top: -10px;
 }
 
 /* end blog styles */
 
+/*  profile page syles */
 #top-plate{
   background-color: rgb(14, 14, 88);
   height: 45px;
@@ -310,11 +283,11 @@ h2,h3{
 .social-link {
   width: 30px;
   height: 30px;
-  /* border: 1px solid #ddd; */
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(221, 225, 231);
+  color: #dde1e7;
   border-radius: 50%;
   transition: all 0.3s;
   font-size: 1.2rem;
@@ -326,23 +299,15 @@ h2,h3{
   color: rgb(20, 103, 228);
 }
 
+/* ------------ end team cards styles-----------*/
 
-
-/* ------------ end team cards styles-------------- */
-
-
-
-/* ----------------------background img------- play */
+/* ----------------------background img------- */
 #mycard{
     background-color: rgb(14, 39, 60);
     
 }
 
-
-
-
 /* learning categories styles */
-
 .main-content {
 	padding-top: 40px;
 	padding-bottom: 100px;
@@ -357,6 +322,7 @@ h2,h3{
 	border: 0;
 	margin-bottom: 30px;
 }
+
 #accordion .accordion-card__header {
 
 	padding: 15px;
@@ -366,24 +332,28 @@ h2,h3{
 	justify-content: space-between;
 	align-items: center;
 }
+
 #accordion .accordion-card__header.collapsed .drop-icon {
 	transform: rotate(0deg);
 }
+
 #accordion .accordion-card__header h5 {
 	display: flex;
 	align-items: center;
 }
+
 #accordion .accordion-card__header h5 span {
 	margin-left: 10px;
 }
+
 #accordion .accordion-card__header .drop-icon {
 	margin-right: 15px;
 	transform: rotate(180deg);
 	transition: all 0.2s;
 }
+
 #accordion .accordion-card__body {
 	padding: 25px;
-	/* background: #fff; */
 	border-radius: 5px;
 	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
 }
@@ -423,10 +393,9 @@ h2,h3{
 
 }
 
-/* 404 page styles */
+/* 404,403,500 page styles */
 
 #main{
-  /* display: table; */
   width: 100%;
   height: 100vh;
   text-align: center;
@@ -438,7 +407,6 @@ h2,h3{
 }
 
 .fof h1{
-  /* font-size: 50px; */
   display: inline-block;
   padding-right: 12px;
   animation: type .5s alternate infinite;

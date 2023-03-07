@@ -33,16 +33,18 @@ def home(request):
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            send_mail(
-                subject=name,
-                message=message,
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=['2rock.rakic@gmail.com']
-            )
-            messages.success(request, 'THANK YOU FOR YOUR MESSAGE')
+            if request.user.is_authenticated:
+                send_mail(
+                        subject=name,
+                        message=message,
+                        from_email=settings.EMAIL_HOST_USER,
+                        recipient_list=['2rock.rakic@gmail.com']
+                    )
+                messages.success(request, 'THANK YOU FOR YOUR MESSAGE')
 
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    else:
-        form = ContactUsForm()
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            else:
+                messages.error(request, 'NEED TO BE LOGGED IN TO SEND MESSAGE')
+                form = ContactUsForm()
 
     return render(request, 'index.html', {'form': form})

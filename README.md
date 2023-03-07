@@ -98,7 +98,7 @@ knowledge.
 
 ### User stories
 
-1. As an authenticated user I would like to see a home page and have an Idea what the application is about
+1. As a  user I want to know Important info on what the app is about so that I can use it's functionality on mutual benefit
 2. As an authenticated user I would like to be able to choose a way to get benefit from the app with choosing the right role
 3. As an authenticated user I would like to have a full access to the content of an web app
 4. As an authenticated user I would like a functionality to create profile(account)
@@ -107,19 +107,18 @@ knowledge.
 7. As an authenticated user I would like functionality to pick different types of learning categories in my profile and change them later
 8. As an authenticated user I would like functionality to see and read blog posts that other users created
 9. As an authenticated user I would like functionality to leave a comment on a blog post 
-10. As an authenticated user I would like functionality to add blog post and share it with other users
+10. As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
 11. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
-12. As an authenticated user I would like to upload a blog in a selected category
-13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable 
-14. As a user I would like web app to be fully responsive and to have the same experience when using
+12. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable 
+13. As a user I would like web app to be fully responsive and to have the same experience when using
 on any device 
-15. As an returning user user I would like functionality to set a new password and use the web app even if I forgot the old password
-16.  As an returning user user I would like functionality to leave a feedback or send a mesage to a site owner or a web app Team
+14. As an returning user user I would like functionality to set a new password if I forgot the password so that I can still use the web app
+15. As a User I would like a Functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
+16. As a user I can update a comment I posted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
 
 ### Site Owner Stories
 
-1. As a Site Owner I would like that every un-authenticated user has  limited
-functionality of a website  until he is registered.
+1. As a site owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
 2. As a Site Owner I would like that authenticated users have full access to web app and its functionality
 3. As a Site Owner I would like that each data entry is validated before stored in database
 4. As a Site Owner I would like that users an leave a message or feedback via contact form or 
@@ -281,6 +280,35 @@ usage of Milestones,Issues GitHub Projects and  Boards led to organizing the dev
 
 - When faced with unexpected changes or challenges during development, I learned to be flexible and adjust my plan accordingly, often by reorganizing cards on my Kanban board and prioritizing tasks based on their importance and impact.
 This allowed me to respond more effectively to change, stay focused on the most critical issues, and ensure that my development process remained agile and adaptable
+
+### Epics
+- Using the GitHub 'Milestones' and Linking the user stories with the tasks I created a 5 epics for this project
+<details><summary>See epics</summary>
+<img src="docs/wireframes/wireframes-mobile.png">
+</details>
+
+### User stories
+- using Github issues first I created the template for a user story that was late used to 
+create user stories. at later date user stories were edited since at the start they were just a rough skech or a guideline that later became a full user story
+<details><summary>See User story template</summary>
+<img src="docs/wireframes/wireframes-mobile.png">
+</details>
+<details><summary>See User story ticket</summary>
+<img src="docs/wireframes/wireframes-mobile.png">
+</details>
+<details><summary>See user story</summary>
+<img src="docs/wireframes/wireframes-mobile.png">
+</details>
+
+### Kanban Board
+- As a visual representation of the project's status, showing what tasks are in progress, what tasks are waiting, and what tasks have been completed.Each task is represented as a card on the board, and the cards can be moved from one column to another to show progress.  Kanban board is an excelent tool and since it was my first time using I didnt get the  full benefits of using it ,since it wasnt used as often as it should, but since completing the project I m more aware of its great purpose and im sure it will be utilized more and more in the future 
+[Link to project Kanban board.](https://github.com/users/rockroman/projects/5)
+<details><summary>See Kanban board</summary>
+<img src="docs/wireframes/wireframes-mobile.png">
+</details>
+
+### Moscow prioritisation
+- 
 
 
 
