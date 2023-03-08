@@ -572,9 +572,9 @@ structured nicely into simple jet effective profile page example
 ### Blog page
 - Latest Blogs published are presented on this page
 - Blogs are displayed using a cards elements(blog card)
- <details><summary>See blog card</summary>
+ <details><summary>See blog Card</summary>
 
-![blog card page](docs/features/feature-home-page.JPG)
+![blog card page](docs/features/blog-card.png)
 </details>
 
 - Basic info about blogpost displayed on a blog card:
@@ -584,9 +584,10 @@ structured nicely into simple jet effective profile page example
     - Category of a blog
 
 - User Story covered with this feature:
- <details><summary>See Blog Page</summary>
+ <details><summary>See Blog page</summary>
 
-![Blog Page](docs/features/feature-home-page.JPG)
+![Blog Page](docs/features/blog-page.png)
+![Blog Page](docs/features/blog-page-mob.png)
 </details> 
 
 ### Blog detail page
@@ -595,7 +596,9 @@ structured nicely into simple jet effective profile page example
 that blog post
  <details><summary>See Blog detail Page</summary>
 
-![Blog detail Page](docs/features/feature-home-page.JPG)
+![Blog detail Page](docs/features/blog-detail1.png)
+![Blog detail Page](docs/features/blog-detail1-mob.png)
+
 </details> 
 
 - If user is the creator of a blog two icons are displayed one for updating and other one
@@ -605,7 +608,8 @@ for deleting a blog
 - User Story covered with this feature:
  <details><summary>See Comment section</summary>
 
-![Comment section](docs/features/feature-home-page.JPG)
+![Comment section](docs/features/blog-detail2.png)
+![Comment section](docs/features/blog-detail2-mob.png)
 </details> 
 
 ### Delete blog (modal)
@@ -614,7 +618,7 @@ for deleting a blog
 - User Story covered with this feature:
  <details><summary>See Delete blog(modal)</summary>
 
-![Delete blog](docs/features/feature-home-page.JPG)
+![Delete blog](docs/features/delete-blog-modal.png)
 </details> 
 
 ### Add blog page
@@ -624,7 +628,8 @@ for deleting a blog
 - User Story covered with this feature:
  <details><summary>See Add blog page</summary>
 
-![Add blog page](docs/features/feature-home-page.JPG)
+![Add blog page](docs/features/add-blog.png)
+![Add blog page](docs/features/add-blog-mob.png)
 </details>
 
 ### Update comment page
@@ -633,7 +638,8 @@ displayed so he can update comment or go back
 - User Story covered with this feature:
  <details><summary>See Update comment page</summary>
 
-![Add blog page](docs/features/feature-home-page.JPG)
+![Update comment page](docs/features/update-comment.png)
+![Update comment page](docs/features/update-comment-mob.png)
 </details>
 
 ### Delete comment (modal)
@@ -642,7 +648,8 @@ displayed so he can update comment or go back
 - User Story covered with this feature:
  <details><summary>See Delete comment (modal)</summary>
 
-![Add blog page](docs/features/feature-home-page.JPG)
+![Delete comment](docs/features/delete-coment-modal.png)
+![Delete comment](docs/features/delete-coment-modal-mob.png)
 </details>
 
 ### Learning Category page (x3)
@@ -651,10 +658,18 @@ displayed so he can update comment or go back
 - User can see mentors available by category and mentors' basic information and contact details.
 - Blogs related to the category are displayed on the page.
 - User Story covered by this feature:
- <details><summary>See Delete Learning Category page</summary>
+ <details><summary>See Learning Category page</summary>
 
-![Add blog page](docs/features/feature-home-page.JPG)
+![Learning Category page](docs/features/category-page.png)
+![Learning Category page](docs/features/category-mentor.png)
 </details>
+
+ <details><summary>See Mentor section of category page</summary>
+
+![Mentor section](docs/features/category-mentor.png)
+![Mentor section](docs/features/cat-mentor-mob.png)
+</details>
+
 
 ### Error handling pages
 - Making the user experience good by handling errors that users can encounter
@@ -662,7 +677,12 @@ displayed so he can update comment or go back
 - User Story covered by this feature:
  <details><summary>See Error pages</summary>
 
-![Add blog page](docs/features/feature-home-page.JPG)
+![404-page](docs/features/404-page.png)
+![404-page](docs/features/404-mob.png)
+![403-page](docs/features/403-page.png)
+![403-page](docs/features/403-mob.png)
+![500-page](docs/features/500-page.png)
+![500-page](docs/features/500-mob.png)
 </details>
 
 
