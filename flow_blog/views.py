@@ -32,7 +32,8 @@ class BlogPageView(ListView):
     template_name = 'flow_blog/blog.html'
 
 
-class BlogDetailView(LoginRequiredMixin,  UserPassesTestMixin, DetailView):
+@method_decorator(login_required, name='dispatch')
+class BlogDetailView(UserPassesTestMixin, DetailView):
     """
     Detail view for each blogpost
     and added comments
@@ -45,7 +46,8 @@ class BlogDetailView(LoginRequiredMixin,  UserPassesTestMixin, DetailView):
 
     def test_func(self):
         if self.request.user.profile.role and self.request.user.profile.bio:
-            return self.request.user
+            return True
+        return False
 
     def handle_no_permission(self):
         if self.request.user:
@@ -86,8 +88,8 @@ class BlogDetailView(LoginRequiredMixin,  UserPassesTestMixin, DetailView):
         return context
 
 
-class AddBlogView(UserPassesTestMixin, LoginRequiredMixin,
-                  SuccessMessageMixin, CreateView):
+@method_decorator(login_required, name='dispatch')
+class AddBlogView(UserPassesTestMixin, SuccessMessageMixin, CreateView):
 
     """
     View for creating new blogposts
@@ -113,6 +115,10 @@ class AddBlogView(UserPassesTestMixin, LoginRequiredMixin,
     def test_func(self):
         if self.request.user.profile.role and self.request.user.profile.bio:
             return self.request.user
+
+    def handle_no_permission(self):
+        if self.request.user:
+            return redirect('protect_profile')
 
 
 class UpdateBlogView(UserPassesTestMixin, LoginRequiredMixin,
@@ -158,10 +164,11 @@ def delete_blog(request, post_id):
         messages.success(request, 'BLOG-POST IS DELETED')
         return HttpResponseRedirect(reverse('blog_page'))
     else:
-        messages.error(request, "CAN'T BLOG-POST(YOU ARE NOT CREATOR) ")
+        messages.error(request, "CAN'T DELET BLOG-POST YOU ARE NOT CREATOR  ")
         return HttpResponseRedirect(reverse('blog_page'))
 
 
+@login_required
 def delete_comment(request, comment_id):
     """
     View that handles deletion
@@ -203,10 +210,6 @@ class UpdateCommentView(LoginRequiredMixin, SuccessMessageMixin,
     def form_valid(self, form):
         form.instance.author.id == self.request.user.id
         return super().form_valid(form)
-
-    def get_queryset(self):
-        qs = super(UpdateCommentView, self).get_queryset()
-        return qs.filter(author=self.request.user)
 
     def test_func(self):
         comment = self.get_object()
