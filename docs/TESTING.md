@@ -116,7 +116,68 @@ click on category to tick the multiple selection box if category is to be added 
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-8. I want to prepare a plan for multiple weeks in advance
+8. As an authenticated user I would like functionality to see and read blog posts that other users created
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to a blog link in the nav bar or click "SEE BLOGS" in the hero section| Loads blogs page | WAS |
+click on a blog title or "Read the blog" button| blog detail page is loaded | WAS |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+9. As an authenticated user I would like functionality to leave a comment on a blog post
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to a blog link in the nav bar or click "SEE BLOGS" in the hero section| Loads blogs page | WAS |
+click on a blog title or read the blog button| blog detail page is loaded | WAS |
+scroll to the end of a blog | comment section is displayed | WAS |
+enter your comment text and press green button|success message is displayed and you can see your comment in comment section  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+10.As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to "Add Blog" link in the nav bar and click on it |The "Create Blog" form is loaded| WAS |
+Enter relevant data for posting the blog| Form is populated with user data | WAS |
+From the drop-down category menu, select category |Categories that are chosen during the profile set up are displayed in the drop-down menu  | WAS |
+ Click the "Post" button|user is redirected to blog page with success message that "YOU ADDED A NEW BLOG" | WAS |
+
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+11. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to "Add Blog" link in the nav bar and click on it |The "Create Blog" form is loaded| WAS |
+Enter relevant data for posting the blog| Form is populated with user data | WAS |
+From the drop-down category menu, select category |Categories that are chosen during the profile set up are displayed in the drop-down menu  | WAS |
+Click "Choose file" under image section of blog form |window with local files is displayed  | WAS |
+Click on image you want to be the blog cover image |name of the image is displayed in the image section  | WAS |
+ Click the "Post" button|user is redirected to blog page with success message that "YOU ADDED A NEW BLOG" | WAS |
+
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+12. I want to prepare a plan for multiple weeks in advance
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -132,7 +193,7 @@ Register or log in to the account to be able to create a plan | Loads planner pa
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-9. I want to prepare a plan for multiple weeks in advance
+13. I want to prepare a plan for multiple weeks in advance
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -148,7 +209,183 @@ Register or log in to the account to be able to create a plan | Loads planner pa
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-10. I want to prepare a plan for multiple weeks in advance
+14. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+15. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+16. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+17. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+18. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+19. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+20. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+21. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+22. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+23. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+24. I want to prepare a plan for multiple weeks in advance
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+ T| T | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+ |  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+25. I want to prepare a plan for multiple weeks in advance
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |

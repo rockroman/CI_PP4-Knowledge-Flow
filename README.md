@@ -356,10 +356,10 @@ create user stories. at later date user stories were edited since at the start t
 
 <details><summary>See Nav-bar and Logo</summary>
 
-![Logo and navbar](docs/features/feature-logo-and-navbar.JPG)
-![Logo and navbar](docs/features/feature-logo-and-navbar-hamburger.jpg)
-![Logo and navbar](docs/features/feature-logo-and-navbar-not-logged-user.JPG)
-![Logo and navbar](docs/features/feature-logo-and-navbar-logged-user.jpg)
+![Logo and navbar](docs/features/nav_bar_logged_in.png)
+![Logo and navbar](docs/features/nav_bar_Mobile.png)
+![Logo and navbar](docs/features/nav_bar_Not_logged_in.png)
+
 </details>
 
 ### Back to top Button
@@ -368,7 +368,7 @@ create user stories. at later date user stories were edited since at the start t
 - Makes navigating the page easier and its enhancing the user experience 
 <details><summary>See Back to top Button</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Home page](docs/features/back-to-top.png)
 </details>
 
 
@@ -377,6 +377,7 @@ create user stories. at later date user stories were edited since at the start t
 <details><summary>See Homepage</summary>
 
 ![Home page](docs/features/feature-home-page.JPG)
+
 </details>
 
 - this feature is First point of contact with a user, it consist of:
@@ -429,9 +430,9 @@ create user stories. at later date user stories were edited since at the start t
 - Footer is intended to be extension of a nav-bar with links to home page, about us setion and blog page, links to social media pages to ensure multple ways that user can communicate with a team and one added detail of a developer git-hub page link with a timeframe ofproject development.
     - User Story covered with this feature: 
 
-    <details><summary>See Team Section </summary>
+    <details><summary>See Footer </summary>
 
-    ![Team Section](docs/features/feature-home-page.JPG)
+    ![Team Section](docs/features/footer_section.png)
     </details>
 
 ***
@@ -445,7 +446,8 @@ create user stories. at later date user stories were edited since at the start t
 
 <details><summary>See Register Page</summary>
 
-![Register Page](docs/features/feature-home-page.JPG)
+![Register Page](docs/features/sign_up_page.png)
+![Register Page](docs/features/sign_up_mobile.png)
 </details>
 
 ### Login page 
@@ -456,7 +458,19 @@ create user stories. at later date user stories were edited since at the start t
 
 <details><summary>See Login Page</summary>
 
-![Login Page](docs/features/feature-home-page.JPG)
+![Login Page](docs/features/login_page.png)
+![Login Page](docs/features/login_mobile.png)
+</details>
+
+### Logout page
+- This feature is presenting logout form wich is par of django-allauth library
+- Authenticated user can click on a nav-bar link and 
+he is redirected to a logout page where ho confirms that he wants to logout
+
+<details><summary>See Forgot password Page</summary>
+
+![Logout page](docs/features/feature-home-page.JPG)
+![Logout page](docs/features/feature-home-page.JPG)
 </details>
 
 
