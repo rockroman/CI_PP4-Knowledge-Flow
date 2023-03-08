@@ -297,17 +297,17 @@ create user stories. at later date user stories were edited since at the start t
 <img src="docs/features/user-story-template.png">
 </details>
 <details><summary>See User story ticket</summary>
-<img src="docs/wireframes/wireframes-mobile.png">
+<img src="docs/features/user-story-ticket.png">
 </details>
 <details><summary>See user story</summary>
-<img src="docs/wireframes/wireframes-mobile.png">
+<img src="docs/features/user-story.png">
 </details>
 
 ### Kanban Board
 - As a visual representation of the project's status, showing what tasks are in progress, what tasks are waiting, and what tasks have been completed.Each task is represented as a card on the board, and the cards can be moved from one column to another to show progress.  Kanban board is an excelent tool and since it was my first time using I didnt get the  full benefits of using it ,since it wasnt used as often as it should, but since completing the project I m more aware of its great purpose and im sure it will be utilized more and more in the future 
 [Link to project Kanban board.](https://github.com/users/rockroman/projects/5)
 <details><summary>See Kanban board</summary>
-<img src="docs/wireframes/wireframes-mobile.png">
+<img src="docs/features/kanban-board.png">
 </details>
 
 ### Moscow prioritisation
@@ -393,7 +393,7 @@ create user stories. at later date user stories were edited since at the start t
 
     <details><summary>See Hero section</summary>
 
-    ![Hero section](docs/features/feature-home-page.JPG)
+    ![Hero section](docs/features/hero-section.png)
     </details>
 
 - Featured section as an extension of a hero section with introduction to web app and small list 
@@ -401,7 +401,8 @@ create user stories. at later date user stories were edited since at the start t
   - User Story covered with this feature:
 
     <details><summary>See Featured section </summary>
-    ![Featured section](docs/features/feature-home-page.JPG)
+
+    ![Featured section](docs/features/feature-section.png)
     </details>
 
 
@@ -410,7 +411,7 @@ create user stories. at later date user stories were edited since at the start t
 
     <details><summary>See Team Section</summary>
 
-    ![Team Section](docs/features/feature-home-page.JPG)
+    ![Team Section](docs/features/team-section.png)
     </details>
 
 - About section with a famous quote is delivering a small peek into reasons for delivering the
@@ -419,7 +420,7 @@ create user stories. at later date user stories were edited since at the start t
 
     <details><summary>See About section </summary>
 
-    ![About section ](docs/features/feature-home-page.JPG)
+    ![About section ](docs/features/about-section.png)
     </details>
 
 - Contact section with a web app logo and small contact form this section purpose is to  
@@ -428,7 +429,7 @@ create user stories. at later date user stories were edited since at the start t
 
     <details><summary>See Contact section</summary>
 
-    ![Contact section](docs/features/feature-home-page.JPG)
+    ![Contact section](docs/features/contact-section.png)
     </details>
 
 - Footer is intended to be extension of a nav-bar with links to home page, about us setion and blog page, links to social media pages to ensure multple ways that user can communicate with a team and one added detail of a developer git-hub page link with a timeframe ofproject development.
@@ -514,8 +515,8 @@ and upo clickinguser profile role is set
 
 <details><summary>See Set role Page</summary>
 
-![Set role Page](docs/features/feature-home-page.JPG)
-![Set role Page](docs/features/feature-home-page.JPG)
+![Set role Page](docs/features/set-role.png)
+![Set role Page](docs/features/set-role-mob.png)
 </details>
 
 ### Create profile page
@@ -529,7 +530,8 @@ and upo clickinguser profile role is set
 
 <details><summary>See Create profile Page</summary>
 
-![Create profile Page](docs/features/feature-home-page.JPG)
+![Create profile Page](docs/features/create-profile.png)
+![Create profile Page](docs/features/create-pofile-mob.png)
 </details>
 
 ### Profile page
@@ -541,7 +543,8 @@ structured nicely into simple jet effective profile page example
 
 <details><summary>See Profile Page</summary>
 
-![Profile Page](docs/features/feature-home-page.JPG)
+![Profile Page](docs/features/profile-page.png)
+![Profile Page](docs/features/see-profile-mob.png)
 </details>
 
 ### Update Profile page
@@ -550,7 +553,8 @@ structured nicely into simple jet effective profile page example
 - User Story covered with this feature:
  <details><summary>See Update Profile Page</summary>
 
-![Update Profile Page](docs/features/feature-home-page.JPG)
+![Update Profile Page](docs/features/update-profile.png)
+![Update Profile Page](docs/features/update-profile-mob.png)
 </details>
 
 
@@ -561,7 +565,8 @@ structured nicely into simple jet effective profile page example
 - User Story covered with this feature:
  <details><summary>See Delete Profile Page</summary>
 
-![Delete Profile Page](docs/features/feature-home-page.JPG)
+![Delete Profile Page](docs/features/delete-profile.png)
+![Delete Profile Page](docs/features/delete-profile-mob.png)
 </details> 
 
 ### Blog page
