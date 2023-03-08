@@ -1,7 +1,10 @@
-![Mockup image](readme/misc/mock-up.png)
+# Knowledge Flow
+(Developer: Roman Rakic)
+
+![Mockup image](docs/features/first-one.png)
 
 
-[View live website](https://pic-pals-pp4.herokuapp.com/)
+[View live website](https://knowledge-flow.herokuapp.com/)
 
 ## Table of Contents
 0. [About](#about)
@@ -57,7 +60,7 @@
 ## About
 
 The Knowledge Flow is a Learning and Blogging application that allows users to post blogs  in
-a chosen categories add comments, learn from the content of a blog or a comment and find out a mentor available 
+a chosen categories add comments, learn from the content of a blog or a comment and find a mentor available 
 for each category and reach out and connect with them.
 
 ***
@@ -137,13 +140,13 @@ Web app is utilizing  dark theme with black and blue colors, it is enhancing use
 
 The Color pallet was created using [Coolors.co](https://coolors.co/)
 <details><summary>See colour pallet</summary>
-<img src="docs/readme/color-pallet-PP4.png">
+<img src="docs/features/color_palete.png">
 </details>
 
 ### Fonts
 Google fonts "'Rubik', sans-serif" modern and versatile font were used for this project as it offers  clean and legible design, which makes it easy to read on screens of different sizes and resolutions. It has a neutral appearance and doesn't have any distracting features that can make it difficult to read.
 <details><summary>See Rubik font</summary>
-<img src="docs/readme/color-pallet-PP4.png">
+<img src="docs/features/fonts.png">
 </details>
 
 
@@ -284,14 +287,14 @@ This allowed me to respond more effectively to change, stay focused on the most 
 ### Epics
 - Using the GitHub 'Milestones' and Linking the user stories with the tasks I created a 5 epics for this project
 <details><summary>See epics</summary>
-<img src="docs/wireframes/wireframes-mobile.png">
+<img src="docs/features/new-epic.png">
 </details>
 
 ### User stories
 - using Github issues first I created the template for a user story that was late used to 
 create user stories. at later date user stories were edited since at the start they were just a rough skech or a guideline that later became a full user story
 <details><summary>See User story template</summary>
-<img src="docs/wireframes/wireframes-mobile.png">
+<img src="docs/features/user-story-template.png">
 </details>
 <details><summary>See User story ticket</summary>
 <img src="docs/wireframes/wireframes-mobile.png">
@@ -376,7 +379,8 @@ create user stories. at later date user stories were edited since at the start t
 
 <details><summary>See Homepage</summary>
 
-![Home page](docs/features/feature-home-page.JPG)
+![Home page](docs/features/home-page.png)
+![Home page](docs/features/home-page-mob.png)
 
 </details>
 
@@ -469,8 +473,8 @@ he is redirected to a logout page where ho confirms that he wants to logout
 
 <details><summary>See Forgot password Page</summary>
 
-![Logout page](docs/features/feature-home-page.JPG)
-![Logout page](docs/features/feature-home-page.JPG)
+![Logout page](docs/features/logout.png)
+![Logout page](docs/features/logout_modal.png)
 </details>
 
 
@@ -483,7 +487,7 @@ he is redirected to a logout page where ho confirms that he wants to logout
 
 <details><summary>See Forgot password Page</summary>
 
-![Forgot password Page](docs/features/feature-home-page.JPG)
+![Forgot password Page](docs/features/forgot-password.png)
 </details>
 
 
@@ -495,7 +499,8 @@ he is redirected to a logout page where ho confirms that he wants to logout
 
 <details><summary>See Forgot password finished Page</summary>
 
-![Forgot password finished Page](docs/features/feature-home-page.JPG)
+![Forgot password finished Page](docs/features/pass-reset-finish.png)
+![Forgot password finished Page](docs/features/pass-reset-finish-mob.png)
 </details>
 
 
@@ -509,6 +514,7 @@ and upo clickinguser profile role is set
 
 <details><summary>See Set role Page</summary>
 
+![Set role Page](docs/features/feature-home-page.JPG)
 ![Set role Page](docs/features/feature-home-page.JPG)
 </details>
 
