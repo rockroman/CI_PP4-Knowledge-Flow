@@ -42,7 +42,7 @@ def home(request):
                     )
                 messages.success(request, 'THANK YOU FOR YOUR MESSAGE')
 
-                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+                return redirect('.')
             else:
                 messages.error(request, 'NEED TO BE LOGGED IN TO SEND MESSAGE')
                 form = ContactUsForm()
