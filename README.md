@@ -110,26 +110,27 @@ knowledge.
 6. As an authenticated user I would like a functionality to update or delete profile (account) if not planning to use web app anymore
 7. As an authenticated user I would like functionality to pick different types of learning categories in my profile and change them later
 8. As an authenticated user I would like functionality to see and read blog posts that other users created
-9. As an authenticated user I would like functionality to leave a comment on a blog post 
-10. As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
-11. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
-12. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable 
-13. As a user I would like web app to be fully responsive and to have the same experience when using
+9. As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
+10. As an authenticated user I would like functionality to delete my blog post i I find it no longer relevant
+11. As an authenticated user I would like functionality to leave a comment on a blog post 
+12. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
+13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable 
+14. As a user I would like web app to be fully responsive and to have the same experience when using
 on any device 
-14. As an returning user user I would like functionality to set a new password if I forgot the password so that I can still use the web app
-15. As a User I would like a Functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
-16. As a user I can update a comment I posted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
+15. As an returning user user I would like functionality to set a new password if I forgot the password so that I can still use the web app
+16. As a User I would like a Functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
+17. As a user I can update a comment I posted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
 
 ### Site Owner Stories
 
-17. As a site owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
-18. As a Site Owner I would like that authenticated users have full access to web app and its functionality
-19. As a Site Owner I would like that each data entry is validated before stored in database
-20. As a Site Owner I would like that users an leave a message or feedback via contact form or 
-21. As a Site Owner I would like that users have more than one way of comunicating with team or myself
-22. As a Site Owner I would like that each 'Mentor' user cant see himself on the list of available mentors for his respective category(user wont be contacting himself)
-23. As a Site Owner I would like that each authenticated user gets prompt messages when performing CRUD(Create,Read,Update,Delete) operations when using web app.
-24. As a Site Owner I would like that each authenticated user has option to get access to an app if he forgots password for any reason via (Reset password functionality)
+18. As a site owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
+19. As a Site Owner I would like that authenticated users have full access to web app and its functionality
+20. As a Site Owner I would like that each data entry is validated before stored in database
+21. As a Site Owner I would like that users an leave a message or feedback via contact form or 
+22. As a Site Owner I would like that users have more than one way of comunicating with team or myself
+23. As a Site Owner I would like that each 'Mentor' user cant see himself on the list of available mentors for his respective category(user wont be contacting himself)
+24. As a Site Owner I would like that each authenticated user gets prompt messages when performing CRUD(Create,Read,Update,Delete) operations when using web app.
+25. As a Site Owner I would like that each authenticated user has option to get access to an app if he forgots password for any reason via (Reset password functionality)
 
 
 
@@ -391,7 +392,7 @@ create user stories. at later date user stories were edited since at the start t
     - CTA guides user depending if user is authenticated or not
     - Authenticated user is redirected to see latest blogs and find his preferrence
     - Unauthnticated user is redirected to a signup page.
-    - User Story covered with this feature:1,15
+    - User Story covered with this feature:1,15,20,13
 
     <details><summary>See Hero section</summary>
 
@@ -435,7 +436,7 @@ create user stories. at later date user stories were edited since at the start t
     </details>
 
 - Footer is intended to be extension of a nav-bar with links to home page, about us setion and blog page, links to social media pages to ensure multple ways that user can communicate with a team and one added detail of a developer git-hub page link with a timeframe ofproject development.
-    - User Story covered with this feature: 
+    - User Story covered with this feature:0,1,13,21 
 
     <details><summary>See Footer </summary>
 
@@ -449,7 +450,7 @@ create user stories. at later date user stories were edited since at the start t
  - This feature is presenting sign up form wich is par of django-allauth and for 
  unauthenticated users CTA button from the home page is linked to this page so incentive is to get users registered so that they can experience the full benefits of th web app
  - For registering User must provide a username and strong enough password(for any errors user is prompted) 
- - User Story covered with this feature: 
+ - User Story covered with this feature:3,4,17,18 
 
 <details><summary>See Register Page</summary>
 
@@ -461,7 +462,7 @@ create user stories. at later date user stories were edited since at the start t
 
  - Returning users with created Profile(account) can get back and use the web app
  - user must provide valid username and password
- - User Story covered with this feature: 
+ - User Story covered with this feature: 17,18,3
 
 <details><summary>See Login Page</summary>
 
@@ -473,8 +474,9 @@ create user stories. at later date user stories were edited since at the start t
 - This feature is presenting logout form wich is par of django-allauth library
 - Authenticated user can click on a nav-bar link and 
 he is redirected to a logout page where ho confirms that he wants to logout
+- User Story covered with this feature:3,18
 
-<details><summary>See Forgot password Page</summary>
+<details><summary>See Logout page Page</summary>
 
 ![Logout page](docs/features/logout.png)
 ![Logout page](docs/features/logout_modal.png)
@@ -486,7 +488,7 @@ he is redirected to a logout page where ho confirms that he wants to logout
 ### Forgot password page
  - This feature is also part of (django-allauth) and its included to help users
  start process of setting the new password if they forgot their password
-  - User Story covered with this feature: 
+  - User Story covered with this feature: 24,14
 
 <details><summary>See Forgot password Page</summary>
 
@@ -498,7 +500,7 @@ he is redirected to a logout page where ho confirms that he wants to logout
 
 ### Reset password finished
 - after user puts his valid email to forgot password page he is redirected to this page and now can check his email for further directions
-  - User Story covered with this feature: 
+  - User Story covered with this feature:24,14 
 
 <details><summary>See Forgot password finished Page</summary>
 
@@ -513,7 +515,7 @@ he is redirected to a logout page where ho confirms that he wants to logout
 - User can register as Student Or Mentor
 - Each card presented gives a brief description of a role selected
 and upo clickinguser profile role is set 
-- User Story covered with this feature: 
+- User Story covered with this feature: 2
 
 <details><summary>See Set role Page</summary>
 
@@ -528,7 +530,7 @@ and upo clickinguser profile role is set
 - Its mandatory to provide email address
 - Its requirement to fill all the fields except website and linkedIn url
 - User is given an option to upload a supporting image to his profile
-- User Story covered with this feature: 
+- User Story covered with this feature:4,3,19 
 
 <details><summary>See Create profile Page</summary>
 
@@ -541,7 +543,7 @@ and upo clickinguser profile role is set
 structured nicely into simple jet effective profile page example
 - User can updatehis profile by clickin on a update profile button
 - user can delete profile by cicking on delete profile button
-- User Story covered with this feature: 
+- User Story covered with this feature: 4,6,7
 
 <details><summary>See Profile Page</summary>
 
@@ -552,7 +554,7 @@ structured nicely into simple jet effective profile page example
 ### Update Profile page
 - User presented with a same form from create profile page
 - User can update his profile info and all the datais updated in a database
-- User Story covered with this feature:
+- User Story covered with this feature:5,6,7
  <details><summary>See Update Profile Page</summary>
 
 ![Update Profile Page](docs/features/update-profile.png)
@@ -564,7 +566,7 @@ structured nicely into simple jet effective profile page example
 - User is presented with two options
 - User can Delete his profile(he cant register with a same username again)
 - User can go back to profile page
-- User Story covered with this feature:
+- User Story covered with this feature:6,7
  <details><summary>See Delete Profile Page</summary>
 
 ![Delete Profile Page](docs/features/delete-profile.png)
@@ -574,6 +576,7 @@ structured nicely into simple jet effective profile page example
 ### Blog page
 - Latest Blogs published are presented on this page
 - Blogs are displayed using a cards elements(blog card)
+- User Story covered with this feature:8,7
  <details><summary>See blog Card</summary>
 
 ![blog card page](docs/features/blog-card.png)
