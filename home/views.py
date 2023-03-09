@@ -4,7 +4,7 @@ A module for home views
 # Imports
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.views import generic
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -43,6 +43,7 @@ def home(request):
                 messages.success(request, 'THANK YOU FOR YOUR MESSAGE')
 
                 return redirect('.')
+
             else:
                 messages.error(request, 'NEED TO BE LOGGED IN TO SEND MESSAGE')
                 form = ContactUsForm()

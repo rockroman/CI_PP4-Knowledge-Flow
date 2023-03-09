@@ -83,7 +83,6 @@ class DeleteAppUser(SuccessMessageMixin,
     """
     model = User
     template_name = 'delete_profile.html'
-    success_message = 'PROFILE IS DELETED'
 
     def get_object(self, *args, **kwargs):
         return self.request.user
@@ -95,6 +94,7 @@ class DeleteAppUser(SuccessMessageMixin,
 
         request.user.is_active = False
         request.user.save()
+        messages.success(request, 'YOUR PROFILE IS DELETED')
 
         return HttpResponseRedirect(reverse_lazy('account_logout'))
 
