@@ -809,24 +809,16 @@ some of the existing features
     <img src="docs/validation/python-js/home-forms.png" width="800" >
     </details>
 
-    <details><summary>models.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
-    </details>
+
 
     <details><summary>tests_views.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="" width="800" >
     </details>
 
-    <details><summary>tests_models.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+ 
     </details>
 
-    <details><summary>tests_forms.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
-    </details>    
-
-    </details>
-
+    ***
 
     <details><summary>flow_blog app</summary>
 
@@ -847,7 +839,7 @@ some of the existing features
     </details>
 
     <details><summary>tests_views.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="" width="800" >
     </details>
 
     <details><summary>tests_models.py</summary>
@@ -859,70 +851,71 @@ some of the existing features
     </details>  
     </details>
 
+    ***
+
 
     <details><summary>siteusers app</summary>
 
     <details><summary>views.py</summary>
-    <img src="docs/validation/python-js/home-views.png" width="800" >
+    <img src="docs/validation/python-js/siteusers-views.png" width="800" >
     </details>
 
     <details><summary>urls.py</summary>
-    <img src="docs/validation/python-js/home-url.png" width="800" >
+    <img src="docs/validation/python-js/siteusers-url.png" width="800" >
     </details>
 
     <details><summary>forms.py</summary>
-    <img src="docs/validation/python-js/home-forms.png" width="800" >
+    <img src="docs/validation/python-js/siteusers-forms.png" width="800" >
     </details>
 
     <details><summary>models.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="docs/validation/python-js/siteusers-models.png" width="800" >
     </details>
 
     <details><summary>tests_views.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="" width="800" >
     </details>
 
     <details><summary>tests_models.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="docs/validation/python-js/siteusers-test-models.png" width="800" >
     </details>
 
     <details><summary>tests_forms.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="" width="800" >
     </details>  
 
-    </details> 
+    </details>
+
+    ***
 
     <details><summary>categories app</summary>
 
     <details><summary>views.py</summary>
-    <img src="docs/validation/python-js/home-views.png" width="800" >
+    <img src="docs/validation/python-js/categories-views.png" width="800" >
     </details>
 
     <details><summary>urls.py</summary>
-    <img src="docs/validation/python-js/home-url.png" width="800" >
+    <img src="docs/validation/python-js/category-url.png" width="800" >
     </details>
 
-    <details><summary>forms.py</summary>
-    <img src="docs/validation/python-js/home-forms.png" width="800" >
-    </details>
 
     <details><summary>models.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="docs/validation/python-js/categories-models.png" width="800" >
     </details>
 
     <details><summary>tests_views.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="docs/validation/python-js/categories-test-views.png" width="800" >
     </details>
 
     <details><summary>tests_models.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    <img src="docs/validation/python-js/categories-test-models.png" width="800" >
     </details>
 
-    <details><summary>tests_forms.py</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
-    </details>    
+  
 
-    </details>   
+    </details>
+
+    ***   
 
 
 
