@@ -45,11 +45,19 @@ class BlogDetailView(UserPassesTestMixin, DetailView):
     form = CommentForm
 
     def test_func(self):
+        """
+        testing if user has his profile role or profile set up
+        correctly if not function fails
+        """
         if self.request.user.profile.role and self.request.user.profile.bio:
             return True
         return False
 
     def handle_no_permission(self):
+        """
+        redirecting user to a propper view if profile role or bio
+        is not set
+        """
         if self.request.user:
             return redirect('protect_profile')
 

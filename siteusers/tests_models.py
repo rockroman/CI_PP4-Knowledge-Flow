@@ -28,8 +28,6 @@ class TestSiteusersModel(TestCase):
         self.user_profile = Profile.objects.update(
             user=self.user,
             first_name='miki',
-
-
         )
 
     def test_is_profile_created(self):

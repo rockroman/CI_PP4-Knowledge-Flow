@@ -13,8 +13,9 @@ from .models import LearningCategory, User
 class TestLearningCategoryModel(TestCase):
     @classmethod
     def setUp(self):
-        # creating and saving a new test user
-
+        """
+        creating and saving a new test user
+        """
         self.user = User.objects.create(
             username='NewTestUser',
             password='mypass7900',
@@ -24,8 +25,16 @@ class TestLearningCategoryModel(TestCase):
         )
         self.user.save()
 
+    def tearDown(self):
+        """
+        deleting a test user
+        """
+        self.user.delete()
+
     def test_string_method_returning_name(self):
-        #  creating a category object
+        """
+        creating a category object
+        """
         new_category = LearningCategory.objects.create(
             maker=self.user,
             name='Coding',

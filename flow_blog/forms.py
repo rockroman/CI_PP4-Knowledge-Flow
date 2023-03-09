@@ -7,8 +7,6 @@ flow_blog forms module
 from django import forms
 from django.contrib.auth.models import User
 from crispy_forms.helper import FormHelper
-# from cloudinary.models import CloudinaryField
-# from cloudinary.forms import CloudinaryFileField
 # Internal:
 from .models import BlogPost, Comment
 from siteusers.models import LearningCategory, Profile
@@ -19,7 +17,6 @@ class BlogForm(forms.ModelForm):
     """
     A class for the blog creation form
     """
-
     class Meta:
         model = BlogPost
         fields = ('title', 'cover_image', 'category', 'body')
@@ -28,7 +25,6 @@ class BlogForm(forms.ModelForm):
             'title': forms.TextInput(
                 attrs={'class': 'form-control', 'placeholder': 'Blog Title'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
-
         }
 
     def __init__(self, user=True, **kwargs):
@@ -42,7 +38,9 @@ class BlogForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
-
+    """
+    A class for the comment creation
+    """
     content = forms.CharField(
         widget=forms.Textarea(
             attrs={
@@ -50,8 +48,6 @@ class CommentForm(forms.ModelForm):
                 'placeholder': 'your comment....',
                 'rows': '3',
                 'id': 'comment',
-
-
             }
         ),
         label='comment:'
@@ -63,14 +59,15 @@ class CommentForm(forms.ModelForm):
 
 
 class UpdateCommentForm(forms.ModelForm):
-
+    """
+    A class for the comment editing
+    """
     content = forms.CharField(
         widget=forms.Textarea(
             attrs={
                 'class': 'md-textarea form-control comment-text',
                 'placeholder': 'your comment....',
                 'rows': '3',
-
             }
         ),
         label=''
