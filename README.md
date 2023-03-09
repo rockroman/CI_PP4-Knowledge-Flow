@@ -781,7 +781,7 @@ some of the existing features
     <img src="docs/validation/html-css/category-valid.png" width="800" >
     </details>
 
-- Note : all info on validator pages are related withusing cloudinary template
+- Note : all info on validator pages are related with using cloudinary template
     tags for rendering user uploaded images and there for trailing slash cant be removed
     
    
@@ -927,7 +927,84 @@ some of the existing features
 
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
-- [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
+
+### Wave
+ [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
+
+
+<details><summary>Home</summary>
+<img src="docs/validation/wave/home-pg.png" width="800" height="1200" >
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/validation/wave/register-pg.png" width="800" height="1200">
+</details>
+
+<details><summary>Login</summary>
+<img src="docs/validation/wave/login-pg.png" width="800" height="1200">
+</details>
+
+<details><summary>password reset</summary>
+<img src="docs/validation/wave/password-reset.png" width="800" >
+</details>
+
+<details><summary>password reset done</summary>
+<img src="docs/validation/wave/pass-reset-done.png" width="800" >
+</details>
+
+<details><summary>Set role</summary>
+<img src="docs/validation/wave/set-role-pg.png" width="800" >
+</details>
+
+<details><summary>Set Profile</summary>
+<img src="docs/validation/wave/create-profile.png" width="800"  >
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/wave/see-profile.png" width="800" >
+</details>
+
+<details><summary>Edit profile</summary>
+<img src="docs/validation/wave/edit-profile.png" width="800">
+</details>
+
+<details><summary>Delete profile</summary>
+<img src="docs/validation/wave/delete-profile.png" width="800" >
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/validation/wave/blog.png" width="800" >
+</details>
+
+<details><summary>Blog add</summary>
+<img src="docs/validation/wave/add-blog.png" width="800" >
+</details>
+
+<details><summary>Blog detail</summary>
+<img src="docs/validation/wave/blog-detail.png" width="800" >
+</details>
+
+<details><summary>Blog edit</summary>
+<img src="docs/validation/wave/blog-edit.png" width="800">
+</details>
+
+<details><summary>Category</summary>
+<img src="docs/validation/wave/category-pg.png" width="800" >
+</details>
+
+- NOTE : Alerts in Wave validator are connected with "alt" attributo of images uploaded by
+the user.they needed to be put as generic since it can be done by the user.
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Testing
