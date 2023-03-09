@@ -101,6 +101,7 @@ knowledge.
 
 ### User stories
 
+0. As a user I want to navigation to be intuitive and user-friendly so that Im able to easily navigate through the app content.
 1. As a  user I want to know Important info on what the app is about so that I can use it's functionality on mutual benefit
 2. As an authenticated user I would like to be able to choose a way to get benefit from the app with choosing the right role
 3. As an authenticated user I would like to have a full access to the content of an web app
@@ -121,14 +122,14 @@ on any device
 
 ### Site Owner Stories
 
-1. As a site owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
-2. As a Site Owner I would like that authenticated users have full access to web app and its functionality
-3. As a Site Owner I would like that each data entry is validated before stored in database
-4. As a Site Owner I would like that users an leave a message or feedback via contact form or 
-5. As a Site Owner I would like that users have more than one way of comunicating with team or myself
-6. As a Site Owner I would like that each 'Mentor' user cant see himself on the list of available mentors for his respective category(user wont be contacting himself)
-7. As a Site Owner I would like that each authenticated user gets prompt messages when performing CRUD(Create,Read,Update,Delete) operations when using web app.
-8. As a Site Owner I would like that each authenticated user has option to get access to an app if he forgots password for any reason via (Reset password functionality)
+17. As a site owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
+18. As a Site Owner I would like that authenticated users have full access to web app and its functionality
+19. As a Site Owner I would like that each data entry is validated before stored in database
+20. As a Site Owner I would like that users an leave a message or feedback via contact form or 
+21. As a Site Owner I would like that users have more than one way of comunicating with team or myself
+22. As a Site Owner I would like that each 'Mentor' user cant see himself on the list of available mentors for his respective category(user wont be contacting himself)
+23. As a Site Owner I would like that each authenticated user gets prompt messages when performing CRUD(Create,Read,Update,Delete) operations when using web app.
+24. As a Site Owner I would like that each authenticated user has option to get access to an app if he forgots password for any reason via (Reset password functionality)
 
 
 
@@ -355,7 +356,7 @@ create user stories. at later date user stories were edited since at the start t
     - unaithenticated user cant see (name link to profile) and blog page dropdown is restricted so he dont have access to CRUD functionality of a blog section while authenticated user has dropdown link to add blog.
 
 - Feature is fully responsive and on smaller screen sizes it coverts into a 'Hamburger menu'
-- User Story covered with this feature:
+- User Story covered with this feature: 0,1
 
 <details><summary>See Nav-bar and Logo</summary>
 
@@ -369,6 +370,7 @@ create user stories. at later date user stories were edited since at the start t
 
 - This button is present an all pages
 - Makes navigating the page easier and its enhancing the user experience 
+- User Story covered with this feature: 0
 <details><summary>See Back to top Button</summary>
 
 ![Home page](docs/features/back-to-top.png)
@@ -389,7 +391,7 @@ create user stories. at later date user stories were edited since at the start t
     - CTA guides user depending if user is authenticated or not
     - Authenticated user is redirected to see latest blogs and find his preferrence
     - Unauthnticated user is redirected to a signup page.
-    - User Story covered with this feature:
+    - User Story covered with this feature:1,15
 
     <details><summary>See Hero section</summary>
 
@@ -661,6 +663,7 @@ displayed so he can update comment or go back
  <details><summary>See Learning Category page</summary>
 
 ![Learning Category page](docs/features/category-page.png)
+
 ![Learning Category page](docs/features/category-mentor.png)
 </details>
 
