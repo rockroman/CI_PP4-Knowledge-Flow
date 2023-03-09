@@ -1,9 +1,16 @@
+"""
+ module for home urls
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.urls import path
-from .views import home         # HomeView
 from . import views
+# Internal:
+from .views import home
+
 
 urlpatterns = [
-    # path('', HomeView.as_view(), name='home'),
     path('', views.home, name='home'),
 
 ]

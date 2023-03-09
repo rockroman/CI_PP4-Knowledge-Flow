@@ -86,9 +86,6 @@ class TestAppUserSetUpProfile(TestCase):
 
        
 
-        
-
-
 class TestProfilePageView(TestCase):
     @classmethod
     def setUp(self):
@@ -188,8 +185,30 @@ class TestProtectProfileView(TestCase):
         # user gets redirected to create full profile
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/siteusers/create_profile/')
-        
-        
 
- 
+
+class TestRedirectView(TestCase):
+    @classmethod
+    def setUp(self):
+        # Create test user
+        self.client = Client()
+        self.user = User.objects.create(
+            username='NewTestUser2',
+            password='mypass799',
+            email='test@user2.com',
+            id='1',
+        )
+        self.user.save()
+        self.profile = Profile.objects.update(
+            user=self.user,
+            role='Mentor'
+    
+        )
+
+    def test_user_with_set_role(self):
+        self.client.login(username='NewTestUser2', password='mypass799')
+        response = self.client.get('')
+        self.assertEqual(response.status_code, 200)
+
+
     

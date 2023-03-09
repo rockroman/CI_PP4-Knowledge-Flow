@@ -32,8 +32,8 @@
 6. [Future implementation](#future-implementation)
     1. [Future Features](#future-features)
 7. [Validation](#validation)
-    1. [HTML](#html-validation)
-    2. [CSS](#css-validation)
+    1. [CSS](#css)
+    2. [Html](#html)
     3. [Javascript](#javascript-validation)
     4. [Python](#python-validation)
     5. [Chrome Dev Tools Lighthouse](#chrome-dev-tools-lighthouse-validation)
@@ -710,88 +710,229 @@ some of the existing features
 
 ## Validation:
 ***
+
+### CSS
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project
     - web app passed validator with no errors
     <details><summary>Style.css</summary>
-    <img src="docs/validation/html-css/css-valid.png">
+    <img src="docs/validation/html-css/css-valid.png" width="800">
     </details>
 
+### Html
 - [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
 
     <details><summary>Home</summary>
-    <img src="docs/validation/validation-css.JPG" width="700" >
+    <img src="docs/validation/html-css/home-html-valid.png" width="800" >
     </details>
 
     <details><summary>Register</summary>
-    <img src="docs/validation/html-css/signup-valid.png" width="700" >
+    <img src="docs/validation/html-css/signup-valid.png" width="800" >
     </details>
 
     <details><summary>Login</summary>
-    <img src="docs/validation/html-css/login-valid.png" width="700" >
+    <img src="docs/validation/html-css/login-valid.png" width="800" >
     </details>
 
     <details><summary>password reset</summary>
-    <img src="docs/validation/html-css/password-reset-valid.png" width="700" >
+    <img src="docs/validation/html-css/password-reset-valid.png" width="800" >
     </details>
 
     <details><summary>password reset done</summary>
-    <img src="docs/validation/html-css/password-reset-done.png" width="700" >
+    <img src="docs/validation/html-css/password-reset-done.png" width="800" >
     </details>
     
     <details><summary>Set role</summary>
-    <img src="docs/validation/html-css/set-role-valid.png" width="700" >
+    <img src="docs/validation/html-css/set-role-valid.png" width="800" >
     </details>
 
     <details><summary>Set Profile</summary>
-    <img src="docs/validation/html-css/set-profile.png" width="700"  >
+    <img src="docs/validation/html-css/set-profile.png" width="800"  >
     </details>
     
     <details><summary>Profile</summary>
-    <img src="docs/validation/html-css/profile-valid.png" width="700" >
+    <img src="docs/validation/html-css/profile-valid.png" width="800" >
     </details>
 
     <details><summary>Edit profile</summary>
-    <img src="docs/validation/html-css/profile-edit-valid.png" width="700">
+    <img src="docs/validation/html-css/profile-edit-valid.png" width="800">
     </details>
     
     <details><summary>Delete profile</summary>
-    <img src="docs/validation/html-css/profile-delete-valid.png" width="700" >
+    <img src="docs/validation/html-css/profile-delete-valid.png" width="800" >
     </details>
 
     <details><summary>Blog</summary>
-    <img src="docs/validation/html-css/blog.png" width="700" >
+    <img src="docs/validation/html-css/blog.png" width="800" >
     </details>
     
     <details><summary>Blog add</summary>
-    <img src="docs/validation/html-css/blog-add.png" width="700" >
+    <img src="docs/validation/html-css/blog-add.png" width="800" >
     </details>
 
     <details><summary>Blog detail</summary>
-    <img src="docs/validation/html-css/blog-detail-valid.png" width="700" >
+    <img src="docs/validation/html-css/blog-detail-valid.png" width="800" >
     </details>
     
     <details><summary>Blog edit</summary>
-    <img src="docs/validation/html-css/blog-edit.png" width="700">
+    <img src="docs/validation/html-css/blog-edit.png" width="800">
     </details>
 
-    <details><summary>Home</summary>
-    <img src="docs/validation/validation-css.JPG" width="700" >
-    </details>
-    
-    <details><summary>Home</summary>
-    <img src="docs/validation/validation-css.JPG">
+    <details><summary>Category</summary>
+    <img src="docs/validation/html-css/category-valid.png" width="800" >
     </details>
 
-    <details><summary>Home</summary>
-    <img src="docs/validation/validation-css.JPG">
-    </details>
+- Note : all info on validator pages are related withusing cloudinary template
+    tags for rendering user uploaded images and there for trailing slash cant be removed
     
-    <details><summary>Home</summary>
-    <img src="docs/validation/validation-css.JPG">
+   
+### Javascript
+- [JShint](https://jshint.com/) was used to validate custom script file
+
+    <details><summary>Js file</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+### Python
+- [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
+
+    <details><summary>Home app</summary>
+
+    <details><summary>views.py</summary>
+    <img src="docs/validation/python-js/home-views.png" width="800" >
+    </details>
+
+    <details><summary>urls.py</summary>
+    <img src="docs/validation/python-js/home-url.png" width="800" >
+    </details>
+
+    <details><summary>forms.py</summary>
+    <img src="docs/validation/python-js/home-forms.png" width="800" >
+    </details>
+
+    <details><summary>models.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_views.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_models.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_forms.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
     </details>    
 
-- [JShint](https://jshint.com/) to validate custom script file
-- [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
+    </details>
+
+
+    <details><summary>flow_blog app</summary>
+
+    <details><summary>views.py</summary>
+    <img src="docs/validation/python-js/blog-views.png" width="800" >
+    </details>
+
+    <details><summary>urls.py</summary>
+    <img src="docs/validation/python-js/blog-urls.png" width="800" >
+    </details>
+
+    <details><summary>forms.py</summary>
+    <img src="docs/validation/python-js/blog-forms.png" width="800" >
+    </details>
+
+    <details><summary>models.py</summary>
+    <img src="docs/validation/python-js/blog-models.png" width="800" >
+    </details>
+
+    <details><summary>tests_views.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_models.py</summary>
+    <img src="docs/validation/python-js/blog-test-models.png" width="800" >
+    </details>
+
+    <details><summary>tests_forms.py</summary>
+    <img src="docs/validation/python-js/blog-test-forms.png" width="800" >
+    </details>  
+    </details>
+
+
+    <details><summary>siteusers app</summary>
+
+    <details><summary>views.py</summary>
+    <img src="docs/validation/python-js/home-views.png" width="800" >
+    </details>
+
+    <details><summary>urls.py</summary>
+    <img src="docs/validation/python-js/home-url.png" width="800" >
+    </details>
+
+    <details><summary>forms.py</summary>
+    <img src="docs/validation/python-js/home-forms.png" width="800" >
+    </details>
+
+    <details><summary>models.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_views.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_models.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_forms.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>  
+
+    </details> 
+
+    <details><summary>categories app</summary>
+
+    <details><summary>views.py</summary>
+    <img src="docs/validation/python-js/home-views.png" width="800" >
+    </details>
+
+    <details><summary>urls.py</summary>
+    <img src="docs/validation/python-js/home-url.png" width="800" >
+    </details>
+
+    <details><summary>forms.py</summary>
+    <img src="docs/validation/python-js/home-forms.png" width="800" >
+    </details>
+
+    <details><summary>models.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_views.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_models.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>
+
+    <details><summary>tests_forms.py</summary>
+    <img src="docs/validation/python-js/custom-js.png" width="800" >
+    </details>    
+
+    </details>   
+
+
+
+
+
+
+
+
+
+
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
 - [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 

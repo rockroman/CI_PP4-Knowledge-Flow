@@ -1,3 +1,10 @@
+"""
+A module for home forms
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
+# Internal:
 from django import forms
 
 
