@@ -1010,8 +1010,40 @@ the user.they needed to be put as generic since it can be done by the user.
 ## Testing
 ***
 
+- Knowledge flow was tested during and post development and all
+results are contained in TESTING.md file that you can see [here.](https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/docs/TESTING.md)
+
 ## Bugs
 ***
+- following Bugs are found during the development of this project
+1. Migration error
+   <details><summary>see bug</summary>
+    <img src="docs/bugs/migration-error1.png" width="800">
+    </details>
+
+1. Bad request(Heroku) images issue
+   <details><summary>see bug</summary>
+    <img src="docs/bugs/bad-request-image-issue.png" width="800">
+    </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Deployment
 ***

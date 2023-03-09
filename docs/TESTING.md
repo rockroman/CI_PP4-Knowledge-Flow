@@ -1,3 +1,5 @@
+# TESTING
+
 
 
 
@@ -10,6 +12,21 @@
 WAS = Works as expected
 
 
+0. As a user I want to navigation to be intuitive and user-friendly so that Im able to easily navigate through the app content.
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigating to :https://knowledge-flow.herokuapp.com/ | home page loads | WAS |
+User scrolls through the home page | Content of the page is presented | WAS |
+User scrolls through the home page | Content of the page is presented | WAS |
+User scrolls through the home page | Content of the page is presented | WAS |
+
+
+ <details><summary>Screenshot</summary>
+<img src="./user-story-test/story1new.png" >
+
+</details>
+
 1. As a user I want to know Important info on what the app is about so that I can use it's functionality on mutual benefit
 
 **Step** | **Expected Result** | **Actual Result**
@@ -19,24 +36,9 @@ User scrolls through the home page | Content of the page is presented | WAS |
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
-</details>
+<img src="./user-story-test/story1.png" >
+<img src="./user-story-test/story1a.png" >
 
-2. I want to prepare a plan for multiple weeks in advance
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
- T| T | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
-
- <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
 3. I want to prepare a plan for multiple weeks in advance
