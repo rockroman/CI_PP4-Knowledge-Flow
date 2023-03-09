@@ -111,15 +111,15 @@ knowledge.
 7. As an authenticated user I would like functionality to pick different types of learning categories in my profile and change them later
 8. As an authenticated user I would like functionality to see and read blog posts that other users created
 9. As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
-10. As an authenticated user I would like functionality to delete my blog post i I find it no longer relevant
+10. As an authenticated user I would like functionality to delete or update my blog post i I find it no longer relevant
 11. As an authenticated user I would like functionality to leave a comment on a blog post 
 12. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
-13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable 
+13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable and their contact info
 14. As a user I would like web app to be fully responsive and to have the same experience when using
 on any device 
 15. As an returning user user I would like functionality to set a new password if I forgot the password so that I can still use the web app
 16. As a User I would like a Functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
-17. As a user I can update a comment I posted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
+17. As a user I would like a Functionality to update or delete a comment I posted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
 
 ### Site Owner Stories
 
@@ -392,7 +392,7 @@ create user stories. at later date user stories were edited since at the start t
     - CTA guides user depending if user is authenticated or not
     - Authenticated user is redirected to see latest blogs and find his preferrence
     - Unauthnticated user is redirected to a signup page.
-    - User Story covered with this feature:1,15,20,13
+    - User Story covered with this feature:1,14,15,19
 
     <details><summary>See Hero section</summary>
 
@@ -401,7 +401,7 @@ create user stories. at later date user stories were edited since at the start t
 
 - Featured section as an extension of a hero section with introduction to web app and small list 
   of benefits when using the web app.
-  - User Story covered with this feature:
+  - User Story covered with this feature:1,2
 
     <details><summary>See Featured section </summary>
 
@@ -410,7 +410,7 @@ create user stories. at later date user stories were edited since at the start t
 
 
 - Team Section that presents the team who delivered the app
-    - User Story covered with this feature:
+    - User Story covered with this feature:1,2,22
 
     <details><summary>See Team Section</summary>
 
@@ -419,7 +419,7 @@ create user stories. at later date user stories were edited since at the start t
 
 - About section with a famous quote is delivering a small peek into reasons for delivering the
    app while effectively communicating  brand's values and invites users to engage with web app
-   - User Story covered with this feature:
+   - User Story covered with this feature:1
 
     <details><summary>See About section </summary>
 
@@ -428,7 +428,7 @@ create user stories. at later date user stories were edited since at the start t
 
 - Contact section with a web app logo and small contact form this section purpose is to  
   establish visual identity of a web app and to provide a convenient way for users to get in touch with a Team
-  - User Story covered with this feature: 
+  - User Story covered with this feature:21,16 
 
     <details><summary>See Contact section</summary>
 
@@ -436,7 +436,7 @@ create user stories. at later date user stories were edited since at the start t
     </details>
 
 - Footer is intended to be extension of a nav-bar with links to home page, about us setion and blog page, links to social media pages to ensure multple ways that user can communicate with a team and one added detail of a developer git-hub page link with a timeframe ofproject development.
-    - User Story covered with this feature:0,1,13,21 
+    - User Story covered with this feature:0,1,14,22 
 
     <details><summary>See Footer </summary>
 
@@ -450,7 +450,7 @@ create user stories. at later date user stories were edited since at the start t
  - This feature is presenting sign up form wich is par of django-allauth and for 
  unauthenticated users CTA button from the home page is linked to this page so incentive is to get users registered so that they can experience the full benefits of th web app
  - For registering User must provide a username and strong enough password(for any errors user is prompted) 
- - User Story covered with this feature:3,4,17,18 
+ - User Story covered with this feature:3,4,18,19 
 
 <details><summary>See Register Page</summary>
 
@@ -462,7 +462,7 @@ create user stories. at later date user stories were edited since at the start t
 
  - Returning users with created Profile(account) can get back and use the web app
  - user must provide valid username and password
- - User Story covered with this feature: 17,18,3
+ - User Story covered with this feature: 18,19,3
 
 <details><summary>See Login Page</summary>
 
@@ -474,7 +474,7 @@ create user stories. at later date user stories were edited since at the start t
 - This feature is presenting logout form wich is par of django-allauth library
 - Authenticated user can click on a nav-bar link and 
 he is redirected to a logout page where ho confirms that he wants to logout
-- User Story covered with this feature:3,18
+- User Story covered with this feature:3,19
 
 <details><summary>See Logout page Page</summary>
 
@@ -488,7 +488,7 @@ he is redirected to a logout page where ho confirms that he wants to logout
 ### Forgot password page
  - This feature is also part of (django-allauth) and its included to help users
  start process of setting the new password if they forgot their password
-  - User Story covered with this feature: 24,14
+  - User Story covered with this feature: 25,15
 
 <details><summary>See Forgot password Page</summary>
 
@@ -500,7 +500,7 @@ he is redirected to a logout page where ho confirms that he wants to logout
 
 ### Reset password finished
 - after user puts his valid email to forgot password page he is redirected to this page and now can check his email for further directions
-  - User Story covered with this feature:24,14 
+  - User Story covered with this feature:25,15 
 
 <details><summary>See Forgot password finished Page</summary>
 
@@ -530,7 +530,7 @@ and upo clickinguser profile role is set
 - Its mandatory to provide email address
 - Its requirement to fill all the fields except website and linkedIn url
 - User is given an option to upload a supporting image to his profile
-- User Story covered with this feature:4,3,19 
+- User Story covered with this feature:4,3,20 
 
 <details><summary>See Create profile Page</summary>
 
@@ -576,7 +576,7 @@ structured nicely into simple jet effective profile page example
 ### Blog page
 - Latest Blogs published are presented on this page
 - Blogs are displayed using a cards elements(blog card)
-- User Story covered with this feature:8,7
+- User Story covered with this feature:8,10
  <details><summary>See blog Card</summary>
 
 ![blog card page](docs/features/blog-card.png)
@@ -588,7 +588,7 @@ structured nicely into simple jet effective profile page example
     - Date of publishing
     - Category of a blog
 
-- User Story covered with this feature:
+- User Story covered with this feature:8,10
  <details><summary>See Blog page</summary>
 
 ![Blog Page](docs/features/blog-page.png)
@@ -599,6 +599,7 @@ structured nicely into simple jet effective profile page example
 - User must be authenticated to get access to a blog detail page
 - User can see full cntent of a blog post , all the comments posted for
 that blog post
+- User Story covered with this feature: 10,11
  <details><summary>See Blog detail Page</summary>
 
 ![Blog detail Page](docs/features/blog-detail1.png)
@@ -610,7 +611,7 @@ that blog post
 for deleting a blog
 - The user have functionality to post a comment under the blog.
 - Two icons are also displayed under each comment that logged in user posted so he got options to delete or update a comment
-- User Story covered with this feature:
+- User Story covered with this feature:10,12
  <details><summary>See Comment section</summary>
 
 ![Comment section](docs/features/blog-detail2.png)
@@ -620,7 +621,7 @@ for deleting a blog
 ### Delete blog (modal)
 - User is presented with a pop up modal
 - Two options in a modal one to delete a blogpost or to go back
-- User Story covered with this feature:
+- User Story covered with this feature:10
  <details><summary>See Delete blog(modal)</summary>
 
 ![Delete blog](docs/features/delete-blog-modal.png)
@@ -630,7 +631,7 @@ for deleting a blog
 - User is presented with add blog form
 - User can add title, supporting image for a blog, and body of a blog
 - Only one of the categories selected in user profile can be selected as a category of a blogpost 
-- User Story covered with this feature:
+- User Story covered with this feature:9,12
  <details><summary>See Add blog page</summary>
 
 ![Add blog page](docs/features/add-blog.png)
@@ -640,7 +641,7 @@ for deleting a blog
 ### Update comment page
 - User is redirected to a page where a comment modal is
 displayed so he can update comment or go back 
-- User Story covered with this feature:
+- User Story covered with this feature:17
  <details><summary>See Update comment page</summary>
 
 ![Update comment page](docs/features/update-comment.png)
@@ -650,7 +651,7 @@ displayed so he can update comment or go back
 ### Delete comment (modal)
 - User is presented with a pop up modal where he got two options
  to delete comment or go back
-- User Story covered with this feature:
+- User Story covered with this feature:17
  <details><summary>See Delete comment (modal)</summary>
 
 ![Delete comment](docs/features/delete-coment-modal.png)
@@ -662,7 +663,7 @@ displayed so he can update comment or go back
 - Users can read about benefits when gaining knowledge about each category.
 - User can see mentors available by category and mentors' basic information and contact details.
 - Blogs related to the category are displayed on the page.
-- User Story covered by this feature:
+- User Story covered by this feature:8,13,23,1
  <details><summary>See Learning Category page</summary>
 
 ![Learning Category page](docs/features/category-page.png)
@@ -680,7 +681,7 @@ displayed so he can update comment or go back
 ### Error handling pages
 - Making the user experience good by handling errors that users can encounter
 (404, 403, and 500 errors)
-- User Story covered by this feature:
+- User Story covered by this feature:18,19
  <details><summary>See Error pages</summary>
 
 ![404-page](docs/features/404-page.png)
@@ -709,8 +710,85 @@ some of the existing features
 
 ## Validation:
 ***
-- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) to validate the css in the project
+- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project
+    - web app passed validator with no errors
+    <details><summary>Style.css</summary>
+    <img src="docs/validation/html-css/css-valid.png">
+    </details>
+
 - [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
+
+    <details><summary>Home</summary>
+    <img src="docs/validation/validation-css.JPG" width="700" >
+    </details>
+
+    <details><summary>Register</summary>
+    <img src="docs/validation/html-css/signup-valid.png" width="700" >
+    </details>
+
+    <details><summary>Login</summary>
+    <img src="docs/validation/html-css/login-valid.png" width="700" >
+    </details>
+
+    <details><summary>password reset</summary>
+    <img src="docs/validation/html-css/password-reset-valid.png" width="700" >
+    </details>
+
+    <details><summary>password reset done</summary>
+    <img src="docs/validation/html-css/password-reset-done.png" width="700" >
+    </details>
+    
+    <details><summary>Set role</summary>
+    <img src="docs/validation/html-css/set-role-valid.png" width="700" >
+    </details>
+
+    <details><summary>Set Profile</summary>
+    <img src="docs/validation/html-css/set-profile.png" width="700"  >
+    </details>
+    
+    <details><summary>Profile</summary>
+    <img src="docs/validation/html-css/profile-valid.png" width="700" >
+    </details>
+
+    <details><summary>Edit profile</summary>
+    <img src="docs/validation/html-css/profile-edit-valid.png" width="700">
+    </details>
+    
+    <details><summary>Delete profile</summary>
+    <img src="docs/validation/html-css/profile-delete-valid.png" width="700" >
+    </details>
+
+    <details><summary>Blog</summary>
+    <img src="docs/validation/html-css/blog.png" width="700" >
+    </details>
+    
+    <details><summary>Blog add</summary>
+    <img src="docs/validation/html-css/blog-add.png" width="700" >
+    </details>
+
+    <details><summary>Blog detail</summary>
+    <img src="docs/validation/html-css/blog-detail-valid.png" width="700" >
+    </details>
+    
+    <details><summary>Blog edit</summary>
+    <img src="docs/validation/html-css/blog-edit.png" width="700">
+    </details>
+
+    <details><summary>Home</summary>
+    <img src="docs/validation/validation-css.JPG" width="700" >
+    </details>
+    
+    <details><summary>Home</summary>
+    <img src="docs/validation/validation-css.JPG">
+    </details>
+
+    <details><summary>Home</summary>
+    <img src="docs/validation/validation-css.JPG">
+    </details>
+    
+    <details><summary>Home</summary>
+    <img src="docs/validation/validation-css.JPG">
+    </details>    
 
 - [JShint](https://jshint.com/) to validate custom script file
 - [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
