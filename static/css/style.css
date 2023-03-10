@@ -1,4 +1,3 @@
-
 /* general styles */
 /* Colors pallet */
 :root {
@@ -16,9 +15,7 @@ html{
 *{
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
-    
-    
+  font-family: 'Rubik', sans-serif;  
 }
 
 body{
@@ -26,10 +23,10 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
-   
+  overflow-x: hidden;  
 }
-/* back to top button  */
+
+/* Styles for back to top button */
 #btn-back-to-top {
   position: fixed;
   bottom: 20px;
@@ -37,28 +34,27 @@ body{
   display: none;
   z-index: 2200;
 }
+
+/* Styles for main headings */
 h1{
- 
   text-transform: uppercase;
 }
     
 h2,h3{
-   
   text-transform:uppercase;
   font-weight: 700;
 }
 
+/* Styles for hover effect on active elements */
 .active:hover{
   transform: scale(1.06)
 }
 /*end general styles */
 
-/* authentication pages styles */
-
-
-/* sign up and login styles   */
+/* Styles for authentication pages */
+/* Styles for sign up and login */
 .authentication-title{
-    color:var(--background-body);
+  color:var(--background-body);
 }
 
 #account-body{
@@ -79,73 +75,58 @@ h2,h3{
   color: #01092def;
 
 }
-/* end sign up and login style  */
+/* end sign up and login styles  */
 
 /* profile delete styles */
-
 .delete-profile{
   max-width: 350px;
 }
-
 /* end profile delete styles */
-
-
-
-
 /* end authentication pages styles */
 
 /* nav-bar styles */
-
 .navbar-light .navbar-nav .nav-link{
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
-color: #c4deef;
-font-weight: 700;
-transform: scale(1.05)
+  color: #c4deef;
+  font-weight: 700;
+  transform: scale(1.05)
 }
 .navbar-light .navbar-nav .active>.nav-link{
-    color: #ffffff;
-
+  color: #ffffff;
 }
 
 .navbar .dropdown-item:hover {
-
-    background-color:#131416 ;
+  background-color:#131416 ;
 } 
 
 .navbar-light .navbar-brand {
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: 800;
-    
-
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .navbar-light .navbar-brand:hover{
-    color: #c4deef;
-    transform: scale(1.1)
-
+  color: #c4deef;
+  transform: scale(1.1)
 }
 
 #logo{
-    color: #378cf4f8;
+  color: #378cf4f8;
     
 }
 /* end nav-bar styles */
 
 /* django messages */
-
 #msg{
   position: absolute;
   left: 25%;
   right: 25%;
   z-index: 100;
 }
-
-/* home page styles-------------------------------------------------------*/
-
+/* home page styles-------------------*/
 /* Hero section-------------------- */
 #hero{
   height: 100vh;
@@ -154,24 +135,20 @@ transform: scale(1.05)
   color: var(--hero-text);
   font-size: 3.5rem;
   text-transform: uppercase;
-  
-
 }
 
 .headline {
-  left: 90px;
-  
+  left: 90px;  
 } 
 .clipped {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
   background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_fit,w_900/v1675369377/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f042ad021dc9.webp');
   background-position: center;
   background-size: cover;
-  height: 100%;
- 
+  height: 100%; 
 }
 
-
+/* animation for hero image */
 .fadeIn {
   animation-name: fadeIn;
   animation-duration: 1.8s;
@@ -188,26 +165,19 @@ transform: scale(1.05)
     opacity: 1;
   }
 }
+/* end animation styles */
+/* End Hero section */
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0.0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* End Hero section-------------------- */
-
-/* midle section styles(ULTIMATE WAY TO KNOWLEDGE)------------------- */
+/* featurd section styles  */
 .list-display li {
   margin-bottom:.4rem;
   font-size:1.1rem;
 }
+
 .list-checkmarks {
   padding-left:1.5rem;
 }
+
 .list-checkmarks li {
   list-style-type:none;
   padding-left:1rem;
@@ -218,9 +188,9 @@ transform: scale(1.05)
   border-radius: 15px;
  
 }
+/* end featured section styles */
 
-/* end midle section styles--------------------------- */
-
+/* contact forms styles */
 .formlabel{
   color: #ffffff;
 }
@@ -232,29 +202,25 @@ transform: scale(1.05)
 
 .contact{
   background-color: #01092def;
-
 }
-
-/* end  home page styles ---------------------------------------------------*/
+/* end contact form styles */
+/* end  home page styles */
 
 /* blog  styles */
 #blog-body{
-    margin-top: -10px;
+  margin-top: -10px;
 }
-
 /* end blog styles */
 
 /*  profile page syles */
 #top-plate{
   background-color: rgb(14, 14, 88);
   height: 45px;
-
   display: flex; 
   flex-wrap: wrap;
   padding: 0.75rem 1rem;
   margin-bottom: 1rem; 
   border-radius: .25rem;
-  
 } 
 
 .my-profile-card{
@@ -266,24 +232,20 @@ transform: scale(1.05)
   overflow:hidden;
   height: 520px;
 }
-
 /* end profile page syles */
 
-/* ---------set role---------- */
+/* set role page syles */
 .card-img-top {
   width: 100%;
   height: 30vh;
   object-fit: cover;
-  }
+}
+/* end set role page syles */
 
-/* ------------end set role------------- */
-
-
-/* ------------ team cards styles-------------- */
+/* team cards styles */
 .social-link {
   width: 30px;
   height: 30px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,14 +260,13 @@ transform: scale(1.05)
   text-decoration: none;
   color: rgb(20, 103, 228);
 }
+/*  end team cards styles */
 
-/* ------------ end team cards styles-----------*/
-
-/* ----------------------background img------- */
+/* background img styles */
 #mycard{
-    background-color: rgb(14, 39, 60);
-    
+  background-color: rgb(14, 39, 60);   
 }
+/* end  background img styles */
 
 /* learning categories styles */
 .main-content {
@@ -324,7 +285,6 @@ transform: scale(1.05)
 }
 
 #accordion .accordion-card__header {
-
 	padding: 15px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -358,8 +318,7 @@ transform: scale(1.05)
 	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* mentor category card section-------------------- */
-
+/* mentor category card section */
 .user-info {
 	display: flex;
 	align-items: center;
@@ -372,12 +331,10 @@ transform: scale(1.05)
 	border: 3px solid rgb(10, 10, 10);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-/*  end mentor category card section--------------------*/
-
+/*  end mentor category card section*/
+/* end learning categories styles */
 
 /* media queries */
-
 @media screen and (max-width: 900px){
 
   /*  hero section */
@@ -388,13 +345,9 @@ transform: scale(1.05)
   .hero-text{
     font-size: 2.5rem;
   }
-
-
-
 }
 
 /* 404,403,500 page styles */
-
 #main{
   width: 100%;
   height: 100vh;
@@ -417,17 +370,12 @@ transform: scale(1.05)
   to{box-shadow: inset -3px 0px 0px transparent;}
 }
 
-
-
 @media screen and (max-width: 650px){
- 
   /* hero section */
   .clipped {
     background-image: url('https://res.cloudinary.com/dgzrzlcs4/image/upload/c_scale,h_420,w_630/v1674088519/static/images/greg-rosenke-mBCsft4274I-unsplash-flow.f84064bd479a.webp');
     clip-path: none;
-    /* height: 50%; */
-    height: 40%;
-    
+    height: 40%; 
   }
 
   h1{

@@ -713,7 +713,7 @@ some of the existing features
 
 ### CSS
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project
-    - web app passed validator with no errors
+    - web app passed validator with no errors. 
     <details><summary>Style.css</summary>
     <img src="docs/validation/html-css/css-valid.png" width="800">
     </details>
@@ -925,12 +925,32 @@ some of the existing features
 
 
 
+### Lighthouse
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
+ 
+<details><summary>Home</summary>
+<img src="docs/validation/wave/home-pg.png" width="800" height="1200" >
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/validation/wave/register-pg.png" width="800" height="1200">
+</details>
+
+
+
+
+
+
+
+
+
 
 ### Wave
  [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 
+- NOTE : Alerts in Wave validator are connected with "alt" attribute of images uploaded by
+the user.they needed to be put as generic since it can't be done by the user.
 
 <details><summary>Home</summary>
 <img src="docs/validation/wave/home-pg.png" width="800" height="1200" >
@@ -992,8 +1012,7 @@ some of the existing features
 <img src="docs/validation/wave/category-pg.png" width="800" >
 </details>
 
-- NOTE : Alerts in Wave validator are connected with "alt" attributo of images uploaded by
-the user.they needed to be put as generic since it can be done by the user.
+
 
 
 
