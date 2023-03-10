@@ -715,7 +715,7 @@ some of the existing features
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project
     - web app passed validator with no errors. 
     <details><summary>Style.css</summary>
-    <img src="docs/validation/html-css/css-valid.png" width="800">
+    <img src="docs/validation/html-css/valid-css.png" width="800">
     </details>
 
 ### Html

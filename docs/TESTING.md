@@ -18,11 +18,13 @@ WAS = Works as expected
 ------------ | ------------ | ------------ |
 Navigating to :https://knowledge-flow.herokuapp.com/ | home page loads | WAS |
 User scrolls through the home page | Content of the page is presented | WAS |
-User scrolls through the home page | Content of the page is presented | WAS |
-User scrolls through the home page | Content of the page is presented | WAS |
+User click on a Link in the nav bar | user taken to desired part of the web app | WAS |
+
 
 
  <details><summary>Screenshot</summary>
+<img src="./user-story-test/story1new.png" >
+<img src="./user-story-test/story1new.png" >
 <img src="./user-story-test/story1new.png" >
 
 </details>
@@ -41,19 +43,21 @@ User scrolls through the home page | Content of the page is presented | WAS |
 
 </details>
 
-3. I want to prepare a plan for multiple weeks in advance
+3. As an authenticated user I would like to have a full access to the content of an web app
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
- T| T | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
+User navigates to a "Register" link in a nav bar | Loads register form | WAS |
+User is filling out form correctly| Home page loads with success message | WAS |
+User navigates to a "Login" link in a nav bar | Loads Login form | WAS |
+User is filling out form correctly| Home page loads with success message | WAS |
+User clicks on a link in the nav bar |user taken to desired part of the web app  | WAS |
+
 
  <details><summary>Screenshot</summary>
 <img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
@@ -131,23 +135,8 @@ click on a blog title or "Read the blog" button| blog detail page is loaded | WA
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-9. As an authenticated user I would like functionality to leave a comment on a blog post
 
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to a blog link in the nav bar or click "SEE BLOGS" in the hero section| Loads blogs page | WAS |
-click on a blog title or read the blog button| blog detail page is loaded | WAS |
-scroll to the end of a blog | comment section is displayed | WAS |
-enter your comment text and press green button|success message is displayed and you can see your comment in comment section  | WAS |
- |  | WAS |
- |  | WAS |
-
- <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
-</details>
-
-10.As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
+9. As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -162,7 +151,38 @@ From the drop-down category menu, select category |Categories that are chosen du
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-11. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
+10. As an authenticated user I would like functionality to delete or update my blog post i I find it no longer relevant
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to "Blog" link in the nav bar and click on it |page with latest blogs is loaded| WAS |
+Find the blog you want to update and click on update(pencil) icon |Blog form with blog data is displayed | WAS |
+Enter new relevant data for your blog and press "Post" button |blog page loads with success message and your blog is updated  | WAS |
+Navigate to "Blog" link in the nav bar and click on it |page with latest blogs is loaded| WAS |
+Find the blog you want to delete and click on delete(trash-can) icon |pop up modal shows and asking user to confirm that he wants to delete blog | WAS |
+Press "delete" button|blogs page loads with success message"your blog post is deleted | WAS |
+
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+11. As an authenticated user I would like functionality to leave a comment on a blog post
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to a blog link in the nav bar or click "SEE BLOGS" in the hero section| Loads blogs page | WAS |
+click on a blog title or read the blog button| blog detail page is loaded | WAS |
+scroll to the end of a blog | comment section is displayed | WAS |
+enter your comment text and press green button|success message is displayed and you can see your comment in comment section  | WAS |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+</details>
+
+12. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -179,13 +199,13 @@ Click on image you want to be the blog cover image |name of the image is display
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-12. I want to prepare a plan for multiple weeks in advance
+13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable and their contact info
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
- T| T | WAS |
- |  | WAS |
+Navigate to "Learning categories" link in the nav bar and click on it| dropdown menu is displayed | WAS |
+Click on a category you want to display|Selected category page is displayed | WAS |
+Navigate to a "mentors available section"|  | WAS |
  |  | WAS |
  |  | WAS |
  |  | WAS |
