@@ -264,14 +264,13 @@ following fields:
 
 <details><summary>Big screens - laptop & desktop</summary>
 
-
 <details><summary>Home page</summary>
 <img src="docs/wireframes/home-desk-wireframe.png" >
 
 </details>
 
 <details><summary>authentication pages(Login,register,logout,password reset and password reset done)</summary>
-<img src="/workspace/CI_PP4-Knowledge-Flow/docs/wireframes/authentication-pages.png">
+<img src="docs/wireframes/authentication-pages.png">
 </details>
 
 <details><summary>Set role</summary>
@@ -287,7 +286,7 @@ following fields:
 </details>
 
 <details><summary>Delete profile</summary>
-<img src="docs/wireframes/delete-profile-mob.png">
+<img src="docs/wireframes/DELETE-PROFILE.png">
 </details>
 
 <details><summary>Blog</summary>
@@ -306,20 +305,56 @@ following fields:
 <img src="docs/wireframes/category-page.png">
 </details>
 
-
-
-
-
-
-
-
-
-
--------------------------------
 </details>
+
+***
+
 <details><summary>Medium screens - tablet</summary>
-<img src="docs/wireframes/wireframes-tablet.png">
+
+<details><summary>Home page</summary>
+<img src="docs/wireframes/home-desk-wireframe.png" >
+
 </details>
+
+<details><summary>authentication pages(Login,register,logout,password reset and password reset done)</summary>
+<img src="docs/wireframes/authentication-tablet.png">
+</details>
+
+<details><summary>Set role</summary>
+<img src="docs/wireframes/set-role-tablet.png">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/wireframes/PROFILE-tablet.png">
+</details>
+
+<details><summary>Edit profile</summary>
+<img src="docs/wireframes/blog-profile-update-add-tablet1.png">
+</details>
+
+<details><summary>Delete profile</summary>
+<img src="docs/wireframes/delete-profile-tablet1.png">
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/wireframes/blog-tablet1.png">
+</details>
+
+<details><summary>Blog detail</summary>
+<img src="docs/wireframes/blog-detail-tablet1.png">
+</details>
+
+<details><summary>Blog edit, Blog add</summary>
+<img src="docs/wireframes/blog-profile-update-add-tablet1.png">
+</details>
+
+<details><summary>Category</summary>
+<img src="docs/wireframes/category-tablet.png">
+</details>
+</details>
+
+***
+
 <details><summary>Small screens - mobile</summary>
 <img src="docs/wireframes/wireframes-mobile.png">
 </details>
