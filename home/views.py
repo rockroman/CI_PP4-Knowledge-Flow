@@ -12,6 +12,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views.generic import TemplateView
+from django.urls import reverse_lazy
 # Internal:
 from siteusers.models import Profile
 from flow_blog.models import BlogPost
@@ -42,7 +43,7 @@ def home(request):
                     )
                 messages.success(request, 'THANK YOU FOR YOUR MESSAGE')
 
-                return redirect('.')
+                return redirect(reverse_lazy('home') + '#')
 
             else:
                 messages.error(request, 'NEED TO BE LOGGED IN TO SEND MESSAGE')
