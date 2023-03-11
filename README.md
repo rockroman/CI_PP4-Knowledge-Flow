@@ -211,9 +211,31 @@ Project code structure is organized and divided into various application folders
 - User model as part of the Django allauth library contains basic information about authenticated user and contains folowing fields:
 username, password,email
 
+
 #### Profile model
 
-- Profile model is constructed as an extension of  user model  and there for has an <strong>one to one</strong> relationship with User model.also it related via <strong>Many To Many</strong> field with a Learning category model. it contains further data about authenticated user and has following fields: Image,first_name, last_name,email,category,website_url,linkedIn_url,bio,role,created_on,updated_on
+- Profile model is constructed as an extension of  user model  and there for has an <strong>one to one</strong> relationship with User model.also it related via <strong>Many To Many</strong> field with a Learning category model. it contains further data about authenticated user and has following fields:
+
+- ROLE = (
+        ('Mentor', 'Mentor'),
+        ('Student', 'Student')
+    ) 
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+|user       | user     | OneToOneField|  User, on_delete=models.CASCADE|
+|  image       |  image     |CloudinaryField | 'image', default='placeholder'  |
+| first_name| first_name  | CharField | max_length=20    |
+| last_name| last_name  | CharField | max_length=20    |
+|  email   | email  | EmailField  | max_length=100  |
+| category      | category    |ManyToManyField|LearningCategory, related_name='user_learning_categoy'      |
+|  website_url    | website_url      | URLField  |  max_length=100, default='https:// www.google.com/'  |
+|  linkedIn_url    | linkedIn_url | URLField  |  max_length=100, default='https:// www.linkedin.com/'   |
+|  bio    | bio      | DateTimeField   | auto_now_add=True    |
+|  role     | role      | CharField | max_length=20, choices=ROLE    |
+|  created_on     | crested_on      | DateTimeField   | auto_now_add=True    |
+|  updated_on     | updated_on      | DateTimeField   | auto_now_add=True    |
+
 
 #### BlogPost model
 
@@ -356,7 +378,49 @@ following fields:
 ***
 
 <details><summary>Small screens - mobile</summary>
-<img src="docs/wireframes/wireframes-mobile.png">
+
+<details><summary>Home page</summary>
+<img src="docs/wireframes/home-mob-wireframe.png" >
+
+</details>
+
+<details><summary>authentication pages(Login,register,logout,password reset and password reset done)</summary>
+<img src="docs/wireframes/authentication-pages-mob.png">
+</details>
+
+<details><summary>Set role</summary>
+<img src="docs/wireframes/set-role-mob.png">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/wireframes/PROFILE-MOB.png">
+</details>
+
+<details><summary>Edit profile</summary>
+<img src="docs/wireframes/profile-blog-update-mob.png">
+</details>
+
+<details><summary>Delete profile</summary>
+<img src="docs/wireframes/delete-profile-mob.png">
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/wireframes/blog-page-mob1.png">
+</details>
+
+<details><summary>Blog detail</summary>
+<img src="docs/wireframes/blog-detail-mob.png">
+</details>
+
+<details><summary>Blog edit, Blog add</summary>
+<img src="docs/wireframes/profile-blog-update-mob.png">
+</details>
+
+<details><summary>Category</summary>
+<img src="docs/wireframes/category-mob.png">
+</details>
+
+
 </details>
 
 ***
@@ -400,9 +464,30 @@ create user stories. at later date user stories were edited since at the start t
 </details>
 
 ### Moscow prioritisation
-- 
+- The Moscow prioritization technique is used to prioritize project requirements based on their importance and urgency. Although it's my first time using this technique and the implementation may not be perfect, it allowed me  to effectively prioritize my project requirements and ensure the most critical ones were addressed first.
+
+<details><summary>See image</summary>
+<img src="docs/features/moscow.png">
+</details>
+
+### Sprints 
+
+- Using Agile sprints , time-boxed iterations in which a team works on a set of prioritized user stories to deliver a potentially shippable product increment. Although the initial implementation may not have been successful as using it for the first time , the experience provided valuable insights and learning opportunities for future sprints to improve. and to improve  overall implementation of the Agile methodology.
+
+#### 1st Sprint
+ - Tasks and User stories in first sprint
+    - Create new django project and app (dev task)
+    - install django and supporting libraries (dev task)
+    - Deploy empty project to heroku (dev task)
+    - USER STORY: 1 (dev task)
+ - development time : 7 days
 
 
+#### Closing words on agile:
+- As a solo developer using Agile for the first time, the learning curve was steep, but the experience gained from the process is invaluable. Although the initial implementation may have not been great ,but  it will serve as a foundation for implementing Agile more effectively in future projects.
+
+    
+***
 
 
 ## Technologies Used
@@ -1025,62 +1110,123 @@ some of the existing features
 </details>
 
 <details><summary>Register page Desktop-screen</summary>
-<img src="docs/validation/lighthouse/Home-mob.png">
+<img src="docs/validation/lighthouse/register-desk.png">
 </details>
 <details><summary>Register page Mobile-screen</summary>
-<img src="docs/validation/wave/register-pg.png">
+<img src="docs/validation/lighthouse/register-mob.png">
 </details>
 
-<details><summary>Login</summary>
-<img src="docs/validation/wave/login-pg.png" >
+<details><summary>Login Desktop-screen</summary>
+<img src="docs/validation/lighthouse/login-desk.png" >
 </details>
 
-<details><summary>password reset</summary>
-<img src="docs/validation/wave/password-reset.png">
+<details><summary>Login page Mobile-screen</summary>
+<img src="docs/validation/lighthouse/login-mob.png">
 </details>
 
-<details><summary>password reset done</summary>
-<img src="docs/validation/wave/pass-reset-done.png">
+<details><summary>password reset Desktop-screen</summary>
+<img src="docs/validation/lighthouse/password-reset-desk.png">
 </details>
 
-<details><summary>Set role</summary>
-<img src="docs/validation/wave/set-role-pg.png">
+<details><summary>password reset Mobile-screen</summary>
+<img src="docs/validation/lighthouse/password-reset-mob.png">
 </details>
 
-<details><summary>Set Profile</summary>
-<img src="docs/validation/wave/create-profile.png">
+<details><summary>password reset done Desktop-screen</summary>
+<img src="docs/validation/lighthouse/pass-reset-done-desk.png">
 </details>
 
-<details><summary>Profile</summary>
-<img src="docs/validation/wave/see-profile.png">
+<details><summary>password reset done Mobile-screen</summary>
+<img src="docs/validation/lighthouse/pass-reset-done-mob.png">
 </details>
 
-<details><summary>Edit profile</summary>
+<details><summary>Set role Desktop-screen</summary>
+<img src="docs/validation/lighthouse/set-role-desk.png">
+</details>
+
+<details><summary>Set role Mobile-screen</summary>
+<img src="docs/validation/lighthouse/set-role-mob.png">
+</details>
+
+<details><summary>Set Profile Desktop-screen</summary>
+<img src="docs/validation/lighthouse/set-profile-desk.png">
+</details>
+
+<details><summary>Set Profile Mobile-screen</summary>
+<img src="docs/validation/lighthouse/set-profile-mob.png">
+</details>
+
+<details><summary>Profile Desktop-screen</summary>
+<img src="docs/validation/lighthouse/profile-desk.png">
+</details>
+
+<details><summary>Profile Mobile-screen</summary>
+<img src="docs/validation/lighthouse/profile-mob.png">
+</details>
+
+<details><summary>Edit profile Desktop-screen</summary>
+<img src="docs/validation/lighthouse/update-profile-desk.png">
+</details>
+
+<details><summary>Edit profile Mobile-screen</summary>
 <img src="docs/validation/wave/edit-profile.png">
 </details>
 
-<details><summary>Delete profile</summary>
-<img src="docs/validation/wave/delete-profile.png">
+<details><summary>Delete profile Desktop-screen</summary>
+<img src="docs/validation/lighthouse/delete-profile-desk.png">
 </details>
 
-<details><summary>Blog</summary>
-<img src="docs/validation/wave/blog.png">
+<details><summary>Delete profile Mobile-screen</summary>
+<img src="docs/validation/lighthouse/delete-profile-mob.png">
 </details>
 
-<details><summary>Blog add</summary>
-<img src="docs/validation/wave/add-blog.png">
+<details><summary>Blog Desktop-screen</summary>
+<img src="docs/validation/lighthouse/blog-desk.png">
 </details>
 
-<details><summary>Blog detail</summary>
-<img src="docs/validation/wave/blog-detail.png">
+<details><summary>Blog Mobile-screen</summary>
+<img src="docs/validation/lighthouse/blog-mob.png">
 </details>
 
-<details><summary>Blog edit</summary>
+<details><summary>Blog add Desktop-screen</summary>
+<img src="docs/validation/lighthouse/add-blog-desk.png">
+</details>
+
+<details><summary>Blog add Mobile-screen</summary>
+<img src="docs/validation/lighthouse/add-blog-mob.png">
+</details>
+
+
+<details><summary>Blog detail Desktop-screen</summary>
+<img src="docs/validation/lighthouse/blog-detail-desk.png">
+</details>
+
+<details><summary>Blog detail Mobile-screen</summary>
+<img src="docs/validation/lighthouse/blog-detail-mob.png">
+</details>
+
+<details><summary>Blog edit Desktop-screen</summary>
 <img src="docs/validation/wave/blog-edit.png">
 </details>
 
-<details><summary>Category</summary>
-<img src="docs/validation/wave/category-pg.png">
+<details><summary>Blog edit Mobile-screen</summary>
+<img src="docs/validation/wave/blog-edit.png">
+</details>
+
+<details><summary>Comment edit Desktop-screen</summary>
+<img src="docs/validation/lighthouse/comment-edit-desk.png">
+</details>
+
+<details><summary>Comment edit Mobile-screen</summary>
+<img src="docs/validation/lighthouse/comment-edit-mob.png">
+</details>
+
+<details><summary>Category Desktop-screen</summary>
+<img src="docs/validation/lighthouse/category-desk.png">
+</details>
+
+<details><summary>Category Mobile-screen</summary>
+<img src="docs/validation/lighthouse/category-mob.png">
 </details>
 
 
