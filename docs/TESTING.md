@@ -69,7 +69,7 @@ User clicks on a link in the nav bar |user taken to desired part of the web app 
 ------------ | ------------ | ------------ |
 Navigate to register link on a navbar| registration form loads | WAS |
 Fill out registration form with all required data|form submmited with succes message  | WAS |
-click on desired profile role|choose role page  displayed with 2 options   | WAS |
+Click on desired profile role|choose role page  displayed with 2 options   | WAS |
 Inputing required data into a create profile form| form is submited with a success message that profile is created | WAS |
 
 
@@ -95,11 +95,11 @@ Click on the choose file button | window with local files open so file can be up
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-navigte to a profile link in the nav bar | profile page loads | WAS |
-click on update profile button| update profile form is displayed | WAS |
- click on any field change the data and click updaate profile | user redirected to profile page with successs message that profile is updated   | WAS |
- click on delete profile|delete profile page loads  | WAS |
- click on delete button| user is redirected to home page and his profile deleted | WAS |
+Navigte to a profile link in the nav bar | profile page loads | WAS |
+Click on update profile button| update profile form is displayed | WAS |
+Click on any field change the data and click updaate profile | user redirected to profile page with successs message that profile is updated   | WAS |
+Click on delete profile|delete profile page loads  | WAS |
+Click on delete button| user is redirected to home page and his profile deleted | WAS |
 
 
  <details><summary>Screenshot</summary>
@@ -112,9 +112,9 @@ click on update profile button| update profile form is displayed | WAS |
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-navigte to a profile link in the nav bar | profile page loads | WAS |
-click on update profile button| update profile form is displayed | WAS |
-click on category to tick the multiple selection box if category is to be added or click on ticked box for category to be removed|depending on action user is redirected to profile page and category is set  | WAS |
+Navigte to a profile link in the nav bar | profile page loads | WAS |
+Click on update profile button| update profile form is displayed | WAS |
+Click on category to tick the multiple selection box if category is to be added or click on ticked box for category to be removed|depending on action user is redirected to profile page and category is set  | WAS |
 
 
  <details><summary>Screenshot</summary>
@@ -127,7 +127,7 @@ click on category to tick the multiple selection box if category is to be added 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 Navigate to a blog link in the nav bar or click "SEE BLOGS" in the hero section| Loads blogs page | WAS |
-click on a blog title or "Read the blog" button| blog detail page is loaded | WAS |
+Click on a blog title or "Read the blog" button| blog detail page is loaded | WAS |
 
 
 <details><summary>Screenshot</summary>
@@ -205,42 +205,38 @@ Click on image you want to be the blog cover image |name of the image is display
 ------------ | ------------ | ------------ |
 Navigate to "Learning categories" link in the nav bar and click on it| dropdown menu is displayed | WAS |
 Click on a category you want to display|Selected category page is displayed | WAS |
-Navigate to a "mentors available section"|  | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
+Navigate to a "mentors available section" click on it|cards with available mentors is displayed   | WAS |
+
 
  <details><summary>Screenshot</summary>
 <img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-13. I want to prepare a plan for multiple weeks in advance
+14. As a user I would like web app to be fully responsive and to have the same experience when using on any device
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
- T| T | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
+Change device screen size using chrome dev tools |Web app ux and designs remains consistent on various screen sizes | WAS |
+Change device with any extension(mobile simulaor) that simulates devices screes| Web app ux and designs remains consistent on various screen sizes| WAS |
+
 
  <details><summary>Screenshot</summary>
 <img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-14. I want to prepare a plan for multiple weeks in advance
+15. As an returning user user I would like functionality to set a new password if I forgot the password so that I can still use the web app
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
- T| T | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
+User navigates to a "Login" link in a nav bar | Loads Login form | WAS |
+Click on a "forgot password" link at the bottom of the form| password reset page loads| WAS |
+Enter the valid email address that was used in setting up the profile and press "reset my password"|password reset done page is displayed and email with reset link is sent  | WAS |
+Open your email inbox and reset password mail with a link should be there|link takes user through a process of setting a new pasword  | WAS |
+
 
  <details><summary>Screenshot</summary>
 <img src="docs/testing/user-stories-testing/user-story-04-a.jpg">

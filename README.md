@@ -37,7 +37,7 @@
     3. [Javascript](#javascript-validation)
     4. [Python](#python-validation)
     5. [Chrome Dev Tools Lighthouse](#chrome-dev-tools-lighthouse-validation)
-    6. [WAVE Validation](#wave-validation)
+    6. [WAVE Validation](#wave-validation)  
 8. [Testing](#testing)
     1. [Device Testing](#device-testing)
     2. [Browser Compatibility](#browser-compatibility)
@@ -263,7 +263,59 @@ following fields:
 ### Wireframes
 
 <details><summary>Big screens - laptop & desktop</summary>
-<img src="docs/wireframes/wireframes-desktop.png">
+
+
+<details><summary>Home page</summary>
+<img src="docs/wireframes/home-desk-wireframe.png" >
+
+</details>
+
+<details><summary>authentication pages(Login,register,logout,password reset and password reset done)</summary>
+<img src="/workspace/CI_PP4-Knowledge-Flow/docs/wireframes/authentication-pages.png">
+</details>
+
+<details><summary>Set role</summary>
+<img src="docs/wireframes/set-role.png">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/wireframes/PROFILE.png">
+</details>
+
+<details><summary>Edit profile</summary>
+<img src="docs/wireframes/PROFILE-BLOG-UPDATE.png">
+</details>
+
+<details><summary>Delete profile</summary>
+<img src="docs/wireframes/delete-profile-mob.png">
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/wireframes/blog-page.png">
+</details>
+
+<details><summary>Blog detail</summary>
+<img src="docs/wireframes/BLOG-DETAIL.png">
+</details>
+
+<details><summary>Blog edit, Blog add</summary>
+<img src="docs/wireframes/PROFILE-BLOG-UPDATE.png">
+</details>
+
+<details><summary>Category</summary>
+<img src="docs/wireframes/category-page.png">
+</details>
+
+
+
+
+
+
+
+
+
+
+-------------------------------
 </details>
 <details><summary>Medium screens - tablet</summary>
 <img src="docs/wireframes/wireframes-tablet.png">
@@ -929,14 +981,72 @@ some of the existing features
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
  
-<details><summary>Home</summary>
-<img src="docs/validation/wave/home-pg.png" width="800" height="1200" >
+<details><summary>Home Desktop-screen</summary>
+<img src="docs/validation/lighthouse/home-desk.png" >
+
+</details>
+<details><summary>Home Mobile-screen</summary>
+<img src="docs/validation/lighthouse/Home-mob.png" >
 </details>
 
-<details><summary>Register</summary>
-<img src="docs/validation/wave/register-pg.png" width="800" height="1200">
+<details><summary>Register page Desktop-screen</summary>
+<img src="docs/validation/lighthouse/Home-mob.png">
+</details>
+<details><summary>Register page Mobile-screen</summary>
+<img src="docs/validation/wave/register-pg.png">
 </details>
 
+<details><summary>Login</summary>
+<img src="docs/validation/wave/login-pg.png" >
+</details>
+
+<details><summary>password reset</summary>
+<img src="docs/validation/wave/password-reset.png">
+</details>
+
+<details><summary>password reset done</summary>
+<img src="docs/validation/wave/pass-reset-done.png">
+</details>
+
+<details><summary>Set role</summary>
+<img src="docs/validation/wave/set-role-pg.png">
+</details>
+
+<details><summary>Set Profile</summary>
+<img src="docs/validation/wave/create-profile.png">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/wave/see-profile.png">
+</details>
+
+<details><summary>Edit profile</summary>
+<img src="docs/validation/wave/edit-profile.png">
+</details>
+
+<details><summary>Delete profile</summary>
+<img src="docs/validation/wave/delete-profile.png">
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/validation/wave/blog.png">
+</details>
+
+<details><summary>Blog add</summary>
+<img src="docs/validation/wave/add-blog.png">
+</details>
+
+<details><summary>Blog detail</summary>
+<img src="docs/validation/wave/blog-detail.png">
+</details>
+
+<details><summary>Blog edit</summary>
+<img src="docs/validation/wave/blog-edit.png">
+</details>
+
+<details><summary>Category</summary>
+<img src="docs/validation/wave/category-pg.png">
+</details>
 
 
 
