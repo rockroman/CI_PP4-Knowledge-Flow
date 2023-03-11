@@ -312,7 +312,7 @@ following fields:
 <details><summary>Medium screens - tablet</summary>
 
 <details><summary>Home page</summary>
-<img src="docs/wireframes/home-desk-wireframe.png" >
+<img src="docs/wireframes/home-tablet.png" >
 
 </details>
 
