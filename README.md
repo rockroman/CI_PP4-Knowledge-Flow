@@ -1100,6 +1100,8 @@ some of the existing features
 ### Lighthouse
 
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
+
+- Note: Lighthouse results of testing the project may be inconsistent due to the functionality of user-uploaded images,Hosting project on Heroku may affected the results (server response time, caching, and network latency), But since Lighthouse scores are not the only measure of a website's performance and user experience, other factors such as functionality, accessibility, and usability should also be considered when determining the overall performance score of the project.
  
 <details><summary>Home Desktop-screen</summary>
 <img src="docs/validation/lighthouse/home-desk.png" >
@@ -1169,7 +1171,7 @@ some of the existing features
 </details>
 
 <details><summary>Edit profile Mobile-screen</summary>
-<img src="docs/validation/wave/edit-profile.png">
+<img src="docs/validation/lighthouse/update-profile-desk.png">
 </details>
 
 <details><summary>Delete profile Desktop-screen</summary>
@@ -1206,11 +1208,11 @@ some of the existing features
 </details>
 
 <details><summary>Blog edit Desktop-screen</summary>
-<img src="docs/validation/wave/blog-edit.png">
+<img src="docs/validation/lighthouse/blog-edit-desk.png">
 </details>
 
 <details><summary>Blog edit Mobile-screen</summary>
-<img src="docs/validation/wave/blog-edit.png">
+<img src="docs/validation/lighthouse/blog-edit-mob.png">
 </details>
 
 <details><summary>Comment edit Desktop-screen</summary>
