@@ -48,5 +48,6 @@ def home(request):
             else:
                 messages.error(request, 'NEED TO BE LOGGED IN TO SEND MESSAGE')
                 form = ContactUsForm()
+                return redirect(reverse_lazy('home') + '#')
 
     return render(request, 'index.html', {'form': form})

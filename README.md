@@ -195,6 +195,8 @@ Project code structure is organized and divided into various application folders
 - **requirements.txt**: This file lists the dependencies required for  Django project to run.
 - **env.py**: This file is used to store environment variables for a Django project or application, such as database connection details or API keys. best practice is including this file into th gitignore file so  the values can be easily accessed and used by the project without being exposed in the code or configuration files.
 
+##### Back to [top](#table-of-contents)
+
 ## Database
 ***
 <details><summary>(ERD)Physical database model</summary>
@@ -486,7 +488,7 @@ create user stories. at later date user stories were edited since at the start t
 #### Closing words on agile:
 - As a solo developer using Agile for the first time, the learning curve was steep, but the experience gained from the process is invaluable. Although the initial implementation may have not been great ,but  it will serve as a foundation for implementing Agile more effectively in future projects.
 
-    
+##### Back to [top](#table-of-contents)    
 ***
 
 
@@ -879,6 +881,7 @@ some of the existing features
 4. Enable the mentor user to add new learning categories with administrator approval.
 5. Implement an internal messaging system between users (inbox).
 
+##### Back to [top](#table-of-contents)
 
 ## Validation:
 ***
@@ -1334,28 +1337,38 @@ results are contained in TESTING.md file that you can see [here.](https://github
     <img src="docs/bugs/migration-error1.png" width="800">
     </details>
 
-1. Bad request(Heroku) images issue
+2. Bad request(Heroku) images issue
    <details><summary>see bug</summary>
     <img src="docs/bugs/bad-request-image-issue.png" width="800">
     </details>
 
 
+3. Prepopulated comment form
+   <details><summary>see bug</summary>
+    <img src="docs/bugs/bug3.png" width="800">
+    </details>
+
+4. only last object deleted
+   <details><summary>see bug</summary>
+    <img src="docs/bugs/bug4.png" width="800">
+    </details>
 
 
+5. missing alt text for "cloudinary tag images" 
+   <details><summary>see bug</summary>
+    <img src="docs/bugs/bug5.png" width="800">
+    </details>
 
 
+6. Button outlined after click 
+   <details><summary>see bug</summary>
+    <img src="docs/bugs/bug6.png" width="800">
+    </details>
 
-
-
-
-
-
-
-
-
-
-
-
+7. not redirected properly after submitting the form 
+   <details><summary>see bug</summary>
+    <img src="docs/bugs/bug7.png" width="800">
+    </details>
 
 
 ## Deployment
@@ -1461,8 +1474,28 @@ variables in a form of:
     </details> 
 
 
+### Forking the GitHub Repository
 
-### Forkig Github Repo
+1. Login or Signup to [Github](https://github.com/)
+2. Navigate to  the GitHub repository link  https://github.com/rockroman/CI_PP4-Knowledge-Flow
+2. Click on the Fork button in the top right corner
+<img src="docs/deployment/git-fork.png">
+3. Copy of the repository will be in your own GitHub account.
 
 
 ### Clone a GitHub Repo
+
+1. Go to the GitHub repository  https://github.com/rockroman/CI_PP4-Knowledge-Flow
+2. Locate the Code button above the list of files (next to 'Add file') and click it
+<img src="docs/deployment/clone.png">
+3. choose a preferred cloning option by selecting either HTTPS or GitHub CLI.
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone <span>https://</span>github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone
+
+
+
+## Credits
+
+### Code

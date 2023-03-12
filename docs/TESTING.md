@@ -243,11 +243,11 @@ Open your email inbox and reset password mail with a link should be there|link t
 <img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
 </details>
 
-15. I want to prepare a plan for multiple weeks in advance
+16. As a User I would like a Functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
+Navigate to  | Loads planner page | WAS |
  T| T | WAS |
  |  | WAS |
  |  | WAS |
