@@ -276,8 +276,8 @@ following fields:
 | maker          | user          | OneToOneField | User, on_delete=models.PROTECT    |
 | name           | name        | CharField    | max_length=50     |
 | category image| category_image   | CloudinaryField   | 'image', default='placeholder'      |
-| Start Quote    | start_quote    | CharField    |    |
-| Description       | description       |TextField ManyToManyField | max_length=255, null=True       |
+| Start Quote    | start_quote    | CharField    |max_length=255, null=True    |
+| Description       | description       |TextField  |       |
 | Importance of category      |importance_of_category      | TextField    | null=True    |
 
 ##### Back to [top](#table-of-contents) 
@@ -893,69 +893,70 @@ some of the existing features
 ### Html
 - [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
 
-    <details><summary>Home</summary>
-    <img src="docs/validation/html-css/home-html-valid.png" width="800" >
-    </details>
-
-    <details><summary>Register</summary>
-    <img src="docs/validation/html-css/signup-valid.png" width="800" >
-    </details>
-
-    <details><summary>Login</summary>
-    <img src="docs/validation/html-css/login-valid.png" width="800" >
-    </details>
-
-    <details><summary>password reset</summary>
-    <img src="docs/validation/html-css/password-reset-valid.png" width="800" >
-    </details>
-
-    <details><summary>password reset done</summary>
-    <img src="docs/validation/html-css/password-reset-done.png" width="800" >
-    </details>
+- Note : all info on validator pages are related with using cloudinary template tags for rendering user uploaded images and there for trailing slash cant be removed
     
-    <details><summary>Set role</summary>
-    <img src="docs/validation/html-css/set-role-valid.png" width="800" >
-    </details>
 
-    <details><summary>Set Profile</summary>
-    <img src="docs/validation/html-css/set-profile.png" width="800"  >
-    </details>
-    
-    <details><summary>Profile</summary>
-    <img src="docs/validation/html-css/profile-valid.png" width="800" >
-    </details>
+<details><summary>Home</summary>
+<img src="docs/validation/html-css/home-html-valid.png" width="800" >
+</details>
 
-    <details><summary>Edit profile</summary>
-    <img src="docs/validation/html-css/profile-edit-valid.png" width="800">
-    </details>
-    
-    <details><summary>Delete profile</summary>
-    <img src="docs/validation/html-css/profile-delete-valid.png" width="800" >
-    </details>
+<details><summary>Register</summary>
+<img src="docs/validation/html-css/signup-valid.png" width="800" >
+</details>
 
-    <details><summary>Blog</summary>
-    <img src="docs/validation/html-css/blog.png" width="800" >
-    </details>
-    
-    <details><summary>Blog add</summary>
-    <img src="docs/validation/html-css/blog-add.png" width="800" >
-    </details>
+<details><summary>Login</summary>
+<img src="docs/validation/html-css/login-valid.png" width="800" >
+</details>
 
-    <details><summary>Blog detail</summary>
-    <img src="docs/validation/html-css/blog-detail-valid.png" width="800" >
-    </details>
-    
-    <details><summary>Blog edit</summary>
-    <img src="docs/validation/html-css/blog-edit.png" width="800">
-    </details>
+<details><summary>password reset</summary>
+<img src="docs/validation/html-css/password-reset-valid.png" width="800" >
+</details>
 
-    <details><summary>Category</summary>
-    <img src="docs/validation/html-css/category-valid.png" width="800" >
-    </details>
+<details><summary>password reset done</summary>
+<img src="docs/validation/html-css/password-reset-done.png" width="800" >
+</details>
 
-- Note : all info on validator pages are related with using cloudinary template
-    tags for rendering user uploaded images and there for trailing slash cant be removed
-    
+<details><summary>Set role</summary>
+<img src="docs/validation/html-css/set-role-valid.png" width="800" >
+</details>
+
+<details><summary>Set Profile</summary>
+<img src="docs/validation/html-css/set-profile.png" width="800"  >
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/html-css/profile-valid.png" width="800" >
+</details>
+
+<details><summary>Edit profile</summary>
+<img src="docs/validation/html-css/profile-edit-valid.png" width="800">
+</details>
+
+<details><summary>Delete profile</summary>
+<img src="docs/validation/html-css/profile-delete-valid.png" width="800" >
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/validation/html-css/blog.png" width="800" >
+</details>
+
+<details><summary>Blog add</summary>
+<img src="docs/validation/html-css/blog-add.png" width="800" >
+</details>
+
+<details><summary>Blog detail</summary>
+<img src="docs/validation/html-css/blog-detail-valid.png" width="800" >
+</details>
+
+<details><summary>Blog edit</summary>
+<img src="docs/validation/html-css/blog-edit.png" width="800">
+</details>
+
+<details><summary>Category</summary>
+<img src="docs/validation/html-css/category-valid.png" width="800" >
+</details>
+
+
    
 ### Javascript
 - [JShint](https://jshint.com/) was used to validate custom script file
@@ -1362,23 +1363,23 @@ results are contained in TESTING.md file that you can see [here.](https://github
 - During the initial phases of development, Knowledge Flow was deployed on Heroku. To avoid any potential deployment issues near the app's release, I made sure that the database and static files were accessible right from the start of the project.
 
 ###  Creating Database ==> ElephantSQL
-1. To generate a managed PostgreSQL database, please proceed to ElephantSQL and either sign up or sign in to your account. Once you've logged in, click on the 'Create New Instance' button.
+1. To generate a managed PostgreSQL database, please proceed to [ElephantSQL](https://customer.elephantsql.com/) and either sign up or sign in to your account. Once you've logged in, click on the 'Create New Instance' button.
     <details><summary>See Image</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![ElephantSQL](docs/deployment/elephant.png)
     </details>
 
 2. Name your database and select the 'Tiny Turtle' payment plan. Then, click on 'Select Region'
     <details><summary>See Image</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![ElephantSQL](docs/deployment/tiny-turtle.png)
     </details>
 
 3. Select your preferred region and create the database instance.
     After creating the instance, navigate to the instances page and click on the name of the database you selected earlier. Then, in the details section on the following page, copy the PostgreSQL URL.
     <details><summary>See Image</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![ElephantSQL](docs/deployment/instance.png)
     </details>
 
 ### Heroku Deployment
@@ -1387,16 +1388,28 @@ results are contained in TESTING.md file that you can see [here.](https://github
 ElephantSQL Database url,SECRET_KEY variable(genrate key different from provided one),CLOUDINARY_URL variable(after logging in the cloudinary website copy the 'cloudinary url' from your account dashboard as value of variable )
 - Create env.py(root level of your project) this file contains above mentioned
 variables in a form of:
-    -  os.environ['DATABASE_URL'] = 'value of ElephantSQL Database url' 
-    -  os.environ['SECRET_KEY'] = 'value of secret key' 
-    -  os.environ['CLOUDINARY_URL'] = 'value of 'cloudinary url' from your account dashboard'
- 
+- os.environ['DATABASE_URL'] = 'value of ElephantSQL Database url'
+        <details><summary>See Image</summary>
+        ![DATABASE_URL](docs/deployment/url.png)
+        </details>
+
+- os.environ['SECRET_KEY'] = 'value of secret key'
+    secret key could be generated [here](https://miniwebtool.com/django-secret-key-generator/)
+        <details><summary>See Image</summary>
+        ![SECRET_KEY](docs/deployment/key.png)
+        </details>
+
+-  os.environ['CLOUDINARY_URL'] = 'value of 'cloudinary url' from your  
+   account dashboard'
+   cloudinary url can be found [here](https://console.cloudinary.com/)
+        <details><summary>See Image</summary>
+        ![CLOUDINARY_UR](docs/deployment/cloudinary.png)
+        </details> 
 
 1. First, sign up or sign in to your Heroku account. Next, create a new app from the Heroku dashboard.
-    <details><summary>See Image</summary>
-
-    ![Add blog page](docs/features/feature-home-page.JPG)
-    </details>
+        <details><summary>See Image</summary>
+        ![heroku](docs/deployment/heroku-app.png)
+        </details>
 
 2. Choose a unique name for your app and enter the region.Then, click on the 
     'Create App' button.
@@ -1407,34 +1420,44 @@ variables in a form of:
     - add DISABLE_COLLECTSTATIC variablewith value of 1 (for initial deployment, later this variable can be removed)
     - add variable named PORT with value of 8000
 
-    <details><summary>See Image</summary>
+    <details><summary>See Images</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![heroku](docs/deployment/heroku2.png)
+    ![heroku](docs/deployment/heroku3.png)
     </details>
 
 3. Select Deploy option from the 'tabs'
      <details><summary>See Image</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![heroku](docs/deployment/heroku4.png)
     </details>
 
 4. From Deployment method section choose Connect to GitHub and click on it
      <details><summary>See Image</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![heroku](docs/deployment/heroku-deploy-meth.png)
     </details>
 
 5. Find your github repository by name and connect
      <details><summary>See Image</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![heroku](docs/deployment/heroku-repo-connected.png)
     </details>
 
 6. At the bottom of the page choose either automatic deployment manual 
-deployment(deploy by branch)
+   deployment(deploy by branch)
      <details><summary>See Image</summary>
 
-    ![Add blog page](docs/features/feature-home-page.JPG)
+    ![heroku](docs/deployment/manual-auto-deploy.png)
+    </details> 
+
+7. Click on the option you want and you should be able to see bouild process
+    and after a while your app should be deployed.
+         <details><summary>See Image</summary>
+
+    ![heroku](docs/deployment/build.png)
+    ![heroku](docs/deployment/build-finish.png)
+   
     </details> 
 
 
