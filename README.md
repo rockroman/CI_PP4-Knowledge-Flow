@@ -22,38 +22,31 @@
     4. [Database](#database)
     5. [Data Models](#data-models)
     6. [Wireframes](#wireframes)
-    1. [Agile Design](#agile-design)
-    2. [CRUD Functionality](#crud-functionality)
+    7. [Agile Design](#agile-design)
 4. [Technologies Used](#technologies-used)
     1. [Languages & Frameworks](#languages--frameworks)
     2. [Libraries and Tools](#libraries--tools)
-    
 5. [Features](#features)
-6. [Future implementation](#future-implementation)
-    1. [Future Features](#future-features)
+6. [Future Features](#future-features)
+    
 7. [Validation](#validation)
     1. [CSS](#css)
     2. [Html](#html)
-    3. [Javascript](#javascript-validation)
-    4. [Python](#python-validation)
-    5. [Chrome Dev Tools Lighthouse](#chrome-dev-tools-lighthouse-validation)
-    6. [WAVE Validation](#wave-validation)  
+    3. [Javascript](#javascript)
+    4. [Python](#python)
+    5. [Chrome Dev Tools Lighthouse](#lighthouse)
+    6. [WAVE Validation](#wave)  
 8. [Testing](#testing)
-    1. [Device Testing](#device-testing)
-    2. [Browser Compatibility](#browser-compatibility)
-    3. [Manual Testing](#manual-testing)
-    4. [Automated Testing](#automated-testing)
+
 9. [Bugs](#bugs)
-10. [Configuration](#configuration)
-    1. [Google emails](#google-emails)
-11. [Deployment](#deployment)
+
+10. [Deployment](#deployment)
     1. [Heroku](#heroku)
     2. [Forking GitHub Repo](#forking-the-github-repository)
     3. [Clone a GitHub Repo](#clone-a-github-repository)
 12. [Credits](#credits)
-    1. [Tutorial](#tutorials)
-    2. [Code](#code)
-    3. [Literature](#literature)
+    1. [Code](#code)
+    3. [Imagery](#imagery)
     4. [Misc](#misc)
 13. [Acknowledgements](#acknowledgements)
 
@@ -1327,7 +1320,13 @@ the user.they needed to be put as generic since it can't be done by the user.
 ***
 
 - Knowledge flow was tested during and post development and all
-results are contained in TESTING.md file that you can see [here.](https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/docs/TESTING.md)
+results for 
+    - Device Testing
+    - Browser Compatibility
+    - Manual Testing
+    - Automated Testing
+
+    are contained in TESTING.md file that you can see [here.](https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/docs/TESTING.md)
 
 ## Bugs
 ***
@@ -1499,3 +1498,5 @@ variables in a form of:
 ## Credits
 
 ### Code
+
+### Imagery

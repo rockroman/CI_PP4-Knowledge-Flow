@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['knowledge-flow.herokuapp.com', 'localhost']
 
@@ -99,7 +99,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'categories.views.list_of_categories',
                 'siteusers.views.list_of_mentors',
-                'flow_blog.views.list_of_comments',
+                # 'flow_blog.views.list_of_comments',
 
             ],
         },
@@ -123,18 +123,18 @@ WSGI_APPLICATION = 'knowledgeflow.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+
+# }
 
 
 # Password validation
