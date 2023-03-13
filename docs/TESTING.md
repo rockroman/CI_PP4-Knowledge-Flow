@@ -161,9 +161,14 @@ Click on delete button| user is redirected to home page and his profile deleted 
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story5da.png" >
+<img src="./user-story-test/story6db.png" >
+<img src="./user-story-test/story6dc.png" >
+<img src="./user-story-test/story6da.png" >
+<img src="./user-story-test/story5ma.png" >
+<img src="./user-story-test/story6mb.png" >
+<img src="./user-story-test/story6mc.png" >
+<img src="./user-story-test/story6ma.png" >
 </details>
 
 7. As an authenticated user I would like functionality to pick different types of learning categories in my profile and change them later
@@ -176,8 +181,16 @@ Click on category to tick the multiple selection box if category is to be added 
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+ <img src="./user-story-test/story5da.png" >
+ <img src="./user-story-test/story7da.png" >
+ <img src="./user-story-test/story7db.png" >
+ <img src="./user-story-test/story7dc.png" >
+ <img src="./user-story-test/story7dd.png" >
+<img src="./user-story-test/story5ma.png" >
+<img src="./user-story-test/story7ma.png" >
+<img src="./user-story-test/story7mb.png" >
+<img src="./user-story-test/story7mc.png" >
+
 </details>
 
 8. As an authenticated user I would like functionality to see and read blog posts that other users created

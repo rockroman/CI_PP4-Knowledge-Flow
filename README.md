@@ -46,6 +46,7 @@
     3. [Clone a GitHub Repo](#clone-a-github-repository)
 12. [Credits](#credits)
     1. [Code](#code)
+    2. [Tutorials](#tutorials)
     3. [Imagery](#imagery)
     4. [Misc](#misc)
 13. [Acknowledgements](#acknowledgements)
@@ -1478,7 +1479,9 @@ variables in a form of:
 1. Login or Signup to [Github](https://github.com/)
 2. Navigate to  the GitHub repository link  https://github.com/rockroman/CI_PP4-Knowledge-Flow
 2. Click on the Fork button in the top right corner
+
 <img src="docs/deployment/git-fork.png">
+
 3. Copy of the repository will be in your own GitHub account.
 
 
@@ -1486,7 +1489,9 @@ variables in a form of:
 
 1. Go to the GitHub repository  https://github.com/rockroman/CI_PP4-Knowledge-Flow
 2. Locate the Code button above the list of files (next to 'Add file') and click it
+
 <img src="docs/deployment/clone.png">
+
 3. choose a preferred cloning option by selecting either HTTPS or GitHub CLI.
 4. Open Git Bash
 5. Change the current working directory to the one where you want the cloned directory
@@ -1498,5 +1503,17 @@ variables in a form of:
 ## Credits
 
 ### Code
+
+- Code for building nav-bar component was taken and adjusted to my project needs from [here](https://getbootstrap.com/)
+- Code for building footer and profile page component  was taken and adjusted to my project needs from [here](https://mdbootstrap.com/)
+- Code for building team section component was taken and adjusted to my project needs from [here](https://codepen.io/search/pens?q=team+section&cursor=ZD0xJm89MCZwPTQ=)
+- Code for building back to top button functionality component was taken and adjusted to my project needs from [here](https://mdbootstrap.com/docs/standard/extended/back-to-top/)
+- Code for building allauth forms components was taken and adjusted to my project needs from [here](https://blog.nirmites.com/)
+
+## Tutorials 
+
+- [This](https://www.youtube.com/watch?v=S9-Bt1JgRjQ) tutorial helped me understand django  Context Processors functionality
+- [This](https://www.youtube.com/watch?v=FdVuKt_iuSI) tutorial helped me to solidify the knowledge of django views forms and templates 
+- 
 
 ### Imagery
