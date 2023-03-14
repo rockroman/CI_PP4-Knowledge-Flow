@@ -14,8 +14,42 @@
 
 ***
 ## Device testing
+***
 
+### Mobile devices 
+
+- project was tested during and post development on following mobile devices
+
+#### Samsung A52
+- Results are here:
+
+    <details><summary>Screenshot</summary>
+    <img src="./device-testing/samsung1.jpg" >
+    <img src="./device-testing/samsung2.jpg" >
+    <img src="./device-testing/samsung3.jpg" >
+    <img src="./device-testing/samsung4.jpg" >
+    <img src="./device-testing/samsung5.jpg" >
+    <img src="./device-testing/samsung6.jpg" >
+    <img src="./device-testing/samsung7.jpg" >
+
+    </details>
+
+#### Iphone 10 
+- Results are here:
+
+    <details><summary>Screenshot</summary>
+    <img src="./device-testing/iphone1.png" >
+    <img src="./device-testing/iphone2.png" >
+    <img src="./device-testing/iphone3.png" >
+    <img src="./device-testing/iphone4.png" >
+    <img src="./device-testing/iphone5.png" >
+    <img src="./device-testing/iphone6.png" >
+    
+    </details>
+
+***
 ## Browser compatibility
+***
 
 
 ## Manual testing of user stories
@@ -202,8 +236,12 @@ Click on a blog title or "Read the blog" button| blog detail page is loaded | WA
 
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story8da.png" >
+<img src="./user-story-test/story8db.png" >
+<img src="./user-story-test/story8dc.png" >
+<img src="./user-story-test/story8ma.png" >
+<img src="./user-story-test/story8mb.png" >
+<img src="./user-story-test/story8mc.png" >
 </details>
 
 

@@ -1517,3 +1517,14 @@ variables in a form of:
 - 
 
 ### Imagery
+
+- Hero image  taken from [here](https://unsplash.com/@greg_rosenke)
+- Team section images taken from [here] (https://www.pexels.com/) 
+- Mentor role image taken from  [here](https://pixabay.com/users/harishs-3407954/)
+- Student role image taken from [here](https://pixabay.com/users/geralt-9301/)
+- Default blog post  image taken from [here](https://unsplash.com/s/photos/cup)
+- Leadership learning category taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
+- Personal-finance learning category taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
+- Time-management learning category taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
+
+- All other images are uploaded by the users of the website
