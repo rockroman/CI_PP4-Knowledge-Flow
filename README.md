@@ -982,7 +982,7 @@ some of the existing features
 
 
     <details><summary>tests_views.py</summary>
-    <img src="" width="800" >
+    <img src="docs/validation/python-js/home-test-views.png" width="800" >
     </details>
 
  

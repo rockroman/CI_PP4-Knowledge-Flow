@@ -256,8 +256,12 @@ From the drop-down category menu, select category |Categories that are chosen du
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+ <img src="./user-story-test/story9da.png" >
+ <img src="./user-story-test/story9db.png" >
+ <img src="./user-story-test/story9dc.png" >
+<img src="./user-story-test/story9ma.png" >
+<img src="./user-story-test/story9mb.png" >
+<img src="./user-story-test/story9mc.png" >
 </details>
 
 10. As an authenticated user I would like functionality to delete or update my blog post i I find it no longer relevant
@@ -273,8 +277,14 @@ Press "delete" button|blogs page loads with success message"your blog post is de
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+ <img src="./user-story-test/story10da.png" >
+ <img src="./user-story-test/story10db.png" >
+ <img src="./user-story-test/story10dc.png" >
+ <img src="./user-story-test/story10dd.png" >
+ <img src="./user-story-test/story10de.png" >
+ <img src="./user-story-test/story10df.png" >
+ <img src="./user-story-test/story10g.png" >
+
 </details>
 
 11. As an authenticated user I would like functionality to leave a comment on a blog post
@@ -287,8 +297,10 @@ scroll to the end of a blog | comment section is displayed | WAS |
 enter your comment text and press green button|success message is displayed and you can see your comment in comment section  | WAS |
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+  <img src="./user-story-test/story11a.png" >
+  <img src="./user-story-test/story11b.png" >
+  <img src="./user-story-test/story11c.png" >
+  <img src="./user-story-test/story11d.png" >
 </details>
 
 12. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
