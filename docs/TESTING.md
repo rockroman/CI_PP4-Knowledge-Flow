@@ -315,9 +315,10 @@ Click on image you want to be the blog cover image |name of the image is display
  Click the "Post" button|user is redirected to blog page with success message that "YOU ADDED A NEW BLOG" | WAS |
 
 
- <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+ <details><summary>Screenshots</summary>
+  <img src="./user-story-test/story12a.png" >
+  <img src="./user-story-test/story12b.png" >
+  <img src="./user-story-test/story12c.png" >
 </details>
 
 13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable and their contact info
@@ -329,9 +330,10 @@ Click on a category you want to display|Selected category page is displayed | WA
 Navigate to a "mentors available section" click on it|cards with available mentors is displayed   | WAS |
 
 
- <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+ <details><summary>Screenshots</summary>
+<img src="./user-story-test/story13a.png" >
+<img src="./user-story-test/story13b.png" >
+<img src="./user-story-test/story13c.png" >
 </details>
 
 14. As a user I would like web app to be fully responsive and to have the same experience when using on any device
