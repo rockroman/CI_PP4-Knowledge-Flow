@@ -345,10 +345,12 @@ Change device with any extension(mobile simulaor) that simulates devices screes|
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story14a.png" >
+<img src="./user-story-test/story14b.png" >
+<img src="./user-story-test/story14c.png" >
+<img src="./user-story-test/story14d.png" >
+<img src="./user-story-test/story14e.png" >
+<img src="./user-story-test/story14f.png" >
 </details>
 
 15. As an returning user user I would like functionality to set a new password if I forgot the password so that I can still use the web app
@@ -362,8 +364,9 @@ Open your email inbox and reset password mail with a link should be there|link t
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story15a.png" >
+<img src="./user-story-test/story15b.png" >
+<img src="./user-story-test/story15c.png" >
 </details>
 
 16. As a User I would like a Functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
@@ -379,8 +382,12 @@ Scroll to the "About us" section of the page| Contact form is displayed | WAS |
 User is filling out form correctly and pressing "Send" button|User taken to top of the page and succes message"Thank you for your message" is displayed  | WAS |
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story16a.png" height="600" >
+<img src="./user-story-test/story16b.png" height="600" >
+<img src="./user-story-test/story16c.png" height="600" >
+<img src="./user-story-test/story16d.png" height="600" >
+<img src="./user-story-test/story16e.png" height="600" >
+<img src="./user-story-test/story16f.png" height="600" >
 </details>
 
 17. As a user I would like a Functionality to update or delete a comment I posted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
@@ -439,7 +446,7 @@ From the drop-down category menu, select category |Categories that are chosen du
 ------------ | ------------ | ------------ |
 Navigte to a profile link in the nav bar | profile page loads | WAS |
 Click on update profile button| update profile form is displayed | WAS |
-Fill clear any fiel except website and linkedIn url fields and press update | form error message is displayed "please fill out this field"   | WAS |
+Fill fill the form and try to leave empty any field except website and linkedIn url fields and press update | form error message is displayed "please fill out this field"   | WAS |
 Navigate to "Add Blog" link in the nav bar and click on it |The "Create Blog" form is loaded| WAS |
 Enter relevant data for posting the blog but dont add category| Form is populated with user data | WAS |
 click "post" button | message is displayed to select the item from the list and blog is not posted | WAS |
@@ -499,41 +506,34 @@ User navigates to his Learning category page (selected in profile) and clicks on
  |  | WAS |
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+  <img src="./user-story-test/story11a.png" >
+  <img src="./user-story-test/story11b.png" >
+  <img src="./user-story-test/story11c.png" >
+  <img src="./user-story-test/story11d.png" >
 </details>
 
-23. I want to prepare a plan for multiple weeks in advance
+24. As a Site Owner I would like that each authenticated user gets prompt messages when performing CRUD(Create,Read,Update,Delete) operations when using web app.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
- T| T | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
+Navigate to a blog link in the nav bar or click "SEE BLOGS" in the hero section| Loads blogs page | WAS |
+click on a blog title or read the blog button| blog detail page is loaded | WAS |
+scroll to the end of a blog | comment section is displayed | WAS |
+enter your comment text and press green button|success message is displayed and you can see your comment in comment section  | WAS |
+Navigte to a profile link in the nav bar | profile page loads | WAS |
+Click on update profile button| update profile form is displayed | WAS |
+Click on any field change the data and click updaate profile | user redirected to profile page with successs message that profile is updated   | WAS |
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story11a.png" >
+<img src="./user-story-test/story11b.png" >
+<img src="./user-story-test/story11c.png" >
+<img src="./user-story-test/story11d.png" >
+<img src="./user-story-test/story5ma.png" >
+<img src="./user-story-test/story6mb.png" >
+<img src="./user-story-test/story6mc.png" >
 </details>
 
-25. I want to prepare a plan for multiple weeks in advance
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Register or log in to the account to be able to create a plan | Loads planner page | WAS |
- T| T | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
-
- <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
-</details>
 
 25. As a Site Owner I would like that each authenticated user has option to get access to an app if he forgots password for any reason via (Reset password functionality)
 
