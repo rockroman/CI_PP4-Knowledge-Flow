@@ -48,7 +48,6 @@
     1. [Code](#code)
     2. [Tutorials](#tutorials)
     3. [Imagery](#imagery)
-    4. [Misc](#misc)
 13. [Acknowledgements](#acknowledgements)
 
 ## About
