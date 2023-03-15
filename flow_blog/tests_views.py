@@ -186,7 +186,6 @@ class TestAddBlogView(TestCase):
             'category': category.pk, 'id': '66',
             'creator': self.user.profile.id}
         response = self.client.post(self.url, data=self.data, follow=True)
-        # print(response)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(BlogPost.objects.filter(title='Test Blog').exists())
         self.assertTrue(BlogPost.objects.all().count(), 2)
