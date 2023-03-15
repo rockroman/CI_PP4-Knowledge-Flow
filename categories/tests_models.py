@@ -25,11 +25,12 @@ class TestLearningCategoryModel(TestCase):
         )
         self.user.save()
 
-    # def tearDown(self):
-    #     """
-    #     deleting a test user
-    #     """
-    #     self.user.delete()
+    def tearDown(self):
+        """
+        deleting a test user
+        """
+        LearningCategory.objects.filter(maker=self.user).delete()
+        self.user.delete()
 
     def test_string_method_returning_name(self):
         """
