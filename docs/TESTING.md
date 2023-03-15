@@ -65,6 +65,33 @@
 ***
 ## Browser compatibility
 ***
+Testing was conducted on the following browsers;
+
+- Chrome;
+
+<details><summary>Screenshot</summary>
+    <img src="./browser-compatibility/chrome1.png" >
+    <img src="./browser-compatibility/chrome2.png" >    
+    <img src="./browser-compatibility/chrome3.png" >    
+</details>
+
+- Firefox;
+
+<details><summary>Screenshot</summary>
+    <img src="./browser-compatibility/fox1.png" >
+    <img src="./browser-compatibility/fox2.png" >    
+    <img src="./browser-compatibility/fox3.png" >    
+</details>
+
+- Microsoft Edge;
+
+<details><summary>Screenshot</summary>
+    <img src="./browser-compatibility/edge1.png" >
+    <img src="./browser-compatibility/edge2.png" >    
+    <img src="./browser-compatibility/edge3.png" >    
+</details>
+
+
 
 
 ## Manual testing of user stories
