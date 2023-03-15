@@ -1528,3 +1528,15 @@ variables in a form of:
 - Time-management learning category taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
 
 - All other images are uploaded by the users of the website
+
+
+## Acknowledgements
+
+***
+I would like to take a few moments to say Thank you to the following people:
+
+- First, I would like to thank my wife Una, and my daughter Tara for their continuous support and understanding while working on the development of this project.
+
+-  I would like to thank my Mentor Mo.Shami for his support, insight expertise, and guidance.
+
+-  Awesome Code Institute Slack community for being there
