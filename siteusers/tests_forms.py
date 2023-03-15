@@ -1,8 +1,16 @@
-from django.test import TestCase, Client 
+"""
+A module for test forms
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
+from django.test import TestCase, Client
+from django.contrib.auth.models import AnonymousUser
+# Internal:
 from .models import Profile, User
 from .forms import Profileform
 from categories.models import LearningCategory
-from django.contrib.auth.models import AnonymousUser
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestProfileForm(TestCase):
@@ -27,24 +35,3 @@ class TestProfileForm(TestCase):
             role='student',
 
         )
-
-    
-    # def test_saving_of_email(self):
-    #     self.client.login(username='testRock', password='mynewpass')
-    #     # profile = Profile.objects.get(user=self.user.id)
-    #     category = LearningCategory.objects.create(
-    #         maker=User.objects.get(username='testRock'),
-    #         name='test category'
-    #     )
-    #     response = self.client.post('/siteusers/edit_profile/', data={
-    #         'first_name': 'Rock',
-    #         'last_name': 'Roman',
-    #         'email': 'rock.roman@bo.com',
-    #         'bio': 'my new bio',
-    #         'category': category
-    #     })
-    #     form = response.context['form']
-    #     print(form.errors)
-    #     # self.assertTrue(self.user.email=='test@user11.com')
-    #     # self.assertEqual(response.status_code, 200)
-    #     # self.assertEqual(self.user.email, 'mi')

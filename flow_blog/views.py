@@ -193,17 +193,6 @@ def delete_comment(request, comment_id):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-# def list_of_comments(request):
-#     """
-#     view used as context processor
-#     so all comment object id's are available to all
-#     templates
-#     """
-#     context = {}
-#     context['comment_id'] = Comment.objects.first().id
-#     return context
-
-
 class UpdateCommentView(LoginRequiredMixin, SuccessMessageMixin,
                         UserPassesTestMixin, UpdateView):
     """

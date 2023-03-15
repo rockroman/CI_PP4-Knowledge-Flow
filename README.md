@@ -993,7 +993,7 @@ some of the existing features
     <details><summary>flow_blog app</summary>
 
     <details><summary>views.py</summary>
-    <img src="docs/validation/python-js/blog-views.png" width="800" >
+    <img src="docs/validation/python-js/blog-views2.png" width="800" >
     </details>
 
     <details><summary>urls.py</summary>

@@ -1,15 +1,25 @@
+"""
+siteusers views test module
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase, Client, RequestFactory
-from .models import Profile, User
-from .forms import Profileform
+from django.http import HttpRequest
+from http import HTTPStatus
 from django.contrib.auth import get_user_model
 from django.urls import reverse, resolve, reverse_lazy
 from home.views import home
 from home import views
-from .views import AppUserSetUpProfile, SeeProfilePageView, EditProfilePageView, protect_profile_view
+# Internal:
+from .models import Profile, User
+from .views import (AppUserSetUpProfile,
+                    SeeProfilePageView, EditProfilePageView,
+                    protect_profile_view)
 from .forms import Profileform
-from django.http import HttpRequest
-from http import HTTPStatus
 from categories.models import LearningCategory
+from home.views import home
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestAppUserSetUpProfile(TestCase):
@@ -26,6 +36,7 @@ class TestAppUserSetUpProfile(TestCase):
         self.user.save()
         self.user.set_password('mypass79')
         self.user.save()
+        #  update existing profile
         self.user_profile = Profile.objects.update(
             user=self.user,
             first_name='Rock',
@@ -34,6 +45,9 @@ class TestAppUserSetUpProfile(TestCase):
             bio='my biography'
 
         )
+
+    def tearDown(self):
+        self.user.delete()
 
     def test_success_url(self):
         client = Client()
@@ -48,6 +62,7 @@ class TestAppUserSetUpProfile(TestCase):
 
     def test_is_the_form_valid(self):
         self.client = Client()
+        # creating new test user
         user2 = User.objects.create(
             username='Tester22',
             password='testpass',
@@ -58,33 +73,32 @@ class TestAppUserSetUpProfile(TestCase):
         user2.save()
         self.assertTrue(Profile.objects.filter(user=user2).exists())
         self.client.login(username='Tester22', password='testpass')
-        # response = self.client.post('/siteusers/set_role/', {
-        #     'role': 'Mentor's
-        # })
-        # self.assertEqual(response.status_code, 200)
         profile = Profile.objects.get(user=user2)
+        # updating new test user profile
         profile = Profile.objects.update(
             role='Mentor'
         )
         self.assertTrue(Profile.objects.filter(role='Mentor').exists())
         self.category = LearningCategory.objects.create(
             name='test category', maker=user2, id=22)
-        # profile.category.add(category)
-       
-        self.data={
-            'first_name': 'mi',
-            'last_name':'tooo',
-            'email': 'mustbe@net.com',
-            'category':self.category.pk,
-            'bio':'my bio'
-
-        }
-        response = self.client.get('/siteusers/create_profile')
-        # self.assertTrue(Profile.objects.filter(category=self.category.pk).exists())
+        response = self.client.get('/siteusers/create_profile/')
         self.assertEqual(response.status_code, 200)
-        # self.assertTemplateUsed('create_profile.html')
+        # creating the profile
+        response = self.client.post('/siteusers/create_profile/', data={
+            'first_name': 'Mike',
+            'last_name': 'tester',
+            'email': 'test@user.com',
+            'category': self.category.pk,
+            'bio': 'my biography',
+            'id': '76'
 
-       
+        }, follow=True)
+        self.assertEqual(response.status_code, 200)
+        # checking is the profile created
+        self.assertTrue(Profile.objects.filter(
+            category=self.category.pk).exists())
+        self.assertContains(response, 'YOUR PROFLE IS SET UP SUCCESSFULLY')
+
 
 class TestProfilePageView(TestCase):
     @classmethod
@@ -103,6 +117,9 @@ class TestProfilePageView(TestCase):
             first_name='Rock'
 
         )
+
+    def tearDown(self):
+        self.user.delete()
 
     def test_details(self):
         request = self.factory.get('see_profile/')
@@ -124,7 +141,7 @@ class TestEditProfilePageView(TestCase):
             id='1',
         )
         self.user.save()
-        
+
         self.user_profile = Profile.objects.update(
             user=self.user,
             first_name='Rock2',
@@ -134,6 +151,9 @@ class TestEditProfilePageView(TestCase):
 
         )
 
+    def tearDown(self):
+        self.user.delete()
+
     def test_get_object_method(self):
         request = self.factory.get('edit_profile/')
         request.user = self.user
@@ -142,8 +162,6 @@ class TestEditProfilePageView(TestCase):
 
 
 class TestProtectProfileView(TestCase):
-    # self.factory = RequestFactory()
-    # Create test user
     @classmethod
     def setUp(self):
         self.factory = RequestFactory()
@@ -157,15 +175,9 @@ class TestProtectProfileView(TestCase):
         self.user.save()
         self.user.set_password('mypass799')
         self.user.save()
-        # self.user_profile = Profile.objects.update(
-        #     user=self.user,
-        #     # first_name='Rock2',
-        #     # last_name='Roman2',
-        #     # email='test@user2.com',
-        #     bio='my biography',
-        #     role=''
 
-        # )
+    def tearDown(self):
+        self.user.delete()
 
     def test_protect_profile(self):
         self.client = Client()
@@ -202,13 +214,13 @@ class TestRedirectView(TestCase):
         self.profile = Profile.objects.update(
             user=self.user,
             role='Mentor'
-    
+
         )
 
     def test_user_with_set_role(self):
         self.client.login(username='NewTestUser2', password='mypass799')
         response = self.client.get('')
         self.assertEqual(response.status_code, 200)
-
-
-    
+        response = self.client.get('/flow_blog/blog/add_blog/', follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed('create_profile.html')

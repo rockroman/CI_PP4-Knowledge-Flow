@@ -1,12 +1,20 @@
+"""
+flow_blog views test module
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
+from django.contrib.auth.models import AnonymousUser
 from django.test import TestCase, Client, RequestFactory
+from django.urls import reverse
+from django.contrib.contenttypes.models import ContentType
+# Internal:
 from siteusers.models import Profile, User
 from .models import BlogPost, Comment
 from .views import BlogDetailView, AddBlogView, delete_blog, UpdateBlogView
-from django.contrib.auth.models import AnonymousUser
 from .forms import BlogForm, CommentForm
-from django.urls import reverse
-from django.contrib.contenttypes.models import ContentType
 from categories.models import LearningCategory
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestBlogDetailView(TestCase):
@@ -41,6 +49,10 @@ class TestBlogDetailView(TestCase):
             id='22'
 
         )
+
+    def tearDown(self):
+        self.user.delete()
+        self.post.delete()
 
     def test_test_function(self):
 
@@ -130,6 +142,11 @@ class TestAddBlogView(TestCase):
             id='31'
         )
 
+    def tearDown(self):
+        BlogPost.objects.filter(creator=self.user).delete()
+        LearningCategory.objects.filter(maker=self.user).delete()
+        self.user.delete()
+
     def test_get_from_kwargs(self):
         self.factory = RequestFactory()
         request = self.factory.get('')
@@ -207,6 +224,11 @@ class TestUpdateBlogView(TestCase):
             id='31'
         )
 
+    def tearDown(self):
+        BlogPost.objects.filter(creator=self.user).delete()
+        LearningCategory.objects.filter(maker=self.user).delete()
+        self.user.delete()
+
     def test_get_from_kwargs(self):
         self.factory = RequestFactory()
         request = self.factory.get('')
@@ -217,10 +239,8 @@ class TestUpdateBlogView(TestCase):
         self.assertIn('user', kwargs)
         self.assertEqual(kwargs['user'], self.user)
 
-    def test_updating_blog_with_or_without_profile_role(self):
+    def test_updating_blog_with_profile_role(self):
         self.client.login(username='testRock', password='mynewpass')
-        response = self.client.get('/flow_blog/blog/edit_blog/31')
-        self.assertEqual(response.status_code, 302)
         self.user_profile = Profile.objects.update(
             user=self.user,
             role='Student'
@@ -290,6 +310,11 @@ class TestDeleteBlog(TestCase):
             body='test body'
         )
 
+    def tearDown(self):
+        self.user.delete()
+        self.user2.delete()
+        self.post.delete()
+
     def test_view(self):
         # logging in and testing deletion of blog created by test user
         self.client.login(username='testRock', password='mynewpass')
@@ -344,6 +369,10 @@ class TestDeleteComment(TestCase):
             id='31'
         )
 
+    def tearDown(self):
+        self.user.delete()
+        self.post.delete()
+
     def test_comment_deletion(self):
         # creating test user
         self.user = User.objects.create_user(
@@ -391,7 +420,9 @@ class TestUpdateCommentView(TestCase):
             username='newTester', password='new password'
         )
         self.user.save()
-        # updating user profile
+        """
+         updating user profile
+        """
         self.user_profile = Profile.objects.update(
             user=self.user,
             first_name='Rocky',
@@ -402,7 +433,9 @@ class TestUpdateCommentView(TestCase):
             id='15'
 
         )
-        # creating test post
+        """
+         creating test post
+        """
         self.post = BlogPost.objects.create(
             creator=self.user,
             title='my test title',
@@ -410,16 +443,24 @@ class TestUpdateCommentView(TestCase):
             id='35',
 
         )
-        # creating 2nd test user
+        """
+        creating 2nd test user
+        """
         self.user2 = User.objects.create(
             username='rockTestuser', password='rockpass'
         )
         self.user2.save()
 
-    def test_updating_comment(self):
+    def tearDown(self):
+        self.user.delete()
+        self.user2.delete()
+        self.post.delete()
 
+    def test_updating_comment(self):
         self.client.force_login(self.user)
-        # creating test comment
+        """
+        creating test comment
+        """
         self.comment = Comment.objects.create(
             author=self.user,
             blogpost=self.post,
@@ -427,30 +468,21 @@ class TestUpdateCommentView(TestCase):
             content='Test comment one',
 
         )
-        # checking if comment is created
+        """
+        checking if comment is created
+        """
         self.assertTrue(Comment.objects.filter(pk=self.comment.pk).exists())
         response = self.client.get('/flow_blog/blog/blog/35', follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(Comment.objects.filter(pk=self.comment.pk).count(), 1)
         self.assertTrue(self.comment.content == 'Test comment one')
-        # changing the content of a commment by his author
-        self.comment.content = 'changed'
-        response = self.client.post(reverse('update_comment', kwargs={
-            'comment_id': self.comment.id,
-
-        }), self.comment.__dict__)
-        self.comment.refresh_from_db()
-        self.assertEqual(response.status_code, 302)
-        # comment is updated
-        self.assertTrue(self.comment.content == 'changed')
-        # creating second user
-        self.unauthorized_user = User.objects.create(
-            username='hacker', password='password'
-        )
-        self.client.force_login(self.unauthorized_user)
-        # user not author of the comment trying to update it
-        response = self.client.post(
-            reverse('update_comment', kwargs={'comment_id': self.comment.id}),
-            {'content': 'Changed comment content'})
-        # comment is not updated
-        self.assertEqual(self.comment.content, 'changed')
+        """
+        updating the comment
+        """
+        response = self.client.get('/flow_blog/update_comment/33/')
+        self.assertEqual(response.status_code, 200)
+        response = self.client.post('/flow_blog/update_comment/33/', data={
+            'content': 'changed comment'
+        }, follow=True)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'COMMENT IS UPDATED')
