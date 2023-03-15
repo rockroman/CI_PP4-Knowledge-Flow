@@ -18,7 +18,7 @@
 
 ### Mobile devices 
 
-- project was tested during and post development on following mobile devices
+- project was tested during and post development on following  devices
 
 #### Samsung A52
 - Results are here:
@@ -34,7 +34,7 @@
 
     </details>
 
-#### Iphone 10 
+#### Iphone 13 mini 
 - Results are here:
 
     <details><summary>Screenshot</summary>
@@ -46,6 +46,21 @@
     <img src="./device-testing/iphone6.png" >
     
     </details>
+
+
+#### Ipad 3rd generation 
+- Results are here:
+
+    <details><summary>Screenshot</summary>
+    <img src="./device-testing/ipad1.jpg" >
+    <img src="./device-testing/ipad2.jpg" >
+    <img src="./device-testing/ipad3.jpg" >
+    <img src="./device-testing/ipad4.jpg" >
+    <img src="./device-testing/ipad5.jpg" >
+    <img src="./device-testing/ipad6.jpg" >
+    
+    </details>
+
 
 ***
 ## Browser compatibility
@@ -402,8 +417,12 @@ Click on the comment field update the comment and press "update " button  | comm
  
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story17a.png">
+<img src="./user-story-test/story17b.png">
+<img src="./user-story-test/story17c.png">
+<img src="./user-story-test/story17d.png">
+<img src="./user-story-test/story17e.png">
+
 </details>
 
 18. As a site owner I want to restrict access to sections of an app to unauthenticated users so that basic standards of data protection are met
@@ -418,8 +437,11 @@ Not logged in user scrolls to a contact form and after filling it out clicks a "
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story18a.png" height="600" >
+<img src="./user-story-test/story18b.png" height="600" >
+<img src="./user-story-test/story18c.png" height="600" >
+<img src="./user-story-test/story18d.png" height="600" >
+<img src="./user-story-test/story18e.png" height="600" >
 </details>
 
 19. As a Site Owner I would like that authenticated users have full access to web app and its functionality
@@ -436,8 +458,12 @@ From the drop-down category menu, select category |Categories that are chosen du
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story16d.png" height="600" >
+<img src="./user-story-test/story16e.png" height="600" >
+<img src="./user-story-test/story16f.png" height="600" >
+<img src="./user-story-test/story19a.png" height="600" >
+<img src="./user-story-test/story19b.png" height="600" >
+<img src="./user-story-test/story19c.png" height="600" >
 </details>
 
 20. As a Site Owner I would like that each data entry is validated before stored in database
@@ -450,11 +476,13 @@ Fill fill the form and try to leave empty any field except website and linkedIn 
 Navigate to "Add Blog" link in the nav bar and click on it |The "Create Blog" form is loaded| WAS |
 Enter relevant data for posting the blog but dont add category| Form is populated with user data | WAS |
 click "post" button | message is displayed to select the item from the list and blog is not posted | WAS |
- |  | WAS |
+
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story20a.png">
+<img src="./user-story-test/story20b.png">
+<img src="./user-story-test/story20c.png">
+<img src="./user-story-test/story20d.png">
 </details>
 
 21. As a Site Owner I would like that users an leave a message or feedback via contact form or
@@ -470,8 +498,9 @@ Scroll to the "About us" section of the page| Contact form is displayed | WAS |
 User is filling out form correctly and pressing "Send" button|User taken to top of the page and succes message"Thank you for your message" is displayed  | WAS |
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story16d.png" height="600" >
+<img src="./user-story-test/story16e.png" height="600" >
+<img src="./user-story-test/story16f.png" height="600" >
 </details>
 
 22. As a Site Owner I would like that users have more than one way of comunicating with team or     myself
@@ -485,11 +514,11 @@ User clicks on a github icon| site owner github page opens in a new window | WAS
 User scrolls to the bottom of the website| website footer is presented | WAS |
 User clicks on a LinkedIn icon |site owner LinkedIn page opens in a new window  | WAS |
 User scrolls to the team section  and click on any social media icon on a team member card | Social media page of a team member opens  | WAS |
- |  | WAS |
+
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story22a.png" height="600" >
+<img src="./user-story-test/story22c.png" height="600" >
 </details>
 
 23. As a Site Owner I would like that each 'Mentor' user cant see himself on the list of available mentors for his respective category(user wont be contacting himself)
@@ -501,15 +530,12 @@ User is filling out form correctly| set role page loads with success message | W
 User reads brief info about 2 roles presented and clicks on "Mentor" button | Set profile page is loaded anduser profile role is set as "Mentor"  | WAS |
 after setting up profile user clicks "set profile" button  |User email is available on a category page for student users to see along with website and linkedIn url if they have been set  | WAS |
 User navigates to his Learning category page (selected in profile) and clicks on available mentors link | Users data is not displayed to himself | WAS |
- |  | WAS |
- |  | WAS |
- |  | WAS |
+
 
  <details><summary>Screenshot</summary>
-  <img src="./user-story-test/story11a.png" >
-  <img src="./user-story-test/story11b.png" >
-  <img src="./user-story-test/story11c.png" >
-  <img src="./user-story-test/story11d.png" >
+  <img src="./user-story-test/story23.png" >
+  <img src="./user-story-test/story23b.png" >
+
 </details>
 
 24. As a Site Owner I would like that each authenticated user gets prompt messages when performing CRUD(Create,Read,Update,Delete) operations when using web app.
@@ -546,8 +572,9 @@ Open your email inbox and reset password mail with a link should be there|link t
 
 
  <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.jpg">
-<img src="docs/testing/user-stories-testing/user-story-04-b.jpg">
+<img src="./user-story-test/story15a.png" >
+<img src="./user-story-test/story15b.png" >
+<img src="./user-story-test/story15c.png" >
 </details>
 
 
