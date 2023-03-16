@@ -23,7 +23,6 @@
             </div>
             {{ form.email|as_crispy_field}}
             <fieldset>
-                <!-- <legend><small class="h6">Category*</small></legend> -->
             {{ form.category|as_crispy_field }}
             </fieldset>
             <div class="form-row">
@@ -32,15 +31,12 @@
                 </div>
                 <div class="form-group col-md mb-0">
                     {{ form.linkedIn_url|as_crispy_field}}
-                </div>
-                
+                </div>         
             </div>
             {{ form.bio|as_crispy_field }}
             <button type="submit" class="btn btn-primary active">Set Profile</button>
         </form>
-    </div>
-    
+    </div>  
 </main>
-
 
 {% endblock content %}
