@@ -52,19 +52,19 @@
 
 ## About
 
-The Knowledge Flow is a Learning and Blogging application that allows users to post blogs  in
-a chosen categories add comments, learn from the content of a blog or a comment and find a mentor available 
+Knowledge Flow is a learning and blogging application that allows users to post blogs in
+chosen categories, Add comments, learn from the content of a blog or a comment, and find a mentor available.
 for each category and reach out and connect with them.
 
 ***
 ## Project Goals
-Primary goals of the Project(web app):
-- Give users  an online solution to Learn  or Teach 
- in a certain category
-- Enable users to express themselves through a written form
-in comfort of their environment and provide or get some 
+Primary goals of the project (web app):
+- Give users  an online solution to learn or teach
+ in a certain category
+- Enable users to express themselves through a written form,
+in the comfort of their environment and provide or get some
 valuable information that will help them or others develop more
-knowledge. 
+knowledge.
   
 
 ### User Goals
@@ -78,41 +78,41 @@ knowledge.
 
 ### Target Audience
 - People with a desire to teach and share their knowledge
-- Individuals that want to learn and expand the knowledge
-- People who's wants to be productive and save time while learning 
+- Individuals that want to learn and expand their knowledge
+- People who want to be productive and save time while learning
 
 
 ### User Requirements and Expectations
 
 - Application with a clear purpose
-- Easy and intuitive user interface that allows quick and efficient navigation
+- An easy and intuitive user interface that allows quick and efficient navigation
 - Responsive and visually good design
-- Engaging content within the limit of set categories
-- Way to engage with a team or a developer
+- Engaging content within the limits of set categories
+- Ways to engage with a team or a developer
 
 ##### Back to [top](#table-of-contents)
 
 ### User stories
 
-0. As a user I want to navigation to be intuitive and user-friendly so that Im able to easily navigate through the app content.
-1. As a  user I want to know Important info on what the app is about so that I can use it's functionality on mutual benefit
-2. As an authenticated user I would like to be able to choose a way to get benefit from the app with choosing the right role
-3. As an authenticated user I would like to have a full access to the content of an web app
-4. As an authenticated user I would like a functionality to create profile(account)
-5. As an authenticated user I would like functionality to upload a supporting image to my profile and change it when I desire
-6. As an authenticated user I would like a functionality to update or delete profile (account) if not planning to use web app anymore
-7. As an authenticated user I would like functionality to pick different types of learning categories in my profile and change them later
+0. As a user I want to navigation to be intuitive and user-friendly so that I'm able to easily navigate through the app content.
+1. As a  user I want to know Important info on what the app is about so that I can use its functionality for mutual benefit
+2. As an authenticated user I would like to be able to choose a way to get benefits from the app by choosing the right role
+3. As an authenticated user I would like to have full access to the content of a web app
+4. As an authenticated user I would like the functionality to create a profile(account)
+5. As an authenticated user I would like the functionality to upload a supporting image to my profile and change it when I desire
+6. As an authenticated user I would like the functionality to update or delete profile (account) if not planning to use the web app anymore
+7. As an authenticated user I would like the functionality to pick different types of learning categories in my profile and change them later
 8. As an authenticated user I would like functionality to see and read blog posts that other users created
-9. As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge,opinion and informations
-10. As an authenticated user I would like functionality to delete or update my blog post i I find it no longer relevant
-11. As an authenticated user I would like functionality to leave a comment on a blog post 
+9. As an authenticated user I would like to upload a blog in a selected category so that I can share my knowledge, opinion, and information
+10. As an authenticated user I would like the functionality to delete or update my blog post I I find it no longer relevant
+11. As an authenticated user I would like the functionality to leave a comment on a blog post
 12. As an authenticated user I would like functionality to support my blog post with a cover image and change it later if needed.
-13. As an authenticated user I would like the functionality for each category page to have a list of mentors avaliable and their contact info
-14. As a user I would like web app to be fully responsive and to have the same experience when using
-on any device 
-15. As an returning user user I would like functionality to set a new password if I forgot the password so that I can still use the web app
-16. As a User I would like a Functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
-17. As a user I would like a Functionality to update or delete a comment I posted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
+13. As an authenticated user I would like the functionality for each category page to have a list of mentors available and their contact info
+14. As a user I would like a web application to be fully responsive and to have the same experience when using
+on any device
+15. As a returning user I would like the functionality to set a new password if I forget the old one so that I can still use the web app
+16. As a User I would like a functionality to contact the app owner or a team so that I can leave a suggestion or express my opinion about the web app
+17. As a user I would like a functionality to update or delete a comment Iposted to a blogpost so that if any mistake was made or new information is acquired anyone reading will be up to date
 
 ### Site Owner Stories
 
@@ -152,41 +152,44 @@ Clean dark theme was used troughout entire project, intuitive and simple navigat
 clear message about value of knowledge was main driver for delivering the project.
 
 #### sections:
-1.  Home page divided into 6 sections with simple and intuitive navigation
+1.  Home page divided into 6 sections with simple and intuitive navigation
 - Hero Section with supporting image and clear call to action
-- Bottom hero that's going deeper with an hero headline and displays some benefits and ways to use the web app
-- Team section that presents members responsible for delivering a fnished project
+- Bottom hero that's going deeper with a hero headline and displays some benefits and ways to use the web app
+- Team section that presents members responsible for delivering a finished project
 - About section with a quote
-- Contact section  with a simple form and a web app banner
-- Footer with some navigation social media links
-2. Blog Page where user can see latest blogs posted with links to a more detail vie of each blog
-3. Add blog page with a simple form 
-4. Profile page where all the data about user is stored
+- Contact section  with a simple form and a web app banner
+- Footer with  navigation and social media links
+2. Blog Page where user can see the latest blogs posted with links to a more detailed view of each blog
+3. Add blog page with a simple form
+4. The profile page where all the data about the user is stored
 5. 3 Category pages
-- Personal finance
+- Personal Finance
 - Leadership
-- Time management 
-- each page consists of headline, supporting image , sections that describes category, describes importance ,benefits and section where user can see available mentors for that category.
+- Time management
+- each page consists of a headline, supporting image, sections that describe the category, describe its importance and benefits,  and a section where user can see available mentors for that category.
 then section with blogs related to that category
 
 ### Code structure
 Project code structure is organized and divided into various application folders and constructed using Django Framework 
 #### Project Apps:
-- Home app - constructed to deliver basic information for the User about the app via Home page with simple an intuitive navigation(links in nav-bar and footer to navigate throughout app), basic contact form for user feedback and footer
+- Home app - constructed to deliver basic information for the User about the app via Home page with simple an intuitive navigation(links in nav-bar and footer to navigate throughout the app), basic contact form for user feedback and a footer
 
-- Siteusers app- this app provide user authentication and profile management functionality,full CRUD functonality, so user can create a an account, select a role that provides further functionality and usage, update profile, upload supporting images for a profile
 
-- flow_blog app - constructed to deliver CRUD functions of a blogging app, where  structure includes the necessary files for running the application, including the views, models, and templates required to create, read, update, and delete blog posts and comments 
+- Siteusers app- this app provides user authentication and profile management functionality, full CRUD functionality, so user can create an account, select a role that provides further functionality and usage, update profile, upload supporting images for a profile
 
-- categories app - delivers  functionality for users to select and manage learning categories for their profile and blog posts. The app includes views and templates for displaying a list of available categories and enabling users to select which learning categories they want to be associated with their profile and blog posts. 
+
+- flow_blog app - constructed to deliver CRUD functions of a blogging app, where  the structure includes the necessary files for running the application, including the views, models, and templates required to create, read, update, and delete blog posts and comments.
+
+
+- categories app - delivers functionality for users to select and manage learning categories for their profile and blog posts. The app includes views and templates for displaying a list of available categories and enabling users to select which learning categories they want to be associated with their profile and blog posts.
 
 #### Other django apps:
 - **settings.py**: This file contains configuration settings for your Django project, such as database settings, installed apps, and middleware.
 - **Procfile**: This file is used to specify the commands that should be executed when your Django app is deployed on a hosting platform.
-- **static**: This directory contains the base CSS and JavaScript files 
-- **templates**- base level folder with basic templates extended throughout other templates like : base.html, navbar.html, footer.html, also templates for user authentication and also each app has its own templates folder with html files to support the app functinalit and reusability
-- **requirements.txt**: This file lists the dependencies required for  Django project to run.
-- **env.py**: This file is used to store environment variables for a Django project or application, such as database connection details or API keys. best practice is including this file into th gitignore file so  the values can be easily accessed and used by the project without being exposed in the code or configuration files.
+- **static**: This directory contains the base CSS and JavaScript files
+- **templates**- base-level folder with basic templates extended throughout other templates like: base.html, navbar.html, footer.html, also templates for user authentication. and also each app has its own templates folder with HTML files to support the app's functionality and reusability
+- **requirements.txt**: This file lists the dependencies required for the Django project to run.
+- **env.py**: This file is used to store environment variables for a Django project or application, such as database connection details or API keys. the best practice is to include this file into th gitignore file so the values can be easily accessed and used by the project without being exposed in the code or configuration files.
 
 ##### Back to [top](#table-of-contents)
 
@@ -264,7 +267,7 @@ following fields:
 
 #### LearningCategory model 
 
-- LearningCategory model is used as an designed to provide a predefined list of categories that users can select from in their profile to indicate their areas of interest for learning, and also to serve as a set of categories that bloggers can assign to their posts to help other users discover relevant content. by using one model to represent both user interests and blog categories, the app can ensure consistency and avoid duplication in the category list. it has foreign key associated with a User. model fields are as follows:  maker,name,category_image,start_quote,description,importance_of_category.
+- LearningCategory model is used as an designed to provide a predefined list of categories that users can select from in their profile to indicate their areas of interest for learning, and also to serve as a set of categories that bloggers can assign to their posts to help other users discover relevant content. by using one model to represent both user interests and blog categories, the app can ensure consistency and avoid duplication in the category list. it has foreign key associated with a User. model fields are as follows: 
 
 | Name          | Database Key  | Field Type    | Validation |
 | ------------- | ------------- | ------------- | ---------- |
@@ -678,10 +681,10 @@ he is redirected to a logout page where ho confirms that he wants to logout
 
 ### Set role page
 
-- After successful rgistration user is reirected  this page that gives Mentor or Student functionality of a web app
-- User can register as Student Or Mentor
+- After successful registration user is redirected  to this page that gives the Mentor or Student functionality of a web app
+- User can register as a Student or mentor.
 - Each card presented gives a brief description of a role selected
-and upo clickinguser profile role is set 
+and upon clicking the user profile role is set
 - User Story covered with this feature: 2
 
 <details><summary>See Set role Page</summary>
@@ -691,12 +694,12 @@ and upo clickinguser profile role is set
 </details>
 
 ### Create profile page
-- User is presented with a form
-- User is filling the form and all the information is stored into the database
+User is presented with a form
+- User is filling out the form and all the information is stored in the database
 - User must choose the category that he is interested in
-- Its mandatory to provide email address
-- Its requirement to fill all the fields except website and linkedIn url
-- User is given an option to upload a supporting image to his profile
+- Its mandatory to provide the email address
+- Its required filling all the fields except website and linkedIn url
+- User is given the option to upload a supporting image to his profile
 - User Story covered with this feature:4,3,20 
 
 <details><summary>See Create profile Page</summary>
@@ -774,10 +777,10 @@ that blog post
 
 </details> 
 
-- If user is the creator of a blog two icons are displayed one for updating and other one
+- If the user is the creator of a blog two icons are displayed, one for updating and the other one
 for deleting a blog
-- The user have functionality to post a comment under the blog.
-- Two icons are also displayed under each comment that logged in user posted so he got options to delete or update a comment
+- The user has the functionality to post a comment under the blog.
+- Two icons are also displayed under each comment that logged in user-posted so he got options to delete or update a comment
 - User Story covered with this feature:10,12
  <details><summary>See Comment section</summary>
 
@@ -806,8 +809,8 @@ for deleting a blog
 </details>
 
 ### Update comment page
-- User is redirected to a page where a comment modal is
-displayed so he can update comment or go back 
+- User is redirected to a page where a comment modal is
+displayed so he can update his comment or go back
 - User Story covered with this feature:17
  <details><summary>See Update comment page</summary>
 
@@ -816,8 +819,8 @@ displayed so he can update comment or go back
 </details>
 
 ### Delete comment (modal)
-- User is presented with a pop up modal where he got two options
- to delete comment or go back
+- User is presented with a pop-up modal where he has two options.
+ to delete the comment or go back
 - User Story covered with this feature:17
  <details><summary>See Delete comment (modal)</summary>
 
@@ -858,9 +861,6 @@ displayed so he can update comment or go back
 ![500-page](docs/features/500-page.png)
 ![500-page](docs/features/500-mob.png)
 </details>
-
-
-
 
 
 ## Future Features
@@ -1008,7 +1008,7 @@ some of the existing features
     </details>
 
     <details><summary>tests_views.py</summary>
-    <img src="" width="800" >
+    <img src="docs/validation/python-js/blog-test-views.png" width="800" >
     </details>
 
     <details><summary>tests_models.py</summary>
@@ -1042,7 +1042,7 @@ some of the existing features
     </details>
 
     <details><summary>tests_views.py</summary>
-    <img src="" width="800" >
+    <img src="docs/validation/python-js/siteusers-test-views.png" width="800" >
     </details>
 
     <details><summary>tests_models.py</summary>
@@ -1050,7 +1050,7 @@ some of the existing features
     </details>
 
     <details><summary>tests_forms.py</summary>
-    <img src="" width="800" >
+    <img src="docs/validation/python-js/siteusers-test-forms.png" width="800" >
     </details>  
 
     </details>
@@ -1085,14 +1085,6 @@ some of the existing features
     </details>
 
     ***   
-
-
-
-
-
-
-
-
 
 ### Lighthouse
 
@@ -1231,16 +1223,11 @@ some of the existing features
 
 
 
-
-
-
-
-
 ### Wave
  [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 
-- NOTE : Alerts in Wave validator are connected with "alt" attribute of images uploaded by
-the user.they needed to be put as generic since it can't be done by the user.
+- NOTE : Alerts in Wave Validator are connected with the "alt" attribute of images uploaded by
+the user. they needed to be put as generic since  user cant put alt text for the image 
 
 <details><summary>Home</summary>
 <img src="docs/validation/wave/home-pg.png" width="800" height="1200" >
@@ -1301,20 +1288,6 @@ the user.they needed to be put as generic since it can't be done by the user.
 <details><summary>Category</summary>
 <img src="docs/validation/wave/category-pg.png" width="800" >
 </details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Testing
 ***
@@ -1396,9 +1369,9 @@ results for
 
 ### Heroku Deployment
 
-- Before deploying to heroku there are few things to have ready 
-ElephantSQL Database url,SECRET_KEY variable(genrate key different from provided one),CLOUDINARY_URL variable(after logging in the cloudinary website copy the 'cloudinary url' from your account dashboard as value of variable )
-- Create env.py(root level of your project) this file contains above mentioned
+- Before deploying to Heroku there are a few things to have ready
+ElephantSQL Database url, SECRET_KEY variable(generate key different from provided one), CLOUDINARY_URL variable(after logging in the Cloudinary website copy the 'cloudinary url' from your account dashboard as the value of a variable )
+- Create env.py (at the root level of your project) This file contains the above mentioned
 variables in a form of:
 - os.environ['DATABASE_URL'] = 'value of ElephantSQL Database url'
         <details><summary>See Image</summary>
@@ -1463,8 +1436,8 @@ variables in a form of:
     ![heroku](docs/deployment/manual-auto-deploy.png)
     </details> 
 
-7. Click on the option you want and you should be able to see bouild process
-    and after a while your app should be deployed.
+7. Click on the option you want, and you should be able to see the boiler process.
+    and after a while, your app should be deployed.
          <details><summary>See Image</summary>
 
     ![heroku](docs/deployment/build.png)
@@ -1503,28 +1476,28 @@ variables in a form of:
 
 ### Code
 
-- Code for building nav-bar component was taken and adjusted to my project needs from [here](https://getbootstrap.com/)
-- Code for building footer and profile page component  was taken and adjusted to my project needs from [here](https://mdbootstrap.com/)
-- Code for building team section component was taken and adjusted to my project needs from [here](https://codepen.io/search/pens?q=team+section&cursor=ZD0xJm89MCZwPTQ=)
-- Code for building back to top button functionality component was taken and adjusted to my project needs from [here](https://mdbootstrap.com/docs/standard/extended/back-to-top/)
-- Code for building allauth forms components was taken and adjusted to my project needs from [here](https://blog.nirmites.com/)
+- The code for building nav-bar component was taken and adjusted to my project needs from [here](https://getbootstrap.com/)
+- The code for building footer and profile page component  was taken and adjusted to my project needs from [here](https://mdbootstrap.com/)
+- The code for building team section component was taken and adjusted to my project needs from [here](https://codepen.io/search/pens?q=team+section&cursor=ZD0xJm89MCZwPTQ=)
+- The code for building back to top button functionality component was taken and adjusted to my project needs from [here](https://mdbootstrap.com/docs/standard/extended/back-to-top/)
+- The code for building allauth forms components was taken and adjusted to my project needs from [here](https://blog.nirmites.com/)
 
 ## Tutorials 
 
-- [This](https://www.youtube.com/watch?v=S9-Bt1JgRjQ) tutorial helped me understand django  Context Processors functionality
-- [This](https://www.youtube.com/watch?v=FdVuKt_iuSI) tutorial helped me to solidify the knowledge of django views forms and templates 
-- 
+- [This](https://www.youtube.com/watch?v=S9-Bt1JgRjQ) tutorial helped me understand django  Context Processors functionality
+- [This](https://www.youtube.com/watch?v=FdVuKt_iuSI) tutorial helped me solidify my knowledge of Django views, forms, and templates
+
 
 ### Imagery
 
 - Hero image  taken from [here](https://unsplash.com/@greg_rosenke)
-- Team section images taken from [here] (https://www.pexels.com/) 
-- Mentor role image taken from  [here](https://pixabay.com/users/harishs-3407954/)
-- Student role image taken from [here](https://pixabay.com/users/geralt-9301/)
+- Team section images are taken from  [here] (https://www.pexels.com/) 
+- Mentor role image is taken from [here](https://pixabay.com/users/harishs-3407954/)
+- Student role image is taken from[here](https://pixabay.com/users/geralt-9301/)
 - Default blog post  image taken from [here](https://unsplash.com/s/photos/cup)
-- Leadership learning category taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
-- Personal-finance learning category taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
-- Time-management learning category taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
+- Leadership learning category image is taken from[here](https://pixabay.com/users/mohamed_hassan-5229782/) 
+- Personal-finance learning category image is taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
+- Time-management learning category image is taken from [here](https://pixabay.com/users/mohamed_hassan-5229782/) 
 
 - All other images are uploaded by the users of the website
 

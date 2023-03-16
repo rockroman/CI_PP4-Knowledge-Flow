@@ -1,8 +1,16 @@
+"""
+knowledgeflow views test module
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.test import TestCase, Client, RequestFactory
 from django.http import HttpResponseServerError
 from django.urls import reverse
 from knowledgeflow import urls
+# Internal:
 from .views import handler500, handler403
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 class TestHandlerViews(TestCase):
