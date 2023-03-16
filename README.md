@@ -442,8 +442,8 @@ This allowed me to respond more effectively to change, stay focused on the most 
 </details>
 
 ### User stories
-- using Github issues first I created the template for a user story that was late used to 
-create user stories. at later date user stories were edited since at the start they were just a rough skech or a guideline that later became a full user story
+- using Github issues first I created the template for a user story that was later used to
+create user stories. at a later date user stories were edited since at the start they were just a rough sketch or a guideline that later became a full user story
 <details><summary>See User story template</summary>
 <img src="docs/features/user-story-template.png">
 </details>
