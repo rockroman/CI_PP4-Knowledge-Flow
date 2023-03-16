@@ -34,7 +34,6 @@
               <h3 class="h5 mb-0">
                 <span class="text-white">Intro to {{ cat_list.cat }} </span>
               </h3>
-              <!-- <i class="fa fa-caret-down drop-icon text-white"></i> -->
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
                 <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
               </svg>
@@ -51,7 +50,6 @@
               <h3 class="h5 mb-0">
                 <span class="text-white">Importance of {{ cat_list.cat }}</span>
               </h3>
-              <!-- <i class="fa fa-caret-down drop-icon text-white"></i> -->
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
                 <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
               </svg>
@@ -71,7 +69,6 @@
               <h4 class="h5 mb-0">
                 <span class="text-white">Mentors available  for {{ cat_list.cat }}</span>
               </h4>
-              <!-- <i class="fa fa-caret-down drop-icon text-white"></i> -->
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
                 <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
               </svg>
@@ -96,17 +93,13 @@
                         {% load cloudinary %}
                         {% cloudinary  mentor.image format="WebP" width=55 height=55 crop='fill' radius='max' class='user_image' alt='profile omage uploaded by th user' %}
                         {% endif %}
-                        <!-- <img src="" alt="User Img" class="rounded-circle mr-3"  width="55" height="55"> -->
                       </div>
                       <div class="user-info__basic">
                         <h5 class="mb-0 text-white text-capitalize">{{ mentor.first_name }} {{ mentor.last_name }}</h5>
-                        <!-- <p class="text-muted mb-0 ml-1"></p> -->
                       </div>
                     </div>
 
                   </div>
-                  <!-- <a href="#!"><small>Contact Me</small></a> -->
-
                   <div class=" mb-0 text-warning"> short bio
                     <p class="text-white">{{ mentor.bio|slice:":100" }}</p>
 
@@ -132,9 +125,7 @@
                         <small class="ml-1 text-white h6">{{ mentor.created_on }}</small>
                       </h5>
                     </div>
-                    <!-- <span class="text-success font-weight-bold">Consult</span> -->
                   </div>
-
                 </div>
                 <!-- end  card -->
                 {% endif %}
@@ -158,8 +149,6 @@
       <div class="col-lg-6 mb-4 ">
         <div class="card h-100 bg-dark">
           {% if 'placeholder' in post.cover_image.url %}
-          <!-- <img src="{% static 'images/us-wah-x8HupeZdK7Y-unsplash-cup.jpg' %}" alt="" width="450" height="250"
-            class="card-img-top"> -->
           <img
             src="https://res.cloudinary.com/dgzrzlcs4/image/upload/v1674088520/static/images/us-wah-x8HupeZdK7Y-unsplash-cup.5ff494c59c0f.webp"
             alt="cup of coffee on a table with a not readme written on it " class="card-img-top" width="450" height="250">
@@ -174,8 +163,6 @@
               href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </div>
             <p class=" d-flex justify-content-between text-white-50">{{ post.creator }} | {{ post.created_on }}
               <strong>{{ post.category }}</strong></p>
-            <!-- <h5 class="card-title "> <a class="text-warning"
-                href="{% url 'blog_details' post.pk %}">{{ post.title }}</a> </h5> -->
             {% if user.is_authenticated %}
             {% if user == post.creator %}
 
