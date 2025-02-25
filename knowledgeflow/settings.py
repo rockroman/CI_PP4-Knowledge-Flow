@@ -122,18 +122,21 @@ WSGI_APPLICATION = 'knowledgeflow.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {h
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('DB_NAME', 'default_db_name'),
+        'USER': os.getenv('DB_USER', 'default_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'default_password'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': '',
+    }
+}
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
 
 # }
-
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
-
-}
 
 
 # Password validation
